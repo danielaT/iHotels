@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Regions</key>
+	<dict>
+		<key>Vidin</key>
+		<array>
+			<string>Vidin</string>
+		</array>
+		<key>Sofia</key>
+		<array>
+			<string>Dragoman</string>
+			<string>Dupnitsa</string>
+			<string>Ihtiman</string>
+			<string>Kostenets</string>
+			<string>Kyustendil</string>
+			<string>Pravets</string>
+			<string>Samokov</string>
+			<string>Sofia</string>
+		</array>
+		<key>Petrich</key>
+		<array>
+			<string>Bansko</string>
+			<string>Blagoevgrad</string>
+			<string>Petrich</string>
+			<string>Razlog</string>
+			<string>Sandanski</string>
+			<string>Simitli</string>
+		</array>
+		<key>Pleven</key>
+		<array>
+			<string>Gabrovo</string>
+			<string>Gorna Orechovitsa</string>
+			<string>Pleven</string>
+			<string>Sevlievo</string>
+			<string>Svishtov</string>
+			<string>Troyan</string>
+			<string>Tryavna</string>
+			<string>Veliko Tarnovo</string>
+		</array>
+		<key>Plovdiv</key>
+		<array>
+			<string>Batak</string>
+			<string>Chepelare</string>
+			<string>Devin</string>
+			<string>Karlovo</string>
+			<string>Pazardzik</string>
+			<string>Plovdiv</string>
+			<string>Smolyan</string>
+			<string>Hisarja</string>
+			<string>Stamboliyski</string>
+			<string>Velingrad</string>
+		</array>
+		<key>Stara Zagora</key>
+		<array>
+			<string>Ardino</string>
+			<string>Dimitrovgrad</string>
+			<string>Haskovo</string>
+			<string>Kardzali</string>
+			<string>Kazanlak</string>
+			<string>Stara Zagora</string>
+			<string>Svilengrad</string>
+		</array>
+		<key>Rousse</key>
+		<array>
+			<string>Isperih</string>
+			<string>Ivanovo</string>
+			<string>Rousse</string>
+			<string>Silistra</string>
+		</array>
+		<key>Varna</key>
+		<array>
+			<string>Aksakovo</string>
+			<string>Avren</string>
+			<string>Albena</string>
+			<string>Balchik</string>
+			<string>Byala</string>
+			<string>Dobrich</string>
+			<string>Golden Sands</string>
+			<string>Kavarna</string>
+			<string>Shumen</string>
+			<string>Sveti Vlas</string>
+			<string>Targovishte</string>
+			<string>Varna</string>
+		</array>
+		<key>Bourgas</key>
+		<array>
+			<string>Bourgas</string>
+			<string>Elenite</string>
+			<string>Kosharitsa</string>
+			<string>Nessebar</string>
+			<string>Obzor</string>
+			<string>Pomorie</string>
+			<string>Primorsko</string>
+			<string>Sozopol</string>
+			<string>Sunny Beach</string>
+			<string>Yambol</string>
+		</array>
+	</dict>
+</dict>
+</plist>
