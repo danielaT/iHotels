@@ -10,19 +10,33 @@
 
 #import "HotelsInformation.h"
 
-NSString* const HOTEL_SUMMARY = @"HotelSummary";
-NSString* const HOTEL_IMAGES = @"HotelImages";
-NSString* const HOTEL_DETAILS = @"HotelDetails";
-NSString* const ROOM_TYPES = @"RoomTypes";
-NSString* const PROPERTY_AMENITIES = @"PropertyAmenities";
-NSString* const HOTEL_IMAGE = @"HotelImage";
+#import "GalleryViewController.h"
+
+#import "HotelDescriptionViewController.h"
+
+#import "RoomTypesViewController.h"
+
+#import "PropertyAmenitiesViewController.h"
+
+const float CELL_HEIGTH = 35.0;
 
 @interface HotelViewController ()
+{
+    NSArray* menuItems;
+    HotelsInformation* hotelInfo;
+}
+
+typedef enum {
+    HotelDescription = 0,
+    RoomTypes = 1,
+    PropertyAmenities = 2,
+    Gallery = 3
+} Segues;
 
 @property (nonatomic)  int hotelIdLoaded;
-@property NSMutableDictionary* hotel;
-@property HotelsInformation* hotelInfo;
-@property NSArray* menuItems;
+@property NSDictionary* hotel;
+- (IBAction)findInMapTouched:(id)sender;
+- (IBAction)makeReservationTouched:(id)sender;
 
 @end
 
@@ -34,27 +48,14 @@ NSString* const HOTEL_IMAGE = @"HotelImage";
 @synthesize locationDescription=_locationDescription;
 @synthesize hotelId=_hotelId;
 @synthesize hotel=_hotel;
-@synthesize hotelInfo=_hotelInfo;
 @synthesize hotelIdLoaded=_hotelIdLoaded;
 @synthesize hotelMenuTableView=_hotelMenuTableView;
-@synthesize menuItems=_menuItems;
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 -(void)setHotelIdLoaded:(int)hotelIdLoaded {
     
     //reload data when a new hotel is selected
-    
-    [self.hotelInfo getHotel:hotelIdLoaded handler:^(NSDictionary* dict) {
-        self.hotel = nil;
-        self.hotel = [NSDictionary dictionaryWithDictionary:dict];
+    [hotelInfo getHotel:hotelIdLoaded handler:^(NSDictionary* dict) {
+        self.hotel = dict;
         [self reloadData];
     }];
 }
@@ -62,28 +63,21 @@ NSString* const HOTEL_IMAGE = @"HotelImage";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.hotelInfo = [[HotelsInformation alloc] init];
-    self.hotel = [[NSMutableDictionary alloc] init];
+	hotelInfo = [[HotelsInformation alloc] init];
     self.hotelIdLoaded = self.hotelId;
     self.hotelMenuTableView.delegate = self;
     self.hotelMenuTableView.dataSource = self;
-    self.menuItems = [[NSArray alloc] initWithObjects:@"Hotel description", @"Rooms", @"Property amenities", @"Gallery", nil];
+    menuItems = [[NSArray alloc] initWithObjects:@"Hotel description", @"Rooms", @"Property amenities", @"Gallery", nil];
 }
 
 -(void) reloadData {
-    NSDictionary* hotelSummary = [self.hotel valueForKey:HOTEL_SUMMARY];
+    NSDictionary* hotelSummary = [hotelInfo getSummaryForHotel:self.hotel];
     self.navigationItem.title = [hotelSummary valueForKey:@"name"];
-    [self.cityAndPostalCode setText:[NSString stringWithFormat:@"%@, Postal code: %@", [hotelSummary valueForKey:@"city"], [hotelSummary valueForKey:@"postalCode"]]];
+    [self.cityAndPostalCode setText:[NSString stringWithFormat:@"%@, %@", [hotelSummary valueForKey:@"city"], [hotelSummary valueForKey:@"postalCode"]]];
     [self.address setText:[hotelSummary valueForKey:@"address1"]];
     [self.locationDescription setText:[hotelSummary valueForKey:@"locationDescription"]];
-    
-    NSDictionary* hotelImages = [self.hotel valueForKey:HOTEL_IMAGES];
-    NSArray* hotelImagesArray = [hotelImages valueForKey:HOTEL_IMAGE];
-    if ([hotelImagesArray count] > 0) {
-        NSDictionary* hotelImage = [hotelImagesArray objectAtIndex:0];
-        NSURL* url = [NSURL URLWithString:[hotelImage valueForKey:@"thumbnailUrl"]];
-        [self.hotelImage loadRequest:[NSURLRequest requestWithURL:url]];
-    }
+    NSURL* url = [NSURL URLWithString:[hotelInfo getProfilePhotoForHotel:self.hotel]];
+    [self.hotelImage loadRequest:[NSURLRequest requestWithURL:url]];
 }
 
 -(int)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -91,15 +85,20 @@ NSString* const HOTEL_IMAGE = @"HotelImage";
 }
 
 -(int)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return [menuItems count];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    [self performSegueWithIdentifier:[NSString stringWithFormat:@"%d", indexPath.row] sender:tableView];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 40;
+    return CELL_HEIGTH;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return CELL_HEIGTH;
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -113,8 +112,51 @@ NSString* const HOTEL_IMAGE = @"HotelImage";
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.text = [self.menuItems objectAtIndex:indexPath.row];
+    cell.textLabel.text = [menuItems objectAtIndex:indexPath.row];
     return cell;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    switch ([segue.identifier intValue]) {
+        case HotelDescription: {
+            HotelDescriptionViewController* hotelDecription = (HotelDescriptionViewController*)segue.destinationViewController;
+            NSDictionary* hotelDetails = [hotelInfo getHotelDetailsForHotel:self.hotel];
+            hotelDecription.roomsCountStr = [[hotelDetails valueForKey:@"numberOfRooms"] intValue];
+            hotelDecription.hotelPolicyStr = [hotelDetails valueForKey:@"hotelPolicy"];
+            hotelDecription.floorsCountStr = [[hotelDetails valueForKey:@"numberOfFloors"] intValue];
+            hotelDecription.propertyInformationStr = [hotelDetails valueForKey:@"propertyInformation"];
+            hotelDecription.checkInStr = [hotelDetails valueForKey:@"checkInTime"];
+            hotelDecription.checkOutStr = [hotelDetails valueForKey:@"checkOutTime"];
+        }
+            break;
+        case RoomTypes: {
+            RoomTypesViewController* roomTypes = (RoomTypesViewController*)segue.destinationViewController;
+            roomTypes.roomTypes = [hotelInfo getRoomTypesForHotel:self.hotel];
+        }
+            break;
+        case PropertyAmenities: {
+            PropertyAmenitiesViewController* propertyAmenities = (PropertyAmenitiesViewController*) segue.destinationViewController;
+            propertyAmenities.propertyAmenitiesArray = [hotelInfo getPropertyAmenitiesForHotel:self.hotel];
+        }
+            break;
+        case Gallery: {
+            GalleryViewController* galleryViewController = (GalleryViewController*)segue.destinationViewController;
+            [hotelInfo getImagesForHotel:self.hotel handler:^(NSArray* arr) {
+                galleryViewController.hotelImages = arr;
+            }];
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+- (IBAction)findInMapTouched:(id)sender {
+    
+}
+
+- (IBAction)makeReservationTouched:(id)sender {
+    
 }
 
 @end

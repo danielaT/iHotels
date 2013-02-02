@@ -11,8 +11,7 @@
 @interface ConnectionStore()
 
 @property NSMutableData* connectionData;
-
-@property (nonatomic, copy) void (^callback)();
+@property (nonatomic, strong) void (^callback)();
 
 @end
 
@@ -52,6 +51,7 @@
     self.connectionData = nil;
     // error
 }
+
 
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection {
     self.callback(self.connectionData);
