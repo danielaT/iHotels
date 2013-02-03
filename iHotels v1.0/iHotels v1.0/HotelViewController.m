@@ -18,6 +18,8 @@
 
 #import "PropertyAmenitiesViewController.h"
 
+#import "ReservationViewController.h"
+
 const float CELL_HEIGTH = 35.0;
 
 @interface HotelViewController ()
@@ -30,7 +32,8 @@ typedef enum {
     HotelDescription = 0,
     RoomTypes = 1,
     PropertyAmenities = 2,
-    Gallery = 3
+    Gallery = 3,
+    Reservation = 4
 } Segues;
 
 @property (nonatomic)  int hotelIdLoaded;
@@ -146,6 +149,17 @@ typedef enum {
             }];
         }
             break;
+        case Reservation: {
+            ReservationViewController* reservation = (ReservationViewController*)segue.destinationViewController;
+            NSDictionary* hotelSummary = [hotelInfo getSummaryForHotel:self.hotel];
+            reservation.nameString = [hotelSummary valueForKey:@"name"];
+            [reservation.hotelName setText:reservation.nameString];
+            reservation.cityString = [hotelSummary valueForKey:@"city"];
+            [reservation.hotelCity setText:reservation.cityString];
+            
+            reservation.url = [NSURL URLWithString:[hotelInfo getProfilePhotoForHotel:self.hotel]];
+            [reservation.hotelImage loadRequest:[NSURLRequest requestWithURL:reservation.url]];
+        }
         default:
             break;
     }
@@ -156,7 +170,7 @@ typedef enum {
 }
 
 - (IBAction)makeReservationTouched:(id)sender {
-    
+    [self performSegueWithIdentifier:@"4" sender:self];
 }
 
 @end

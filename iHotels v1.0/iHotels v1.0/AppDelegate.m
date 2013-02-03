@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "HotelVisited.h"
 
 //#import "MasterViewController.h"
 
@@ -15,6 +16,12 @@
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return [FBSession.activeSession handleOpenURL:url];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -32,6 +39,10 @@
 //        MasterViewController *controller = (MasterViewController *)navigationController.topViewController;
 //        controller.managedObjectContext = self.managedObjectContext;
 //    }
+    HotelVisited *hotel = [ NSEntityDescription insertNewObjectForEntityForName:@"HotelVisited" inManagedObjectContext:self.managedObjectContext];
+    hotel.hotelName = @"My first visited hotel";
+    
+    [FBProfilePictureView class];
     return YES;
 }
 							
@@ -55,10 +66,12 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBSession.activeSession handleDidBecomeActive];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    [FBSession.activeSession close];
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
 }
