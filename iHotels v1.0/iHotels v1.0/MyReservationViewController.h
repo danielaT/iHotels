@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *reservationName;
 @property NSString *stringName;
 @property (weak, nonatomic) IBOutlet UILabel *reservationDate;
+@property NSString *stringDate;
 @property (weak, nonatomic) IBOutlet UILabel *reservationDays;
 @property NSString *stringDays;
 @end

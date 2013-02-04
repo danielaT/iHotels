@@ -154,6 +154,8 @@
         [hotelDecription.reservationName setText:hotelDecription.stringName];
         hotelDecription.stringDays = [NSString stringWithFormat:@"%@",res.days];
         [hotelDecription.reservationDays setText:hotelDecription.stringDays];
+        hotelDecription.stringDate = [NSString stringWithFormat:@"%@",res.startDate];
+        [hotelDecription.reservationDate setText:hotelDecription.stringDate];
 
     }
 }

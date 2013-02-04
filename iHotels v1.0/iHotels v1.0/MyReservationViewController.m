@@ -17,7 +17,6 @@
 
 @implementation MyReservationViewController
 
-@synthesize hotelListArray;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,6 +32,7 @@
     [super viewDidLoad];
     [self.reservationName setText:self.stringName];
     [self.reservationDays setText:self.stringDays];
+     [self.reservationDate setText:[self.stringDate substringToIndex:10]];
 
 	// Do any additional setup after loading the view.
 }

@@ -73,7 +73,7 @@
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WaJ-Nu-DjM">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="34q-Z8-TbI"/>
+                                    <constraint firstAttribute="width" constant="157" id="G7C-Zg-fgT"/>
                                     <constraint firstAttribute="height" constant="21" id="XO0-8K-tak"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -88,7 +88,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="friends" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksq-T5-fko">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="scroll view with friends :P" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksq-T5-fko">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Dmr-cs-sZx"/>
                                 </constraints>
@@ -99,13 +99,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.95294123890000004" green="0.96078437569999997" blue="0.85490202900000001" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
-                            <constraint firstItem="RjS-5N-7lv" firstAttribute="trailing" secondItem="ksq-T5-fko" secondAttribute="trailing" type="default" id="HCb-7N-imL"/>
                             <constraint firstItem="WaJ-Nu-DjM" firstAttribute="trailing" secondItem="RjS-5N-7lv" secondAttribute="trailing" type="default" id="Ppb-t8-h7P"/>
+                            <constraint firstItem="ksq-T5-fko" firstAttribute="leading" secondItem="jun-XQ-lK4" secondAttribute="leading" constant="107" id="eNz-fG-kOq"/>
                             <constraint firstItem="3we-iA-Dl8" firstAttribute="leading" secondItem="WaJ-Nu-DjM" secondAttribute="leading" type="default" id="f9r-U8-lVQ"/>
                             <constraint firstItem="RjS-5N-7lv" firstAttribute="leading" secondItem="WaJ-Nu-DjM" secondAttribute="leading" type="default" id="fH1-mT-s7e"/>
                             <constraint firstItem="ksq-T5-fko" firstAttribute="top" secondItem="jun-XQ-lK4" secondAttribute="top" constant="204" id="fxW-YJ-Ho3"/>
                             <constraint firstAttribute="trailing" secondItem="3we-iA-Dl8" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="iaB-Xq-GfU"/>
-                            <constraint firstItem="ksq-T5-fko" firstAttribute="leading" secondItem="RjS-5N-7lv" secondAttribute="leading" type="default" id="jFi-nn-TMN"/>
                             <constraint firstItem="RjS-5N-7lv" firstAttribute="top" secondItem="jun-XQ-lK4" secondAttribute="top" constant="154" id="o2K-H7-Gby"/>
                             <constraint firstItem="WaJ-Nu-DjM" firstAttribute="top" secondItem="jun-XQ-lK4" secondAttribute="top" constant="110" id="orO-C0-d6C"/>
                             <constraint firstItem="3we-iA-Dl8" firstAttribute="top" secondItem="jun-XQ-lK4" secondAttribute="top" constant="59" id="skb-UM-K3G"/>
@@ -573,7 +572,7 @@
                         <color key="separatorColor" red="0.094117656349999995" green="0.22352942819999999" blue="0.61176472900000001" alpha="1" colorSpace="deviceRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RoomType" id="3DN-dL-R0m">
-                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -1387,155 +1386,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="pic.jpg" width="1600" height="1200"/>
         <image name="twitter-icon.png" width="512" height="512"/>
     </resources>
-    <classes>
-        <class className="CityPickerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CityPickerViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="ContactsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactsViewController.h"/>
-        </class>
-        <class className="DateViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DateViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
-            </relationships>
-        </class>
-        <class className="FBProfilePictureView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FBProfilePictureView.h"/>
-        </class>
-        <class className="GalleryViewController" superclassName="UICollectionViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GalleryViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="loadingIndicator" candidateClass="UIActivityIndicatorView"/>
-            </relationships>
-        </class>
-        <class className="HotelDescriptionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HotelDescriptionViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="checkInTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="checkOutTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="floorsNumber" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="hotelPolicy" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="propertyInformation" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="roomsNumber" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="HotelImageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HotelImageViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="hotelImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="HotelTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HotelTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="hotelDescription" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="hotelImage" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="hotelName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="hotelRating" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="HotelViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HotelViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="findInMapTouched:"/>
-                <relationship kind="action" name="makeReservationTouched:"/>
-                <relationship kind="outlet" name="address" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cityAndPostalCode" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="hotelImage" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="hotelMenuTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="locationDescription" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ImageCollectionViewCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageCollectionViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="hotelImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="MapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="browseCitiesButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="mapImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="searchButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="searchTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
-        </class>
-        <class className="MyReservationViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyReservationViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="reservationDate" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="reservationDays" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="reservationName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PropertyAmenitiesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PropertyAmenitiesViewController.h"/>
-        </class>
-        <class className="ReservationViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReservationViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="date" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="days" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="hotelCity" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="hotelImage" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="hotelName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="selectedFriendsView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="ReservationsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReservationsTableViewController.h"/>
-        </class>
-        <class className="RoomTypesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoomTypesViewController.h"/>
-        </class>
-        <class className="RoomViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoomViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="roomAmenitiesTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="SocialViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="facebookPost" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="profilePhoto" candidateClass="FBProfilePictureView"/>
-                <relationship kind="outlet" name="segmentedControl" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="twitterPost" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="VisitedPlacesTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VisitedPlacesTableViewController.h"/>
-        </class>
-        <class className="WelcomeScreenViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcomeScreenViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="logoImageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
