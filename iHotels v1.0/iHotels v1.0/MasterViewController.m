@@ -54,7 +54,7 @@ NSString* const THUMB_NAIL_URL = @"http://images.travelnow.com";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // self.cityName = @"Stara Zagora";
+    //self.cityName = @"Stara%20Zagora";
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     self.hotelListArray = [[NSMutableArray alloc] init];
 }

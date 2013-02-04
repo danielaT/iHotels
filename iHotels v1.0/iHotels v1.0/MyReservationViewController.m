@@ -9,6 +9,7 @@
 #import "MyReservationViewController.h"
 #import "HotelsInformation.h"
 
+
 @interface MyReservationViewController ()
 
 @property NSArray* hotelListArray;
@@ -32,10 +33,25 @@
     [super viewDidLoad];
     [self.reservationName setText:self.stringName];
     [self.reservationDays setText:self.stringDays];
-     [self.reservationDate setText:[self.stringDate substringToIndex:10]];
+    [self.reservationDate setText:[self.stringDate substringToIndex:10]];
+    
+    [UIView animateWithDuration:2.0
+                          delay:0.0
+                        options: UIViewAnimationCurveEaseInOut
+                     animations:^{
+                         [self.nameView setAlpha:1.0f];
+                         
+                     }
+                     completion:^(BOOL finished){
+                         if(finished)  NSLog(@"Finished !!!!!");
+                                             // do any stuff here if you want
+                                             }];
+
 
 	// Do any additional setup after loading the view.
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {
