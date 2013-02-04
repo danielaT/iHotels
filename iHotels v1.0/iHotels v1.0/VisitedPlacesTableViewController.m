@@ -46,6 +46,20 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self reloadInformation];
+    [self.tableView reloadData];
+}
+
+- (void) reloadInformation
+{
+    AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
+    NSManagedObjectContext *context = delegate.managedObjectContext;
+    NSError *error;
+    NSFetchRequest *request1 = [[NSFetchRequest alloc] initWithEntityName:@"HotelVisited"];
+    hotels = [context executeFetchRequest:request1 error:&error];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

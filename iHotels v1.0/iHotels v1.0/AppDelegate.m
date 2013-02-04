@@ -28,6 +28,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [self isVisited];
     // Override point for customization after application launch.
 //    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
 //        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
@@ -64,7 +65,11 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    
+    [self isVisited];
+}
+
+- (void) isVisited
+{
     NSError *error;
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Reservation"];
     NSArray* orders = [self.managedObjectContext executeFetchRequest:request error:&error];
@@ -73,10 +78,9 @@
     
     for(Reservation* res in orders)
     {
-        NSLog(@"is visited: %d", (int)res.isVisited);
+        //NSLog(@"is visited: %d", (int)res.isVisited);
         if( res.isVisited == YES)
         {
-            
             HotelVisited *hotelVisited = [ NSEntityDescription insertNewObjectForEntityForName:@"HotelVisited" inManagedObjectContext:self.managedObjectContext];
             hotelVisited.hotelId = res.hotelId;
             hotelVisited.hotelName = res.hotelName;
@@ -87,16 +91,15 @@
         }
     }
     
-    NSFetchRequest *request2 = [[NSFetchRequest alloc] initWithEntityName:@"Friend"];
-    NSArray* orders2 = [self.managedObjectContext executeFetchRequest:request2 error:&error1];
-    
-    for(Friend* fr in orders2)
-    {
-        NSLog(@"fr: %@",fr.name);
-    }
-
-    
+//    NSFetchRequest *request2 = [[NSFetchRequest alloc] initWithEntityName:@"Friend"];
+//    NSArray* orders2 = [self.managedObjectContext executeFetchRequest:request2 error:&error1];
+//    
+//    for(Friend* fr in orders2)
+//    {
+//        NSLog(@"fr: %@",fr.name);
+//    }
 }
+
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {

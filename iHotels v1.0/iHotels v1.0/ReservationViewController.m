@@ -72,6 +72,7 @@
     [super viewDidUnload];
 }
 
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -158,23 +159,8 @@
         friend.name = [arrayWithFriends objectAtIndex:i];
         [reservation addFriendsObject:friend];
     }
-    //NSSet *set = [[NSSet alloc]initWithArray:arrayWithFriends];
-    //reservation.friends = set;
+    
     [context save:&error];
-
-
-//    NSFetchRequest *request1 = [[NSFetchRequest alloc] initWithEntityName:@"Reservation"];
-//    NSArray* orders1 = [context executeFetchRequest:request1 error:&error];
-//    NSFetchRequest *request2 = [[NSFetchRequest alloc] initWithEntityName:@"Friend"];
-//    NSArray* orders2 = [context executeFetchRequest:request2 error:&error];
-//    for(Reservation* res in orders1)
-//    {
-//            NSLog(@"%@ %@ %@ %@", res.hotelName, res.hotelId, res.startDate, res.days);
-//    }
-//    for(Friend* fr in orders2)
-//    {
-//        NSLog(@"fr: %@",fr.name);
-//    }
     
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Successfull!" message:[NSString stringWithFormat:@"You make reservation for: %@", self.hotelName.text,nil] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     [alert show];

@@ -32,13 +32,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
-    NSManagedObjectContext *context = delegate.managedObjectContext;
-    NSError *error;
-    NSFetchRequest *request1 = [[NSFetchRequest alloc] initWithEntityName:@"Reservation"];
-    reservations = [context executeFetchRequest:request1 error:&error];
+    [self.tableView reloadData];
     
-
+    [self reloadInformation];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -46,6 +42,20 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self reloadInformation];
+    [self.tableView reloadData];
+}
+
+- (void) reloadInformation
+{
+    AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
+    NSManagedObjectContext *context = delegate.managedObjectContext;
+    NSError *error;
+    NSFetchRequest *request1 = [[NSFetchRequest alloc] initWithEntityName:@"Reservation"];
+    reservations = [context executeFetchRequest:request1 error:&error];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -76,6 +86,7 @@
     cell.textLabel.font = [UIFont fontWithName:nil size:8];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.imageView.image = [UIImage imageNamed:@"car.jpg"];
+    
     return cell;
 }
 

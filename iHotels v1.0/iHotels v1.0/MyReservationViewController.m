@@ -7,12 +7,17 @@
 //
 
 #import "MyReservationViewController.h"
+#import "HotelsInformation.h"
 
 @interface MyReservationViewController ()
+
+@property NSArray* hotelListArray;
 
 @end
 
 @implementation MyReservationViewController
+
+@synthesize hotelListArray;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,6 +33,7 @@
     [super viewDidLoad];
     [self.reservationName setText:self.stringName];
     [self.reservationDays setText:self.stringDays];
+
 	// Do any additional setup after loading the view.
 }
 
