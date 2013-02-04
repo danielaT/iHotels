@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "HotelVisited.h"
+#import "Reservation.h"
+#import "HotelVisited.h"
+#import "Friend.h"
 
 //#import "MasterViewController.h"
 
@@ -39,8 +42,8 @@
 //        MasterViewController *controller = (MasterViewController *)navigationController.topViewController;
 //        controller.managedObjectContext = self.managedObjectContext;
 //    }
-    HotelVisited *hotel = [ NSEntityDescription insertNewObjectForEntityForName:@"HotelVisited" inManagedObjectContext:self.managedObjectContext];
-    hotel.hotelName = @"My first visited hotel";
+//    HotelVisited *hotel = [ NSEntityDescription insertNewObjectForEntityForName:@"HotelVisited" inManagedObjectContext:self.managedObjectContext];
+//    hotel.hotelName = @"My first visited hotel";
     
     [FBProfilePictureView class];
     return YES;
@@ -61,6 +64,38 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    NSError *error;
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Reservation"];
+    NSArray* orders = [self.managedObjectContext executeFetchRequest:request error:&error];
+    
+    NSError *error1;
+    
+    for(Reservation* res in orders)
+    {
+        NSLog(@"is visited: %d", (int)res.isVisited);
+        if( res.isVisited == YES)
+        {
+            
+            HotelVisited *hotelVisited = [ NSEntityDescription insertNewObjectForEntityForName:@"HotelVisited" inManagedObjectContext:self.managedObjectContext];
+            hotelVisited.hotelId = res.hotelId;
+            hotelVisited.hotelName = res.hotelName;
+            hotelVisited.friends = res.friends;
+            //delete from database res
+            [self.managedObjectContext deleteObject:res];
+            [self.managedObjectContext save:&error1];
+        }
+    }
+    
+    NSFetchRequest *request2 = [[NSFetchRequest alloc] initWithEntityName:@"Friend"];
+    NSArray* orders2 = [self.managedObjectContext executeFetchRequest:request2 error:&error1];
+    
+    for(Friend* fr in orders2)
+    {
+        NSLog(@"fr: %@",fr.name);
+    }
+
+    
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application

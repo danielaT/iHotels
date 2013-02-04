@@ -27,4 +27,6 @@
 - (void)addFriends:(NSSet *)values;
 - (void)removeFriends:(NSSet *)values;
 
+- (BOOL) isVisited;
+
 @end
