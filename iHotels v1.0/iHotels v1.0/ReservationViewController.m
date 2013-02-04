@@ -151,14 +151,17 @@
     reservation.days = [NSNumber numberWithInt:(int)self.days.text.intValue];
     NSError *error;
     
+    NSLog(@" masiv priqteli: %d", [arrayWithFriends count]);
     for(int i = 0; i < [arrayWithFriends count]; i++)
     {
         Friend *friend = [NSEntityDescription insertNewObjectForEntityForName:@"Friend" inManagedObjectContext:context];
         friend.name = [arrayWithFriends objectAtIndex:i];
+        [reservation addFriendsObject:friend];
     }
-    
-    reservation.friends = [NSSet setWithArray:arrayWithFriends];
+    //NSSet *set = [[NSSet alloc]initWithArray:arrayWithFriends];
+    //reservation.friends = set;
     [context save:&error];
+
 
 //    NSFetchRequest *request1 = [[NSFetchRequest alloc] initWithEntityName:@"Reservation"];
 //    NSArray* orders1 = [context executeFetchRequest:request1 error:&error];
