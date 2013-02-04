@@ -20,6 +20,8 @@
 
 #import "ReservationViewController.h"
 
+#import <MapKit/MapKit.h>
+
 const float CELL_HEIGTH = 35.0;
 
 @interface HotelViewController ()
@@ -96,13 +98,13 @@ typedef enum {
     [self performSegueWithIdentifier:[NSString stringWithFormat:@"%d", indexPath.row] sender:tableView];
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return CELL_HEIGTH;
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return CELL_HEIGTH;
-}
+//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return CELL_HEIGTH;
+//}
+//
+//-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+//    return CELL_HEIGTH;
+//}
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return @"Hotel information";
@@ -165,9 +167,39 @@ typedef enum {
     }
 }
 
+
+
 - (IBAction)findInMapTouched:(id)sender {
     
+    // first get the full address of the hotel in a string...
+    NSDictionary* hotelSummary = [hotelInfo getSummaryForHotel:self.hotel];
+    [self.cityAndPostalCode setText:[NSString stringWithFormat:@"%@, %@", [hotelSummary valueForKey:@"city"], [hotelSummary valueForKey:@"postalCode"]]];
+    [self.address setText:[hotelSummary valueForKey:@"address1"]];
+    
+    NSString* fullHotelAddress = [NSString stringWithFormat:@"%@, %@, %@", [hotelSummary valueForKey:@"city"], [hotelSummary valueForKey:@"postalCode"], [hotelSummary valueForKey:@"address1"]];
+    
+    // ... and then geocode it!
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder geocodeAddressString:fullHotelAddress completionHandler:^(NSArray* placemarks, NSError* error)
+     {
+         // Check for returned placemarks and open the maps app
+         if (placemarks && placemarks.count > 0)
+         {
+             CLPlacemark *topResult = [placemarks objectAtIndex:0];
+             MKPlacemark *placemark = [[MKPlacemark alloc]initWithPlacemark:topResult];
+             MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+             [mapItem setName: [NSString stringWithFormat:@"Hotel: '%@'", [hotelSummary valueForKey:@"name"]]];
+             [mapItem openInMapsWithLaunchOptions:nil];
+         }
+         else {
+             // if no placemarks are found - display error (this shouldn't happen, but just in case...)
+            UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"Error!" message:@"Address not found." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+             [alert show];
+         }
+     }];
 }
+
+
 
 - (IBAction)makeReservationTouched:(id)sender {
     [self performSegueWithIdentifier:@"4" sender:self];

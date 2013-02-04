@@ -51,8 +51,8 @@
 		FD8FB82D16BE6E3A003B81D0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8FB82316BE6E3A003B81D0 /* CoreLocation.framework */; };
 		FD8FB82E16BE6E3A003B81D0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8FB82416BE6E3A003B81D0 /* MapKit.framework */; };
 		FD8FB82F16BE6E3A003B81D0 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8FB82516BE6E3A003B81D0 /* AdSupport.framework */; };
-		FD8FB83316BE6E3A003B81D0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8FB82916BE6E3A003B81D0 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		FD8FB83416BE6E3A003B81D0 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8FB82A16BE6E3A003B81D0 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		FD8FB83316BE6E3A003B81D0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8FB82916BE6E3A003B81D0 /* Social.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		FD8FB83416BE6E3A003B81D0 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8FB82A16BE6E3A003B81D0 /* Accounts.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		FD8FB83516BE6E3A003B81D0 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8FB82B16BE6E3A003B81D0 /* AddressBookUI.framework */; };
 		FD8FB83616BE6E3A003B81D0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8FB82C16BE6E3A003B81D0 /* AddressBook.framework */; };
 		FD8FB83E16BE72DE003B81D0 /* ReservationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8FB83D16BE72DE003B81D0 /* ReservationViewController.m */; };
@@ -165,12 +165,12 @@
 		FD8FB85616BE8308003B81D0 /* fb-logout.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "fb-logout.gif"; sourceTree = "<group>"; };
 		FD8FB85816BE930E003B81D0 /* fb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fb.jpg; sourceTree = "<group>"; };
 		FD8FB85A16BEA5FD003B81D0 /* iphone-contacts-icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "iphone-contacts-icon.jpg"; sourceTree = "<group>"; };
-		FD8FB86316BEAC9F003B81D0 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
-		FD8FB86416BEAC9F003B81D0 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
-		FD8FB86616BEACAF003B81D0 /* HotelVisited.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelVisited.h; sourceTree = "<group>"; };
-		FD8FB86716BEACAF003B81D0 /* HotelVisited.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelVisited.m; sourceTree = "<group>"; };
-		FD8FB86916BEACB8003B81D0 /* Reservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reservation.h; sourceTree = "<group>"; };
-		FD8FB86A16BEACB8003B81D0 /* Reservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reservation.m; sourceTree = "<group>"; };
+		FD8FB86316BEAC9F003B81D0 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Friend.h; path = ../Friend.h; sourceTree = "<group>"; };
+		FD8FB86416BEAC9F003B81D0 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Friend.m; path = ../Friend.m; sourceTree = "<group>"; };
+		FD8FB86616BEACAF003B81D0 /* HotelVisited.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HotelVisited.h; path = ../HotelVisited.h; sourceTree = "<group>"; };
+		FD8FB86716BEACAF003B81D0 /* HotelVisited.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HotelVisited.m; path = ../HotelVisited.m; sourceTree = "<group>"; };
+		FD8FB86916BEACB8003B81D0 /* Reservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reservation.h; path = ../Reservation.h; sourceTree = "<group>"; };
+		FD8FB86A16BEACB8003B81D0 /* Reservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reservation.m; path = ../Reservation.m; sourceTree = "<group>"; };
 		FD8FB87216BEB2A4003B81D0 /* ReservationsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservationsTableViewController.h; sourceTree = "<group>"; };
 		FD8FB87316BEB2A4003B81D0 /* ReservationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationsTableViewController.m; sourceTree = "<group>"; };
 		FD8FB87516BEB45D003B81D0 /* car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = car.jpg; sourceTree = "<group>"; };
@@ -209,6 +209,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B0C7F9716BFCC90003C1CCD /* CoreDataClasses */ = {
+			isa = PBXGroup;
+			children = (
+				FD8FB86916BEACB8003B81D0 /* Reservation.h */,
+				FD8FB86A16BEACB8003B81D0 /* Reservation.m */,
+				FD8FB86616BEACAF003B81D0 /* HotelVisited.h */,
+				FD8FB86716BEACAF003B81D0 /* HotelVisited.m */,
+				FD8FB86316BEAC9F003B81D0 /* Friend.h */,
+				FD8FB86416BEAC9F003B81D0 /* Friend.m */,
+			);
+			name = CoreDataClasses;
+			sourceTree = "<group>";
+		};
 		F9957B0116BCA29800CC06A2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,12 +253,6 @@
 		F9989ECE16B9A9270015A5C9 = {
 			isa = PBXGroup;
 			children = (
-				FD8FB86916BEACB8003B81D0 /* Reservation.h */,
-				FD8FB86A16BEACB8003B81D0 /* Reservation.m */,
-				FD8FB86616BEACAF003B81D0 /* HotelVisited.h */,
-				FD8FB86716BEACAF003B81D0 /* HotelVisited.m */,
-				FD8FB86316BEAC9F003B81D0 /* Friend.h */,
-				FD8FB86416BEAC9F003B81D0 /* Friend.m */,
 				F9989EE516B9A9280015A5C9 /* iHotels v1.0 */,
 				F9989EDC16B9A9270015A5C9 /* Frameworks */,
 				F9989EDA16B9A9270015A5C9 /* Products */,
@@ -284,6 +291,7 @@
 		F9989EE516B9A9280015A5C9 /* iHotels v1.0 */ = {
 			isa = PBXGroup;
 			children = (
+				5B0C7F9716BFCC90003C1CCD /* CoreDataClasses */,
 				F9957B0116BCA29800CC06A2 /* Resources */,
 				F9989EE616B9A9280015A5C9 /* Supporting Files */,
 				F9989EEE16B9A9280015A5C9 /* AppDelegate.h */,
