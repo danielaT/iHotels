@@ -83,6 +83,10 @@ typedef enum {
     [self.locationDescription setText:[hotelSummary valueForKey:@"locationDescription"]];
     NSURL* url = [NSURL URLWithString:[hotelInfo getProfilePhotoForHotel:self.hotel]];
     [self.hotelImage loadRequest:[NSURLRequest requestWithURL:url]];
+    
+    NSUInteger hotelRating = [[hotelSummary valueForKey:@"hotelRating"] integerValue]; // needed because some hotels have decimal rating (f. ex. 3.5)
+    NSString* hotelRatingImageName = [NSString stringWithFormat:@"iphone_star%d", hotelRating];
+    self.ratingImage.image = [UIImage imageNamed:hotelRatingImageName];
 }
 
 -(int)numberOfSectionsInTableView:(UITableView *)tableView {

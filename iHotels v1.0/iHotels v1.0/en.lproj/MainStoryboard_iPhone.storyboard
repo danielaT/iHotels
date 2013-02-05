@@ -8,7 +8,7 @@
         <scene sceneID="OYm-9G-n9G">
             <objects>
                 <navigationController definesPresentationContext="YES" id="rlW-7c-5pM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Reservations" id="RUn-7s-nEi"/>
+                    <tabBarItem key="tabBarItem" title="Reservations" image="iphone_reservation.png" id="RUn-7s-nEi"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nww-VX-3Lw">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -137,7 +137,7 @@
         <scene sceneID="gh1-qw-Tm4">
             <objects>
                 <navigationController definesPresentationContext="YES" id="5ha-ql-Ysf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Social" id="HHI-o0-iLH"/>
+                    <tabBarItem key="tabBarItem" title="Social" image="iphone_social.png" id="HHI-o0-iLH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4DB-qt-T9d">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -165,7 +165,6 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="To share your information about places you have been" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8n1-Ya-vzh">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Ehu-MP-861"/>
-                                    <constraint firstAttribute="width" constant="412" id="ToA-FG-6DI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -202,13 +201,13 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="fb.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ly3-Fh-y5g">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="62" id="tW7-zm-h5d"/>
-                                    <constraint firstAttribute="height" constant="52" id="zMq-8u-IWf"/>
+                                    <constraint firstAttribute="height" constant="60" id="PDw-op-6Yf"/>
+                                    <constraint firstAttribute="width" constant="60" id="cC0-rd-rD6"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="twitter-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="dPi-Tn-Rkx">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="67" id="9sl-qJ-gci"/>
+                                    <constraint firstAttribute="width" constant="60" id="5fe-9c-bGT"/>
                                 </constraints>
                             </imageView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="YIe-RD-mjG">
@@ -228,19 +227,20 @@
                             <constraint firstAttribute="bottom" secondItem="NNb-i4-4kH" secondAttribute="bottom" constant="141" id="AgG-TG-UFj"/>
                             <constraint firstItem="8n1-Ya-vzh" firstAttribute="leading" secondItem="gr1-7M-241" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Bio-if-Qm4"/>
                             <constraint firstItem="dPi-Tn-Rkx" firstAttribute="top" secondItem="gr1-7M-241" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Cdi-7c-FCQ"/>
-                            <constraint firstItem="dPi-Tn-Rkx" firstAttribute="leading" secondItem="NNb-i4-4kH" secondAttribute="leading" type="default" id="FuK-23-OZQ"/>
-                            <constraint firstAttribute="trailing" secondItem="O1p-lf-znt" secondAttribute="trailing" constant="191" id="Fz3-VA-2ro"/>
-                            <constraint firstItem="ly3-Fh-y5g" firstAttribute="leading" secondItem="gr1-7M-241" secondAttribute="leading" constant="37" id="IzH-df-3OH"/>
+                            <constraint firstItem="dPi-Tn-Rkx" firstAttribute="bottom" secondItem="ly3-Fh-y5g" secondAttribute="bottom" type="default" id="INs-Xc-sK8"/>
                             <constraint firstAttribute="bottom" secondItem="sGf-9S-5fw" secondAttribute="bottom" constant="82" id="NgB-9Q-7QB"/>
+                            <constraint firstItem="ygT-TW-Guv" firstAttribute="top" secondItem="gr1-7M-241" secondAttribute="top" constant="80" id="P3W-cn-shi"/>
                             <constraint firstItem="ygT-TW-Guv" firstAttribute="centerX" secondItem="gr1-7M-241" secondAttribute="centerX" type="default" id="PW6-Xe-DNU"/>
                             <constraint firstItem="YIe-RD-mjG" firstAttribute="centerX" secondItem="ygT-TW-Guv" secondAttribute="centerX" type="default" id="Xgp-3I-gaQ"/>
                             <constraint firstItem="YIe-RD-mjG" firstAttribute="top" secondItem="gr1-7M-241" secondAttribute="top" constant="169" id="abw-hA-qNO"/>
-                            <constraint firstItem="ygT-TW-Guv" firstAttribute="top" secondItem="dPi-Tn-Rkx" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="cDB-YI-Jj3"/>
-                            <constraint firstItem="ygT-TW-Guv" firstAttribute="top" secondItem="ly3-Fh-y5g" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="eB4-mW-rxc"/>
+                            <constraint firstItem="ly3-Fh-y5g" firstAttribute="centerX" secondItem="O1p-lf-znt" secondAttribute="centerX" type="default" id="d3z-pU-e3P"/>
                             <constraint firstItem="ly3-Fh-y5g" firstAttribute="top" secondItem="gr1-7M-241" secondAttribute="top" constant="20" symbolic="YES" type="default" id="eIv-HM-f9p"/>
+                            <constraint firstAttribute="trailing" secondItem="dPi-Tn-Rkx" secondAttribute="trailing" constant="64" id="f5p-Br-zBS"/>
+                            <constraint firstItem="ly3-Fh-y5g" firstAttribute="leading" secondItem="gr1-7M-241" secondAttribute="leading" constant="58" id="j44-vz-zeh"/>
                             <constraint firstItem="NNb-i4-4kH" firstAttribute="centerX" secondItem="8n1-Ya-vzh" secondAttribute="centerX" type="default" id="mcm-fQ-fSL"/>
                             <constraint firstItem="O1p-lf-znt" firstAttribute="leading" secondItem="gr1-7M-241" secondAttribute="leading" constant="48" id="nN3-HK-YoF"/>
                             <constraint firstItem="sGf-9S-5fw" firstAttribute="leading" secondItem="NNb-i4-4kH" secondAttribute="leading" type="default" id="sdb-BR-0Fj"/>
+                            <constraint firstItem="dPi-Tn-Rkx" firstAttribute="centerX" secondItem="8n1-Ya-vzh" secondAttribute="centerX" type="default" id="stQ-cc-vTY"/>
                             <constraint firstAttribute="bottom" secondItem="O1p-lf-znt" secondAttribute="bottom" constant="95" id="yoW-Vs-n4A"/>
                         </constraints>
                     </view>
@@ -254,13 +254,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15W-O2-sbg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1047" y="-485"/>
+            <point key="canvasLocation" x="-1068" y="-485"/>
         </scene>
-        <!--Navigation Controller - Cities-->
+        <!--Navigation Controller - Cities & Hotels-->
         <scene sceneID="11">
             <objects>
                 <navigationController id="3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cities" id="o1C-aU-Rdc"/>
+                    <tabBarItem key="tabBarItem" title="Cities &amp; Hotels" image="iphone_hotel.png" id="o1C-aU-Rdc"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -566,6 +566,7 @@
                         <outlet property="cityAndPostalCode" destination="xIz-Uk-xGw" id="DGg-x7-LvN"/>
                         <outlet property="hotelImage" destination="Khj-xA-bur" id="RDK-rz-8jQ"/>
                         <outlet property="hotelMenuTableView" destination="aiI-oY-EcU" id="sXG-ln-M53"/>
+                        <outlet property="ratingImage" destination="O03-QT-gi8" id="BW4-X8-PuS"/>
                         <segue destination="InI-Rv-nGM" kind="push" identifier="4" id="b7u-fF-MQN"/>
                     </connections>
                 </viewController>
@@ -584,7 +585,7 @@
                         <color key="separatorColor" red="0.094117656349999995" green="0.22352942819999999" blue="0.61176472900000001" alpha="1" colorSpace="deviceRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RoomType" id="3DN-dL-R0m">
-                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -1334,7 +1335,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <scene sceneID="EcW-sc-Xgc">
             <objects>
                 <navigationController definesPresentationContext="YES" id="6F5-s8-OB9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Places" id="KQM-er-8GW"/>
+                    <tabBarItem key="tabBarItem" title="Places" image="iphone_places.png" id="KQM-er-8GW"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JEb-xV-wlE">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1373,7 +1374,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <outlet property="delegate" destination="JwA-aV-3gG" id="jng-Pd-G7a"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Reservations" id="7x5-ma-vYy"/>
+                    <tabBarItem key="tabBarItem" title="" id="7x5-ma-vYy"/>
                     <navigationItem key="navigationItem" title="Visited Places" id="17u-jQ-S51"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tzd-UJ-fUa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1421,7 +1422,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </constraints>
                             </imageView>
                             <imageView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vpk-M7-BqR">
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="280" id="8kT-vg-5Jp"/>
                                 </constraints>
@@ -1493,6 +1493,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </scenes>
     <resources>
         <image name="fb.jpg" width="225" height="225"/>
+        <image name="iphone_hotel.png" width="30" height="30"/>
+        <image name="iphone_places.png" width="30" height="30"/>
+        <image name="iphone_reservation.png" width="30" height="30"/>
+        <image name="iphone_social.png" width="30" height="30"/>
         <image name="maps_icon.png" width="256" height="256"/>
         <image name="pic.jpg" width="1600" height="1200"/>
         <image name="twitter-icon.png" width="512" height="512"/>

@@ -11,6 +11,8 @@
 @interface HotelViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic) int hotelId;
+
+@property (weak, nonatomic) IBOutlet UIImageView *ratingImage;
 @property (weak, nonatomic) IBOutlet UILabel *cityAndPostalCode;
 @property (weak, nonatomic) IBOutlet UILabel *address;
 @property (weak, nonatomic) IBOutlet UILabel *locationDescription;

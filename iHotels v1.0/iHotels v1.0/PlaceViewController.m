@@ -41,13 +41,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // set the name of the hotel label
 	self.hotelNameLabel.text = self.hotel.hotelName;
     
+    // set the date label
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterLongStyle];
     [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
     self.dateLabel.text = [dateFormatter stringFromDate: self.hotel.startDate];
     
+    // set the star number image
+    NSString* imageName = [NSString stringWithFormat:@"iphone_star%d", [self.hotel.hotelRate integerValue]];
+    self.ratingImageView.image = [UIImage imageNamed:imageName];
+    
+    // set the image from this place, if there is one
     if (self.hotel.photoPath == nil) {
         self.photoImageView.image = [UIImage imageNamed:DEFAULT_IMAGE_NAME];
     }
@@ -61,8 +69,7 @@
     UITapGestureRecognizer *tapOnImageView = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(openImagePicker)];
     [tapOnImageView setNumberOfTapsRequired:1];
     [self.photoImageView addGestureRecognizer:tapOnImageView];
-    
-    //TODO = set stars picture
+
 }
 
 

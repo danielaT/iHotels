@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class HotelVisited;
 
-#define DEFAULT_IMAGE_NAME @"Default"
+#define DEFAULT_IMAGE_NAME @"iphone_empty_photo"
 
 @interface PlaceViewController : UIViewController
 @property (nonatomic, strong) HotelVisited* hotel;
