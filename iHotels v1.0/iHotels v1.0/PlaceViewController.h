@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 @class HotelVisited;
 
+#define DEFAULT_IMAGE_NAME @"Default"
+
 @interface PlaceViewController : UIViewController
 @property (nonatomic, strong) HotelVisited* hotel;
 @end

@@ -32,6 +32,8 @@
 {
     [super viewDidLoad];
     
+    [[self navigationController] setNavigationBarHidden:NO animated:YES];
+    
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"RegionsAndCities" ofType:@"plist"];
     NSDictionary *regionsAndCities = [NSDictionary dictionaryWithContentsOfFile:plistPath];
     
@@ -74,6 +76,9 @@
     // Sort the citiesArray and place the result in the availableCitiesArray, which fills the tableview later.
     self.availableCitiesArray = (NSArray*) citiesArray;
     [self sortAvailableCitiesArray];
+    
+    // set the title
+    self.title = @"Available Cities";
 }
 
 
@@ -84,6 +89,9 @@
     NSDictionary *selectedRegion = [regionsFromPlist objectForKey:self.selectedRegionName];
     self.availableCitiesArray = [selectedRegion objectForKey:@"Cities"];
     [self sortAvailableCitiesArray];
+    
+    // set the region name as title
+    self.title = [NSString stringWithFormat:@"%@ Region", self.selectedRegionName];
 
 }
 

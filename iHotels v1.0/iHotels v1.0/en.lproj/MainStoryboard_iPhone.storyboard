@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="llI-w5-T0d">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="nSu-Z2-WrV">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -18,7 +18,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KJ7-bm-WUB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1483" y="-1281"/>
+            <point key="canvasLocation" x="-1553" y="-2030"/>
         </scene>
         <!--Reservations Table View Controller - Reservations-->
         <scene sceneID="1GT-eq-tMv">
@@ -52,7 +52,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NNO-7Z-c4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1006" y="-1281"/>
+            <point key="canvasLocation" x="-1068" y="-2030"/>
         </scene>
         <!--My Reservation View Controller-->
         <scene sceneID="g0x-Ls-Nbq">
@@ -131,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PdB-dZ-gaH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-499" y="-1281"/>
+            <point key="canvasLocation" x="-582" y="-2030"/>
         </scene>
         <!--Navigation Controller - Social-->
         <scene sceneID="gh1-qw-Tm4">
@@ -147,7 +147,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRi-TC-0hn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1987" y="173"/>
+            <point key="canvasLocation" x="-1553" y="-485"/>
         </scene>
         <!--Social View Controller-->
         <scene sceneID="AZZ-Ry-5Ea">
@@ -254,13 +254,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15W-O2-sbg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1483" y="173"/>
+            <point key="canvasLocation" x="-1047" y="-485"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Cities-->
         <scene sceneID="11">
             <objects>
                 <navigationController id="3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="o1C-aU-Rdc"/>
+                    <tabBarItem key="tabBarItem" title="Cities" id="o1C-aU-Rdc"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -270,7 +270,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1513" y="-2018"/>
+            <point key="canvasLocation" x="-1553" y="-2806"/>
         </scene>
         <!--City Picker View Controller-->
         <scene sceneID="jmy-i7-d8E">
@@ -324,7 +324,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k7G-l7-Lub" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-514" y="-2018"/>
+            <point key="canvasLocation" x="-582" y="-2806"/>
         </scene>
         <!--Master View Controller - Master-->
         <scene sceneID="18">
@@ -408,7 +408,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-13" y="-2018"/>
+            <point key="canvasLocation" x="-101" y="-2806"/>
         </scene>
         <!--Hotel View Controller-->
         <scene sceneID="xqo-A7-IWR">
@@ -571,7 +571,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sDJ-Ej-US2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="477" y="-2018"/>
+            <point key="canvasLocation" x="385" y="-2806"/>
         </scene>
         <!--Room Types View Controller - Rooms-->
         <scene sceneID="pCU-sY-p3G">
@@ -584,7 +584,7 @@
                         <color key="separatorColor" red="0.094117656349999995" green="0.22352942819999999" blue="0.61176472900000001" alpha="1" colorSpace="deviceRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RoomType" id="3DN-dL-R0m">
-                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -605,7 +605,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ok-4v-7Zu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1140" y="-2487"/>
+            <point key="canvasLocation" x="1040" y="-2806"/>
         </scene>
         <!--Property Amenities View Controller-->
         <scene sceneID="gaO-Mj-Lab">
@@ -636,7 +636,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j60-tr-4E6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1152" y="-1823"/>
+            <point key="canvasLocation" x="1040" y="-2051"/>
         </scene>
         <!--Room View Controller-->
         <scene sceneID="AYg-Es-MfO">
@@ -677,7 +677,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WHP-ek-TGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1580" y="-2487"/>
+            <point key="canvasLocation" x="1546" y="-2806"/>
         </scene>
         <!--Gallery View Controller - Gallery-->
         <scene sceneID="tTa-Cn-Wvu">
@@ -736,7 +736,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XFR-uA-QiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1140" y="-1132"/>
+            <point key="canvasLocation" x="1040" y="-1321"/>
         </scene>
         <!--Hotel Description View Controller - Hotel description-->
         <scene sceneID="K9T-lr-cXD">
@@ -891,7 +891,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9e-Zk-Cfz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="874" y="-3160"/>
+            <point key="canvasLocation" x="1040" y="-3576"/>
         </scene>
         <!--Hotel Image View Controller-->
         <scene sceneID="n9l-qt-RIS">
@@ -922,7 +922,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sVL-ZV-gLl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1668" y="-1132"/>
+            <point key="canvasLocation" x="1590" y="-1321"/>
         </scene>
         <!--Welcome Screen View Controller-->
         <scene sceneID="cQg-SW-YYn">
@@ -950,7 +950,6 @@
                     </view>
                     <connections>
                         <outlet property="logoImageView" destination="QCq-Kf-kJJ" id="4fq-e1-NnK"/>
-                        <segue destination="nSu-Z2-WrV" kind="modal" identifier="toTabBarSegue" id="KCR-FK-Coz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g89-lx-Wip" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1060,7 +1059,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GPr-a5-2mj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1006" y="-2018"/>
+            <point key="canvasLocation" x="-1068" y="-2806"/>
         </scene>
         <!--Reservation View Controller - Reservation-->
         <scene sceneID="ipK-KO-8DB">
@@ -1222,7 +1221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHW-k2-JTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="576" y="-376"/>
+            <point key="canvasLocation" x="1040" y="-555"/>
         </scene>
         <!--Contacts View Controller - Contacts-->
         <scene sceneID="zFq-bl-Idm">
@@ -1254,7 +1253,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fN-m8-gMv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1140" y="-376"/>
+            <point key="canvasLocation" x="1590" y="-555"/>
         </scene>
         <!--Date View Controller-->
         <scene sceneID="C85-Jr-5R0">
@@ -1329,7 +1328,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckA-5X-vqA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1140" y="327"/>
+            <point key="canvasLocation" x="1590" y="173"/>
         </scene>
         <!--Navigation Controller - Places-->
         <scene sceneID="EcW-sc-Xgc">
@@ -1345,7 +1344,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7x-0c-Y3y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1483" y="-555"/>
+            <point key="canvasLocation" x="-1553" y="-1239"/>
         </scene>
         <!--Visited Places Table View Controller - Visited Places-->
         <scene sceneID="JiB-pO-r8u">
@@ -1379,7 +1378,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tzd-UJ-fUa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-966" y="-555"/>
+            <point key="canvasLocation" x="-1068" y="-1239"/>
         </scene>
         <!--Places Page View Controller-->
         <scene sceneID="qhw-Mk-Y1X">
@@ -1391,10 +1390,105 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="6jV-tN-ekl"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ql5-gw-cTl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-461" y="-555"/>
+            <point key="canvasLocation" x="-582" y="-1239"/>
+        </scene>
+        <!--Place View Controller-->
+        <scene sceneID="rEE-ms-Bb5">
+            <objects>
+                <viewController storyboardIdentifier="PlaceViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Okr-LM-ItD" customClass="PlaceViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yr5-BJ-UlO">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nlx-Ng-iR9">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMg-nX-XnN">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="May-68-icB">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="lP4-d4-7uw"/>
+                                    <constraint firstAttribute="height" constant="20" id="uWj-0n-c1E"/>
+                                </constraints>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vpk-M7-BqR">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="8kT-vg-5Jp"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NyH-1r-Phk">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="FN2-gH-jL9"/>
+                                    <constraint firstAttribute="height" constant="40" id="sB7-W8-1OJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="twitter-icon.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="postOnTwitterButtonTap:" destination="Okr-LM-ItD" eventType="touchUpInside" id="0c8-fF-5Us"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="40" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KxK-D0-qBX">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="fb.jpg">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareOnFacebookButtonTap:" destination="Okr-LM-ItD" eventType="touchUpInside" id="mYF-Uv-pa0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Vpk-M7-BqR" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="7Uk-zS-TcI"/>
+                            <constraint firstAttribute="trailing" secondItem="Nlx-Ng-iR9" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="7qO-QQ-nSA"/>
+                            <constraint firstItem="KxK-D0-qBX" firstAttribute="leading" secondItem="NyH-1r-Phk" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="8t8-ql-yY1"/>
+                            <constraint firstAttribute="bottom" secondItem="KxK-D0-qBX" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="9Lu-n8-Twt"/>
+                            <constraint firstAttribute="bottom" secondItem="NyH-1r-Phk" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="EU5-Bt-jz9"/>
+                            <constraint firstAttribute="trailing" secondItem="NyH-1r-Phk" secondAttribute="trailing" constant="68" id="K9N-YK-7Zk"/>
+                            <constraint firstItem="May-68-icB" firstAttribute="top" secondItem="Yr5-BJ-UlO" secondAttribute="top" constant="41" id="Kn5-Bi-gOz"/>
+                            <constraint firstItem="Nlx-Ng-iR9" firstAttribute="leading" secondItem="Yr5-BJ-UlO" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Qyy-Px-aGl"/>
+                            <constraint firstItem="zMg-nX-XnN" firstAttribute="leading" secondItem="Yr5-BJ-UlO" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Vyo-5A-xSi"/>
+                            <constraint firstItem="Vpk-M7-BqR" firstAttribute="leading" secondItem="Yr5-BJ-UlO" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Xer-tR-aHG"/>
+                            <constraint firstAttribute="trailing" secondItem="KxK-D0-qBX" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Xur-iT-Sv5"/>
+                            <constraint firstItem="NyH-1r-Phk" firstAttribute="top" secondItem="KxK-D0-qBX" secondAttribute="top" type="default" id="YRU-IZ-aes"/>
+                            <constraint firstAttribute="trailing" secondItem="zMg-nX-XnN" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="aBB-P6-LEL"/>
+                            <constraint firstItem="Vpk-M7-BqR" firstAttribute="centerY" secondItem="Yr5-BJ-UlO" secondAttribute="centerY" type="default" id="daz-FA-q8p"/>
+                            <constraint firstItem="zMg-nX-XnN" firstAttribute="top" secondItem="Nlx-Ng-iR9" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="dsc-QP-Gs3"/>
+                            <constraint firstItem="Nlx-Ng-iR9" firstAttribute="top" secondItem="May-68-icB" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="p0a-5l-yM5"/>
+                            <constraint firstItem="May-68-icB" firstAttribute="centerX" secondItem="Nlx-Ng-iR9" secondAttribute="centerX" type="default" id="xmS-fu-jP8"/>
+                        </constraints>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="zMg-nX-XnN" id="PIx-Af-eXU"/>
+                        <outlet property="hotelNameLabel" destination="Nlx-Ng-iR9" id="AVl-3p-QbE"/>
+                        <outlet property="photoImageView" destination="Vpk-M7-BqR" id="f9F-7o-L17"/>
+                        <outlet property="ratingImageView" destination="May-68-icB" id="XL0-k1-KOE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NEs-4x-rDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-101" y="-1239"/>
         </scene>
     </scenes>
     <resources>

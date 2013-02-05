@@ -33,7 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"City Search";
+    self.title = @"Cities&Hotels";
     
     self.mapImageView.image = [UIImage imageNamed:@"map_bulgaria"];
        
@@ -46,6 +46,8 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
+    [[self navigationController] setNavigationBarHidden:YES animated:YES];
+    
     UIInterfaceOrientation orientation = [[UIDevice currentDevice] orientation];
 
     [self rearrangeViewsInOrientation:orientation];

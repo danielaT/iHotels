@@ -12,11 +12,14 @@
 #import "AppDelegate.h"
 
 @interface PlacesPageViewController () <UIPageViewControllerDataSource>
-@property NSArray* visitedHotels;
+@property (nonatomic, strong) NSArray* visitedHotels;
+@property (nonatomic, strong) UIPageViewController *pageController;
 @end
 
 @implementation PlacesPageViewController
 @synthesize selectedHotel = _selectedHotel;
+@synthesize pageController = _pageController;
+@synthesize visitedHotels = _visitedHotels;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,21 +35,22 @@
 {
     [super viewDidLoad];
     [self populateHotels];
-	// Do any additional setup after loading the view.
+    [self setUpPageViewController];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
+
 
 -(void) populateHotels
 {
     AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
     NSManagedObjectContext *context = delegate.managedObjectContext;
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"HotelVisited"];
-    NSSortDescriptor *descriptor =[[NSSortDescriptor alloc]initWithKey:@"StartDate" ascending:YES];
+    NSSortDescriptor *descriptor =[[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:YES];
     request.sortDescriptors = [NSArray arrayWithObject:descriptor];
     NSError *error;
     
@@ -54,7 +58,33 @@
     if (error) {
         NSLog(@"Error fetching: %@", error);
     }
+    //NSLog(@"count: %d",[self.visitedHotels count]);
 }
+
+
+
+-(void)setUpPageViewController
+{
+//    NSDictionary *options =  [NSDictionary dictionaryWithObject: [NSNumber numberWithInteger:UIPageViewControllerSpineLocationMin] forKey: UIPageViewControllerOptionSpineLocationKey];
+    
+    NSDictionary *options =  [NSDictionary dictionaryWithObject: @20.0 forKey: UIPageViewControllerOptionSpineLocationKey];
+    
+    self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options: options];
+    
+    self.pageController.dataSource = self;
+    [[self.pageController view] setFrame:[[self view] bounds]];
+    
+    PlaceViewController *initialViewController = [self viewControllerAtIndex: [self.visitedHotels indexOfObject:self.selectedHotel]];
+    
+    NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
+    
+    [self.pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    
+    [self addChildViewController:self.pageController];
+    [[self view] addSubview:[self.pageController view]];
+    [self.pageController didMoveToParentViewController:self];
+}
+
 
 
 
@@ -69,7 +99,7 @@
     }
     
     // Create a new view controller and pass suitable data.
-    PlaceViewController *controller = [[PlaceViewController alloc] initWithNibName:nil bundle:nil];
+    PlaceViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"PlaceViewController"];
     controller.hotel = [self.visitedHotels objectAtIndex:index];
     return controller;
 }
