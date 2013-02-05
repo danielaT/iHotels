@@ -1,18 +1,18 @@
 //
-//  PageViewController.m
+//  PlaceViewController.m
 //  iHotels v1.0
 //
-//  Created by Desislava on 2/3/13.
+//  Created by Martin on 05-02-2013.
 //  Copyright (c) 2013 Student14. All rights reserved.
 //
 
-#import "PageViewController.h"
+#import "PlaceViewController.h"
 
-@interface PageViewController ()
+@interface PlaceViewController ()
 
 @end
 
-@implementation PageViewController
+@implementation PlaceViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

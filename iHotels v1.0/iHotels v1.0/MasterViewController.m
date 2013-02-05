@@ -8,7 +8,7 @@
 
 #import "MasterViewController.h"
 
-#import "DetailViewController.h"
+//#import "DetailViewController.h"
 
 #import "HotelsInformation.h"
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12A269" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Friend" representedClassName="Friend" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="hotelsVisited" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HotelVisited" inverseName="friends" inverseEntity="HotelVisited" syncable="YES"/>
@@ -23,8 +23,8 @@
         <userInfo/>
     </entity>
     <elements>
-        <element name="Reservation" positionX="198" positionY="-2125" width="128" height="118"/>
-        <element name="Friend" positionX="450" positionY="-1879" width="128" height="88"/>
-        <element name="HotelVisited" positionX="477" positionY="-2170" width="128" height="118"/>
+        <element name="Friend" positionX="304" positionY="-1762" width="128" height="88"/>
+        <element name="HotelVisited" positionX="538" positionY="-2025" width="128" height="118"/>
+        <element name="Reservation" positionX="90" positionY="-2007" width="128" height="118"/>
     </elements>
 </model>

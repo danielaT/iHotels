@@ -25,7 +25,7 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    [self performSelector:@selector(goToTabBarController) withObject:nil afterDelay:3];
+    [self performSelector:@selector(goToTabBarController) withObject:nil afterDelay:1.0];
     
 }
 

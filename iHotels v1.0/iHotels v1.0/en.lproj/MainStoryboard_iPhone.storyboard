@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="llI-w5-T0d">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="llI-w5-T0d">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller - Reservations-->
@@ -584,7 +584,7 @@
                         <color key="separatorColor" red="0.094117656349999995" green="0.22352942819999999" blue="0.61176472900000001" alpha="1" colorSpace="deviceRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RoomType" id="3DN-dL-R0m">
-                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -1356,14 +1356,17 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VisitedHotelCell" id="ucC-HD-Ju3">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VisitedHotelCell" id="ucC-HD-Ju3">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="hn8-RN-VDb" kind="push" identifier="toPageViewSegue" id="hxA-LK-zFf"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1373,23 +1376,25 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Reservations" id="7x5-ma-vYy"/>
                     <navigationItem key="navigationItem" title="Visited Places" id="17u-jQ-S51"/>
-                    <connections>
-                        <segue destination="kxh-r9-Mhc" kind="push" identifier="Photos" id="gc5-GX-LPP"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tzd-UJ-fUa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-966" y="-555"/>
         </scene>
-        <!--Page View Controller-->
-        <scene sceneID="5QO-qh-J6j">
+        <!--Places Page View Controller-->
+        <scene sceneID="qhw-Mk-Y1X">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="kxh-r9-Mhc" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="PrH-gU-esh"/>
-                </pageViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1HF-rD-cnf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="hn8-RN-VDb" customClass="PlacesPageViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kYO-7a-7Sd">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6jV-tN-ekl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ql5-gw-cTl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-476" y="-549"/>
+            <point key="canvasLocation" x="-461" y="-555"/>
         </scene>
     </scenes>
     <resources>
@@ -1398,171 +1403,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="pic.jpg" width="1600" height="1200"/>
         <image name="twitter-icon.png" width="512" height="512"/>
     </resources>
-    <classes>
-        <class className="CityPickerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CityPickerViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="ContactsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addContactsToReservation:"/>
-            </relationships>
-        </class>
-        <class className="DateViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DateViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="selectDate:"/>
-                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
-            </relationships>
-        </class>
-        <class className="FBProfilePictureView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FBProfilePictureView.h"/>
-        </class>
-        <class className="GalleryViewController" superclassName="UICollectionViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GalleryViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="loadingIndicator" candidateClass="UIActivityIndicatorView"/>
-            </relationships>
-        </class>
-        <class className="HotelDescriptionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HotelDescriptionViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="checkInTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="checkOutTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="floorsNumber" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="hotelPolicy" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="propertyInformation" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="roomsNumber" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="HotelImageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HotelImageViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="hotelImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="HotelTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HotelTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="hotelDescription" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="hotelImage" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="hotelName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="hotelRating" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="HotelViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HotelViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="findInMapTouched:"/>
-                <relationship kind="action" name="makeReservationTouched:"/>
-                <relationship kind="outlet" name="address" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cityAndPostalCode" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="hotelImage" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="hotelMenuTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="locationDescription" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ImageCollectionViewCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageCollectionViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="hotelImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="MapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="browseCitiesButtonTap:"/>
-                <relationship kind="action" name="searchButtonTap:"/>
-                <relationship kind="outlet" name="browseCitiesButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="mapImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="searchButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="searchTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
-        </class>
-        <class className="MyReservationViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyReservationViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="nameView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="reservationDate" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="reservationDays" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="reservationName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PropertyAmenitiesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PropertyAmenitiesViewController.h"/>
-        </class>
-        <class className="ReservationViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReservationViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="makeReservation:"/>
-                <relationship kind="action" name="phoneFriends:"/>
-                <relationship kind="action" name="pickFriendsButtonClick:"/>
-                <relationship kind="outlet" name="date" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="days" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="hotelCity" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="hotelImage" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="hotelName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="selectedFriendsView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="ReservationsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReservationsTableViewController.h"/>
-        </class>
-        <class className="RoomTypesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoomTypesViewController.h"/>
-        </class>
-        <class className="RoomViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoomViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="roomAmenitiesTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="SocialViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="postInFacebook:"/>
-                <relationship kind="action" name="postInTwitter:"/>
-                <relationship kind="action" name="segmentedSwitch:"/>
-                <relationship kind="outlet" name="facebookPost" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="profilePhoto" candidateClass="FBProfilePictureView"/>
-                <relationship kind="outlet" name="segmentedControl" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="twitterPost" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
-        </class>
-        <class className="VisitedPlacesTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VisitedPlacesTableViewController.h"/>
-        </class>
-        <class className="WelcomeScreenViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcomeScreenViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="logoImageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

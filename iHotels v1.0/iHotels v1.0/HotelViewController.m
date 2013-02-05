@@ -98,6 +98,9 @@ typedef enum {
     [self performSegueWithIdentifier:[NSString stringWithFormat:@"%d", indexPath.row] sender:tableView];
 }
 
+
+// These are not needed when using fixed cells. Also, they mess with autolayout :(
+
 //-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    return CELL_HEIGTH;
 //}

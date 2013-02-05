@@ -44,31 +44,47 @@
 }
 
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    UIInterfaceOrientation orientation = [[UIDevice currentDevice] orientation];
+
+    [self rearrangeViewsInOrientation:orientation];
+    
+}
+
 
 -(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
-    if (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight || toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) {
-        
-        if([[UIScreen mainScreen] bounds].size.height == 568.0)
-        {
-            // iphone 4.0 inch screen
-            self.searchTextField.frame = CGRectMake(338, 30, 200, self.searchTextField.frame.size.height);
-            self.searchButton.frame = CGRectMake(363, 80, self.searchButton.frame.size.width, self.searchButton.frame.size.height);
-            self.browseCitiesButton.frame = CGRectMake(363, 140, self.browseCitiesButton.frame.size.width, self.browseCitiesButton.frame.size.height);
-            self.mapImageView.frame = CGRectMake(30, 20, self.mapImageView.frame.size.width, self.mapImageView.frame.size.height);
-        }
-        else
-        {
-            // iphone 3.5 inch screen
-            self.searchTextField.frame = CGRectMake(310, 30, 150, self.searchTextField.frame.size.height);
-            self.searchButton.frame = CGRectMake(310, 80, self.searchButton.frame.size.width, self.searchButton.frame.size.height);
-            self.browseCitiesButton.frame = CGRectMake(310, 140, self.browseCitiesButton.frame.size.width, self.browseCitiesButton.frame.size.height);
-            self.mapImageView.frame = CGRectMake(10, 20, self.mapImageView.frame.size.width, self.mapImageView.frame.size.height);
-        }
-        // TODO = code for iPad screen
-    }
+    [self rearrangeViewsInOrientation:toInterfaceOrientation];
 }
 
+
+
+-(void) rearrangeViewsInOrientation:(UIInterfaceOrientation) orientation
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        if (orientation == UIInterfaceOrientationLandscapeRight || orientation == UIInterfaceOrientationLandscapeLeft) {
+            
+            if([[UIScreen mainScreen] bounds].size.height == 568.0)
+            {
+                // iphone 4.0 inch screen
+                self.searchTextField.frame = CGRectMake(338, 30, 200, self.searchTextField.frame.size.height);
+                self.searchButton.frame = CGRectMake(363, 80, self.searchButton.frame.size.width, self.searchButton.frame.size.height);
+                self.browseCitiesButton.frame = CGRectMake(363, 140, self.browseCitiesButton.frame.size.width, self.browseCitiesButton.frame.size.height);
+                self.mapImageView.frame = CGRectMake(30, 20, self.mapImageView.frame.size.width, self.mapImageView.frame.size.height);
+            }
+            else
+            {
+                // iphone 3.5 inch screen
+                self.searchTextField.frame = CGRectMake(310, 30, 150, self.searchTextField.frame.size.height);
+                self.searchButton.frame = CGRectMake(310, 80, self.searchButton.frame.size.width, self.searchButton.frame.size.height);
+                self.browseCitiesButton.frame = CGRectMake(310, 140, self.browseCitiesButton.frame.size.width, self.browseCitiesButton.frame.size.height);
+                self.mapImageView.frame = CGRectMake(10, 20, self.mapImageView.frame.size.width, self.mapImageView.frame.size.height);
+            }
+            // TODO = code for iPad screen
+        }
+    }];
+}
 
 
 -(void)tapOnImage:(id)sender
