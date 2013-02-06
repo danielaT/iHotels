@@ -10,6 +10,8 @@
 
 #import "HotelsInformation.h"
 
+#import "UIViewController+iHotelsColorTheme.h"
+
 @interface RoomViewController ()
 
 @end
@@ -22,6 +24,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // apply color theme methods
+    [self applyiHotelsThemeWithPatternImageName:@"iphone_hotel_pattern"];
+    [self configureSubviews];
+    
     self.roomAmenitiesTableView.delegate = self;
     self.roomAmenitiesTableView.dataSource = self;
     self.navigationItem.title = [self.roomDictionary valueForKey:@"description"];

@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "PlaceViewController.h"
 #import "HotelVisited.h"
+#import "UIViewController+iHotelsColorTheme.h"
 
 @interface PlaceViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -70,6 +71,9 @@
     [tapOnImageView setNumberOfTapsRequired:1];
     [self.photoImageView addGestureRecognizer:tapOnImageView];
 
+    // apply color theme methods
+    [self applyiHotelsThemeWithPatternImageName:@"iphone_places_pattern"];
+    [self configureSubviews];
 }
 
 

@@ -13,6 +13,7 @@
 #import <Accounts/Accounts.h>
 #import "Friend.h"
 #import "HotelVisited.h"
+#import "UIViewController+iHotelsColorTheme.h"
 
 @interface ReservationViewController ()
 
@@ -52,8 +53,10 @@
     UITapGestureRecognizer *dateTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleChooseDate:)];
     [self.date addGestureRecognizer:dateTap];
     
-   
-	// Do any additional setup after loading the view, typically from a nib.
+    // apply color theme methods
+    [self applyiHotelsThemeWithPatternImageName:@"iphone_hotel_pattern"];
+    [self configureNavigationBar];
+    [self configureSubviews];
 }
 
 - (void)handleChooseDate:(UIGestureRecognizer *)gestureRecognizer

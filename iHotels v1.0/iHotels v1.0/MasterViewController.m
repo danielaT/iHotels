@@ -16,6 +16,8 @@
 
 #import "HotelViewController.h"
 
+#import "UIViewController+iHotelsColorTheme.h"
+
 NSString* const THUMB_NAIL_URL = @"http://images.travelnow.com";
 
 @interface MasterViewController ()
@@ -54,6 +56,11 @@ NSString* const THUMB_NAIL_URL = @"http://images.travelnow.com";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // apply color theme methods
+    [self applyiHotelsThemeWithPatternImageName:@"iphone_hotel_pattern"];
+    [self configureSubviews];
+    
     //self.cityName = @"Stara%20Zagora";
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     self.hotelListArray = [[NSMutableArray alloc] init];

@@ -8,6 +8,7 @@
 
 #import "DateViewController.h"
 #import "ReservationViewController.h"
+#import "UIViewController+iHotelsColorTheme.h"
 
 @interface DateViewController ()
 
@@ -32,7 +33,10 @@
     
     self.navigationItem.hidesBackButton = YES;
     
-	// Do any additional setup after loading the view.
+    // apply color theme methods
+    [self applyiHotelsThemeWithPatternImageName:@"iphone_hotel_pattern"];
+    [self configureNavigationBar];
+    [self configureSubviews];
 }
 
 - (void)viewWillAppear:(BOOL)animated

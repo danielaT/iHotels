@@ -11,6 +11,7 @@
 #import "HotelVisited.h"
 #import "MyReservationViewController.h"
 #import "PlacesPageViewController.h"
+#import "UIViewController+iHotelsColorTheme.h"
 
 @interface VisitedPlacesTableViewController ()
 
@@ -39,12 +40,9 @@
     NSFetchRequest *request1 = [[NSFetchRequest alloc] initWithEntityName:@"HotelVisited"];
     hotels = [context executeFetchRequest:request1 error:&error];
     
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // apply color theme methods
+    [self configureSubviews];
+    [self configureNavigationBar];
 }
 
 -(void)viewWillAppear:(BOOL)animated

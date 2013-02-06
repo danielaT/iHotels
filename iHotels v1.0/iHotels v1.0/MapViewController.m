@@ -8,6 +8,7 @@
 
 #import "MapViewController.h"
 #import "CityPickerViewController.h"
+#import "UIViewController+iHotelsColorTheme.h"
 
 @interface MapViewController () <UITextFieldDelegate>
 
@@ -40,13 +41,18 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapOnImage:)];
     tap.numberOfTapsRequired = 1;
 
-    [self.mapImageView addGestureRecognizer:tap];    
+    [self.mapImageView addGestureRecognizer:tap];
+    
+    // apply color theme methods
+    [self applyiHotelsThemeWithPatternImageName:@"iphone_hotel_pattern"];
+    [self configureNavigationBar];
+    [self configureSubviews];
 }
 
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    [[self navigationController] setNavigationBarHidden:YES animated:YES];
+//    [[self navigationController] setNavigationBarHidden:YES animated:YES];
     
     UIInterfaceOrientation orientation = [[UIDevice currentDevice] orientation];
 

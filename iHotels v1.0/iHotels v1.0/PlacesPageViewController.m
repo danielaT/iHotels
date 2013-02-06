@@ -10,6 +10,7 @@
 #import "PlaceViewController.h"
 #import "HotelVisited.h"
 #import "AppDelegate.h"
+#import "UIViewController+iHotelsColorTheme.h"
 
 @interface PlacesPageViewController () <UIPageViewControllerDataSource>
 @property (nonatomic, strong) NSArray* visitedHotels;
@@ -36,6 +37,11 @@
     [super viewDidLoad];
     [self populateHotels];
     [self setUpPageViewController];
+    
+    // apply color theme methods
+    [self applyiHotelsThemeWithPatternImageName:@"iphone_places_pattern"];
+    [self configureNavigationBar];
+    [self configureSubviews];
 }
 
 - (void)didReceiveMemoryWarning

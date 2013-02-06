@@ -8,6 +8,8 @@
 
 #import "HotelDescriptionViewController.h"
 
+#import "UIViewController+iHotelsColorTheme.h"
+
 @interface HotelDescriptionViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *checkInTime;
@@ -46,6 +48,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // apply color theme methods
+    [self applyiHotelsThemeWithPatternImageName:@"iphone_hotel_pattern"];
+    [self configureSubviews];
 }
 
 @end

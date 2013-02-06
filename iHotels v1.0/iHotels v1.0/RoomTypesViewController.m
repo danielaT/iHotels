@@ -12,6 +12,8 @@
 
 #import "HotelsInformation.h"
 
+#import "UIViewController+iHotelsColorTheme.h"
+
 NSString* const SHOW_ROOM_SEGUE = @"ShowRoom";
 
 @interface RoomTypesViewController ()
@@ -25,6 +27,11 @@ NSString* const SHOW_ROOM_SEGUE = @"ShowRoom";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // apply color theme methods
+    [self applyiHotelsThemeWithPatternImageName:@"iphone_hotel_pattern"];
+    [self configureNavigationBar];
+    [self configureSubviews];
 }
 
 #pragma mark - Table view data source

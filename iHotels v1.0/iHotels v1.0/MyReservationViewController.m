@@ -8,6 +8,7 @@
 
 #import "MyReservationViewController.h"
 #import "HotelsInformation.h"
+#import "UIViewController+iHotelsColorTheme.h"
 
 
 @interface MyReservationViewController ()
@@ -48,7 +49,9 @@
                                              }];
 
 
-	// Do any additional setup after loading the view.
+    // apply color theme methods
+    [self applyiHotelsThemeWithPatternImageName:@"iphone_reservation_pattern"];
+    [self configureSubviews];
 }
 
 

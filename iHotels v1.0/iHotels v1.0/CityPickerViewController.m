@@ -8,6 +8,7 @@
 
 #import "CityPickerViewController.h"
 #import "MasterViewController.h"
+#import "UIViewController+iHotelsColorTheme.h"
 
 @interface CityPickerViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -31,6 +32,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // apply color theme methods
+    [self applyiHotelsThemeWithPatternImageName:@"iphone_hotel_pattern"];
+    [self configureSubviews];
     
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
     
@@ -155,6 +160,8 @@
 {
     NSString* cityName = [self.availableCitiesArray objectAtIndex: indexPath.row];
     cell.textLabel.text = cityName;
+    cell.textLabel.font = [UIFont fontWithName:@"Baar Philos" size:18.0];
+    cell.textLabel.textColor = [UIColor colorWithHue:0.1417 saturation:0.21 brightness:0.9 alpha:1];
 }
 
 

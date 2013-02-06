@@ -8,6 +8,8 @@
 
 #import "PropertyAmenitiesViewController.h"
 
+#import "UIViewController+iHotelsColorTheme.h"
+
 @interface PropertyAmenitiesViewController ()
 
 @end
@@ -19,6 +21,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // apply color theme methods
+    [self applyiHotelsThemeWithPatternImageName:@"iphone_hotel_pattern"];
+    [self configureSubviews];
 }
 
 

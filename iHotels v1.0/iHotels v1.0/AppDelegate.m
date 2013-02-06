@@ -46,7 +46,18 @@
 //    HotelVisited *hotel = [ NSEntityDescription insertNewObjectForEntityForName:@"HotelVisited" inManagedObjectContext:self.managedObjectContext];
 //    hotel.hotelName = @"My first visited hotel";
     
+    // set the color of the tabbar
+    UITabBarController  * controller = (UITabBarController*)self.window.rootViewController;
+    if ([controller.tabBar respondsToSelector:@selector(setBackgroundImage:)] )
+    {
+        UIImage *image = [[UIImage imageNamed:@"iphone_tabbar"] resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeStretch];
+        
+        [controller.tabBar setBackgroundImage :image];
+        [[UITabBar appearance] setSelectedImageTintColor:[UIColor colorWithHue:0.1417 saturation:10 brightness:60 alpha:0.5]];
+    }
+    
     [FBProfilePictureView class];
+    
     return YES;
 }
 							

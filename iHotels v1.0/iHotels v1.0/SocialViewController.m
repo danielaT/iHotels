@@ -9,6 +9,7 @@
 #import "SocialViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import <Social/Social.h>
+#import "UIViewController+iHotelsColorTheme.h"
 
 @interface SocialViewController ()
 
@@ -43,7 +44,10 @@
         [self populateUserDetails];
     }
     
-	// Do any additional setup after loading the view.
+    // apply color theme methods
+    [self applyiHotelsThemeWithPatternImageName:@"iphone_social_pattern"];
+    [self configureSubviews];
+    [self configureNavigationBar];
 }
 
 - (void)populateUserDetails

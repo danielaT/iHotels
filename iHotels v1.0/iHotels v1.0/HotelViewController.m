@@ -20,6 +20,8 @@
 
 #import "ReservationViewController.h"
 
+#import "UIViewController+iHotelsColorTheme.h"
+
 #import <MapKit/MapKit.h>
 
 const float CELL_HEIGTH = 35.0;
@@ -68,6 +70,11 @@ typedef enum {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // apply color theme methods
+    [self applyiHotelsThemeWithPatternImageName:@"iphone_hotel_pattern"];
+    [self configureSubviews];
+    
 	hotelInfo = [[HotelsInformation alloc] init];
     self.hotelIdLoaded = self.hotelId;
     self.hotelMenuTableView.delegate = self;
@@ -125,6 +132,9 @@ typedef enum {
     }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.textLabel.text = [menuItems objectAtIndex:indexPath.row];
+    cell.textLabel.font = [UIFont fontWithName:@"Baar Philos" size:18.0];
+    cell.textLabel.textColor = [UIColor colorWithHue:0.1417 saturation:0.21 brightness:0.9 alpha:1];
+    cell.backgroundColor = [UIColor colorWithHue:0.63 saturation:0.17 brightness:0.4 alpha:1];
     return cell;
 }
 

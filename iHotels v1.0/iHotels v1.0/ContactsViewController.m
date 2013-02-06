@@ -8,6 +8,7 @@
 
 #import "ContactsViewController.h"
 #import "ReservationViewController.h"
+#import "UIViewController+iHotelsColorTheme.h"
 
 
 @interface ContactsViewController ()
