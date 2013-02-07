@@ -161,6 +161,8 @@
         NSURL *url = [NSURL URLWithString:res.hotelImage];
         [hotelDecription.webView loadRequest:[NSURLRequest requestWithURL:url]];
         hotelDecription.arrayWithFriends = [NSMutableArray arrayWithArray:[res.friends allObjects]];
+        hotelDecription.hotelRating =  res.hotelRate;
+        
     }
 }
 

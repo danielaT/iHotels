@@ -50,6 +50,10 @@
     self.days.delegate =self;
     [self.selectedFriendsView setText:@"Friends:"];
     
+    NSString* imageName = [NSString stringWithFormat:@"iphone_star%d", [self.hotelRating intValue]];
+    self.starImage.image = [UIImage imageNamed:imageName];
+    
+    
     UITapGestureRecognizer *dateTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleChooseDate:)];
     [self.date addGestureRecognizer:dateTap];
     
@@ -175,8 +179,8 @@
         
         NSDate *date = [dateFormat dateFromString:self.date.text];
         
-        NSLog(@"date %@", date);
-        NSLog(@"date %@", self.date.text);
+        //NSLog(@"date %@", date);
+        //NSLog(@"date %@", self.date.text);
         
         AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
         

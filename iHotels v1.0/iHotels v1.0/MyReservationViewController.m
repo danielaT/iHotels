@@ -39,6 +39,9 @@
     NSURL *url = [NSURL URLWithString:self.urlString];
     [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
     
+    NSString* imageName = [NSString stringWithFormat:@"iphone_star%@",self.hotelRating];
+    self.starImage.image = [UIImage imageNamed:imageName];
+    
     [UIView animateWithDuration:2.0
                           delay:0.0
                         options: UIViewAnimationCurveEaseInOut

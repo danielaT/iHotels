@@ -20,5 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property NSString *urlString;
 @property NSMutableArray *arrayWithFriends;
-
+@property (weak, nonatomic) IBOutlet UIImageView *starImage;
+@property NSNumber *hotelRating;
 @end

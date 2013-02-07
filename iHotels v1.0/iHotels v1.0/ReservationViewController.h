@@ -22,4 +22,5 @@
 
 @property NSString *imageURL;
 @property NSString *hotelRating;
+@property (weak, nonatomic) IBOutlet UIImageView *starImage;
 @end
