@@ -75,14 +75,24 @@
 
 - (IBAction)selectDate:(id)sender
 {
-    ReservationViewController *reservation =  [[[self navigationController] viewControllers]objectAtIndex:4];
-    
-    NSString *stringDate = [NSString stringWithFormat:@"%@-%@-%@",self.year.text, self.month.text, self.day.text];
-    
-    [reservation.date setText:[NSString stringWithFormat:@"%@",stringDate]];
+    if([self.year.text intValue] < 2013 || [self.month.text intValue] < 0 || [self.month.text intValue] > 12 || [self.day.text intValue] < 0 || [self.day.text intValue] > 31)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Please enter valid date!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    else
+    {
+        ReservationViewController *reservation =  [[[self navigationController] viewControllers]objectAtIndex:4];
+        
+        NSString *stringDate = [NSString stringWithFormat:@"%@-%@-%@",self.year.text, self.month.text, self.day.text];
+        
+        [reservation.date setText:[NSString stringWithFormat:@"%@",stringDate]];
+        
+        [[self navigationController] popToViewController:reservation animated:YES];
 
-    [[self navigationController] popToViewController:reservation animated:YES];
-
+        
+    }
+   
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
