@@ -12,7 +12,7 @@
 
 @implementation HotelVisited
 
-@dynamic hotelId;
+@dynamic hotelImage;
 @dynamic hotelName;
 @dynamic hotelRate;
 @dynamic photoPath;

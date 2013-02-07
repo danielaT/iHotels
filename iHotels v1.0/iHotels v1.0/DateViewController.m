@@ -82,15 +82,16 @@
     }
     else
     {
+        //NSLog(@"%@",self.month.text);
         ReservationViewController *reservation =  [[[self navigationController] viewControllers]objectAtIndex:4];
         
         NSString *stringDate = [NSString stringWithFormat:@"%@-%@-%@",self.year.text, self.month.text, self.day.text];
         
-        [reservation.date setText:[NSString stringWithFormat:@"%@",stringDate]];
+        [reservation.date setText:stringDate];
         
+        //NSLog(@"%@", reservation.date);
         [[self navigationController] popToViewController:reservation animated:YES];
 
-        
     }
    
 }

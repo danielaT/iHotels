@@ -14,10 +14,11 @@
 @interface Reservation : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * days;
-@property (nonatomic, retain) NSString * hotelId;
+@property (nonatomic, retain) NSString * hotelImage;
 @property (nonatomic, retain) NSString * hotelName;
 @property (nonatomic, retain) NSDate * startDate;
 @property (nonatomic, retain) NSSet *friends;
+@property (nonatomic, retain) NSNumber *hotelRate;
 @end
 
 @interface Reservation (CoreDataGeneratedAccessors)

@@ -21,5 +21,5 @@
 - (void) addFriend:(NSString*) name;
 
 @property NSString *imageURL;
-
+@property NSString *hotelRating;
 @end

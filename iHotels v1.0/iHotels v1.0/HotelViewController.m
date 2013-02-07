@@ -175,7 +175,8 @@ typedef enum {
             [reservation.hotelName setText:reservation.nameString];
             reservation.cityString = [hotelSummary valueForKey:@"city"];
             [reservation.hotelCity setText:reservation.cityString];
-            
+            reservation.hotelRating = [hotelSummary valueForKey:@"hotelRating"];
+           
             reservation.url = [NSURL URLWithString:[hotelInfo getProfilePhotoForHotel:self.hotel]];
             reservation.imageURL = [hotelInfo getProfilePhotoForHotel:self.hotel];
             [reservation.hotelImage loadRequest:[NSURLRequest requestWithURL:reservation.url]];

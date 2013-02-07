@@ -13,7 +13,7 @@
 
 @interface HotelVisited : NSManagedObject
 
-@property (nonatomic, retain) NSString * hotelId;
+@property (nonatomic, retain) NSString * hotelImage;
 @property (nonatomic, retain) NSString * hotelName;
 @property (nonatomic, retain) NSNumber * hotelRate;
 @property (nonatomic, retain) NSString * photoPath;

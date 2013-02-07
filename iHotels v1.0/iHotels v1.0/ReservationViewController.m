@@ -165,11 +165,18 @@
     else
     {
         NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-        [dateFormat setDateFormat:@"yyyy-mm-dd"];
+        [dateFormat setDateFormat:@"yyyy-MM-dd"];
+        [dateFormat setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+        NSLocale *enUSPOSIXLocale = [NSLocale currentLocale];
+        
+        
+        NSAssert(enUSPOSIXLocale != nil, @"POSIX may not be nil.");
+        [dateFormat setLocale:enUSPOSIXLocale];
+        
         NSDate *date = [dateFormat dateFromString:self.date.text];
         
         NSLog(@"date %@", date);
-        
+        NSLog(@"date %@", self.date.text);
         
         AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
         
@@ -178,7 +185,9 @@
         reservation.hotelName = self.hotelName.text;
         reservation.startDate = date;
         reservation.days = [NSNumber numberWithInt:(int)self.days.text.intValue];
-        reservation.hotelId = self.imageURL;
+        reservation.hotelImage = self.imageURL;
+        reservation.hotelRate = [NSNumber numberWithInt:[ self.hotelRating intValue]];
+        
         NSError *error;
         
         //NSLog(@" masiv priqteli: %d", [arrayWithFriends count]);

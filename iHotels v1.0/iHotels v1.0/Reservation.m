@@ -13,10 +13,11 @@
 @implementation Reservation
 
 @dynamic days;
-@dynamic hotelId;
+@dynamic hotelImage;
 @dynamic hotelName;
 @dynamic startDate;
 @dynamic friends;
+@dynamic hotelRate;
 
 - (BOOL) isVisited
 {

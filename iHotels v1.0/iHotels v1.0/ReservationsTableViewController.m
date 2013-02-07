@@ -157,8 +157,8 @@
         [hotelDecription.reservationDays setText:hotelDecription.stringDays];
         hotelDecription.stringDate = [NSString stringWithFormat:@"%@",res.startDate];
         [hotelDecription.reservationDate setText:hotelDecription.stringDate];
-        hotelDecription.urlString = res.hotelId;
-        NSURL *url = [NSURL URLWithString:res.hotelId];
+        hotelDecription.urlString = res.hotelImage;
+        NSURL *url = [NSURL URLWithString:res.hotelImage];
         [hotelDecription.webView loadRequest:[NSURLRequest requestWithURL:url]];
         hotelDecription.arrayWithFriends = [NSMutableArray arrayWithArray:[res.friends allObjects]];
     }

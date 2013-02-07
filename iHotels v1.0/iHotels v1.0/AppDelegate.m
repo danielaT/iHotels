@@ -94,9 +94,10 @@
         {
             HotelVisited *hotelVisited = [ NSEntityDescription insertNewObjectForEntityForName:@"HotelVisited" inManagedObjectContext:self.managedObjectContext];
             hotelVisited.startDate = res.startDate;
-            hotelVisited.hotelId = res.hotelId;
+            hotelVisited.hotelImage = res.hotelImage;
             hotelVisited.hotelName = res.hotelName;
             hotelVisited.friends = res.friends;
+            hotelVisited.hotelRate = res.hotelRate;
             //delete from database res
             [self.managedObjectContext deleteObject:res];
             [self.managedObjectContext save:&error1];
