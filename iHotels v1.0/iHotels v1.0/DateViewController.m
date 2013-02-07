@@ -12,7 +12,10 @@
 
 @interface DateViewController ()
 
-@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+//@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UITextField *year;
+@property (weak, nonatomic) IBOutlet UITextField *month;
+@property (weak, nonatomic) IBOutlet UITextField *day;
 
 @end
 
@@ -30,6 +33,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.year.delegate = self;
+    self.month.delegate = self;
+    self.day.delegate = self;
     
     self.navigationItem.hidesBackButton = YES;
     
@@ -43,30 +49,37 @@
 {
     // NSUserDefaults is a singleton instance and access to the store is provided
     // by the class method, +standardUserDefaults
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    //NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     // Let's pull the date out of our picker
-    NSDate *selectedDate = [self.datePicker date];
-    NSLog(@"date: %@", selectedDate);
+    //NSDate *selectedDate = [self.datePicker date];
+    //NSLog(@"date: %@", selectedDate);
     // Store the date object into the user defaults. The key argument expects a
     // string and should be unique. I usually prepend any key with the name
     // of the class it's being used in.
     // Savvy programmers would pull this string out into a constant so that
     // it could be accessed from other classes if necessary.
-    [defaults setObject:selectedDate forKey:@"DatePickerViewController.selectedDate"];
+    //[defaults setObject:selectedDate forKey:@"DatePickerViewController.selectedDate"];
 }
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    return [textField resignFirstResponder];
+    
+}
+
 - (IBAction)selectDate:(id)sender
 {
     ReservationViewController *reservation =  [[[self navigationController] viewControllers]objectAtIndex:4];
     
-    NSString *stringDate = [NSString stringWithFormat:@"%@",[self.datePicker date]];
+    NSString *stringDate = [NSString stringWithFormat:@"%@-%@-%@",self.year.text, self.month.text, self.day.text];
     
-    [reservation.date setText:[NSString stringWithFormat:@"%@",[stringDate substringToIndex:10]]];
+    [reservation.date setText:[NSString stringWithFormat:@"%@",stringDate]];
 
     [[self navigationController] popToViewController:reservation animated:YES];
 

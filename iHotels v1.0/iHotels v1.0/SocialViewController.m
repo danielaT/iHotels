@@ -18,6 +18,8 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *facebookPost;
 @property (weak, nonatomic) IBOutlet UIButton *twitterPost;
+@property (weak, nonatomic) IBOutlet UILabel *loginLabel;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 
 @end
 
@@ -38,6 +40,8 @@
     self.profilePhoto.hidden = YES;
     self.facebookPost.hidden = YES;
     self.twitterPost.hidden = YES;
+    self.loginLabel.hidden = YES;
+    self.usernameLabel.hidden = YES;
     
     if (FBSession.activeSession.isOpen)
     {
@@ -57,7 +61,7 @@
         [[FBRequest requestForMe] startWithCompletionHandler:
          ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *user, NSError *error) {
              if (!error) {
-                 //self.userNameLabel.text = user.name;
+                 self.usernameLabel.text = user.name;
                  self.profilePhoto.profileID = user.id;
                  NSLog(@"user's id %@",self.profilePhoto.profileID);
              }
@@ -74,6 +78,8 @@
         self.profilePhoto.hidden = NO;
         self.facebookPost.hidden = NO;
         self.twitterPost.hidden = YES;
+        self.loginLabel.hidden = NO;
+        self.usernameLabel.hidden = NO;
         if (!FBSession.activeSession.isOpen) {
             // if the session is closed, then we open it here, and establish a handler for state changes
             [FBSession.activeSession openWithCompletionHandler:^(FBSession *session,
@@ -105,6 +111,8 @@
         self.profilePhoto.hidden = YES;
         self.facebookPost.hidden = YES;
         self.twitterPost.hidden = NO;
+        self.loginLabel.hidden = YES;
+        self.usernameLabel.hidden = YES;
 
     }
 }

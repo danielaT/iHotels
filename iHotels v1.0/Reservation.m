@@ -21,32 +21,23 @@
 - (BOOL) isVisited
 {
     NSDate *dateNow = [NSDate date];
-    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     [dateComponents setDay:self.days.intValue];
     
-    NSDate *dateAfterTheTrip = [[NSCalendar currentCalendar]
-                                dateByAddingComponents:dateComponents
-                                toDate:self.startDate options:0];
+    NSDate *dateAfterTheTrip = [[NSCalendar currentCalendar] dateByAddingComponents:dateComponents toDate:self.startDate options:0];
     
-    if ([dateNow compare:dateAfterTheTrip] == NSOrderedDescending) {
-        NSLog(@"datenow: %@", dateNow);
-        NSLog(@"dateafter: %@", dateAfterTheTrip);
-        
-        NSLog(@"datenow is later than dateAfterTrip");
+    if ([dateNow compare:dateAfterTheTrip] == NSOrderedDescending)
+    {
         return YES;
-        
-    } else if ([dateNow compare:dateAfterTheTrip] == NSOrderedAscending) {
-        NSLog(@"datenow: %@", dateNow);
-        NSLog(@"dateafter: %@", dateAfterTheTrip);
-        NSLog(@"datenow is earlier than dateAfterTrip");
+    }
+    else if ([dateNow compare:dateAfterTheTrip] == NSOrderedAscending)
+    {
         return NO;
-        
-    } else {
-        NSLog(@"dates are the same");
+    } else
+    {
         return YES;
     }
 }

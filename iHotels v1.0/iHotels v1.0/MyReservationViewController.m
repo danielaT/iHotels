@@ -44,7 +44,7 @@
                          
                      }
                      completion:^(BOOL finished){
-                         if(finished)  NSLog(@"Finished !!!!!");
+                         //if(finished)  NSLog(@"Finished !!!!!");
                                              // do any stuff here if you want
                                              }];
 

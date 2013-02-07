@@ -63,6 +63,7 @@
 {
     [self performSegueWithIdentifier:@"Select Date" sender:self];
 }
+
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     return [textField resignFirstResponder];
@@ -144,18 +145,20 @@
 
 - (IBAction)makeReservation:(id)sender
 {
-    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-mm-dd"];
+    NSDate *date = [dateFormat dateFromString:self.date.text];
     
     AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
     
     NSManagedObjectContext *context = delegate.managedObjectContext;
     Reservation *reservation = [ NSEntityDescription insertNewObjectForEntityForName:@"Reservation" inManagedObjectContext:context];
     reservation.hotelName = self.hotelName.text;
-    reservation.startDate = [NSDate date];
+    reservation.startDate = date;
     reservation.days = [NSNumber numberWithInt:(int)self.days.text.intValue];
     NSError *error;
     
-    NSLog(@" masiv priqteli: %d", [arrayWithFriends count]);
+    //NSLog(@" masiv priqteli: %d", [arrayWithFriends count]);
     for(int i = 0; i < [arrayWithFriends count]; i++)
     {
         Friend *friend = [NSEntityDescription insertNewObjectForEntityForName:@"Friend" inManagedObjectContext:context];

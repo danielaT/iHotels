@@ -11,6 +11,7 @@
 #import "PlaceViewController.h"
 #import "HotelVisited.h"
 #import "UIViewController+iHotelsColorTheme.h"
+#import <Social/Social.h>
 
 @interface PlaceViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -128,13 +129,57 @@
 
 
 
-- (IBAction)shareOnFacebookButtonTap:(id)sender {
+- (IBAction)shareOnFacebookButtonTap:(id)sender
+{
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+    {
+        SLComposeViewController *facebookSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        [facebookSheet setInitialText:[NSString stringWithFormat:@"At %@ I was at one hotel named %@ and it was...", self.hotel.startDate, self.hotelNameLabel.text]];
+        
+        [facebookSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
+            
+            switch (result) {
+                case SLComposeViewControllerResultCancelled:
+                    NSLog(@"Post Canceled");
+                    break;
+                case SLComposeViewControllerResultDone:
+                    NSLog(@"Post Sucessful");
+                    break;
+                    
+                default:
+                    break;
+            }
+        }];
+        [self presentViewController:facebookSheet animated:YES completion:nil];
+    }
 
 }
 
 
 
-- (IBAction)postOnTwitterButtonTap:(id)sender {
+- (IBAction)postOnTwitterButtonTap:(id)sender
+{
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        SLComposeViewController *twitterSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [twitterSheet setInitialText:[NSString stringWithFormat:@"At %@ I was at one hotel named %@ and it was...", self.hotel.startDate, self.hotel.hotelName]];
+        
+        [twitterSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
+            
+            switch (result) {
+                case SLComposeViewControllerResultCancelled:
+                    NSLog(@"Post Canceled");
+                    break;
+                case SLComposeViewControllerResultDone:
+                    NSLog(@"Post Sucessful");
+                    break;
+                    
+                default:
+                    break;
+            }
+        }];
+        [self presentViewController:twitterSheet animated:YES completion:nil];
+    }
 }
 
 
