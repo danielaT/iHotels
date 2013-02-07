@@ -90,21 +90,30 @@
 
 - (IBAction)pickFriendsButtonClick:(id)sender
 {
-    if (self.friendPickerController == nil)
+    if (FBSession.activeSession.isOpen)
     {
-        // Create friend picker, and get data loaded into it.
-        self.friendPickerController = [[FBFriendPickerViewController alloc] init];
-        self.friendPickerController.title = @"Pick Friends";
-        self.friendPickerController.delegate = self;
+        if (self.friendPickerController == nil)
+        {
+            // Create friend picker, and get data loaded into it.
+            self.friendPickerController = [[FBFriendPickerViewController alloc] init];
+            self.friendPickerController.title = @"Pick Friends";
+            self.friendPickerController.delegate = self;
+        }
+        
+        [self.friendPickerController loadData];
+        [self.friendPickerController clearSelection];
+        
+        // iOS 5.0+ apps should use [UIViewController presentViewController:animated:completion:]
+        // rather than this deprecated method, but we want our samples to run on iOS 4.x as well.
+        //[self presentModalViewController:self.friendPickerController animated:YES];
+        [self presentViewController:self.friendPickerController animated:YES completion:nil];
     }
-    
-    [self.friendPickerController loadData];
-    [self.friendPickerController clearSelection];
-    
-    // iOS 5.0+ apps should use [UIViewController presentViewController:animated:completion:]
-    // rather than this deprecated method, but we want our samples to run on iOS 4.x as well.
-    //[self presentModalViewController:self.friendPickerController animated:YES];
-    [self presentViewController:self.friendPickerController animated:YES completion:nil];
+    else
+    {
+        [self.tabBarController setSelectedIndex:3];
+        [(UINavigationController*)[self.tabBarController.viewControllers objectAtIndex:0] popViewControllerAnimated:YES];
+
+    }
 }
 
 
@@ -179,6 +188,11 @@
 {
     [arrayWithFriends addObject:name];
 }
-    
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+}
+
 
 @end
