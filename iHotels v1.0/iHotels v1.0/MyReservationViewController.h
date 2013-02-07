@@ -19,4 +19,6 @@
 @property NSString *stringDays;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property NSString *urlString;
+@property NSMutableArray *arrayWithFriends;
+
 @end

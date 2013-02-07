@@ -42,6 +42,7 @@
     self.twitterPost.hidden = YES;
     self.loginLabel.hidden = YES;
     self.usernameLabel.hidden = YES;
+    self.navigationItem.title = @"Social";
     
     if (FBSession.activeSession.isOpen)
     {

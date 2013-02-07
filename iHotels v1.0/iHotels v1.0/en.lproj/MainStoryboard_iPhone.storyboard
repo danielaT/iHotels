@@ -74,14 +74,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="scroll view with friends :P" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksq-T5-fko">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Dmr-cs-sZx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SmE-HR-c8D">
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3we-iA-Dl8">
@@ -135,24 +127,27 @@
                                     <constraint firstAttribute="height" constant="70" id="Vlc-gP-h7c"/>
                                 </constraints>
                             </webView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KyX-44-yS4"/>
                         </subviews>
                         <color key="backgroundColor" red="0.95294123890000004" green="0.96078437569999997" blue="0.85490202900000001" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="Ddq-Ik-EBj" firstAttribute="top" secondItem="RjS-5N-7lv" secondAttribute="top" type="default" id="218-YU-GZq"/>
-                            <constraint firstAttribute="bottom" secondItem="ksq-T5-fko" secondAttribute="bottom" constant="86" id="58E-KJ-SPU"/>
                             <constraint firstItem="rDE-25-KUL" firstAttribute="top" secondItem="jun-XQ-lK4" secondAttribute="top" constant="171" id="6y2-Mg-129"/>
                             <constraint firstAttribute="trailing" secondItem="SmE-HR-c8D" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ERv-Na-CLX"/>
                             <constraint firstItem="Ddq-Ik-EBj" firstAttribute="top" secondItem="jun-XQ-lK4" secondAttribute="top" constant="221" id="Ebd-7l-V3f"/>
                             <constraint firstItem="rDE-25-KUL" firstAttribute="baseline" secondItem="WaJ-Nu-DjM" secondAttribute="baseline" type="default" id="FPW-Pi-gEf"/>
                             <constraint firstItem="RjS-5N-7lv" firstAttribute="leading" secondItem="WaJ-Nu-DjM" secondAttribute="leading" type="default" id="Gpx-oS-4R3"/>
+                            <constraint firstAttribute="bottom" secondItem="KyX-44-yS4" secondAttribute="bottom" constant="35" id="NFN-ob-Dun"/>
                             <constraint firstItem="Alh-gc-M4L" firstAttribute="top" secondItem="jun-XQ-lK4" secondAttribute="top" constant="35" id="PO8-WR-nxX"/>
                             <constraint firstItem="rDE-25-KUL" firstAttribute="top" secondItem="WaJ-Nu-DjM" secondAttribute="top" type="default" id="QeZ-fJ-rcD"/>
                             <constraint firstItem="Ddq-Ik-EBj" firstAttribute="baseline" secondItem="RjS-5N-7lv" secondAttribute="baseline" type="default" id="TqF-qn-HrT"/>
                             <constraint firstItem="sUs-9R-fdl" firstAttribute="top" secondItem="jun-XQ-lK4" secondAttribute="top" constant="97" id="Vj9-78-Ynt"/>
                             <constraint firstItem="SmE-HR-c8D" firstAttribute="leading" secondItem="jun-XQ-lK4" secondAttribute="leading" constant="128" id="W3v-ic-sbg"/>
                             <constraint firstItem="SmE-HR-c8D" firstAttribute="top" secondItem="jun-XQ-lK4" secondAttribute="top" constant="40" id="Wkm-yi-fuD"/>
-                            <constraint firstItem="ksq-T5-fko" firstAttribute="centerX" secondItem="jun-XQ-lK4" secondAttribute="centerX" type="default" id="YvR-gE-oLZ"/>
+                            <constraint firstItem="KyX-44-yS4" firstAttribute="top" secondItem="jun-XQ-lK4" secondAttribute="top" constant="276" id="a99-WZ-LhN"/>
+                            <constraint firstAttribute="trailing" secondItem="KyX-44-yS4" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="anx-vI-fc3"/>
                             <constraint firstItem="rDE-25-KUL" firstAttribute="leading" secondItem="jun-XQ-lK4" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="f40-rx-BvX"/>
+                            <constraint firstItem="KyX-44-yS4" firstAttribute="leading" secondItem="jun-XQ-lK4" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fZ3-Nc-smo"/>
                             <constraint firstItem="Ddq-Ik-EBj" firstAttribute="leading" secondItem="jun-XQ-lK4" secondAttribute="leading" constant="60" id="fug-ng-3rD"/>
                             <constraint firstAttribute="trailing" secondItem="WaJ-Nu-DjM" secondAttribute="trailing" constant="3" id="htx-Zh-VnT"/>
                             <constraint firstItem="RjS-5N-7lv" firstAttribute="trailing" secondItem="WaJ-Nu-DjM" secondAttribute="trailing" type="default" id="j9n-v9-KsY"/>
@@ -167,6 +162,7 @@
                         <outlet property="reservationDate" destination="WaJ-Nu-DjM" id="v9B-ze-11c"/>
                         <outlet property="reservationDays" destination="RjS-5N-7lv" id="jxF-ug-x0f"/>
                         <outlet property="reservationName" destination="3we-iA-Dl8" id="0PZ-wB-oEi"/>
+                        <outlet property="scrollViewWithFriends" destination="KyX-44-yS4" id="pMt-Xr-GrZ"/>
                         <outlet property="webView" destination="Alh-gc-M4L" id="KvZ-5V-Gmp"/>
                     </connections>
                 </viewController>
@@ -1025,7 +1021,7 @@
                                     <constraint firstAttribute="height" constant="180" type="user" id="scn-xO-nxI"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UCV-Ms-akY">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Cities" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UCV-Ms-akY">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="241" id="jVW-Mb-uH5"/>
                                 </constraints>
@@ -1646,6 +1642,7 @@
                 <relationship kind="outlet" name="reservationDate" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="reservationDays" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="reservationName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrollViewWithFriends" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>

@@ -160,7 +160,7 @@
         hotelDecription.urlString = res.hotelId;
         NSURL *url = [NSURL URLWithString:res.hotelId];
         [hotelDecription.webView loadRequest:[NSURLRequest requestWithURL:url]];
-
+        hotelDecription.arrayWithFriends = [NSMutableArray arrayWithArray:[res.friends allObjects]];
     }
 }
 

@@ -154,34 +154,50 @@
 
 - (IBAction)makeReservation:(id)sender
 {
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"yyyy-mm-dd"];
-    NSDate *date = [dateFormat dateFromString:self.date.text];
+    NSString *string1 = self.date.text;
+    NSString *string2 = self.days.text;
     
-    AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
-    
-    NSManagedObjectContext *context = delegate.managedObjectContext;
-    Reservation *reservation = [ NSEntityDescription insertNewObjectForEntityForName:@"Reservation" inManagedObjectContext:context];
-    reservation.hotelName = self.hotelName.text;
-    reservation.startDate = date;
-    reservation.days = [NSNumber numberWithInt:(int)self.days.text.intValue];
-    reservation.hotelId = self.imageURL;
-    NSError *error;
-    
-    //NSLog(@" masiv priqteli: %d", [arrayWithFriends count]);
-    for(int i = 0; i < [arrayWithFriends count]; i++)
+    if(string1.length == 0 || string2.length == 0 || [self.days.text intValue] < 0)
     {
-        Friend *friend = [NSEntityDescription insertNewObjectForEntityForName:@"Friend" inManagedObjectContext:context];
-        friend.name = [arrayWithFriends objectAtIndex:i];
-        [reservation addFriendsObject:friend];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Please enter date and days!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    else
+    {
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"yyyy-mm-dd"];
+        NSDate *date = [dateFormat dateFromString:self.date.text];
+        
+        NSLog(@"date %@", date);
+        
+        
+        AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
+        
+        NSManagedObjectContext *context = delegate.managedObjectContext;
+        Reservation *reservation = [ NSEntityDescription insertNewObjectForEntityForName:@"Reservation" inManagedObjectContext:context];
+        reservation.hotelName = self.hotelName.text;
+        reservation.startDate = date;
+        reservation.days = [NSNumber numberWithInt:(int)self.days.text.intValue];
+        reservation.hotelId = self.imageURL;
+        NSError *error;
+        
+        //NSLog(@" masiv priqteli: %d", [arrayWithFriends count]);
+        for(int i = 0; i < [arrayWithFriends count]; i++)
+        {
+            Friend *friend = [NSEntityDescription insertNewObjectForEntityForName:@"Friend" inManagedObjectContext:context];
+            friend.name = [arrayWithFriends objectAtIndex:i];
+            [reservation addFriendsObject:friend];
+        }
+        
+        [context save:&error];
+        
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Successfull!" message:[NSString stringWithFormat:@"You make reservation for: %@", self.hotelName.text,nil] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        
+        [self.navigationController popToRootViewControllerAnimated:YES];
+        
     }
     
-    [context save:&error];
-    
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Successfull!" message:[NSString stringWithFormat:@"You make reservation for: %@", self.hotelName.text,nil] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-    [alert show];
-    
-    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void) addFriend:(NSString*) name

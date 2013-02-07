@@ -93,6 +93,7 @@
         if( res.isVisited == YES)
         {
             HotelVisited *hotelVisited = [ NSEntityDescription insertNewObjectForEntityForName:@"HotelVisited" inManagedObjectContext:self.managedObjectContext];
+            hotelVisited.startDate = res.startDate;
             hotelVisited.hotelId = res.hotelId;
             hotelVisited.hotelName = res.hotelName;
             hotelVisited.friends = res.friends;

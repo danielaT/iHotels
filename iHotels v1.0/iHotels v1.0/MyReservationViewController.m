@@ -14,6 +14,7 @@
 @interface MyReservationViewController ()
 
 @property NSArray* hotelListArray;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollViewWithFriends;
 
 @end
 
@@ -49,6 +50,8 @@
                          //if(finished)  NSLog(@"Finished !!!!!");
                                              // do any stuff here if you want
                                              }];
+    
+    NSLog(@"friends: %d", [self.arrayWithFriends count]);
 
 
     // apply color theme methods
