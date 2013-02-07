@@ -2,7 +2,7 @@
 //  HotelVisited.h
 //  iHotels v1.0
 //
-//  Created by Martin on 05-02-2013.
+//  Created by Desislava on 2/7/13.
 //  Copyright (c) 2013 Student14. All rights reserved.
 //
 
@@ -13,11 +13,11 @@
 
 @interface HotelVisited : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * hotelId;
+@property (nonatomic, retain) NSString * hotelId;
 @property (nonatomic, retain) NSString * hotelName;
 @property (nonatomic, retain) NSNumber * hotelRate;
-@property (nonatomic, retain) NSDate * startDate;
 @property (nonatomic, retain) NSString * photoPath;
+@property (nonatomic, retain) NSDate * startDate;
 @property (nonatomic, retain) NSSet *friends;
 @end
 

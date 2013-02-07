@@ -156,6 +156,7 @@
     reservation.hotelName = self.hotelName.text;
     reservation.startDate = date;
     reservation.days = [NSNumber numberWithInt:(int)self.days.text.intValue];
+    reservation.hotelId = self.imageURL;
     NSError *error;
     
     //NSLog(@" masiv priqteli: %d", [arrayWithFriends count]);

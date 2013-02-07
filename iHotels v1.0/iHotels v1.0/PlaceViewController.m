@@ -134,7 +134,7 @@
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
     {
         SLComposeViewController *facebookSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        [facebookSheet setInitialText:[NSString stringWithFormat:@"At %@ I was at one hotel named %@ and it was...", self.hotel.startDate, self.hotelNameLabel.text]];
+        [facebookSheet setInitialText:[NSString stringWithFormat:@"At %@ I was at one hotel named %@ and it was...", self.dateLabel.text, self.hotelNameLabel.text]];
         
         [facebookSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
             
@@ -162,7 +162,7 @@
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
         SLComposeViewController *twitterSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [twitterSheet setInitialText:[NSString stringWithFormat:@"At %@ I was at one hotel named %@ and it was...", self.hotel.startDate, self.hotel.hotelName]];
+        [twitterSheet setInitialText:[NSString stringWithFormat:@"At %@ I was at one hotel named %@ and it was...", self.dateLabel.text, self.hotel.hotelName]];
         
         [twitterSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
             

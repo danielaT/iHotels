@@ -20,4 +20,6 @@
 @property NSURL* url;
 - (void) addFriend:(NSString*) name;
 
+@property NSString *imageURL;
+
 @end

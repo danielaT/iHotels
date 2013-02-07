@@ -6,7 +6,7 @@
         <relationship name="reservations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Reservation" inverseName="friends" inverseEntity="Reservation" syncable="YES"/>
     </entity>
     <entity name="HotelVisited" representedClassName="HotelVisited" syncable="YES">
-        <attribute name="hotelId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="hotelId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="hotelName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="hotelRate" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="photoPath" optional="YES" attributeType="String" syncable="YES"/>
@@ -17,7 +17,7 @@
         <attribute name="days" optional="YES" attributeType="Integer 16" defaultValueString="0">
             <userInfo/>
         </attribute>
-        <attribute name="hotelId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="hotelId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="hotelName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="friends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Friend" inverseName="reservations" inverseEntity="Friend" syncable="YES"/>

@@ -16,4 +16,6 @@
 @dynamic reservations;
 @dynamic hotelsVisited;
 
+
+
 @end

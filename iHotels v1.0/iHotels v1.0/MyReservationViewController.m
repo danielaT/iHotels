@@ -35,6 +35,8 @@
     [self.reservationName setText:self.stringName];
     [self.reservationDays setText:self.stringDays];
     [self.reservationDate setText:[self.stringDate substringToIndex:10]];
+    NSURL *url = [NSURL URLWithString:self.urlString];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
     
     [UIView animateWithDuration:2.0
                           delay:0.0
@@ -52,6 +54,11 @@
     // apply color theme methods
     [self applyiHotelsThemeWithPatternImageName:@"iphone_reservation_pattern"];
     [self configureSubviews];
+}
+- (IBAction)goToMap:(id)sender
+{
+    [self.tabBarController setSelectedIndex:0];
+    [(UINavigationController*)[self.tabBarController.viewControllers objectAtIndex:0] popViewControllerAnimated:YES];
 }
 
 

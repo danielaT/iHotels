@@ -31,7 +31,6 @@
 		5BCF415F16C2F21B002C9CA3 /* baarprg_.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF415D16C2F21B002C9CA3 /* baarprg_.TTF */; };
 		5BCF416016C2F21B002C9CA3 /* baarpb__.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF415E16C2F21B002C9CA3 /* baarpb__.TTF */; };
 		5BD9CA2716C139B60007AD19 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD9CA2616C139B50007AD19 /* MobileCoreServices.framework */; };
-		5BD9CA2A16C13D7D0007AD19 /* HotelVisited.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD9CA2916C13D7D0007AD19 /* HotelVisited.m */; };
 		5BE1AF8B16C1AD8300A57D93 /* iphone_hotel.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE1AF8316C1AD8200A57D93 /* iphone_hotel.png */; };
 		5BE1AF8C16C1AD8300A57D93 /* iphone_hotel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE1AF8416C1AD8200A57D93 /* iphone_hotel@2x.png */; };
 		5BE1AF9116C1AD8300A57D93 /* iphone_social.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE1AF8916C1AD8300A57D93 /* iphone_social.png */; };
@@ -105,7 +104,6 @@
 		FD8FB85916BE930E003B81D0 /* fb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD8FB85816BE930E003B81D0 /* fb.jpg */; };
 		FD8FB85B16BEA5FD003B81D0 /* iphone-contacts-icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD8FB85A16BEA5FD003B81D0 /* iphone-contacts-icon.jpg */; };
 		FD8FB86516BEACA0003B81D0 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8FB86416BEAC9F003B81D0 /* Friend.m */; };
-		FD8FB86B16BEACB8003B81D0 /* Reservation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8FB86A16BEACB8003B81D0 /* Reservation.m */; };
 		FD8FB87416BEB2A4003B81D0 /* ReservationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8FB87316BEB2A4003B81D0 /* ReservationsTableViewController.m */; };
 		FD8FB87616BEB45D003B81D0 /* car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD8FB87516BEB45D003B81D0 /* car.jpg */; };
 		FD8FB87916BEB863003B81D0 /* MyReservationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8FB87816BEB862003B81D0 /* MyReservationViewController.m */; };
@@ -114,6 +112,9 @@
 		FD8FB8CB16C01D1B003B81D0 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FD8FB8C916C01D1B003B81D0 /* FacebookSDKResources.bundle */; };
 		FD8FB8CC16C01D1B003B81D0 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FD8FB8CA16C01D1B003B81D0 /* FBUserSettingsViewResources.bundle */; };
 		FD8FB8CE16C01D33003B81D0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8FB8CD16C01D33003B81D0 /* FacebookSDK.framework */; };
+		FD8FB93116C3F305003B81D0 /* images.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD8FB93016C3F305003B81D0 /* images.jpg */; };
+		FD8FB93916C3FE70003B81D0 /* Reservation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8FB93816C3FE62003B81D0 /* Reservation.m */; };
+		FD8FB93C16C40140003B81D0 /* HotelVisited.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8FB93B16C4012B003B81D0 /* HotelVisited.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -144,8 +145,6 @@
 		5BCF415D16C2F21B002C9CA3 /* baarprg_.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = baarprg_.TTF; sourceTree = "<group>"; };
 		5BCF415E16C2F21B002C9CA3 /* baarpb__.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = baarpb__.TTF; sourceTree = "<group>"; };
 		5BD9CA2616C139B50007AD19 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		5BD9CA2816C13D7D0007AD19 /* HotelVisited.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelVisited.h; sourceTree = "<group>"; };
-		5BD9CA2916C13D7D0007AD19 /* HotelVisited.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelVisited.m; sourceTree = "<group>"; };
 		5BE1AF8316C1AD8200A57D93 /* iphone_hotel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_hotel.png; sourceTree = "<group>"; };
 		5BE1AF8416C1AD8200A57D93 /* iphone_hotel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone_hotel@2x.png"; sourceTree = "<group>"; };
 		5BE1AF8916C1AD8300A57D93 /* iphone_social.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_social.png; sourceTree = "<group>"; };
@@ -244,8 +243,6 @@
 		FD8FB85A16BEA5FD003B81D0 /* iphone-contacts-icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "iphone-contacts-icon.jpg"; sourceTree = "<group>"; };
 		FD8FB86316BEAC9F003B81D0 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Friend.h; path = ../Friend.h; sourceTree = "<group>"; };
 		FD8FB86416BEAC9F003B81D0 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Friend.m; path = ../Friend.m; sourceTree = "<group>"; };
-		FD8FB86916BEACB8003B81D0 /* Reservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reservation.h; path = ../Reservation.h; sourceTree = "<group>"; };
-		FD8FB86A16BEACB8003B81D0 /* Reservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reservation.m; path = ../Reservation.m; sourceTree = "<group>"; };
 		FD8FB87216BEB2A4003B81D0 /* ReservationsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservationsTableViewController.h; sourceTree = "<group>"; };
 		FD8FB87316BEB2A4003B81D0 /* ReservationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationsTableViewController.m; sourceTree = "<group>"; };
 		FD8FB87516BEB45D003B81D0 /* car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = car.jpg; sourceTree = "<group>"; };
@@ -257,6 +254,11 @@
 		FD8FB8C916C01D1B003B81D0 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKResources.bundle; sourceTree = "<group>"; };
 		FD8FB8CA16C01D1B003B81D0 /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
 		FD8FB8CD16C01D33003B81D0 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		FD8FB93016C3F305003B81D0 /* images.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpg; sourceTree = "<group>"; };
+		FD8FB93716C3FE5A003B81D0 /* Reservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reservation.h; sourceTree = "<group>"; };
+		FD8FB93816C3FE62003B81D0 /* Reservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reservation.m; sourceTree = "<group>"; };
+		FD8FB93A16C40124003B81D0 /* HotelVisited.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelVisited.h; sourceTree = "<group>"; };
+		FD8FB93B16C4012B003B81D0 /* HotelVisited.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelVisited.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,12 +288,12 @@
 		5B0C7F9716BFCC90003C1CCD /* CoreDataClasses */ = {
 			isa = PBXGroup;
 			children = (
-				5BD9CA2816C13D7D0007AD19 /* HotelVisited.h */,
-				5BD9CA2916C13D7D0007AD19 /* HotelVisited.m */,
 				FD8FB86316BEAC9F003B81D0 /* Friend.h */,
 				FD8FB86416BEAC9F003B81D0 /* Friend.m */,
-				FD8FB86916BEACB8003B81D0 /* Reservation.h */,
-				FD8FB86A16BEACB8003B81D0 /* Reservation.m */,
+				FD8FB93A16C40124003B81D0 /* HotelVisited.h */,
+				FD8FB93B16C4012B003B81D0 /* HotelVisited.m */,
+				FD8FB93716C3FE5A003B81D0 /* Reservation.h */,
+				FD8FB93816C3FE62003B81D0 /* Reservation.m */,
 			);
 			name = CoreDataClasses;
 			sourceTree = "<group>";
@@ -382,6 +384,7 @@
 				5BEF076B16BD3322005F7990 /* RegionsAndCities.plist */,
 				FD8FB84916BE7E2C003B81D0 /* twitter-icon-small.png */,
 				FD8FB84716BE7DE1003B81D0 /* twitter-icon.png */,
+				FD8FB93016C3F305003B81D0 /* images.jpg */,
 			);
 			name = Resources;
 			path = ..;
@@ -615,6 +618,7 @@
 				5BCF415916C2F0C6002C9CA3 /* iphone_button.png in Resources */,
 				5BCF415F16C2F21B002C9CA3 /* baarprg_.TTF in Resources */,
 				5BCF416016C2F21B002C9CA3 /* baarpb__.TTF in Resources */,
+				FD8FB93116C3F305003B81D0 /* images.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,14 +653,14 @@
 				FD8FB84616BE7961003B81D0 /* DateViewController.m in Sources */,
 				FD8FB84D16BE7E62003B81D0 /* SocialViewController.m in Sources */,
 				FD8FB86516BEACA0003B81D0 /* Friend.m in Sources */,
-				FD8FB86B16BEACB8003B81D0 /* Reservation.m in Sources */,
 				FD8FB87416BEB2A4003B81D0 /* ReservationsTableViewController.m in Sources */,
 				FD8FB87916BEB863003B81D0 /* MyReservationViewController.m in Sources */,
 				FD8FB88016BECB88003B81D0 /* VisitedPlacesTableViewController.m in Sources */,
 				5BAC679116C108A8005637D9 /* PlaceViewController.m in Sources */,
 				5BAC679416C108EF005637D9 /* PlacesPageViewController.m in Sources */,
-				5BD9CA2A16C13D7D0007AD19 /* HotelVisited.m in Sources */,
 				5BCF415C16C2F10F002C9CA3 /* UIViewController+iHotelsColorTheme.m in Sources */,
+				FD8FB93916C3FE70003B81D0 /* Reservation.m in Sources */,
+				FD8FB93C16C40140003B81D0 /* HotelVisited.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

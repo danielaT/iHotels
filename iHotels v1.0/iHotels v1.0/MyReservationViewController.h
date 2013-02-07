@@ -17,5 +17,6 @@
 @property NSString *stringDate;
 @property (weak, nonatomic) IBOutlet UILabel *reservationDays;
 @property NSString *stringDays;
-
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property NSString *urlString;
 @end
