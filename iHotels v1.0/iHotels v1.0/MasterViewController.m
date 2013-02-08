@@ -35,15 +35,20 @@ const float ROW_HEIGTH = 120;
 
 // reload tableView with new hotels when new city is selected
 -(void)setCityName:(NSString *)cityName {
+    _cityName = cityName;
+    self.navigationItem.title = self.cityName;
     HotelsInformation* hotelsInfo = [[HotelsInformation alloc] init];
-    self.navigationItem.title = cityName;
     [hotelsInfo getHotelsForCity:cityName handler:^(NSArray* hotels) {
         self.hotelListArray = hotels;
-    
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
     }];
+}
+
+-(NSString*)cityName {
+    return [_cityName stringByReplacingOccurrencesOfString:@"%20" withString:@" "];
 }
 
 - (void)awakeFromNib
@@ -63,7 +68,6 @@ const float ROW_HEIGTH = 120;
     [self applyiHotelsThemeWithPatternImageName:@"iphone_hotel_pattern"];
     [self configureSubviews];
     
-    //self.cityName = @"Stara%20Zagora";
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     self.hotelListArray = [[NSMutableArray alloc] init];
 }

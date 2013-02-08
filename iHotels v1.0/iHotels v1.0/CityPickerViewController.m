@@ -11,7 +11,7 @@
 #import "UIViewController+iHotelsColorTheme.h"
 
 NSString* const BLANK_SPACE = @" ";
-NSString* const BLANK_SPACE_REPLACEMENT = @"%02";
+NSString* const BLANK_SPACE_REPLACEMENT = @"%20";
 
 @interface CityPickerViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -22,15 +22,11 @@ NSString* const BLANK_SPACE_REPLACEMENT = @"%02";
 
 @end
 
-
-
 @implementation CityPickerViewController
 
 @synthesize availableCitiesArray = _availableCitiesArray;
 @synthesize selectedSearchString = _selecredSearchString;
 @synthesize selectedRegionName = _selectedRegionName;
-
-
 
 - (void)viewDidLoad
 {
@@ -55,7 +51,6 @@ NSString* const BLANK_SPACE_REPLACEMENT = @"%02";
     {
         [self getCitiesInRegionFromPlist:regionsAndCities];
     }
-    
 }
 
 -(void) searchCitiesInPlist:(NSDictionary*)plist thatMatchSearchString:(NSString*) string
@@ -89,7 +84,6 @@ NSString* const BLANK_SPACE_REPLACEMENT = @"%02";
     self.title = @"Available Cities";
 }
 
-
 -(void) getCitiesInRegionFromPlist:(NSDictionary*)plist
 {
     // get the cities that are going to be displayed (from plist)
@@ -102,8 +96,6 @@ NSString* const BLANK_SPACE_REPLACEMENT = @"%02";
     self.title = [NSString stringWithFormat:@"%@ Region", self.selectedRegionName];
     
 }
-
-
 
 // sort the cities array by name (easy, since there are all string objects in it)
 -(void) sortAvailableCitiesArray
@@ -119,7 +111,6 @@ NSString* const BLANK_SPACE_REPLACEMENT = @"%02";
     self.selectedRegionName = regionName;
 }
 
-
 -(void) setSearchString:(NSString *)searchString
 {
     self.selectedSearchString = searchString;
@@ -131,7 +122,7 @@ NSString* const BLANK_SPACE_REPLACEMENT = @"%02";
         NSIndexPath *selectedRowIndexPath = [self.tableView indexPathForSelectedRow];
         MasterViewController *hotelListController = (MasterViewController*) segue.destinationViewController;
         
-        // replace blank spaces with %02 for correct response  
+        // replace blank spaces with %02 for correct response
         [hotelListController setCityName: [[self.availableCitiesArray objectAtIndex:selectedRowIndexPath.row] stringByReplacingOccurrencesOfString:BLANK_SPACE withString:BLANK_SPACE_REPLACEMENT]];
     }
 }
@@ -148,14 +139,12 @@ NSString* const BLANK_SPACE_REPLACEMENT = @"%02";
     return [self.availableCitiesArray count];
 }
 
-
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CityCell"];
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
-
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
@@ -164,7 +153,5 @@ NSString* const BLANK_SPACE_REPLACEMENT = @"%02";
     cell.textLabel.font = [UIFont fontWithName:@"Baar Philos" size:18.0];
     cell.textLabel.textColor = [UIColor colorWithHue:0.1417 saturation:0.21 brightness:0.9 alpha:1];
 }
-
-
 
 @end
