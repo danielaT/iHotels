@@ -13,6 +13,13 @@
 - (void)configureView;
 @end
 
+
+//
+//
+// I HATE GITHUB!!
+//
+//
+
 @implementation DetailViewController
 
 #pragma mark - Managing the detail item
