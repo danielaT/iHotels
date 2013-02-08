@@ -1,3 +1,4 @@
+// komentar ot Marto
 //  DetailViewController.m
 //  iHotels v1.0
 //  Created by Student14 on 1/30/13.
