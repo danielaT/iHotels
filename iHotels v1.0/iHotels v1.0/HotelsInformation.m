@@ -57,6 +57,7 @@ const int HOTELS_DICTIONARY_CAPACITY = 3;
         if ([self.hotelsInCities count] >= HOTELS_DICTIONARY_CAPACITY) {
             [self.hotelsInCities removeObjectForKey:[[self.hotelsInCities allKeys] objectAtIndex:0]];
         }
+        
         [JsonParser getJsonForCity:cityName handler:^(NSDictionary* dict) {
             [self.hotelsInCities setValue:dict forKey:cityName];
             [self callbackForCityName:cityName];
@@ -70,7 +71,15 @@ const int HOTELS_DICTIONARY_CAPACITY = 3;
     NSDictionary* hotelsInCurrentCityDictionary = [self.hotelsInCities valueForKey:name];
     NSDictionary* hotelListResponseDictionary = [hotelsInCurrentCityDictionary objectForKey:HOTEL_LIST_RESPONSE];
     NSDictionary* hotelListDictionary = [hotelListResponseDictionary objectForKey:HOTEL_LIST];
-    self.callback([hotelListDictionary objectForKey:HOTEL_SUMMARY]);
+    
+    // if there is just one hotel in the selected city 
+    if ([[[hotelListDictionary objectForKey:HOTEL_SUMMARY] class] isSubclassOfClass:[NSDictionary class]]) {
+        [self.hotelsInCities setValue:[[NSArray alloc] initWithObjects:[hotelListDictionary objectForKey:HOTEL_SUMMARY], nil] forKey:name];
+        self.callback([self.hotelsInCities objectForKey:name]);
+    }
+    else {
+         self.callback([hotelListDictionary objectForKey:HOTEL_SUMMARY]);
+    }
 }
 
 -(void)getHotel:(int)index handler:(void (^)(NSDictionary*))callback {

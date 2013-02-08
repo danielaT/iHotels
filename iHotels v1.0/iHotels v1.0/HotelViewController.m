@@ -24,8 +24,6 @@
 
 #import <MapKit/MapKit.h>
 
-const float CELL_HEIGTH = 35.0;
-
 @interface HotelViewController ()
 {
     NSArray* menuItems;
@@ -109,17 +107,6 @@ typedef enum {
     [self performSegueWithIdentifier:[NSString stringWithFormat:@"%d", indexPath.row] sender:tableView];
 }
 
-
-// These are not needed when using fixed cells. Also, they mess with autolayout :(
-
-//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return CELL_HEIGTH;
-//}
-//
-//-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//    return CELL_HEIGTH;
-//}
-
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return @"Hotel information";
 }
@@ -175,8 +162,6 @@ typedef enum {
             [reservation.hotelName setText:reservation.nameString];
             reservation.cityString = [hotelSummary valueForKey:@"city"];
             [reservation.hotelCity setText:reservation.cityString];
-            reservation.hotelRating = [hotelSummary valueForKey:@"hotelRating"];
-           
             reservation.url = [NSURL URLWithString:[hotelInfo getProfilePhotoForHotel:self.hotel]];
             reservation.imageURL = [hotelInfo getProfilePhotoForHotel:self.hotel];
             [reservation.hotelImage loadRequest:[NSURLRequest requestWithURL:reservation.url]];
@@ -185,8 +170,6 @@ typedef enum {
             break;
     }
 }
-
-
 
 - (IBAction)findInMapTouched:(id)sender {
     
@@ -218,10 +201,8 @@ typedef enum {
      }];
 }
 
-
-
 - (IBAction)makeReservationTouched:(id)sender {
-    [self performSegueWithIdentifier:@"4" sender:self];
+    [self performSegueWithIdentifier:[NSString stringWithFormat:@"%d", Reservation] sender:self];
 }
 
 @end

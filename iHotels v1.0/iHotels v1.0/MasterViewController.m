@@ -19,11 +19,11 @@
 #import "UIViewController+iHotelsColorTheme.h"
 
 NSString* const THUMB_NAIL_URL = @"http://images.travelnow.com";
+const float ROW_HEIGTH = 120;
 
 @interface MasterViewController ()
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
-
 @property NSArray* hotelListArray;
 
 @end
@@ -36,11 +36,13 @@ NSString* const THUMB_NAIL_URL = @"http://images.travelnow.com";
 // reload tableView with new hotels when new city is selected
 -(void)setCityName:(NSString *)cityName {
     HotelsInformation* hotelsInfo = [[HotelsInformation alloc] init];
-    self.hotelListArray = nil;
     self.navigationItem.title = cityName;
     [hotelsInfo getHotelsForCity:cityName handler:^(NSArray* hotels) {
         self.hotelListArray = hotels;
-        [self.tableView reloadData];
+    
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
     }];
 }
 
@@ -86,7 +88,7 @@ NSString* const THUMB_NAIL_URL = @"http://images.travelnow.com";
 }
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 120;
+    return ROW_HEIGTH;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -127,6 +129,9 @@ NSString* const THUMB_NAIL_URL = @"http://images.travelnow.com";
     [cell.hotelDescription setText:[currentHotel valueForKey:@"locationDescription"]];
     NSString* imageUrl = [THUMB_NAIL_URL stringByAppendingFormat:@"%@", [currentHotel valueForKey:@"thumbNailUrl"]];
     [cell.hotelImage loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:imageUrl]]];
+    NSUInteger hotelRating = [[currentHotel valueForKey:@"hotelRating"] integerValue]; // needed because some hotels have decimal rating (f. ex. 3.5)
+    NSString* hotelRatingImageName = [NSString stringWithFormat:@"iphone_star%d", hotelRating];
+    [cell.hotelRating setImage:[UIImage imageNamed:hotelRatingImageName]];
 }
 
 @end
