@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Friend" representedClassName="Friend" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="hotelsVisited" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HotelVisited" inverseName="friends" inverseEntity="HotelVisited" syncable="YES"/>
+        <relationship name="reservations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Reservation" inverseName="friends" inverseEntity="Reservation" syncable="YES"/>
+    </entity>
+    <entity name="HotelVisited" representedClassName="HotelVisited" syncable="YES">
+        <attribute name="hotelId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hotelName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hotelRate" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="photoPath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="friends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Friend" inverseName="hotelsVisited" inverseEntity="Friend" syncable="YES"/>
+    </entity>
+    <entity name="Reservation" representedClassName="Reservation">
+        <attribute name="days" optional="YES" attributeType="Integer 16" defaultValueString="0">
+            <userInfo/>
+        </attribute>
+        <attribute name="hotelId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hotelName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="friends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Friend" inverseName="reservations" inverseEntity="Friend" syncable="YES"/>
+        <userInfo/>
+    </entity>
+    <elements>
+        <element name="Friend" positionX="313" positionY="-1800" width="128" height="88"/>
+        <element name="HotelVisited" positionX="538" positionY="-2025" width="128" height="133"/>
+        <element name="Reservation" positionX="90" positionY="-2007" width="128" height="118"/>
+    </elements>
+</model>
