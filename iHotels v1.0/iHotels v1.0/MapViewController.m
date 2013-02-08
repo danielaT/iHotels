@@ -29,8 +29,6 @@
 @synthesize searchString = _searchString;
 
 
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -55,18 +53,13 @@
 //    [[self navigationController] setNavigationBarHidden:YES animated:YES];
     
     UIInterfaceOrientation orientation = [[UIDevice currentDevice] orientation];
-
     [self rearrangeViewsInOrientation:orientation];
-    
 }
-
 
 -(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
     [self rearrangeViewsInOrientation:toInterfaceOrientation];
 }
-
-
 
 -(void) rearrangeViewsInOrientation:(UIInterfaceOrientation) orientation
 {
