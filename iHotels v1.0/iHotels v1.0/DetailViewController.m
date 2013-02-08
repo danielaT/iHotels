@@ -1,5 +1,6 @@
-//
-// iuhuhutjh;tht
+
+// test merge dani
+
 //  DetailViewController.m
 //  iHotels v1.0
 //
@@ -14,12 +15,6 @@
 - (void)configureView;
 @end
 
-
-//
-//
-// I HATE GITHUB!!
-//
-//
 
 @implementation DetailViewController
 
@@ -76,8 +71,5 @@
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     self.masterPopoverController = nil;
 }
-
-
-// testov commit za merge :)))) ot dani :))
 
 @end
