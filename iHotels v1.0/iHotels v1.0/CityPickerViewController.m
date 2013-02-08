@@ -34,7 +34,7 @@ NSString* const BLANK_SPACE_REPLACEMENT = @"%20";
     
     // apply color theme methods
     [self applyiHotelsThemeWithPatternImageName:@"iphone_hotel_pattern"];
-    [self configureSubviews];
+    [self configureSubviewsWithPatternImageName:@"iphone_hotel_pattern"];
     
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
     
@@ -150,8 +150,9 @@ NSString* const BLANK_SPACE_REPLACEMENT = @"%20";
 {
     NSString* cityName = [self.availableCitiesArray objectAtIndex: indexPath.row];
     cell.textLabel.text = cityName;
-    cell.textLabel.font = [UIFont fontWithName:@"Baar Philos" size:18.0];
+    cell.textLabel.font = [UIFont fontWithName:@"Baar Philos" size:16.0];
     cell.textLabel.textColor = [UIColor colorWithHue:0.1417 saturation:0.21 brightness:0.9 alpha:1];
+    cell.backgroundColor = [UIColor colorWithHue:0.63 saturation:0.17 brightness:0.4 alpha:1];
 }
 
 -(void)viewWillDisappear:(BOOL)animated {

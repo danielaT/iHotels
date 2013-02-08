@@ -40,7 +40,7 @@
     // apply color theme methods
     [self applyiHotelsThemeWithPatternImageName:@"iphone_reservation_pattern"];
     [self configureNavigationBar];
-    [self configureSubviews];
+    [self configureSubviewsWithPatternImageName:@"iphone_reservation_pattern"];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -84,7 +84,9 @@
     Reservation *res = [reservations objectAtIndex:indexPath.row];
     //cell.detailTextLabel.text = [NSString stringWithFormat:@"%d",(int)res.days];
     cell.textLabel.text = res.hotelName;
-    cell.textLabel.font = [UIFont fontWithName:nil size:8];
+    cell.textLabel.font = [UIFont fontWithName:@"Baar Philos" size:16.0];
+    cell.textLabel.textColor = [UIColor colorWithHue:0.1417 saturation:0.21 brightness:0.9 alpha:1];
+    cell.backgroundColor = [UIColor colorWithHue:0.63 saturation:0.17 brightness:0.4 alpha:1];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.imageView.image = [UIImage imageNamed:@"car.jpg"];
     

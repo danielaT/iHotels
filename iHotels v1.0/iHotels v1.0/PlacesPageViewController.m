@@ -43,7 +43,7 @@
     // apply color theme methods
     // [self applyiHotelsThemeWithPatternImageName:@"iphone_places_pattern"];
     // [self configureNavigationBar];
-    [self configureSubviews];
+    [self configureSubviewsWithPatternImageName:@"iphone_places_pattern"];
 }
 
 - (void)didReceiveMemoryWarning

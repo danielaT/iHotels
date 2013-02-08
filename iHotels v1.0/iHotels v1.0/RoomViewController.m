@@ -27,7 +27,7 @@
     
     // apply color theme methods
     [self applyiHotelsThemeWithPatternImageName:@"iphone_hotel_pattern"];
-    [self configureSubviews];
+    [self configureSubviewsWithPatternImageName:@"iphone_hotel_pattern"];
     
     self.roomAmenitiesTableView.delegate = self;
     self.roomAmenitiesTableView.dataSource = self;
@@ -54,6 +54,9 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     NSArray* roomAmenities = [[[HotelsInformation alloc] init] getRoomAmenitiesForRoom:self.roomDictionary];
     cell.textLabel.text = [[roomAmenities objectAtIndex:indexPath.row] valueForKey:@"amenity"];
+    cell.textLabel.font = [UIFont fontWithName:@"Baar Philos" size:16.0];
+    cell.textLabel.textColor = [UIColor colorWithHue:0.1417 saturation:0.21 brightness:0.9 alpha:1];
+    cell.backgroundColor = [UIColor colorWithHue:0.63 saturation:0.17 brightness:0.4 alpha:1];
     return cell;
 }
 

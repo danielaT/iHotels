@@ -11,7 +11,7 @@
 @interface UIViewController (iHotelsColorTheme)
 
 -(void)applyiHotelsThemeWithPatternImageName:(NSString*)patternImageName;
--(void)configureSubviews;
+-(void)configureSubviewsWithPatternImageName:(NSString*)patternImageName;
 -(void)configureNavigationBar;
 
 @end

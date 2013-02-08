@@ -31,7 +31,7 @@ NSString* const SHOW_ROOM_SEGUE = @"ShowRoom";
     // apply color theme methods
     [self applyiHotelsThemeWithPatternImageName:@"iphone_hotel_pattern"];
     [self configureNavigationBar];
-    [self configureSubviews];
+    [self configureSubviewsWithPatternImageName:@"iphone_hotel_pattern"];
 }
 
 #pragma mark - Table view data source
@@ -52,6 +52,9 @@ NSString* const SHOW_ROOM_SEGUE = @"ShowRoom";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     cell.textLabel.text = [[self.roomTypes objectAtIndex:indexPath.row] valueForKey:@"description"];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.textLabel.font = [UIFont fontWithName:@"Baar Philos" size:16.0];
+    cell.textLabel.textColor = [UIColor colorWithHue:0.1417 saturation:0.21 brightness:0.9 alpha:1];
+    cell.backgroundColor = [UIColor colorWithHue:0.63 saturation:0.17 brightness:0.4 alpha:1];
     return cell;
 }
 

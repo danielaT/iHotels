@@ -12,6 +12,8 @@
 		5B3B18C016C4ED1D004C29A9 /* twitter_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B3B18BC16C4ED1D004C29A9 /* twitter_logo.png */; };
 		5B3B18C116C4ED1D004C29A9 /* twitter_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B3B18BD16C4ED1D004C29A9 /* twitter_logo@2x.png */; };
 		5B3B18C916C4F26B004C29A9 /* HotelVisited.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B18C816C4F26B004C29A9 /* HotelVisited.m */; };
+		5B46CFA516C5830A000643E5 /* iphone_map_bulgaria.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B46CFA316C5830A000643E5 /* iphone_map_bulgaria.png */; };
+		5B46CFA616C5830A000643E5 /* iphone_map_bulgaria@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B46CFA416C5830A000643E5 /* iphone_map_bulgaria@2x.png */; };
 		5BAC679116C108A8005637D9 /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAC679016C108A8005637D9 /* PlaceViewController.m */; };
 		5BAC679416C108EF005637D9 /* PlacesPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAC679316C108EF005637D9 /* PlacesPageViewController.m */; };
 		5BCF413716C2EF99002C9CA3 /* iphone_ihotels_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF413516C2EF99002C9CA3 /* iphone_ihotels_icon.png */; };
@@ -56,8 +58,6 @@
 		5BE1AFAE16C1AFEE00A57D93 /* iphone_star5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE1AFA416C1AFEE00A57D93 /* iphone_star5@2x.png */; };
 		5BE1AFB116C1B51A00A57D93 /* iphone_empty_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE1AFAF16C1B51900A57D93 /* iphone_empty_photo.png */; };
 		5BE1AFB216C1B51A00A57D93 /* iphone_empty_photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE1AFB016C1B51900A57D93 /* iphone_empty_photo@2x.png */; };
-		5BEF076716BD3289005F7990 /* map_bulgaria@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BEF076416BD3289005F7990 /* map_bulgaria@2x.png */; };
-		5BEF076816BD3289005F7990 /* map_bulgaria.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BEF076516BD3289005F7990 /* map_bulgaria.png */; };
 		5BEF076916BD3289005F7990 /* map_control.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BEF076616BD3289005F7990 /* map_control.png */; };
 		5BEF076C16BD3322005F7990 /* RegionsAndCities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BEF076B16BD3322005F7990 /* RegionsAndCities.plist */; };
 		5BEF076F16BD335D005F7990 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BEF076E16BD335D005F7990 /* MapViewController.m */; };
@@ -124,6 +124,8 @@
 		5B3B18BD16C4ED1D004C29A9 /* twitter_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter_logo@2x.png"; sourceTree = "<group>"; };
 		5B3B18C716C4F26B004C29A9 /* HotelVisited.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelVisited.h; sourceTree = "<group>"; };
 		5B3B18C816C4F26B004C29A9 /* HotelVisited.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelVisited.m; sourceTree = "<group>"; };
+		5B46CFA316C5830A000643E5 /* iphone_map_bulgaria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_map_bulgaria.png; sourceTree = "<group>"; };
+		5B46CFA416C5830A000643E5 /* iphone_map_bulgaria@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone_map_bulgaria@2x.png"; sourceTree = "<group>"; };
 		5BAC678F16C108A8005637D9 /* PlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceViewController.h; sourceTree = "<group>"; };
 		5BAC679016C108A8005637D9 /* PlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceViewController.m; sourceTree = "<group>"; };
 		5BAC679216C108EF005637D9 /* PlacesPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesPageViewController.h; sourceTree = "<group>"; };
@@ -171,8 +173,6 @@
 		5BE1AFA416C1AFEE00A57D93 /* iphone_star5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone_star5@2x.png"; sourceTree = "<group>"; };
 		5BE1AFAF16C1B51900A57D93 /* iphone_empty_photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_empty_photo.png; sourceTree = "<group>"; };
 		5BE1AFB016C1B51900A57D93 /* iphone_empty_photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone_empty_photo@2x.png"; sourceTree = "<group>"; };
-		5BEF076416BD3289005F7990 /* map_bulgaria@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_bulgaria@2x.png"; sourceTree = "<group>"; };
-		5BEF076516BD3289005F7990 /* map_bulgaria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_bulgaria.png; sourceTree = "<group>"; };
 		5BEF076616BD3289005F7990 /* map_control.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_control.png; sourceTree = "<group>"; };
 		5BEF076B16BD3322005F7990 /* RegionsAndCities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RegionsAndCities.plist; sourceTree = "<group>"; };
 		5BEF076D16BD335D005F7990 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -375,8 +375,8 @@
 				5BE1AFA416C1AFEE00A57D93 /* iphone_star5@2x.png */,
 				5BCF414F16C2F0AF002C9CA3 /* iphone_tabbar.png */,
 				5BCF414E16C2F0AF002C9CA3 /* iphone_tabbar@2x.png */,
-				5BEF076516BD3289005F7990 /* map_bulgaria.png */,
-				5BEF076416BD3289005F7990 /* map_bulgaria@2x.png */,
+				5B46CFA316C5830A000643E5 /* iphone_map_bulgaria.png */,
+				5B46CFA416C5830A000643E5 /* iphone_map_bulgaria@2x.png */,
 			);
 			name = iPhone;
 			sourceTree = "<group>";
@@ -571,8 +571,6 @@
 				F9989EF916B9A9280015A5C9 /* MainStoryboard_iPhone.storyboard in Resources */,
 				F9989EFC16B9A9280015A5C9 /* MainStoryboard_iPad.storyboard in Resources */,
 				F9957B0316BCA2C200CC06A2 /* maps_icon.png in Resources */,
-				5BEF076716BD3289005F7990 /* map_bulgaria@2x.png in Resources */,
-				5BEF076816BD3289005F7990 /* map_bulgaria.png in Resources */,
 				5BEF076916BD3289005F7990 /* map_control.png in Resources */,
 				5BEF076C16BD3322005F7990 /* RegionsAndCities.plist in Resources */,
 				FD8FB84316BE78C5003B81D0 /* pic.jpg in Resources */,
@@ -627,6 +625,8 @@
 				5B3B18BF16C4ED1D004C29A9 /* facebook_logo@2x.png in Resources */,
 				5B3B18C016C4ED1D004C29A9 /* twitter_logo.png in Resources */,
 				5B3B18C116C4ED1D004C29A9 /* twitter_logo@2x.png in Resources */,
+				5B46CFA516C5830A000643E5 /* iphone_map_bulgaria.png in Resources */,
+				5B46CFA616C5830A000643E5 /* iphone_map_bulgaria@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

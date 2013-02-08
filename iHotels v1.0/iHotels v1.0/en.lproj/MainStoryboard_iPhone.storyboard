@@ -404,7 +404,7 @@
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HotelCell" rowHeight="120" id="lJ0-d7-vTF" customClass="HotelTableViewCell">
-                                <rect key="frame" x="0.0" y="46" width="320" height="121"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="122"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="119"/>
@@ -414,6 +414,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="CJS-2L-idR"/>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="260" type="user" id="XTs-Dg-gxf"/>
+                                                <constraint firstAttribute="width" constant="264" id="qRc-Ni-oGD"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="16"/>
                                             <color key="textColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -421,7 +422,6 @@
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="hotelDescription" translatesAutoresizingMaskIntoConstraints="NO" id="Rth-oi-eGM">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="180" type="user" id="0EG-al-4Zs"/>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="500" constant="180" type="user" id="KF3-lA-SFK"/>
                                                 <constraint firstAttribute="height" constant="50" id="aRJ-Mr-fxs"/>
                                             </constraints>
@@ -447,14 +447,15 @@
                                 </view>
                                 <color key="backgroundColor" red="0.2273763567" green="0.2450556904" blue="0.32558700439999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="T0x-SB-KLD" firstAttribute="leading" secondItem="26c-Jb-9ak" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="0TI-Jb-n09"/>
                                     <constraint firstItem="gQR-mQ-TLL" firstAttribute="top" secondItem="lJ0-d7-vTF" secondAttribute="top" constant="8" id="1LJ-5w-FEC"/>
-                                    <constraint firstItem="Rth-oi-eGM" firstAttribute="top" secondItem="lJ0-d7-vTF" secondAttribute="top" constant="56" id="2RX-xA-WLW"/>
-                                    <constraint firstItem="T0x-SB-KLD" firstAttribute="centerX" secondItem="gQR-mQ-TLL" secondAttribute="centerX" type="default" id="BD5-ci-WQz"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rth-oi-eGM" secondAttribute="trailing" constant="30" type="user" id="Ml3-FI-YY3"/>
                                     <constraint firstItem="26c-Jb-9ak" firstAttribute="top" secondItem="lJ0-d7-vTF" secondAttribute="top" constant="30" id="P5C-iF-RXF"/>
-                                    <constraint firstItem="26c-Jb-9ak" firstAttribute="leading" secondItem="lJ0-d7-vTF" secondAttribute="leading" constant="30" type="user" id="bGI-Fx-ajY"/>
+                                    <constraint firstAttribute="centerX" secondItem="T0x-SB-KLD" secondAttribute="centerX" type="user" id="YMS-Oh-4d1"/>
                                     <constraint firstItem="Rth-oi-eGM" firstAttribute="leading" secondItem="26c-Jb-9ak" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="cgP-Rn-mPc"/>
                                     <constraint firstItem="T0x-SB-KLD" firstAttribute="top" secondItem="lJ0-d7-vTF" secondAttribute="top" constant="31" id="dBL-wu-dl8"/>
+                                    <constraint firstItem="Rth-oi-eGM" firstAttribute="top" secondItem="T0x-SB-KLD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="mNc-Lo-odO"/>
+                                    <constraint firstAttribute="centerX" secondItem="gQR-mQ-TLL" secondAttribute="centerX" type="user" id="tu2-wN-iW9"/>
+                                    <constraint firstItem="26c-Jb-9ak" firstAttribute="leading" secondItem="lJ0-d7-vTF" secondAttribute="leading" constant="30" type="user" id="xun-C3-UmA"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="hotelDescription" destination="Rth-oi-eGM" id="pCx-ky-Uzg"/>
@@ -653,7 +654,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.95294123890000004" green="0.96078437569999997" blue="0.85490202900000001" alpha="1" colorSpace="deviceRGB"/>
-                        <color key="separatorColor" red="0.094117656349999995" green="0.22352942819999999" blue="0.61176472900000001" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RoomType" id="3DN-dL-R0m">
                                 <rect key="frame" x="0.0" y="46" width="320" height="45"/>
@@ -683,17 +684,17 @@
         <scene sceneID="gaO-Mj-Lab">
             <objects>
                 <tableViewController storyboardIdentifier="PropertyAmenities" id="KvE-1c-vji" customClass="PropertyAmenitiesViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Iq1-Bj-l4r">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="grouped" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Iq1-Bj-l4r">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.95294123890000004" green="0.96078437569999997" blue="0.85490202900000001" alpha="1" colorSpace="deviceRGB"/>
-                        <color key="separatorColor" red="0.094117656349999995" green="0.22352942819999999" blue="0.61176472900000001" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleAspectFit" selectionStyle="blue" indentationWidth="10" reuseIdentifier="PropertyAmenity" id="myo-0j-bFV">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -718,15 +719,15 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7Ft-bQ-bD8">
-                                <color key="backgroundColor" red="0.95294123890000004" green="0.96078437569999997" blue="0.85490202900000001" alpha="1" colorSpace="deviceRGB"/>
-                                <color key="separatorColor" red="0.094117656349999995" green="0.22352942819999999" blue="0.61176472900000001" alpha="1" colorSpace="deviceRGB"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Ft-bQ-bD8">
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleAspectFit" selectionStyle="blue" indentationWidth="10" reuseIdentifier="RoomAmenity" id="atY-bI-GAe">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -1583,14 +1584,10 @@
         </class>
         <class className="ContactsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addContactsToReservation:"/>
-            </relationships>
         </class>
         <class className="DateViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DateViewController.h"/>
             <relationships>
-                <relationship kind="action" name="selectDate:"/>
                 <relationship kind="outlet" name="day" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="month" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="year" candidateClass="UITextField"/>
@@ -1653,8 +1650,6 @@
         <class className="MapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
-                <relationship kind="action" name="browseCitiesButtonTap:"/>
-                <relationship kind="action" name="searchButtonTap:"/>
                 <relationship kind="outlet" name="browseCitiesButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="mapImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="searchButton" candidateClass="UIButton"/>
@@ -1667,7 +1662,6 @@
         <class className="MyReservationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MyReservationViewController.h"/>
             <relationships>
-                <relationship kind="action" name="goToMap:"/>
                 <relationship kind="outlet" name="nameView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="reservationDate" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="reservationDays" candidateClass="UILabel"/>
@@ -1700,9 +1694,6 @@
         <class className="ReservationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ReservationViewController.h"/>
             <relationships>
-                <relationship kind="action" name="makeReservation:"/>
-                <relationship kind="action" name="phoneFriends:"/>
-                <relationship kind="action" name="pickFriendsButtonClick:"/>
                 <relationship kind="outlet" name="date" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="days" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="hotelCity" candidateClass="UILabel"/>
@@ -1727,9 +1718,6 @@
         <class className="SocialViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialViewController.h"/>
             <relationships>
-                <relationship kind="action" name="postInFacebook:"/>
-                <relationship kind="action" name="postInTwitter:"/>
-                <relationship kind="action" name="segmentedSwitch:"/>
                 <relationship kind="outlet" name="facebookPost" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="loginLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="profilePhoto" candidateClass="FBProfilePictureView"/>
@@ -1749,9 +1737,6 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
         <class className="VisitedPlacesTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VisitedPlacesTableViewController.h"/>

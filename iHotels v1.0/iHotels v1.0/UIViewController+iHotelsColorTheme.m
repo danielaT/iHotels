@@ -15,7 +15,7 @@ NSString* const HEAVY_FONT = @"BaarPhilosBold";
 
 -(void)applyiHotelsThemeWithPatternImageName:(NSString*)patternImageName
 {
-    UIImage* pattern = [[UIImage imageNamed:patternImageName]resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeTile];
+    UIImage* pattern = [[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:patternImageName ofType:@"png"]]resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeTile];
     
     // view controller background
     self.view.backgroundColor = [UIColor colorWithPatternImage:pattern];
@@ -37,7 +37,7 @@ NSString* const HEAVY_FONT = @"BaarPhilosBold";
     UIColor* const DARK_COLOR = [UIColor colorWithHue:0.63 saturation:0.17 brightness:0.4 alpha:1];
     
     // navigation bar background and text style
-    UIImage *image = [[UIImage imageNamed:@"iphone_navbar"] resizableImageWithCapInsets:UIEdgeInsetsZero];
+    UIImage *image = [[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"iphone_navbar" ofType:@"png"]] resizableImageWithCapInsets:UIEdgeInsetsZero];
     [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.tintColor = DARK_COLOR;
     
@@ -51,7 +51,7 @@ NSString* const HEAVY_FONT = @"BaarPhilosBold";
     self.navigationController.navigationBar.tintColor = DARK_COLOR;
 }
 
--(void)configureSubviews
+-(void)configureSubviewsWithPatternImageName:(NSString*) patternImageName
 {
     // some constant colors
     UIColor* const VERY_LIGHT_COLOR = [UIColor colorWithHue:0.1417 saturation:0.21 brightness:0.9 alpha:1];
@@ -63,7 +63,7 @@ NSString* const HEAVY_FONT = @"BaarPhilosBold";
         // standard buttons
         if ([view class] == [UIButton class]) {
             UIButton* button = (UIButton*)view;
-            [button setBackgroundImage:[[UIImage imageNamed:@"iphone_button"]resizableImageWithCapInsets:UIEdgeInsetsMake(5, 5, 5, 5) resizingMode:UIImageResizingModeStretch] forState:UIControlStateNormal];
+            [button setBackgroundImage:[[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"iphone_button" ofType:@"png"]]resizableImageWithCapInsets:UIEdgeInsetsMake(5, 5, 5, 5) resizingMode:UIImageResizingModeStretch] forState:UIControlStateNormal];
             
             button.titleLabel.font = [UIFont fontWithName:HEAVY_FONT size:16];
             button.titleLabel.textColor = LIGHT_COLOR;
@@ -96,7 +96,8 @@ NSString* const HEAVY_FONT = @"BaarPhilosBold";
         else if ([view class] == [UITableView class])
         {
             UITableView* tableView = (UITableView*)view;
-            UIImageView* background = [[UIImageView alloc]initWithImage:[[UIImage imageNamed:@"iphone_navbarbutton"]resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0) resizingMode:UIImageResizingModeTile]];
+            UIImage* pattern = [[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:patternImageName ofType:@"png"]]resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeTile];
+            UIImageView* background = [[UIImageView alloc]initWithImage:pattern];
             tableView.backgroundView = background;
         }
     }

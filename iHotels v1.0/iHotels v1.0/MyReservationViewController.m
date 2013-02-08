@@ -59,7 +59,7 @@
 
     // apply color theme methods
     [self applyiHotelsThemeWithPatternImageName:@"iphone_reservation_pattern"];
-    [self configureSubviews];
+    [self configureSubviewsWithPatternImageName:@"iphone_reservation_pattern"];
 }
 - (IBAction)goToMap:(id)sender
 {

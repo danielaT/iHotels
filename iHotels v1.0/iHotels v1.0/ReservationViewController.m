@@ -51,7 +51,7 @@
     [self.selectedFriendsView setText:@"Friends:"];
     
     NSString* imageName = [NSString stringWithFormat:@"iphone_star%d", [self.hotelRating intValue]];
-    self.starImage.image = [UIImage imageNamed:imageName];
+    self.starImage.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageName ofType:@"png"]];
     
     
     UITapGestureRecognizer *dateTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleChooseDate:)];
@@ -60,7 +60,7 @@
     // apply color theme methods
     [self applyiHotelsThemeWithPatternImageName:@"iphone_hotel_pattern"];
     [self configureNavigationBar];
-    [self configureSubviews];
+    [self configureSubviewsWithPatternImageName:@"iphone_hotel_pattern"];
 }
 
 - (void)handleChooseDate:(UIGestureRecognizer *)gestureRecognizer

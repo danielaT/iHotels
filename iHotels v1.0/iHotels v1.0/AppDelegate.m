@@ -50,7 +50,7 @@
     UITabBarController  * controller = (UITabBarController*)self.window.rootViewController;
     if ([controller.tabBar respondsToSelector:@selector(setBackgroundImage:)] )
     {
-        UIImage *image = [[UIImage imageNamed:@"iphone_tabbar"] resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeStretch];
+        UIImage *image = [[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"iphone_tabbar" ofType:@"png"]] resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeStretch];
         
         [controller.tabBar setBackgroundImage :image];
         [[UITabBar appearance] setSelectedImageTintColor:[UIColor colorWithHue:0.1417 saturation:10 brightness:60 alpha:0.5]];

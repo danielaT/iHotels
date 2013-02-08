@@ -34,7 +34,7 @@
     [super viewDidLoad];
     self.title = @"Cities&Hotels";
     
-    self.mapImageView.image = [UIImage imageNamed:@"map_bulgaria"];
+    self.mapImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"iphone_map_bulgaria" ofType:@"png"]];
        
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapOnImage:)];
     tap.numberOfTapsRequired = 1;
@@ -44,7 +44,7 @@
     // apply color theme methods
     [self applyiHotelsThemeWithPatternImageName:@"iphone_hotel_pattern"];
     [self configureNavigationBar];
-    [self configureSubviews];
+    [self configureSubviewsWithPatternImageName:@"iphone_hotel_pattern"];
 }
 
 

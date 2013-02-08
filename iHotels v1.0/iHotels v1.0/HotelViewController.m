@@ -71,7 +71,7 @@ typedef enum {
     
     // apply color theme methods
     [self applyiHotelsThemeWithPatternImageName:@"iphone_hotel_pattern"];
-    [self configureSubviews];
+    [self configureSubviewsWithPatternImageName:@"iphone_hotel_pattern"];
     
 	hotelInfo = [[HotelsInformation alloc] init];
     self.hotelIdLoaded = self.hotelId;
@@ -91,7 +91,8 @@ typedef enum {
     
     NSUInteger hotelRating = [[hotelSummary valueForKey:@"hotelRating"] integerValue]; // needed because some hotels have decimal rating (f. ex. 3.5)
     NSString* hotelRatingImageName = [NSString stringWithFormat:@"iphone_star%d", hotelRating];
-    self.ratingImage.image = [UIImage imageNamed:hotelRatingImageName];
+    
+    self.ratingImage.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:hotelRatingImageName ofType:@"png"]];
 }
 
 -(int)numberOfSectionsInTableView:(UITableView *)tableView {

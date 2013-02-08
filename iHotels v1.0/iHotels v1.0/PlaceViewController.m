@@ -54,8 +54,9 @@
     self.dateLabel.text = [dateFormatter stringFromDate: self.hotel.startDate];
     
     // set the star number image
+    
     NSString* imageName = [NSString stringWithFormat:@"iphone_star%d", [self.hotel.hotelRate integerValue]];
-    self.ratingImageView.image = [UIImage imageNamed:imageName];
+    self.ratingImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageName ofType:@"png"]];
     
     // set the image from this place, if there is one
     if (self.hotel.photoPath == nil) {
@@ -74,7 +75,7 @@
 
     // apply color theme methods
     [self applyiHotelsThemeWithPatternImageName:@"iphone_places_pattern"];
-    [self configureSubviews];
+    [self configureSubviewsWithPatternImageName:@"iphone_places_pattern"];
 }
 
 

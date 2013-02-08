@@ -66,7 +66,7 @@ const float ROW_HEIGTH = 120;
     
     // apply color theme methods
     [self applyiHotelsThemeWithPatternImageName:@"iphone_hotel_pattern"];
-    [self configureSubviews];
+    [self configureSubviewsWithPatternImageName:@"iphone_hotel_pattern"];
     
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     self.hotelListArray = [[NSMutableArray alloc] init];
@@ -130,12 +130,21 @@ const float ROW_HEIGTH = 120;
 {
     NSDictionary* currentHotel = [self.hotelListArray objectAtIndex:indexPath.row];
     [cell.hotelName setText:[currentHotel valueForKey:@"name"]];
-    [cell.hotelDescription setText:[currentHotel valueForKey:@"locationDescription"]];
+    if ([[currentHotel valueForKey:@"locationDescription"] isEqualToString:@""]) {
+        [cell.hotelDescription setText:@"Description for this hotel not found."];
+    } else {
+        [cell.hotelDescription setText:[currentHotel valueForKey:@"locationDescription"]];
+    }
+    
     NSString* imageUrl = [THUMB_NAIL_URL stringByAppendingFormat:@"%@", [currentHotel valueForKey:@"thumbNailUrl"]];
     [cell.hotelImage loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:imageUrl]]];
+    
     NSUInteger hotelRating = [[currentHotel valueForKey:@"hotelRating"] integerValue]; // needed because some hotels have decimal rating (f. ex. 3.5)
     NSString* hotelRatingImageName = [NSString stringWithFormat:@"iphone_star%d", hotelRating];
-    [cell.hotelRating setImage:[UIImage imageNamed:hotelRatingImageName]];
+    [cell.hotelRating setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:hotelRatingImageName ofType:@"png"]]];
+    
+    cell.hotelDescription.font = [UIFont fontWithName:@"Baar Philos" size:12];
+    cell.hotelName.font = [UIFont fontWithName:@"BaarPhilosBold" size:16];
 }
 
 @end

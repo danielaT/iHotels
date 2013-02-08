@@ -51,7 +51,7 @@
     
     // apply color theme methods
     [self applyiHotelsThemeWithPatternImageName:@"iphone_social_pattern"];
-    [self configureSubviews];
+    [self configureSubviewsWithPatternImageName:@"iphone_social_pattern"];
     [self configureNavigationBar];
 }
 
