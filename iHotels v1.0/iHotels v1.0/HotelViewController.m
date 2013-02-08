@@ -126,6 +126,9 @@ typedef enum {
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSIndexPath *selectedIndexPath = [self.hotelMenuTableView indexPathForSelectedRow];
+    [self.hotelMenuTableView deselectRowAtIndexPath:selectedIndexPath animated:NO];
+    
     switch ([segue.identifier intValue]) {
         case HotelDescription: {
             HotelDescriptionViewController* hotelDecription = (HotelDescriptionViewController*)segue.destinationViewController;

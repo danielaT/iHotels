@@ -154,4 +154,10 @@ NSString* const BLANK_SPACE_REPLACEMENT = @"%20";
     cell.textLabel.textColor = [UIColor colorWithHue:0.1417 saturation:0.21 brightness:0.9 alpha:1];
 }
 
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+    [self.tableView deselectRowAtIndexPath:selectedIndexPath animated:NO];
+}
+
 @end
