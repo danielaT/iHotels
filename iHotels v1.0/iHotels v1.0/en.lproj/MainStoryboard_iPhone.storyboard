@@ -404,7 +404,7 @@
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HotelCell" rowHeight="120" id="lJ0-d7-vTF" customClass="HotelTableViewCell">
-                                <rect key="frame" x="0.0" y="46" width="320" height="121"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="122"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="119"/>
@@ -412,7 +412,8 @@
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQR-mQ-TLL">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="179" id="vFO-3T-yGY"/>
+                                                <constraint firstAttribute="height" constant="20" id="CJS-2L-idR"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="260" type="user" id="XTs-Dg-gxf"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="16"/>
                                             <color key="textColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -420,7 +421,9 @@
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="hotelDescription" translatesAutoresizingMaskIntoConstraints="NO" id="Rth-oi-eGM">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="170" id="KF3-lA-SFK"/>
+                                                <constraint firstAttribute="width" constant="180" type="user" id="0EG-al-4Zs"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="500" constant="180" type="user" id="KF3-lA-SFK"/>
+                                                <constraint firstAttribute="height" constant="50" id="aRJ-Mr-fxs"/>
                                             </constraints>
                                             <color key="textColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
@@ -428,15 +431,15 @@
                                         </textView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T0x-SB-KLD">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="6sr-HL-86q"/>
+                                                <constraint firstAttribute="width" constant="100" type="user" id="P0Y-us-kSp"/>
                                                 <constraint firstAttribute="height" constant="20" id="mu8-4f-Eaj"/>
                                             </constraints>
                                         </imageView>
                                         <webView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="26c-Jb-9ak">
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="70" id="WWj-fJ-D4x"/>
-                                                <constraint firstAttribute="width" constant="70" id="rdi-CO-17L"/>
+                                                <constraint firstAttribute="height" constant="70" type="user" id="5f6-MQ-Ffq"/>
+                                                <constraint firstAttribute="width" constant="70" type="user" id="rdi-CO-17L"/>
                                             </constraints>
                                         </webView>
                                     </subviews>
@@ -444,16 +447,14 @@
                                 </view>
                                 <color key="backgroundColor" red="0.2273763567" green="0.2450556904" blue="0.32558700439999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="gQR-mQ-TLL" firstAttribute="leading" secondItem="lJ0-d7-vTF" secondAttribute="leading" constant="100" id="1Vz-6G-Occ"/>
-                                    <constraint firstItem="26c-Jb-9ak" firstAttribute="top" secondItem="lJ0-d7-vTF" secondAttribute="top" constant="30" id="4Sc-bi-aRW"/>
-                                    <constraint firstItem="26c-Jb-9ak" firstAttribute="top" secondItem="Rth-oi-eGM" secondAttribute="top" type="default" id="COV-on-ba2"/>
-                                    <constraint firstItem="Rth-oi-eGM" firstAttribute="leading" secondItem="lJ0-d7-vTF" secondAttribute="leading" constant="120" id="Ekg-fV-k2Y"/>
-                                    <constraint firstItem="T0x-SB-KLD" firstAttribute="centerY" secondItem="gQR-mQ-TLL" secondAttribute="centerY" type="default" id="MQT-Db-hNp"/>
-                                    <constraint firstItem="T0x-SB-KLD" firstAttribute="top" secondItem="gQR-mQ-TLL" secondAttribute="top" type="default" id="PI4-2X-jXP"/>
-                                    <constraint firstItem="T0x-SB-KLD" firstAttribute="leading" secondItem="26c-Jb-9ak" secondAttribute="leading" type="default" id="QCn-08-K2j"/>
-                                    <constraint firstItem="26c-Jb-9ak" firstAttribute="bottom" secondItem="Rth-oi-eGM" secondAttribute="bottom" type="default" id="fMK-5V-DWw"/>
-                                    <constraint firstItem="T0x-SB-KLD" firstAttribute="top" secondItem="lJ0-d7-vTF" secondAttribute="top" constant="8" id="i2H-zS-nso"/>
-                                    <constraint firstItem="T0x-SB-KLD" firstAttribute="leading" secondItem="lJ0-d7-vTF" secondAttribute="leading" constant="30" id="tLR-Cc-cp7"/>
+                                    <constraint firstItem="T0x-SB-KLD" firstAttribute="leading" secondItem="26c-Jb-9ak" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="0TI-Jb-n09"/>
+                                    <constraint firstItem="gQR-mQ-TLL" firstAttribute="top" secondItem="lJ0-d7-vTF" secondAttribute="top" constant="8" id="1LJ-5w-FEC"/>
+                                    <constraint firstItem="Rth-oi-eGM" firstAttribute="top" secondItem="lJ0-d7-vTF" secondAttribute="top" constant="56" id="2RX-xA-WLW"/>
+                                    <constraint firstItem="T0x-SB-KLD" firstAttribute="centerX" secondItem="gQR-mQ-TLL" secondAttribute="centerX" type="default" id="BD5-ci-WQz"/>
+                                    <constraint firstItem="26c-Jb-9ak" firstAttribute="top" secondItem="lJ0-d7-vTF" secondAttribute="top" constant="30" id="P5C-iF-RXF"/>
+                                    <constraint firstItem="26c-Jb-9ak" firstAttribute="leading" secondItem="lJ0-d7-vTF" secondAttribute="leading" constant="30" type="user" id="bGI-Fx-ajY"/>
+                                    <constraint firstItem="Rth-oi-eGM" firstAttribute="leading" secondItem="26c-Jb-9ak" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="cgP-Rn-mPc"/>
+                                    <constraint firstItem="T0x-SB-KLD" firstAttribute="top" secondItem="lJ0-d7-vTF" secondAttribute="top" constant="31" id="dBL-wu-dl8"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="hotelDescription" destination="Rth-oi-eGM" id="pCx-ky-Uzg"/>
@@ -655,7 +656,7 @@
                         <color key="separatorColor" red="0.094117656349999995" green="0.22352942819999999" blue="0.61176472900000001" alpha="1" colorSpace="deviceRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RoomType" id="3DN-dL-R0m">
-                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="280" height="43"/>
