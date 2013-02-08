@@ -10,6 +10,9 @@
 #import "MasterViewController.h"
 #import "UIViewController+iHotelsColorTheme.h"
 
+NSString* const BLANK_SPACE = @" ";
+NSString* const BLANK_SPACE_REPLACEMENT = @"%02";
+
 @interface CityPickerViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -52,7 +55,7 @@
     {
         [self getCitiesInRegionFromPlist:regionsAndCities];
     }
-
+    
 }
 
 -(void) searchCitiesInPlist:(NSDictionary*)plist thatMatchSearchString:(NSString*) string
@@ -75,7 +78,7 @@
             if (!(range.location == NSNotFound) || ([string isEqualToString:@""]))
             {
                 [citiesArray addObject:[citiesInRegion objectAtIndex:i]];
-            }       
+            }
         }
     }
     // Sort the citiesArray and place the result in the availableCitiesArray, which fills the tableview later.
@@ -97,7 +100,7 @@
     
     // set the region name as title
     self.title = [NSString stringWithFormat:@"%@ Region", self.selectedRegionName];
-
+    
 }
 
 
@@ -111,7 +114,6 @@
                                  }];
 }
 
-
 -(void) setRegion:(NSString*)regionName
 {
     self.selectedRegionName = regionName;
@@ -123,14 +125,13 @@
     self.selectedSearchString = searchString;
 }
 
-
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"toHotelListSegue"]) {
         NSIndexPath *selectedRowIndexPath = [self.tableView indexPathForSelectedRow];
         MasterViewController *hotelListController = (MasterViewController*) segue.destinationViewController;
-        [hotelListController setCityName: [self.availableCitiesArray objectAtIndex:selectedRowIndexPath.row]];
+        [[self.availableCitiesArray objectAtIndex:selectedRowIndexPath.row] stringByReplacingOccurrencesOfString:BLANK_SPACE withString:BLANK_SPACE_REPLACEMENT];
+        [hotelListController setCityName: [[self.availableCitiesArray objectAtIndex:selectedRowIndexPath.row] stringByReplacingOccurrencesOfString:BLANK_SPACE withString:BLANK_SPACE_REPLACEMENT]];
     }
 }
 
@@ -140,7 +141,6 @@
 {
     return 1;
 }
-
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
