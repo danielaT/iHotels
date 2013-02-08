@@ -48,6 +48,9 @@ const float ROW_HEIGTH = 120;
 }
 
 -(NSString*)cityName {
+    if ([_cityName isEqualToString:@" "]) {
+        return @"";
+    }
     return [_cityName stringByReplacingOccurrencesOfString:@"%20" withString:@" "];
 }
 

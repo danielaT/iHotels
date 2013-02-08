@@ -81,7 +81,7 @@ NSString* const HEAVY_FONT = @"BaarPhilosBold";
         {
             UITextView *textView = (UITextView*)view;
             [textView setFont: [UIFont fontWithName:LIGHT_FONT size:14]];
-            [textView setBackgroundColor:VERY_LIGHT_COLOR];
+            [textView setBackgroundColor:[UIColor clearColor]];
             [textView setTextColor:DARK_COLOR];
         }
         // labels

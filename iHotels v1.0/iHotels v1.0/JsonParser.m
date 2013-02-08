@@ -19,7 +19,6 @@ NSString* const HOTEL_INFO_URL = @"http://api.ean.com/ean-services/rs/hotel/v3/i
     
     NSString* stringAppendedWithCityName = [HOTEL_LIST_REQUEST_URL stringByAppendingFormat:@"%@", cityName];
     NSURL* urlForRequest = [NSURL URLWithString:stringAppendedWithCityName];
-    
     [[[ConnectionStore alloc] init] getDataForConnectionWithURL:urlForRequest handler:^(NSData* data) {
         NSError* error;
         ch([NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error]);

@@ -72,13 +72,13 @@ const int HOTELS_DICTIONARY_CAPACITY = 3;
     NSDictionary* hotelListResponseDictionary = [hotelsInCurrentCityDictionary objectForKey:HOTEL_LIST_RESPONSE];
     NSDictionary* hotelListDictionary = [hotelListResponseDictionary objectForKey:HOTEL_LIST];
     
-    // if there is just one hotel in the selected city 
+    // if there is just one hotel in the selected city
     if ([[[hotelListDictionary objectForKey:HOTEL_SUMMARY] class] isSubclassOfClass:[NSDictionary class]]) {
         [self.hotelsInCities setValue:[[NSArray alloc] initWithObjects:[hotelListDictionary objectForKey:HOTEL_SUMMARY], nil] forKey:name];
         self.callback([self.hotelsInCities objectForKey:name]);
     }
     else {
-         self.callback([hotelListDictionary objectForKey:HOTEL_SUMMARY]);
+        self.callback([hotelListDictionary objectForKey:HOTEL_SUMMARY]);
     }
 }
 
@@ -157,7 +157,10 @@ const int HOTELS_DICTIONARY_CAPACITY = 3;
 
 -(NSArray*) getRoomTypesForHotel:(NSDictionary*)hotel {
     NSDictionary* roomTypes = [hotel valueForKey:ROOM_TYPES];
-    return [roomTypes valueForKey:ROOM_TYPE];
+    if (![[[roomTypes valueForKey:ROOM_TYPE] class] isSubclassOfClass:[NSDictionary class]]) {
+        return [roomTypes valueForKey:ROOM_TYPE];
+    }
+    return [[NSArray alloc] init];
 }
 
 -(NSDictionary*) getRoomAtIndex:(int)index fromRooms:(NSArray*)rooms {
@@ -165,11 +168,18 @@ const int HOTELS_DICTIONARY_CAPACITY = 3;
 }
 
 -(NSArray*) getRoomAmenitiesForRoom:(NSDictionary*)room {
-    return [[room valueForKey:@"roomAmenities"] valueForKey:ROOM_AMENITY];
+    
+    if (![[[[room valueForKey:@"roomAmenities"] valueForKey:ROOM_AMENITY] class] isSubclassOfClass:[NSDictionary class]]) {
+        return [[room valueForKey:@"roomAmenities"] valueForKey:ROOM_AMENITY];
+    }
+    return [[NSArray alloc] init];
 }
 
 -(NSArray*) getPropertyAmenitiesForHotel:(NSDictionary*)hotel {
-    return [[hotel valueForKey:PROPERTY_AMENITIES] valueForKey:PROPERTY_AMENITY];
+    if (![[[[hotel valueForKey:PROPERTY_AMENITIES] valueForKey:PROPERTY_AMENITY] class] isSubclassOfClass:[NSDictionary class]]) {
+        return [[hotel valueForKey:PROPERTY_AMENITIES] valueForKey:PROPERTY_AMENITY];
+    }
+    return [[NSArray alloc] init];
 }
 
 @end

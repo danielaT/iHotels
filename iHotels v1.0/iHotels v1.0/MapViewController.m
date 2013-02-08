@@ -198,16 +198,14 @@
     }
 }
 
-
 - (IBAction)searchButtonTap:(id)sender {
     self.selectedRegion = nil;
-    if (![self.searchTextField.text isEqualToString:@""]) {
+    NSString *trimmedString = [self.searchTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    if ([trimmedString length] > 0) {
         self.searchString = self.searchTextField.text;
         [self performSegueWithIdentifier:@"toCityListSegue" sender:self];
     }
-    
 }
-
 
 - (IBAction)browseCitiesButtonTap:(id)sender {
     self.selectedRegion = nil;
