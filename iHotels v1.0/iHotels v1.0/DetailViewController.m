@@ -1,6 +1,7 @@
 
 // test merge dani
 //test
+//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 //  DetailViewController.m
 //  iHotels v1.0
 //
@@ -15,6 +16,12 @@
 - (void)configureView;
 @end
 
+
+//
+//
+// I HATE GITHUB!!
+//
+//
 
 @implementation DetailViewController
 
