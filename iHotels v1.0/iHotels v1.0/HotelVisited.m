@@ -2,7 +2,7 @@
 //  HotelVisited.m
 //  iHotels v1.0
 //
-//  Created by Desislava on 2/7/13.
+//  Created by Martin on 08-02-2013.
 //  Copyright (c) 2013 Student14. All rights reserved.
 //
 
@@ -17,6 +17,7 @@
 @dynamic hotelRate;
 @dynamic photoPath;
 @dynamic startDate;
+@dynamic userRating;
 @dynamic friends;
 
 @end

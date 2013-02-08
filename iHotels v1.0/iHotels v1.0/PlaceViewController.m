@@ -124,6 +124,8 @@
         {
             NSLog(@"error updating photo path: %@", error.localizedDescription);
         }
+        // load the image in the imageview
+        self.photoImageView.image = image;
     }
 }
 
@@ -134,13 +136,13 @@
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
     {
         SLComposeViewController *facebookSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        [facebookSheet setInitialText:[NSString stringWithFormat:@"At %@ I was at one hotel named %@ and it was...", self.dateLabel.text, self.hotelNameLabel.text]];
+        [facebookSheet setInitialText:[NSString stringWithFormat:@"was at %@ on %@ and it was...",  self.hotelNameLabel.text, self.dateLabel.text]];
         
         [facebookSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
             
             switch (result) {
                 case SLComposeViewControllerResultCancelled:
-                    NSLog(@"Post Canceled");
+                    NSLog(@"Post Cancelled");
                     break;
                 case SLComposeViewControllerResultDone:
                     NSLog(@"Post Sucessful");
@@ -162,13 +164,13 @@
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
         SLComposeViewController *twitterSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [twitterSheet setInitialText:[NSString stringWithFormat:@"At %@ I was at one hotel named %@ and it was...", self.dateLabel.text, self.hotel.hotelName]];
+        [twitterSheet setInitialText:[NSString stringWithFormat:@"was at %@ on %@ and it was...",  self.hotelNameLabel.text, self.dateLabel.text]];
         
         [twitterSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
             
             switch (result) {
                 case SLComposeViewControllerResultCancelled:
-                    NSLog(@"Post Canceled");
+                    NSLog(@"Post Cancelled");
                     break;
                 case SLComposeViewControllerResultDone:
                     NSLog(@"Post Sucessful");

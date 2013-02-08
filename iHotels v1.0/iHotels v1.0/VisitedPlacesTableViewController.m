@@ -41,7 +41,7 @@
     hotels = [context executeFetchRequest:request1 error:&error];
     
     // apply color theme methods
-    [self configureSubviews];
+    [self applyiHotelsThemeWithPatternImageName:@"iphone_places_pattern"];
     [self configureNavigationBar];
 }
 

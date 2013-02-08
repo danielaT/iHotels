@@ -15,9 +15,11 @@
 @interface PlacesPageViewController () <UIPageViewControllerDataSource>
 @property (nonatomic, strong) NSArray* visitedHotels;
 @property (nonatomic, strong) UIPageViewController *pageController;
+@property NSInteger selectedHotelIndex;
 @end
 
 @implementation PlacesPageViewController
+@synthesize selectedHotelIndex = _selectedHotelIndex;
 @synthesize selectedHotel = _selectedHotel;
 @synthesize pageController = _pageController;
 @synthesize visitedHotels = _visitedHotels;
@@ -39,8 +41,8 @@
     [self setUpPageViewController];
     
     // apply color theme methods
-    [self applyiHotelsThemeWithPatternImageName:@"iphone_places_pattern"];
-    [self configureNavigationBar];
+    // [self applyiHotelsThemeWithPatternImageName:@"iphone_places_pattern"];
+    // [self configureNavigationBar];
     [self configureSubviews];
 }
 
@@ -65,6 +67,8 @@
         NSLog(@"Error fetching: %@", error);
     }
     //NSLog(@"count: %d",[self.visitedHotels count]);
+    // get the index of the currently selected hotel
+    self.selectedHotelIndex = [self.visitedHotels indexOfObject:self.selectedHotel];
 }
 
 
@@ -78,7 +82,11 @@
     self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options: options];
     
     self.pageController.dataSource = self;
-    [[self.pageController view] setFrame:[[self view] bounds]];
+    //[[self.pageController view] setFrame:[[self view] bounds]];
+    NSLog(@"%f %f", self.view.bounds.size.width, self.view.bounds.size.height);
+
+    [self.pageController.view setFrame:CGRectMake(20, 20, 280, 426)];
+    
     
     PlaceViewController *initialViewController = [self viewControllerAtIndex: [self.visitedHotels indexOfObject:self.selectedHotel]];
     
@@ -127,6 +135,7 @@
     }
     
     index--;
+    self.selectedHotelIndex--;
     return [self viewControllerAtIndex:index];
 }
 
@@ -140,6 +149,7 @@
     }
     
     index++;
+    self.selectedHotelIndex++;
     if (index == [self.visitedHotels count]) {
         return nil;
     }
