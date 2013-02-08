@@ -404,7 +404,7 @@
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HotelCell" rowHeight="120" id="lJ0-d7-vTF" customClass="HotelTableViewCell">
-                                <rect key="frame" x="0.0" y="46" width="320" height="122"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="121"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="119"/>
@@ -691,7 +691,7 @@
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleAspectFit" selectionStyle="blue" indentationWidth="10" reuseIdentifier="PropertyAmenity" id="myo-0j-bFV">
-                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -1138,7 +1138,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="yyyy-mm-dd" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eSJ-Bc-FAY">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eSJ-Bc-FAY">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="153" id="q6b-f6-2DD"/>
                                 </constraints>
@@ -1584,10 +1584,14 @@
         </class>
         <class className="ContactsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addContactsToReservation:"/>
+            </relationships>
         </class>
         <class className="DateViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DateViewController.h"/>
             <relationships>
+                <relationship kind="action" name="selectDate:"/>
                 <relationship kind="outlet" name="day" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="month" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="year" candidateClass="UITextField"/>
@@ -1650,6 +1654,8 @@
         <class className="MapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
+                <relationship kind="action" name="browseCitiesButtonTap:"/>
+                <relationship kind="action" name="searchButtonTap:"/>
                 <relationship kind="outlet" name="browseCitiesButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="mapImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="searchButton" candidateClass="UIButton"/>
@@ -1662,6 +1668,7 @@
         <class className="MyReservationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MyReservationViewController.h"/>
             <relationships>
+                <relationship kind="action" name="goToMap:"/>
                 <relationship kind="outlet" name="nameView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="reservationDate" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="reservationDays" candidateClass="UILabel"/>
@@ -1694,6 +1701,9 @@
         <class className="ReservationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ReservationViewController.h"/>
             <relationships>
+                <relationship kind="action" name="makeReservation:"/>
+                <relationship kind="action" name="phoneFriends:"/>
+                <relationship kind="action" name="pickFriendsButtonClick:"/>
                 <relationship kind="outlet" name="date" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="days" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="hotelCity" candidateClass="UILabel"/>
@@ -1718,6 +1728,9 @@
         <class className="SocialViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialViewController.h"/>
             <relationships>
+                <relationship kind="action" name="postInFacebook:"/>
+                <relationship kind="action" name="postInTwitter:"/>
+                <relationship kind="action" name="segmentedSwitch:"/>
                 <relationship kind="outlet" name="facebookPost" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="loginLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="profilePhoto" candidateClass="FBProfilePictureView"/>
@@ -1737,6 +1750,9 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
         <class className="VisitedPlacesTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VisitedPlacesTableViewController.h"/>

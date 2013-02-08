@@ -16,30 +16,25 @@
 #import "UIViewController+iHotelsColorTheme.h"
 
 @interface ReservationViewController ()
-
-@end
-
-
-@interface ReservationViewController ()
-
+{
+    NSMutableArray *arrayWithFriends;
+    NSString* alertMessage;
+    UIActionSheet *pickerViewPopup;
+}
 @property (strong, nonatomic) IBOutlet UITextView *selectedFriendsView;
 @property (retain, nonatomic) FBFriendPickerViewController *friendPickerController;
-
 @property (weak, nonatomic) IBOutlet UITextField *days;
-
 
 - (void)fillTextBoxAndDismiss:(NSString *)text;
 
 @end
 
 @implementation ReservationViewController
-{
-    NSMutableArray *arrayWithFriends;
-}
+
 @synthesize selectedFriendsView = _friendResultText;
 @synthesize friendPickerController = _friendPickerController;
 
-- (void)viewDidLoad
+- (void) viewDidLoad
 {
     [self.hotelName setText: self.nameString];
     [self.hotelCity setText: self.cityString];
@@ -61,30 +56,70 @@
     [self applyiHotelsThemeWithPatternImageName:@"iphone_hotel_pattern"];
     [self configureNavigationBar];
     [self configureSubviewsWithPatternImageName:@"iphone_hotel_pattern"];
+    
+    pickerViewPopup = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
 }
 
 - (void)handleChooseDate:(UIGestureRecognizer *)gestureRecognizer
 {
-    [self performSegueWithIdentifier:@"Select Date" sender:self];
+    [self showDatePickerView];
+}
+
+-(void) showDatePickerView {
+    UIDatePicker *pickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 44, 0, 0)];
+    pickerView.datePickerMode = UIDatePickerModeDate;
+    pickerView.hidden = NO;
+    pickerView.date = [NSDate date];
+    pickerView.minimumDate = [NSDate date];
+    // about a yars
+    double timeInterval = 365 * 24 * 60 * 60;
+    pickerView.maximumDate = [[NSDate date] dateByAddingTimeInterval:timeInterval];
+    
+    UIToolbar *pickerToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    pickerToolbar.barStyle = UIBarStyleBlackOpaque;
+    [pickerToolbar sizeToFit];
+    
+    NSMutableArray *barItems = [[NSMutableArray alloc] init];
+    UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    [barItems addObject:flexSpace];
+    
+    UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed:)];
+    [barItems addObject:doneBtn];
+    UIBarButtonItem *cancelBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonPressed:)];
+    [barItems addObject:cancelBtn];
+    [pickerToolbar setItems:barItems animated:YES];
+    
+    [pickerViewPopup addSubview:pickerView];
+    [pickerViewPopup addSubview:pickerToolbar];
+    [pickerViewPopup showFromTabBar:self.tabBarController.tabBar];
+    [pickerViewPopup setBounds:CGRectMake(0,0,320, 464)];
+}
+
+-(void)doneButtonPressed:(id)sender{
+    for (UIView* view in pickerViewPopup.subviews) {
+        if ([[view class] isSubclassOfClass:[UIDatePicker class]]) {
+            NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+            [dateFormat setDateFormat:@"yyyy-MM-dd"];
+            self.date.text = [dateFormat stringFromDate:[(UIDatePicker*)view date]];
+        }
+    }
+    [pickerViewPopup dismissWithClickedButtonIndex:1 animated:YES];
+}
+
+-(void)cancelButtonPressed:(id)sender{
+    [pickerViewPopup dismissWithClickedButtonIndex:1 animated:YES];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     return [textField resignFirstResponder];
-    
 }
+
 - (void)viewDidUnload {
     self.selectedFriendsView = nil;
     self.friendPickerController = nil;
     
     [super viewDidUnload];
-}
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)phoneFriends:(id)sender
@@ -116,11 +151,9 @@
     {
         [self.tabBarController setSelectedIndex:3];
         [(UINavigationController*)[self.tabBarController.viewControllers objectAtIndex:0] popViewControllerAnimated:YES];
-
+        
     }
 }
-
-
 
 - (void)facebookViewControllerDoneWasPressed:(id)sender
 {
@@ -150,42 +183,40 @@
 - (void)fillTextBoxAndDismiss:(NSString *)text
 {
     self.selectedFriendsView.text = text;
-
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-
+-(BOOL) isValid {
+    NSString *trimmedDate = [self.date.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSString *trimmedDays = [self.days.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    
+    if ([trimmedDate length] <= 0) {
+        alertMessage = @"Please, enter date.";
+        return NO;}
+    else if ([trimmedDays length] <= 0) {
+        alertMessage = @"Please, enter days.";
+        return NO;
+    }
+    return YES;
+}
 
 - (IBAction)makeReservation:(id)sender
 {
-    NSString *string1 = self.date.text;
-    NSString *string2 = self.days.text;
-    
-    if(string1.length == 0 || string2.length == 0 || [self.days.text intValue] < 0)
-    {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Please enter date and days!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alert show];
-    }
-    else
+    if ([self isValid])
     {
         NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
         [dateFormat setDateFormat:@"yyyy-MM-dd"];
         [dateFormat setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
         NSLocale *enUSPOSIXLocale = [NSLocale currentLocale];
-        
-        
-        NSAssert(enUSPOSIXLocale != nil, @"POSIX may not be nil.");
+    
         [dateFormat setLocale:enUSPOSIXLocale];
         
         NSDate *date = [dateFormat dateFromString:self.date.text];
-        
-        //NSLog(@"date %@", date);
-        //NSLog(@"date %@", self.date.text);
-        
-        AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
+        AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
         
         NSManagedObjectContext *context = delegate.managedObjectContext;
-        Reservation *reservation = [ NSEntityDescription insertNewObjectForEntityForName:@"Reservation" inManagedObjectContext:context];
+        Reservation *reservation = [NSEntityDescription insertNewObjectForEntityForName:@"Reservation" inManagedObjectContext:context];
         reservation.hotelName = self.hotelName.text;
         reservation.startDate = date;
         reservation.days = [NSNumber numberWithInt:(int)self.days.text.intValue];
@@ -194,7 +225,6 @@
         
         NSError *error;
         
-        //NSLog(@" masiv priqteli: %d", [arrayWithFriends count]);
         for(int i = 0; i < [arrayWithFriends count]; i++)
         {
             Friend *friend = [NSEntityDescription insertNewObjectForEntityForName:@"Friend" inManagedObjectContext:context];
@@ -204,13 +234,12 @@
         
         [context save:&error];
         
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Successfull!" message:[NSString stringWithFormat:@"You make reservation for: %@", self.hotelName.text,nil] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alert show];
-        
+        alertMessage = [NSString stringWithFormat:@"You made reservation for: %@", self.hotelName.text, nil];
         [self.navigationController popToRootViewControllerAnimated:YES];
-        
     }
     
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:alertMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alert show];
 }
 
 - (void) addFriend:(NSString*) name

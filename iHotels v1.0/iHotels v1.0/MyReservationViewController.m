@@ -53,8 +53,6 @@
                          //if(finished)  NSLog(@"Finished !!!!!");
                                              // do any stuff here if you want
                                              }];
-    
-    NSLog(@"friends: %d", [self.arrayWithFriends count]);
 
 
     // apply color theme methods

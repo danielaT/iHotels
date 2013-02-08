@@ -37,7 +37,8 @@
     else if ([dateNow compare:dateAfterTheTrip] == NSOrderedAscending)
     {
         return NO;
-    } else
+    }
+    else
     {
         return YES;
     }

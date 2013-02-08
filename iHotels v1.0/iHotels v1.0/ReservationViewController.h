@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 
-@interface ReservationViewController : UIViewController<FBFriendPickerDelegate,UITextFieldDelegate>
+@interface ReservationViewController : UIViewController<FBFriendPickerDelegate,UITextFieldDelegate, UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *date;
 @property (weak, nonatomic) IBOutlet UILabel *hotelName;
