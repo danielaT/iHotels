@@ -130,7 +130,8 @@ NSString* const BLANK_SPACE_REPLACEMENT = @"%02";
     if ([segue.identifier isEqualToString:@"toHotelListSegue"]) {
         NSIndexPath *selectedRowIndexPath = [self.tableView indexPathForSelectedRow];
         MasterViewController *hotelListController = (MasterViewController*) segue.destinationViewController;
-        [[self.availableCitiesArray objectAtIndex:selectedRowIndexPath.row] stringByReplacingOccurrencesOfString:BLANK_SPACE withString:BLANK_SPACE_REPLACEMENT];
+        
+        // replace blank spaces with %02 for correct response  
         [hotelListController setCityName: [[self.availableCitiesArray objectAtIndex:selectedRowIndexPath.row] stringByReplacingOccurrencesOfString:BLANK_SPACE withString:BLANK_SPACE_REPLACEMENT]];
     }
 }
