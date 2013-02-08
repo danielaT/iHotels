@@ -1,14 +1,5 @@
-
-// test merge dani
-//test
-//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 //  DetailViewController.m
 //  iHotels v1.0
-<<<<<<< HEAD
-//gfgfgfdgdf
-=======
-// test 
->>>>>>> 26236657920bb90f086e44211eb1faceeb6c8152
 //  Created by Student14 on 1/30/13.
 //  Copyright (c) 2013 Student14. All rights reserved.
 //
@@ -19,13 +10,6 @@
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 - (void)configureView;
 @end
-
-
-//
-//
-// I HATE GITHUB!!
-//
-//
 
 @implementation DetailViewController
 
