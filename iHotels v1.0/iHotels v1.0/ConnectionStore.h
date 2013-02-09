@@ -10,6 +10,7 @@
 
 @interface ConnectionStore : NSObject<NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 
--(void) getDataForConnectionWithURL:(NSURL*)url handler:(void (^)(NSData*))ch;
+-(void) getDataForConnectionWithURL:(NSURL*)url handler:(void (^)(NSData*))completionHandler;
+-(void) showMessageIfInternetConnectionIsUnavailable;
 
 @end

@@ -51,7 +51,6 @@
 -(void)viewDidAppear:(BOOL)animated
 {
 //    [[self navigationController] setNavigationBarHidden:YES animated:YES];
-    
     UIInterfaceOrientation orientation = [[UIDevice currentDevice] orientation];
     [self rearrangeViewsInOrientation:orientation];
 }

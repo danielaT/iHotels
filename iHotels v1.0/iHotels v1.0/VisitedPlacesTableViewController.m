@@ -12,6 +12,7 @@
 #import "MyReservationViewController.h"
 #import "PlacesPageViewController.h"
 #import "UIViewController+iHotelsColorTheme.h"
+#import "DataBaseHelper.h"
 
 @interface VisitedPlacesTableViewController ()
 
@@ -47,26 +48,8 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    [self reloadInformation];
+    hotels = [DataBaseHelper reloadVisitedPlaces];
     [self.tableView reloadData];
-}
-
-- (void) reloadInformation
-{
-    
-    //TODO - move this into separate class!
-    AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
-    NSManagedObjectContext *context = delegate.managedObjectContext;
-    NSError *error;
-    NSFetchRequest *request1 = [[NSFetchRequest alloc] initWithEntityName:@"HotelVisited"];
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:YES];
-    request1.sortDescriptors = @[sortDescriptor];
-    hotels = [context executeFetchRequest:request1 error:&error];
-}
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -78,7 +61,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
     return [hotels count];
 }
 
@@ -105,7 +87,6 @@
     return cell;
 }
 
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:@"toPageViewSegue"])
@@ -115,6 +96,5 @@
         controller.selectedHotel = [hotels objectAtIndex:indexPath.row];
     }
 }
-
 
 @end

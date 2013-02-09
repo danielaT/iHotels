@@ -24,36 +24,15 @@
 @synthesize pageController = _pageController;
 @synthesize visitedHotels = _visitedHotels;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self populateHotels];
     [self setUpPageViewController];
-    
-    // apply color theme methods
-    // [self applyiHotelsThemeWithPatternImageName:@"iphone_places_pattern"];
-    // [self configureNavigationBar];
     [self configureSubviewsWithPatternImageName:@"iphone_places_pattern"];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
-
-
--(void) populateHotels
+- (void) populateHotels
 {
     AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
     NSManagedObjectContext *context = delegate.managedObjectContext;
@@ -66,12 +45,10 @@
     if (error) {
         NSLog(@"Error fetching: %@", error);
     }
-    //NSLog(@"count: %d",[self.visitedHotels count]);
+    
     // get the index of the currently selected hotel
     self.selectedHotelIndex = [self.visitedHotels indexOfObject:self.selectedHotel];
 }
-
-
 
 -(void)setUpPageViewController
 {
@@ -98,9 +75,6 @@
     [self.pageController didMoveToParentViewController:self];
 }
 
-
-
-
 #pragma mark - page view controller data source and delegate methods
 
 - (PlaceViewController *)viewControllerAtIndex:(NSUInteger)index
@@ -117,14 +91,10 @@
     return controller;
 }
 
-
-
 - (NSUInteger)indexOfViewController:(PlaceViewController *)viewController
 {
     return [self.visitedHotels indexOfObject: viewController.hotel];
 }
-
-
 
 - (UIViewController *)pageViewController: (UIPageViewController *)pageViewController viewControllerBeforeViewController: (UIViewController *)viewController
 {
@@ -165,6 +135,5 @@
         NSLog(@"error updating photo path: %@", error.localizedDescription);
     }
 }
-
 
 @end

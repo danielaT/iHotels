@@ -11,8 +11,8 @@
 #import "Reservation.h"
 #import "HotelVisited.h"
 #import "Friend.h"
-
-//#import "MasterViewController.h"
+#import "ConnectionStore.h"
+#import "DataBaseHelper.h"
 
 @implementation AppDelegate
 
@@ -28,7 +28,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [self isVisited];
+    [DataBaseHelper moveReservationsToVisitedPlaces];
+    
+    
     // Override point for customization after application launch.
 //    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
 //        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
@@ -57,10 +59,12 @@
     }
     
     [FBProfilePictureView class];
-    
+        
+    [[[ConnectionStore alloc] init] showMessageIfInternetConnectionIsUnavailable];
+
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -76,41 +80,7 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    [self isVisited];
-}
-
-- (void) isVisited
-{
-    NSError *error;
-    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Reservation"];
-    NSArray* orders = [self.managedObjectContext executeFetchRequest:request error:&error];
-    
-    NSError *error1;
-    
-    for(Reservation* res in orders)
-    {
-        //NSLog(@"is visited: %d", (int)res.isVisited);
-        if( res.isVisited == YES)
-        {
-            HotelVisited *hotelVisited = [ NSEntityDescription insertNewObjectForEntityForName:@"HotelVisited" inManagedObjectContext:self.managedObjectContext];
-            hotelVisited.startDate = res.startDate;
-            hotelVisited.hotelImage = res.hotelImage;
-            hotelVisited.hotelName = res.hotelName;
-            hotelVisited.friends = res.friends;
-            hotelVisited.hotelRate = res.hotelRate;
-            //delete from database res
-            [self.managedObjectContext deleteObject:res];
-            [self.managedObjectContext save:&error1];
-        }
-    }
-    
-//    NSFetchRequest *request2 = [[NSFetchRequest alloc] initWithEntityName:@"Friend"];
-//    NSArray* orders2 = [self.managedObjectContext executeFetchRequest:request2 error:&error1];
-//    
-//    for(Friend* fr in orders2)
-//    {
-//        NSLog(@"fr: %@",fr.name);
-//    }
+    [DataBaseHelper moveReservationsToVisitedPlaces];
 }
 
 

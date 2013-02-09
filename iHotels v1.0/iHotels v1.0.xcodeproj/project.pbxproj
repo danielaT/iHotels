@@ -90,6 +90,8 @@
 		F99BAF1C16BBF938001F2D02 /* ImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F99BAF1B16BBF938001F2D02 /* ImageCollectionViewCell.m */; };
 		F99BBACD16BAAE9100246E3B /* HotelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F99BBACC16BAAE9000246E3B /* HotelTableViewCell.m */; };
 		F99BBAD016BAC20000246E3B /* HotelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F99BBACF16BAC20000246E3B /* HotelViewController.m */; };
+		F9AF007116C68803006CAE32 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AF007016C68803006CAE32 /* SystemConfiguration.framework */; };
+		F9AF007516C69063006CAE32 /* DataBaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AF007416C69063006CAE32 /* DataBaseHelper.m */; };
 		FD8FB82D16BE6E3A003B81D0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8FB82316BE6E3A003B81D0 /* CoreLocation.framework */; };
 		FD8FB82E16BE6E3A003B81D0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8FB82416BE6E3A003B81D0 /* MapKit.framework */; };
 		FD8FB82F16BE6E3A003B81D0 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8FB82516BE6E3A003B81D0 /* AdSupport.framework */; };
@@ -224,6 +226,9 @@
 		F99BBACC16BAAE9000246E3B /* HotelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelTableViewCell.m; sourceTree = "<group>"; };
 		F99BBACE16BAC20000246E3B /* HotelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelViewController.h; sourceTree = "<group>"; };
 		F99BBACF16BAC20000246E3B /* HotelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelViewController.m; sourceTree = "<group>"; };
+		F9AF007016C68803006CAE32 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F9AF007316C69063006CAE32 /* DataBaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseHelper.h; sourceTree = "<group>"; };
+		F9AF007416C69063006CAE32 /* DataBaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseHelper.m; sourceTree = "<group>"; };
 		FD8FB82316BE6E3A003B81D0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FD8FB82416BE6E3A003B81D0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FD8FB82516BE6E3A003B81D0 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -263,6 +268,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9AF007116C68803006CAE32 /* SystemConfiguration.framework in Frameworks */,
 				5BD9CA2716C139B60007AD19 /* MobileCoreServices.framework in Frameworks */,
 				F9989EDE16B9A9270015A5C9 /* UIKit.framework in Frameworks */,
 				F9989EE016B9A9270015A5C9 /* Foundation.framework in Frameworks */,
@@ -307,6 +313,8 @@
 				F9989F1016B9EBB80015A5C9 /* ConnectionStore.m */,
 				F9989F1616B9EF6C0015A5C9 /* JsonParser.h */,
 				F9989F1716B9EF6C0015A5C9 /* JsonParser.m */,
+				F9AF007316C69063006CAE32 /* DataBaseHelper.h */,
+				F9AF007416C69063006CAE32 /* DataBaseHelper.m */,
 			);
 			name = HelperClasses;
 			sourceTree = "<group>";
@@ -463,6 +471,7 @@
 		F9989EDC16B9A9270015A5C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F9AF007016C68803006CAE32 /* SystemConfiguration.framework */,
 				5BD9CA2616C139B50007AD19 /* MobileCoreServices.framework */,
 				FD8FB8CD16C01D33003B81D0 /* FacebookSDK.framework */,
 				FD8FB8C916C01D1B003B81D0 /* FacebookSDKResources.bundle */,
@@ -679,6 +688,7 @@
 				FD8FB93916C3FE70003B81D0 /* Reservation.m in Sources */,
 				5B3B18C916C4F26B004C29A9 /* HotelVisited.m in Sources */,
 				5B4C5CC416C66F9200BAFAAA /* RatingFaceView.m in Sources */,
+				F9AF007516C69063006CAE32 /* DataBaseHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

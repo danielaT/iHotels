@@ -7,6 +7,7 @@
 //
 
 #import "ConnectionStore.h"
+#import <SystemConfiguration/SystemConfiguration.h>
 
 @interface ConnectionStore()
 
@@ -21,19 +22,19 @@
 
 @synthesize connectionData=_connectionData;
 
--(void) getDataForConnectionWithURL:(NSURL*)url handler:(void (^)(NSData*))ch {
+-(void) getDataForConnectionWithURL:(NSURL*)url handler:(void (^)(NSData*))completionHandler {
     self.connectionData = [NSMutableData data];
     
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     NSURLConnection* connection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self startImmediately:YES];
     
-    self.callback = ch;
+    self.callback = completionHandler;
     
     if (connection) {
         self.connectionData = [NSMutableData data];
     }
     else {
-        // error
+        [self showMessageIfInternetConnectionIsUnavailable];
     }
 }
 
@@ -49,12 +50,29 @@
 
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     self.connectionData = nil;
-    // error
+    [self showMessageIfInternetConnectionIsUnavailable];
 }
-
 
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection {
     self.callback(self.connectionData);
+}
+
+// cheks if internet connection is svailable
+- (void)showMessageIfInternetConnectionIsUnavailable
+{
+    static BOOL checkNetwork = YES;
+    if (checkNetwork) { // Since checking the reachability of a host can be expensive, cache the result and perform the reachability check once.
+        checkNetwork = NO;
+        Boolean success;
+        const char *host_name = "ean.com"; // host name for testing the internet connection
+        SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithName(NULL, host_name);
+        SCNetworkReachabilityFlags flags;
+        success = SCNetworkReachabilityGetFlags(reachability, &flags);
+        if (!(success && (flags & kSCNetworkFlagsReachable) && !(flags & kSCNetworkFlagsConnectionRequired))) {
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"" message:@"This application needs internet connection." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+    }
 }
 
 @end

@@ -11,6 +11,7 @@
 #import "Reservation.h"
 #import "MyReservationViewController.h"
 #import "UIViewController+iHotelsColorTheme.h"
+#import "DataBaseHelper.h"
 
 @interface ReservationsTableViewController ()
 
@@ -35,8 +36,6 @@
     [super viewDidLoad];
     [self.tableView reloadData];
     
-    [self reloadInformation];
-
     // apply color theme methods
     [self applyiHotelsThemeWithPatternImageName:@"iphone_reservation_pattern"];
     [self configureNavigationBar];
@@ -45,22 +44,10 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    [self reloadInformation];
+    reservations = [DataBaseHelper reloadReservations];;
     [self.tableView reloadData];
 }
 
-- (void) reloadInformation
-{
-    
-    //TODO - move this into separate class!
-    AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
-    NSManagedObjectContext *context = delegate.managedObjectContext;
-    NSError *error;
-    NSFetchRequest *request1 = [[NSFetchRequest alloc] initWithEntityName:@"Reservation"];
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc ]initWithKey:@"startDate" ascending:YES];
-    request1.sortDescriptors = @[sortDescriptor];
-    reservations = [context executeFetchRequest:request1 error:&error];
-}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
