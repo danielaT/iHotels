@@ -61,8 +61,20 @@
     [FBProfilePictureView class];
         
     [[[ConnectionStore alloc] init] showMessageIfInternetConnectionIsUnavailable];
-
+    
     return YES;
+}
+
+- (void)application:(UIApplication *)app didReceiveLocalNotification:(UILocalNotification *)notif {
+    // Handle the notificaton when the app is running
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"" message:notif.alertBody delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"View", nil];
+    [alert show];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        // view reservation
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -83,11 +95,11 @@
     [DataBaseHelper moveReservationsToVisitedPlaces];
 }
 
-
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     [FBSession.activeSession handleDidBecomeActive];
+    application.applicationIconBadgeNumber = 0;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

@@ -27,7 +27,6 @@
     [self configureSubviewsWithPatternImageName:@"iphone_hotel_pattern"];
 }
 
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -50,9 +49,5 @@
     cell.backgroundColor = [UIColor colorWithHue:0.63 saturation:0.17 brightness:0.4 alpha:1];
     return cell;
 }
-
-//-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-//    return @"Property amenities";
-//}
 
 @end

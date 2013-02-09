@@ -240,10 +240,30 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
         
         alertMessage = [NSString stringWithFormat:@"You made reservation for: %@", self.hotelName.text, nil];
         [self.navigationController popToRootViewControllerAnimated:YES];
+        
+        
+        [self createNotificationWithFireDate:date];
     }
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:alertMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     [alert show];
+}
+
+-(void) createNotificationWithFireDate:(NSDate*)fireDate {
+    UILocalNotification *scheduledAlert;
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    scheduledAlert = [[UILocalNotification alloc] init];
+    scheduledAlert.applicationIconBadgeNumber = 1;
+    // one day before the reservation start date
+    double oneDayBefore = -(24*60*60);
+   // scheduledAlert.fireDate = [fireDate dateByAddingTimeInterval:oneDayBefore];
+    scheduledAlert.fireDate = [NSDate dateWithTimeIntervalSinceNow:20];
+    scheduledAlert.timeZone = [NSTimeZone localTimeZone];
+    scheduledAlert.repeatInterval =  NSHourCalendarUnit;
+    scheduledAlert.soundName = UILocalNotificationDefaultSoundName;
+    scheduledAlert.alertBody = @"Reservation for hotel tomorrow!";
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:scheduledAlert];
 }
 
 - (void) addFriend:(NSString*) name

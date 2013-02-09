@@ -31,7 +31,7 @@
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReservationCell" textLabel="F8y-Cr-4CN" detailTextLabel="TeQ-Od-VZg" style="IBUITableViewCellStyleValue2" id="9lC-Bb-f7N">
-                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -363,7 +363,7 @@
                                 <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CityCell" textLabel="3dN-bj-TWr" style="IBUITableViewCellStyleDefault" id="k2u-iA-H17">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -417,7 +417,7 @@
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HotelCell" rowHeight="120" id="lJ0-d7-vTF" customClass="HotelTableViewCell">
-                                <rect key="frame" x="0.0" y="46" width="320" height="122"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="121"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="119"/>
@@ -670,7 +670,7 @@
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RoomType" id="3DN-dL-R0m">
-                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -704,7 +704,7 @@
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleAspectFit" selectionStyle="blue" indentationWidth="10" reuseIdentifier="PropertyAmenity" id="myo-0j-bFV">
-                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -879,7 +879,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Flooors" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWj-Hk-j7j">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Floors" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWj-Hk-j7j">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="JB5-2D-rNT"/>
                                 </constraints>
@@ -1347,7 +1347,7 @@
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VisitedHotelCell" textLabel="OXd-Lz-Aep" detailTextLabel="Wsp-1h-9AG" style="IBUITableViewCellStyleValue2" id="ucC-HD-Ju3">
-                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -1672,6 +1672,7 @@
         <class className="ReservationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ReservationViewController.h"/>
             <relationships>
+                <relationship kind="action" name="pickFriendsButtonClick:"/>
                 <relationship kind="outlet" name="date" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="days" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="hotelCity" candidateClass="UILabel"/>
