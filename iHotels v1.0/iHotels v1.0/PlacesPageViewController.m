@@ -35,6 +35,11 @@
     
     [self setUpPageViewController];
     [self configureSubviewsWithPatternImageName:@"iphone_places_pattern"];
+    
+    UIImage* pattern = [[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"iphone_page_book" ofType:@"png"]]resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeTile];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:pattern];
+    
+    [self updateTitle];
 }
 
 -(void)setUpPageViewController
@@ -51,6 +56,13 @@
     [[self view] addSubview:[self.pageController view]];
     [self.pageController didMoveToParentViewController:self];
 }
+
+-(void) updateTitle
+{
+    NSString *titleText = [NSString stringWithFormat:@"%d/%d",self.selectedHotelIndex+1, [self.visitedHotels count]];
+    self.title = titleText;
+}
+
 
 #pragma mark - page view controller data source and delegate methods
 
@@ -82,6 +94,7 @@
     
     index--;
     self.selectedHotelIndex--;
+    [self updateTitle];
     return [self viewControllerAtIndex:index];
 }
 
@@ -97,12 +110,13 @@
     if (index == [self.visitedHotels count]) {
         return nil;
     }
+    [self updateTitle];
     return [self viewControllerAtIndex:index];
 }
 
 -(void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers
 {
-    // save the context (in case the user changed the rating and/or picture
+    // save the context (in case the user changed the rating and/or picture)
     [DataBaseHelper saveContext];
 }
 

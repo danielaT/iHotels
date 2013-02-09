@@ -25,7 +25,7 @@
             <objects>
                 <tableViewController id="1dq-SV-qeh" customClass="ReservationsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="P3T-Qs-7N9">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -71,7 +71,7 @@
             <objects>
                 <viewController id="n2p-pu-N2K" customClass="MyReservationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jun-XQ-lK4">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WaJ-Nu-DjM">
@@ -213,7 +213,7 @@
             <objects>
                 <viewController id="RdP-08-1dM" customClass="SocialViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gr1-7M-241">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Log in/out in Facebook and Twitter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygT-TW-Guv">
@@ -355,7 +355,7 @@
             <objects>
                 <viewController id="1jT-dZ-9p8" customClass="CityPickerViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HSl-Hd-KRS">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pzj-UI-dIf">
@@ -411,7 +411,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="" title="Master" id="12" customClass="MasterViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="13">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -496,7 +496,7 @@
             <objects>
                 <viewController storyboardIdentifier="hotel" id="dcI-0E-JtF" customClass="HotelViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SGL-5W-WJL">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="city&amp;post code label" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIz-Uk-xGw">
@@ -664,7 +664,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="RoomTypes" id="70f-dT-SKk" customClass="RoomTypesViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="mCA-wP-Utv">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.95294123890000004" green="0.96078437569999997" blue="0.85490202900000001" alpha="1" colorSpace="deviceRGB"/>
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -698,7 +698,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="PropertyAmenities" id="KvE-1c-vji" customClass="PropertyAmenitiesViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="grouped" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Iq1-Bj-l4r">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -729,7 +729,7 @@
             <objects>
                 <viewController id="Q14-F2-M4V" customClass="RoomViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jYt-bC-Nbt">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Ft-bQ-bD8">
@@ -770,7 +770,7 @@
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="aOQ-ei-Z3k" customClass="GalleryViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="aC1-Kl-EbM">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Fo0-lg-OLX">
                             <size key="itemSize" width="84" height="87"/>
@@ -779,7 +779,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <activityIndicatorView key="backgroundView" hidden="YES" opaque="NO" contentMode="scaleToFill" style="whiteLarge" id="lWS-TN-Ubf">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </activityIndicatorView>
@@ -829,7 +829,7 @@
             <objects>
                 <viewController id="ojH-2f-qZx" customClass="HotelDescriptionViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qzy-Jw-ZLn">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Check in time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7H-Tn-JiW">
@@ -982,7 +982,7 @@
             <objects>
                 <viewController storyboardIdentifier="HotelImage" id="Amp-Yr-031" customClass="HotelImageViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hwf-t5-Pgs">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="aij-Pj-hzE">
@@ -1034,7 +1034,7 @@
             <objects>
                 <viewController id="gTw-QG-Tpi" customClass="MapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U16-aS-bHy">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLF-Uv-zJB">
@@ -1118,7 +1118,7 @@
             <objects>
                 <viewController id="InI-Rv-nGM" customClass="ReservationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YU5-k7-FkY">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3J-9d-qwF">
@@ -1293,7 +1293,7 @@
             <objects>
                 <tableViewController id="Mwz-0r-wM1" customClass="ContactsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="EPh-Lc-eqg">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -1341,7 +1341,7 @@
             <objects>
                 <tableViewController id="JwA-aV-3gG" customClass="VisitedPlacesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="EYT-bb-HZz">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1387,7 +1387,7 @@
             <objects>
                 <viewController id="hn8-RN-VDb" customClass="PlacesPageViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kYO-7a-7Sd">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.2628156840801239" green="0.27442795038223267" blue="0.3256717324256897" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1432,8 +1432,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NyH-1r-Phk">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="bTr-Te-zDE"/>
-                                    <constraint firstAttribute="height" constant="40" id="sB7-W8-1OJ"/>
+                                    <constraint firstAttribute="width" constant="20" id="meY-QH-khs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" backgroundImage="twitter_logo.png">
@@ -1449,7 +1448,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="40" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KxK-D0-qBX">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="xSY-hG-cFt"/>
+                                    <constraint firstAttribute="width" constant="20" id="nBd-oT-3oD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" backgroundImage="facebook_logo.png">
@@ -1463,17 +1462,17 @@
                                     <action selector="shareOnFacebookButtonTap:" destination="Okr-LM-ItD" eventType="touchUpInside" id="mYF-Uv-pa0"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KV4-A7-Dpa" customClass="RatingFaceView">
+                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KV4-A7-Dpa" customClass="RatingFaceView">
                                 <color key="backgroundColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZ1-g0-2e5">
+                            <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZ1-g0-2e5">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="SXb-6S-8I5"/>
-                                    <constraint firstAttribute="height" constant="36" id="eHR-8q-05b"/>
+                                    <constraint firstAttribute="height" constant="33" id="p9I-K4-9LQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="-">
-                                    <color key="titleColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -1483,13 +1482,13 @@
                                     <action selector="minusButtonTap:" destination="Okr-LM-ItD" eventType="touchUpInside" id="UVa-ge-Xcj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yeu-3m-qMR">
+                            <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yeu-3m-qMR">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="5SN-Qj-ZRq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="+">
-                                    <color key="titleColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -1504,30 +1503,31 @@
                         <constraints>
                             <constraint firstItem="May-68-icB" firstAttribute="top" secondItem="Yr5-BJ-UlO" secondAttribute="top" constant="20" type="user" id="3ba-wJ-fXC"/>
                             <constraint firstItem="Nlx-Ng-iR9" firstAttribute="top" secondItem="May-68-icB" secondAttribute="bottom" constant="8" type="user" id="3mC-oA-U3k"/>
-                            <constraint firstItem="oZ1-g0-2e5" firstAttribute="centerY" secondItem="KV4-A7-Dpa" secondAttribute="centerY" type="default" id="7gC-2t-0sT"/>
-                            <constraint firstItem="zMg-nX-XnN" firstAttribute="top" secondItem="Yr5-BJ-UlO" secondAttribute="top" constant="78" id="8pX-UC-z3r"/>
-                            <constraint firstItem="KxK-D0-qBX" firstAttribute="leading" secondItem="NyH-1r-Phk" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="8t8-ql-yY1"/>
-                            <constraint firstItem="Yeu-3m-qMR" firstAttribute="top" secondItem="oZ1-g0-2e5" secondAttribute="top" type="default" id="CLt-RB-Dtr"/>
-                            <constraint firstItem="Yeu-3m-qMR" firstAttribute="leading" secondItem="Yr5-BJ-UlO" secondAttribute="leading" constant="121" id="E0F-Ll-ueu"/>
+                            <constraint firstItem="Yeu-3m-qMR" firstAttribute="bottom" secondItem="oZ1-g0-2e5" secondAttribute="bottom" type="default" id="6dE-Ch-gVv"/>
+                            <constraint firstItem="Nlx-Ng-iR9" firstAttribute="top" secondItem="KxK-D0-qBX" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="860-O2-aBr"/>
+                            <constraint firstItem="NyH-1r-Phk" firstAttribute="leading" secondItem="Yr5-BJ-UlO" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="991-j3-1PI"/>
+                            <constraint firstItem="Yeu-3m-qMR" firstAttribute="top" secondItem="oZ1-g0-2e5" secondAttribute="top" type="default" id="BXI-aZ-GNn"/>
+                            <constraint firstItem="KV4-A7-Dpa" firstAttribute="leading" secondItem="oZ1-g0-2e5" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="D9e-HL-34c"/>
+                            <constraint firstItem="oZ1-g0-2e5" firstAttribute="leading" secondItem="Yr5-BJ-UlO" secondAttribute="leading" constant="72" id="GVo-eQ-usG"/>
+                            <constraint firstAttribute="bottom" secondItem="KV4-A7-Dpa" secondAttribute="bottom" constant="10" id="Jhr-hp-RYT"/>
+                            <constraint firstItem="zMg-nX-XnN" firstAttribute="top" secondItem="Yr5-BJ-UlO" secondAttribute="top" constant="78" id="Mec-kJ-EfJ"/>
                             <constraint firstItem="Nlx-Ng-iR9" firstAttribute="trailing" secondItem="Yr5-BJ-UlO" secondAttribute="trailing" type="default" id="NXk-mV-coM"/>
-                            <constraint firstItem="NyH-1r-Phk" firstAttribute="top" secondItem="KxK-D0-qBX" secondAttribute="top" type="default" id="PBG-IV-7Gw"/>
                             <constraint firstItem="Vpk-M7-BqR" firstAttribute="top" secondItem="zMg-nX-XnN" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Pyv-io-w08"/>
-                            <constraint firstAttribute="bottom" secondItem="KV4-A7-Dpa" secondAttribute="bottom" constant="10" id="Qhg-Np-KfA"/>
                             <constraint firstItem="Nlx-Ng-iR9" firstAttribute="centerX" secondItem="May-68-icB" secondAttribute="centerX" type="default" id="R1e-5j-22U"/>
+                            <constraint firstAttribute="trailing" secondItem="KxK-D0-qBX" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Uob-6w-Scv"/>
                             <constraint firstItem="KV4-A7-Dpa" firstAttribute="top" secondItem="Vpk-M7-BqR" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="VZb-ky-KJq"/>
                             <constraint firstItem="Vpk-M7-BqR" firstAttribute="leading" secondItem="Yr5-BJ-UlO" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Xer-tR-aHG"/>
-                            <constraint firstItem="Yeu-3m-qMR" firstAttribute="bottom" secondItem="oZ1-g0-2e5" secondAttribute="bottom" type="default" id="eJv-gs-bCJ"/>
+                            <constraint firstItem="Nlx-Ng-iR9" firstAttribute="top" secondItem="NyH-1r-Phk" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Xzp-rI-Kvb"/>
                             <constraint firstAttribute="trailing" secondItem="Vpk-M7-BqR" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ei4-6R-XTY"/>
-                            <constraint firstItem="NyH-1r-Phk" firstAttribute="bottom" secondItem="KxK-D0-qBX" secondAttribute="bottom" type="default" id="fCb-Kj-CyL"/>
                             <constraint firstItem="Nlx-Ng-iR9" firstAttribute="leading" secondItem="Yr5-BJ-UlO" secondAttribute="leading" type="default" id="gxY-WC-YcC"/>
                             <constraint firstItem="zMg-nX-XnN" firstAttribute="trailing" secondItem="Yr5-BJ-UlO" secondAttribute="trailing" type="default" id="hLe-Xr-LKU"/>
                             <constraint firstItem="zMg-nX-XnN" firstAttribute="top" secondItem="Nlx-Ng-iR9" secondAttribute="bottom" constant="8" type="user" id="iaV-b4-GJG"/>
-                            <constraint firstItem="KV4-A7-Dpa" firstAttribute="leading" secondItem="oZ1-g0-2e5" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="khq-sn-Fzy"/>
-                            <constraint firstItem="oZ1-g0-2e5" firstAttribute="leading" secondItem="Yr5-BJ-UlO" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="mhP-t6-FI4"/>
-                            <constraint firstItem="Yeu-3m-qMR" firstAttribute="leading" secondItem="KV4-A7-Dpa" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="mqa-Da-ql9"/>
+                            <constraint firstItem="NyH-1r-Phk" firstAttribute="top" secondItem="Yr5-BJ-UlO" secondAttribute="top" constant="20" symbolic="YES" type="default" id="lLi-9d-0Mh"/>
                             <constraint firstItem="zMg-nX-XnN" firstAttribute="leading" secondItem="Yr5-BJ-UlO" secondAttribute="leading" type="default" id="o5t-Q0-Y3u"/>
-                            <constraint firstItem="Yeu-3m-qMR" firstAttribute="centerY" secondItem="NyH-1r-Phk" secondAttribute="centerY" type="default" id="r6B-jg-8g2"/>
-                            <constraint firstAttribute="trailing" secondItem="KxK-D0-qBX" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="rae-2w-cdo"/>
+                            <constraint firstItem="KxK-D0-qBX" firstAttribute="top" secondItem="Yr5-BJ-UlO" secondAttribute="top" constant="20" symbolic="YES" type="default" id="o9T-na-96b"/>
+                            <constraint firstItem="Yeu-3m-qMR" firstAttribute="leading" secondItem="KV4-A7-Dpa" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="rof-0i-Fw9"/>
+                            <constraint firstItem="oZ1-g0-2e5" firstAttribute="centerY" secondItem="KV4-A7-Dpa" secondAttribute="centerY" type="default" id="tZj-rW-MZm"/>
+                            <constraint firstItem="KV4-A7-Dpa" firstAttribute="centerX" secondItem="Vpk-M7-BqR" secondAttribute="centerX" type="default" id="yMb-Cu-XyM"/>
                         </constraints>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
@@ -1651,6 +1651,8 @@
         <class className="PlaceViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PlaceViewController.h"/>
             <relationships>
+                <relationship kind="action" name="minusButtonTap:"/>
+                <relationship kind="action" name="plusButtonTap:"/>
                 <relationship kind="action" name="postOnTwitterButtonTap:"/>
                 <relationship kind="action" name="shareOnFacebookButtonTap:"/>
                 <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
@@ -1672,7 +1674,6 @@
         <class className="ReservationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ReservationViewController.h"/>
             <relationships>
-                <relationship kind="action" name="pickFriendsButtonClick:"/>
                 <relationship kind="outlet" name="date" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="days" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="hotelCity" candidateClass="UILabel"/>
@@ -1724,6 +1725,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>

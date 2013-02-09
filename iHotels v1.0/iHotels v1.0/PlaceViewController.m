@@ -82,8 +82,12 @@
     [self.photoImageView addGestureRecognizer:tapOnImageView];
 
     // apply color theme methods
-    [self applyiHotelsThemeWithPatternImageName:@"iphone_places_pattern"];
     [self configureSubviewsWithPatternImageName:@"iphone_places_pattern"];
+    
+    UIImage* pattern = [[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"iphone_page" ofType:@"png"]]resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeTile];
+    
+    // view controller background
+    self.view.backgroundColor = [UIColor colorWithPatternImage:pattern];
 }
 
 
