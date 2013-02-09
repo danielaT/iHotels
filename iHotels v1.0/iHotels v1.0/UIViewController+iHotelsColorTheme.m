@@ -37,7 +37,7 @@ NSString* const HEAVY_FONT = @"BaarPhilosBold";
     UIColor* const DARK_COLOR = [UIColor colorWithHue:0.63 saturation:0.17 brightness:0.4 alpha:1];
     
     // navigation bar background and text style
-    UIImage *image = [[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"iphone_navbar" ofType:@"png"]] resizableImageWithCapInsets:UIEdgeInsetsZero];
+    UIImage *image = [[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"iphone_navbar" ofType:@"png"]] resizableImageWithCapInsets:UIEdgeInsetsMake(1, 0, 1, 0) resizingMode:UIImageResizingModeStretch];
     [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.tintColor = DARK_COLOR;
     

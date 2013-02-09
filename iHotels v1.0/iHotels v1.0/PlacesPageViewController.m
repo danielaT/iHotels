@@ -12,7 +12,7 @@
 #import "AppDelegate.h"
 #import "UIViewController+iHotelsColorTheme.h"
 
-@interface PlacesPageViewController () <UIPageViewControllerDataSource>
+@interface PlacesPageViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 @property (nonatomic, strong) NSArray* visitedHotels;
 @property (nonatomic, strong) UIPageViewController *pageController;
 @property NSInteger selectedHotelIndex;
@@ -82,8 +82,7 @@
     self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options: options];
     
     self.pageController.dataSource = self;
-    //[[self.pageController view] setFrame:[[self view] bounds]];
-    NSLog(@"%f %f", self.view.bounds.size.width, self.view.bounds.size.height);
+
 
     [self.pageController.view setFrame:CGRectMake(20, 20, 280, 426)];
     
@@ -102,7 +101,7 @@
 
 
 
-#pragma mark - page view controller data source methods
+#pragma mark - page view controller data source and delegate methods
 
 - (PlaceViewController *)viewControllerAtIndex:(NSUInteger)index
 {
@@ -156,6 +155,16 @@
     return [self viewControllerAtIndex:index];
 }
 
+-(void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers
+{
+    // save the context (in case the user changed the rating and/or picture
+    AppDelegate* delegate = [[UIApplication sharedApplication] delegate];
+    NSError* error;
+    if (![delegate.managedObjectContext save:&error])
+    {
+        NSLog(@"error updating photo path: %@", error.localizedDescription);
+    }
+}
 
 
 @end

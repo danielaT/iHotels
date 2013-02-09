@@ -11,6 +11,7 @@
 #import "PlaceViewController.h"
 #import "HotelVisited.h"
 #import "UIViewController+iHotelsColorTheme.h"
+#import "RatingFaceView.h"
 #import <Social/Social.h>
 
 @interface PlaceViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
@@ -19,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *ratingImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
+@property (weak, nonatomic) IBOutlet RatingFaceView *ratingFaceView;
 
 - (IBAction)shareOnFacebookButtonTap:(id)sender;
 - (IBAction)postOnTwitterButtonTap:(id)sender;
@@ -54,7 +56,6 @@
     self.dateLabel.text = [dateFormatter stringFromDate: self.hotel.startDate];
     
     // set the star number image
-    
     NSString* imageName = [NSString stringWithFormat:@"iphone_star%d", [self.hotel.hotelRate integerValue]];
     self.ratingImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageName ofType:@"png"]];
     
@@ -66,6 +67,13 @@
     {
         NSData* imageData = [NSData dataWithContentsOfFile:self.hotel.photoPath];
         self.photoImageView.image = [UIImage imageWithData:imageData];
+    }
+    
+    // set the smiley face image if the hotel has user rating
+    self.ratingFaceView.backgroundColor = [UIColor clearColor];
+    if (self.hotel.userRating) {
+        self.ratingFaceView.ratingValue = [self.hotel.userRating integerValue];
+        [self.ratingFaceView setNeedsDisplay];
     }
     
     // add gesture recognizer for tap on photo
@@ -118,13 +126,7 @@
         
         // if file is saved successfully, update the entry in the database!
         self.hotel.photoPath = fullPath;
-        // save the context
-        AppDelegate* delegate = [[UIApplication sharedApplication] delegate];
-        NSError* error;
-        if (![delegate.managedObjectContext save:&error])
-        {
-            NSLog(@"error updating photo path: %@", error.localizedDescription);
-        }
+
         // load the image in the imageview
         self.photoImageView.image = image;
     }
@@ -137,7 +139,15 @@
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
     {
         SLComposeViewController *facebookSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        [facebookSheet setInitialText:[NSString stringWithFormat:@"was at %@ on %@ and it was...",  self.hotelNameLabel.text, self.dateLabel.text]];
+        
+        NSString* messageText;
+        if (self.hotel.userRating) {
+            messageText = [NSString stringWithFormat:@"was at %@ on %@ and rated the experience %d/5!",  self.hotelNameLabel.text, self.dateLabel.text, [self.hotel.userRating integerValue]];
+        }
+        else {
+            messageText = [NSString stringWithFormat:@"was at %@ on %@!",  self.hotelNameLabel.text, self.dateLabel.text];
+        }
+        [facebookSheet setInitialText:messageText];
         
         [facebookSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
             
@@ -165,7 +175,15 @@
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
         SLComposeViewController *twitterSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [twitterSheet setInitialText:[NSString stringWithFormat:@"was at %@ on %@ and it was...",  self.hotelNameLabel.text, self.dateLabel.text]];
+        
+        NSString* messageText;
+        if (self.hotel.userRating) {
+            messageText = [NSString stringWithFormat:@"was at %@ on %@ and rated the experience %d/5!",  self.hotelNameLabel.text, self.dateLabel.text, [self.hotel.userRating integerValue]];
+        }
+        else {
+            messageText = [NSString stringWithFormat:@"was at %@ on %@!",  self.hotelNameLabel.text, self.dateLabel.text];
+        }
+        [twitterSheet setInitialText:messageText];
         
         [twitterSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
             
@@ -185,6 +203,25 @@
     }
 }
 
+
+- (IBAction)plusButtonTap:(id)sender {
+    if (self.ratingFaceView.ratingValue<5) {
+        self.ratingFaceView.ratingValue++;
+        [self.ratingFaceView setNeedsDisplay];
+        
+        self.hotel.userRating = [NSNumber numberWithInteger:self.ratingFaceView.ratingValue];
+    }
+    
+}
+
+- (IBAction)minusButtonTap:(id)sender {
+    if (self.ratingFaceView.ratingValue>1) {
+        self.ratingFaceView.ratingValue--;
+        [self.ratingFaceView setNeedsDisplay];
+        
+        self.hotel.userRating = [NSNumber numberWithInteger:self.ratingFaceView.ratingValue];
+    }
+}
 
 
 #pragma mark - image picker delegate methods

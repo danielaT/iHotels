@@ -53,10 +53,14 @@
 
 - (void) reloadInformation
 {
+    
+    //TODO - move this into separate class!
     AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
     NSManagedObjectContext *context = delegate.managedObjectContext;
     NSError *error;
     NSFetchRequest *request1 = [[NSFetchRequest alloc] initWithEntityName:@"HotelVisited"];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:YES];
+    request1.sortDescriptors = @[sortDescriptor];
     hotels = [context executeFetchRequest:request1 error:&error];
 }
 - (void)didReceiveMemoryWarning
@@ -83,23 +87,23 @@
     static NSString *CellIdentifier = @"VisitedHotelCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    HotelVisited *res = [hotels objectAtIndex:indexPath.row];
-
-    cell.textLabel.text = res.hotelName;
-    cell.textLabel.font = [UIFont fontWithName:@"Baar Philos" size:16.0];
-    cell.textLabel.textColor = [UIColor colorWithHue:0.1417 saturation:0.21 brightness:0.9 alpha:1];
+    HotelVisited *hotel = [hotels objectAtIndex:indexPath.row];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    
+    cell.detailTextLabel.text = hotel.hotelName;
+    cell.textLabel.text = [dateFormatter stringFromDate:hotel.startDate];
+    
     cell.backgroundColor = [UIColor colorWithHue:0.63 saturation:0.17 brightness:0.4 alpha:1];
+    cell.textLabel.font = [UIFont fontWithName:@"Baar Philos" size:10.0];
+    cell.textLabel.textColor = [UIColor colorWithHue:0.1417 saturation:0.21 brightness:0.9 alpha:1];
+    cell.detailTextLabel.font = [UIFont fontWithName:@"Baar Philos" size:14.0];
+    cell.detailTextLabel.textColor = [UIColor colorWithHue:0.1417 saturation:0.21 brightness:0.9 alpha:1];
+    
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.imageView.image = [UIImage imageNamed:@"hotel.jpg"];
     return cell;
 }
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 70;
-}
-
-
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
