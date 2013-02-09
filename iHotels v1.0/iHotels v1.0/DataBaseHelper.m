@@ -68,4 +68,28 @@
     return [context executeFetchRequest:request1 error:&error];
 }
 
++ (NSArray*) getHotels
+{
+    AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
+    NSManagedObjectContext *context = delegate.managedObjectContext;
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"HotelVisited"];
+    NSSortDescriptor *descriptor =[[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:YES];
+    request.sortDescriptors = [NSArray arrayWithObject:descriptor];
+    NSError *error;
+    if (error) {
+        NSLog(@"Error fetching: %@", error);
+    }
+    
+    return [context executeFetchRequest:request error:&error];
+}
+
++(void) saveContext {
+    AppDelegate* delegate = [[UIApplication sharedApplication] delegate];
+    NSError* error;
+    if (![delegate.managedObjectContext save:&error])
+    {
+        NSLog(@"error updating photo path: %@", error.localizedDescription);
+    }
+}
+
 @end

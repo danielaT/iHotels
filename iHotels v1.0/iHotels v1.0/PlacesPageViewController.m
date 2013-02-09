@@ -11,6 +11,7 @@
 #import "HotelVisited.h"
 #import "AppDelegate.h"
 #import "UIViewController+iHotelsColorTheme.h"
+#import "DataBaseHelper.h"
 
 @interface PlacesPageViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 @property (nonatomic, strong) NSArray* visitedHotels;
@@ -27,49 +28,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self populateHotels];
+    self.visitedHotels = [DataBaseHelper getHotels];
+    
+    // get the index of the currently selected hotel
+    self.selectedHotelIndex = [self.visitedHotels indexOfObject:self.selectedHotel];
+    
     [self setUpPageViewController];
     [self configureSubviewsWithPatternImageName:@"iphone_places_pattern"];
 }
 
-- (void) populateHotels
-{
-    AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
-    NSManagedObjectContext *context = delegate.managedObjectContext;
-    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"HotelVisited"];
-    NSSortDescriptor *descriptor =[[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:YES];
-    request.sortDescriptors = [NSArray arrayWithObject:descriptor];
-    NSError *error;
-    
-    self.visitedHotels = [context executeFetchRequest:request error:&error];
-    if (error) {
-        NSLog(@"Error fetching: %@", error);
-    }
-    
-    // get the index of the currently selected hotel
-    self.selectedHotelIndex = [self.visitedHotels indexOfObject:self.selectedHotel];
-}
-
 -(void)setUpPageViewController
 {
-//    NSDictionary *options =  [NSDictionary dictionaryWithObject: [NSNumber numberWithInteger:UIPageViewControllerSpineLocationMin] forKey: UIPageViewControllerOptionSpineLocationKey];
-    
     NSDictionary *options =  [NSDictionary dictionaryWithObject: @20.0 forKey: UIPageViewControllerOptionSpineLocationKey];
-    
     self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options: options];
-    
     self.pageController.dataSource = self;
-
-
     [self.pageController.view setFrame:CGRectMake(20, 20, 280, 426)];
     
-    
     PlaceViewController *initialViewController = [self viewControllerAtIndex: [self.visitedHotels indexOfObject:self.selectedHotel]];
-    
     NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
-    
     [self.pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-    
     [self addChildViewController:self.pageController];
     [[self view] addSubview:[self.pageController view]];
     [self.pageController didMoveToParentViewController:self];
@@ -108,8 +85,6 @@
     return [self viewControllerAtIndex:index];
 }
 
-
-
 - (UIViewController *)pageViewController: (UIPageViewController *)pageViewController viewControllerAfterViewController: (UIViewController *)viewController
 {
     NSUInteger index = [self indexOfViewController: (PlaceViewController*)viewController];
@@ -128,12 +103,7 @@
 -(void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers
 {
     // save the context (in case the user changed the rating and/or picture
-    AppDelegate* delegate = [[UIApplication sharedApplication] delegate];
-    NSError* error;
-    if (![delegate.managedObjectContext save:&error])
-    {
-        NSLog(@"error updating photo path: %@", error.localizedDescription);
-    }
+    [DataBaseHelper saveContext];
 }
 
 @end

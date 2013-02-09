@@ -13,5 +13,7 @@
 +(void) moveReservationsToVisitedPlaces;
 +(NSArray*) reloadVisitedPlaces;
 +(NSArray*) reloadReservations;
++(NSArray*) getHotels;
++(void) saveContext;
 
 @end
