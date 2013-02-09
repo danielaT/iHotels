@@ -75,6 +75,7 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
 }
 
 -(void) showDatePickerView {
+    
     UIDatePicker *pickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, PICKER_TOOLBAR_HEIGTH, 0, 0)];
     pickerView.datePickerMode = UIDatePickerModeDate;
     pickerView.hidden = NO;
