@@ -15,6 +15,9 @@
 #import "HotelVisited.h"
 #import "UIViewController+iHotelsColorTheme.h"
 
+const int PICKER_TOOLBAR_HEIGTH = 44;
+NSString* const DATE_FORMAT = @"yyyy-MM-dd";
+
 @interface ReservationViewController ()
 {
     NSMutableArray *arrayWithFriends;
@@ -36,28 +39,34 @@
 
 - (void) viewDidLoad
 {
-    [self.hotelName setText: self.nameString];
-    [self.hotelCity setText: self.cityString];
-    [self.hotelImage loadRequest:[NSURLRequest requestWithURL:self.url]];
     [super viewDidLoad];
-    self.navigationItem.hidesBackButton = YES;
-    self.date.delegate =self;
-    self.days.delegate =self;
-    [self.selectedFriendsView setText:@"Friends:"];
     
-    NSString* imageName = [NSString stringWithFormat:@"iphone_star%d", [self.hotelRating intValue]];
-    self.starImage.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageName ofType:@"png"]];
-    
+    self.date.delegate = self;
+    self.days.delegate = self;
     
     UITapGestureRecognizer *dateTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleChooseDate:)];
     [self.date addGestureRecognizer:dateTap];
     
-    // apply color theme methods
+    [self showInformation];
+    [self applyTheme];
+    
+    pickerViewPopup = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+}
+
+// apply color theme methods
+-(void) applyTheme {
     [self applyiHotelsThemeWithPatternImageName:@"iphone_hotel_pattern"];
     [self configureNavigationBar];
     [self configureSubviewsWithPatternImageName:@"iphone_hotel_pattern"];
-    
-    pickerViewPopup = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+}
+
+-(void) showInformation {
+    [self.hotelName setText: self.nameString];
+    [self.hotelCity setText: self.cityString];
+    [self.hotelImage loadRequest:[NSURLRequest requestWithURL:self.url]];
+    [self.selectedFriendsView setText:@"Friends:"];
+    NSString* imageName = [NSString stringWithFormat:@"iphone_star%d", [self.hotelRating intValue]];
+    self.starImage.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageName ofType:@"png"]];
 }
 
 - (void)handleChooseDate:(UIGestureRecognizer *)gestureRecognizer
@@ -66,7 +75,7 @@
 }
 
 -(void) showDatePickerView {
-    UIDatePicker *pickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 44, 0, 0)];
+    UIDatePicker *pickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, PICKER_TOOLBAR_HEIGTH, 0, 0)];
     pickerView.datePickerMode = UIDatePickerModeDate;
     pickerView.hidden = NO;
     pickerView.date = [NSDate date];
@@ -75,7 +84,7 @@
     double timeInterval = 365 * 24 * 60 * 60;
     pickerView.maximumDate = [[NSDate date] dateByAddingTimeInterval:timeInterval];
     
-    UIToolbar *pickerToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    UIToolbar *pickerToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, PICKER_TOOLBAR_HEIGTH)];
     pickerToolbar.barStyle = UIBarStyleBlackOpaque;
     [pickerToolbar sizeToFit];
     
@@ -92,14 +101,14 @@
     [pickerViewPopup addSubview:pickerView];
     [pickerViewPopup addSubview:pickerToolbar];
     [pickerViewPopup showFromTabBar:self.tabBarController.tabBar];
-    [pickerViewPopup setBounds:CGRectMake(0,0,320, 464)];
+    [pickerViewPopup setBounds:CGRectMake(0, 0 , self.view.frame.size.width, self.view.frame.size.height)];
 }
 
 -(void)doneButtonPressed:(id)sender{
     for (UIView* view in pickerViewPopup.subviews) {
         if ([[view class] isSubclassOfClass:[UIDatePicker class]]) {
             NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-            [dateFormat setDateFormat:@"yyyy-MM-dd"];
+            [dateFormat setDateFormat:DATE_FORMAT];
             self.date.text = [dateFormat stringFromDate:[(UIDatePicker*)view date]];
         }
     }
@@ -118,7 +127,6 @@
 - (void)viewDidUnload {
     self.selectedFriendsView = nil;
     self.friendPickerController = nil;
-    
     [super viewDidUnload];
 }
 
@@ -206,15 +214,11 @@
     if ([self isValid])
     {
         NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-        [dateFormat setDateFormat:@"yyyy-MM-dd"];
+        [dateFormat setDateFormat:DATE_FORMAT];
         [dateFormat setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-        NSLocale *enUSPOSIXLocale = [NSLocale currentLocale];
-    
-        [dateFormat setLocale:enUSPOSIXLocale];
-        
         NSDate *date = [dateFormat dateFromString:self.date.text];
-        AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
         
+        AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
         NSManagedObjectContext *context = delegate.managedObjectContext;
         Reservation *reservation = [NSEntityDescription insertNewObjectForEntityForName:@"Reservation" inManagedObjectContext:context];
         reservation.hotelName = self.hotelName.text;
@@ -223,8 +227,6 @@
         reservation.hotelImage = self.imageURL;
         reservation.hotelRate = [NSNumber numberWithInt:[ self.hotelRating intValue]];
         
-        NSError *error;
-        
         for(int i = 0; i < [arrayWithFriends count]; i++)
         {
             Friend *friend = [NSEntityDescription insertNewObjectForEntityForName:@"Friend" inManagedObjectContext:context];
@@ -232,6 +234,7 @@
             [reservation addFriendsObject:friend];
         }
         
+        NSError *error;
         [context save:&error];
         
         alertMessage = [NSString stringWithFormat:@"You made reservation for: %@", self.hotelName.text, nil];
