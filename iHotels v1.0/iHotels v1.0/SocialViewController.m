@@ -132,6 +132,7 @@
     {
         [self populateUserDetails];
     }
+
 }
 - (IBAction)postInFacebook:(id)sender
 {

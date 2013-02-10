@@ -17,7 +17,7 @@
 {
     NSError *error;
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Reservation"];
-    AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSArray* reservations = [delegate.managedObjectContext executeFetchRequest:request error:&error];
 
     for (Reservation* res in reservations)
@@ -48,7 +48,7 @@
 
 +(NSArray*) reloadVisitedPlaces
 {
-    AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = delegate.managedObjectContext;
     NSError *error;
     NSFetchRequest *request1 = [[NSFetchRequest alloc] initWithEntityName:@"HotelVisited"];
@@ -59,7 +59,7 @@
 
 +(NSArray*) reloadReservations
 {
-    AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = delegate.managedObjectContext;
     NSError *error;
     NSFetchRequest *request1 = [[NSFetchRequest alloc] initWithEntityName:@"Reservation"];
@@ -70,7 +70,7 @@
 
 + (NSArray*) getHotels
 {
-    AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = delegate.managedObjectContext;
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"HotelVisited"];
     NSSortDescriptor *descriptor =[[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:YES];
@@ -84,7 +84,7 @@
 }
 
 +(void) saveContext {
-    AppDelegate* delegate = [[UIApplication sharedApplication] delegate];
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSError* error;
     if (![delegate.managedObjectContext save:&error])
     {

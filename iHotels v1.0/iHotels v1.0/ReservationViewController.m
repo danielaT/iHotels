@@ -168,7 +168,7 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
     else
     {
         [self.tabBarController setSelectedIndex:3];
-        [(UINavigationController*)[self.tabBarController.viewControllers objectAtIndex:0] popViewControllerAnimated:YES];
+        //[(UINavigationController*)[self.tabBarController.viewControllers objectAtIndex:0] popViewControllerAnimated:YES];
         
     }
 }
@@ -233,7 +233,7 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
         [dateFormat setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
         NSDate *date = [dateFormat dateFromString:self.date.text];
         
-        AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+        AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         NSManagedObjectContext *context = delegate.managedObjectContext;
         Reservation *reservation = [NSEntityDescription insertNewObjectForEntityForName:@"Reservation" inManagedObjectContext:context];
         reservation.hotelName = self.hotelName.text;
