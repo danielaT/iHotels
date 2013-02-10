@@ -42,17 +42,17 @@
     NSString* imageName = [NSString stringWithFormat:@"iphone_star%@",self.hotelRating];
     self.starImage.image = [UIImage imageNamed:imageName];
     
-    [UIView animateWithDuration:2.0
-                          delay:0.0
-                        options: UIViewAnimationCurveEaseInOut
-                     animations:^{
-                         [self.nameView setAlpha:1.0f];
-                         
-                     }
-                     completion:^(BOOL finished){
-                         //if(finished)  NSLog(@"Finished !!!!!");
-                                             // do any stuff here if you want
-                                             }];
+//    [UIView animateWithDuration:2.0
+//                          delay:0.0
+//                        options: UIViewAnimationCurveEaseInOut
+//                     animations:^{
+//                         [self.nameView setAlpha:1.0f];
+//                         
+//                     }
+//                     completion:^(BOOL finished){
+//                         //if(finished)  NSLog(@"Finished !!!!!");
+//                                             // do any stuff here if you want
+//                                             }];
 
 
     // apply color theme methods

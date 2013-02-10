@@ -10,7 +10,6 @@
 
 @interface MyReservationViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIView *nameView;
 @property (weak, nonatomic) IBOutlet UILabel *reservationName;
 @property NSString *stringName;
 @property (weak, nonatomic) IBOutlet UILabel *reservationDate;

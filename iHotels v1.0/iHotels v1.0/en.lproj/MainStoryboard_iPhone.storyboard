@@ -74,43 +74,28 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WaJ-Nu-DjM">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WaJ-Nu-DjM">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="127" id="nJY-Cb-kqa"/>
+                                    <constraint firstAttribute="width" constant="100" id="cbn-Dy-HsQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="days" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RjS-5N-7lv">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="days" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RjS-5N-7lv">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SmE-HR-c8D">
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3we-iA-Dl8">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="170" id="0BE-vr-iii"/>
-                                            <constraint firstAttribute="height" constant="21" id="jSI-fS-gZ0"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.64239870882926331" green="0.65698740433673475" blue="0.56960285419032453" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDE-25-KUL">
                                 <constraints>
-                                    <constraint firstItem="3we-iA-Dl8" firstAttribute="centerY" secondItem="SmE-HR-c8D" secondAttribute="centerY" type="default" id="B9O-CW-Juk"/>
-                                    <constraint firstItem="3we-iA-Dl8" firstAttribute="leading" secondItem="SmE-HR-c8D" secondAttribute="leading" type="default" id="Q4L-QW-eat"/>
+                                    <constraint firstAttribute="width" constant="100" id="yjO-vR-TB3"/>
                                 </constraints>
-                            </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="The Date of the trip:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDE-25-KUL">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Days:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ddq-Ik-EBj">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Duration:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ddq-Ik-EBj">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -147,42 +132,46 @@
                                     <constraint firstAttribute="height" constant="20" id="G59-rl-Xey"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="hotel name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Me8-gr-R8c">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.95294123890000004" green="0.96078437569999997" blue="0.85490202900000001" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
-                            <constraint firstItem="Ddq-Ik-EBj" firstAttribute="top" secondItem="RjS-5N-7lv" secondAttribute="top" type="default" id="218-YU-GZq"/>
-                            <constraint firstItem="rDE-25-KUL" firstAttribute="top" secondItem="jun-XQ-lK4" secondAttribute="top" constant="171" id="6y2-Mg-129"/>
-                            <constraint firstAttribute="trailing" secondItem="SmE-HR-c8D" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ERv-Na-CLX"/>
-                            <constraint firstItem="Ddq-Ik-EBj" firstAttribute="top" secondItem="jun-XQ-lK4" secondAttribute="top" constant="221" id="Ebd-7l-V3f"/>
-                            <constraint firstItem="rDE-25-KUL" firstAttribute="baseline" secondItem="WaJ-Nu-DjM" secondAttribute="baseline" type="default" id="FPW-Pi-gEf"/>
-                            <constraint firstItem="RjS-5N-7lv" firstAttribute="leading" secondItem="WaJ-Nu-DjM" secondAttribute="leading" type="default" id="Gpx-oS-4R3"/>
-                            <constraint firstAttribute="bottom" secondItem="SmE-HR-c8D" secondAttribute="bottom" constant="327" id="JUh-YQ-lov"/>
+                            <constraint firstItem="rDE-25-KUL" firstAttribute="trailing" secondItem="Ddq-Ik-EBj" secondAttribute="trailing" type="default" id="30l-vA-SlV"/>
+                            <constraint firstItem="sUs-9R-fdl" firstAttribute="top" secondItem="jun-XQ-lK4" secondAttribute="top" constant="77" id="52E-Fs-HgK"/>
+                            <constraint firstItem="Ddq-Ik-EBj" firstAttribute="top" secondItem="rDE-25-KUL" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5dS-4D-vxP"/>
+                            <constraint firstAttribute="trailing" secondItem="Me8-gr-R8c" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="9xn-1M-Keq"/>
+                            <constraint firstItem="Me8-gr-R8c" firstAttribute="leading" secondItem="jun-XQ-lK4" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="B8A-Lv-Jwq"/>
+                            <constraint firstItem="WaJ-Nu-DjM" firstAttribute="baseline" secondItem="rDE-25-KUL" secondAttribute="baseline" type="default" id="Hue-ME-7pI"/>
+                            <constraint firstItem="Me8-gr-R8c" firstAttribute="top" secondItem="KzM-de-boZ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="JD1-UB-jPG"/>
+                            <constraint firstItem="RjS-5N-7lv" firstAttribute="leading" secondItem="WaJ-Nu-DjM" secondAttribute="leading" type="default" id="Kic-PE-Hif"/>
+                            <constraint firstAttribute="trailing" secondItem="sUs-9R-fdl" secondAttribute="trailing" constant="27" id="N0y-mS-qwQ"/>
                             <constraint firstAttribute="bottom" secondItem="KyX-44-yS4" secondAttribute="bottom" constant="35" id="NFN-ob-Dun"/>
-                            <constraint firstItem="Alh-gc-M4L" firstAttribute="top" secondItem="jun-XQ-lK4" secondAttribute="top" constant="35" id="PO8-WR-nxX"/>
-                            <constraint firstItem="sUs-9R-fdl" firstAttribute="top" secondItem="jun-XQ-lK4" secondAttribute="top" constant="98" id="Pwk-Nh-W5b"/>
-                            <constraint firstItem="rDE-25-KUL" firstAttribute="top" secondItem="WaJ-Nu-DjM" secondAttribute="top" type="default" id="QeZ-fJ-rcD"/>
-                            <constraint firstItem="KzM-de-boZ" firstAttribute="top" secondItem="Alh-gc-M4L" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ro3-Lm-xVl"/>
-                            <constraint firstItem="Ddq-Ik-EBj" firstAttribute="baseline" secondItem="RjS-5N-7lv" secondAttribute="baseline" type="default" id="TqF-qn-HrT"/>
-                            <constraint firstItem="SmE-HR-c8D" firstAttribute="leading" secondItem="jun-XQ-lK4" secondAttribute="leading" constant="128" id="W3v-ic-sbg"/>
-                            <constraint firstItem="SmE-HR-c8D" firstAttribute="top" secondItem="jun-XQ-lK4" secondAttribute="top" constant="40" id="Wkm-yi-fuD"/>
+                            <constraint firstItem="RjS-5N-7lv" firstAttribute="top" secondItem="WaJ-Nu-DjM" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="NJQ-hJ-16v"/>
+                            <constraint firstItem="KzM-de-boZ" firstAttribute="centerX" secondItem="Alh-gc-M4L" secondAttribute="centerX" type="default" id="Ncw-Em-A7u"/>
+                            <constraint firstItem="Ddq-Ik-EBj" firstAttribute="leading" secondItem="jun-XQ-lK4" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="SOY-c4-0uz"/>
+                            <constraint firstItem="Me8-gr-R8c" firstAttribute="centerX" secondItem="KzM-de-boZ" secondAttribute="centerX" type="default" id="TK6-ab-5UJ"/>
+                            <constraint firstItem="KzM-de-boZ" firstAttribute="top" secondItem="Alh-gc-M4L" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Tb9-Cf-1A1"/>
+                            <constraint firstItem="WaJ-Nu-DjM" firstAttribute="top" secondItem="rDE-25-KUL" secondAttribute="top" type="default" id="Z9N-Cc-L9D"/>
                             <constraint firstItem="KyX-44-yS4" firstAttribute="top" secondItem="jun-XQ-lK4" secondAttribute="top" constant="276" id="a99-WZ-LhN"/>
                             <constraint firstAttribute="trailing" secondItem="KyX-44-yS4" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="anx-vI-fc3"/>
+                            <constraint firstAttribute="trailing" secondItem="WaJ-Nu-DjM" secondAttribute="trailing" constant="17" id="cMo-uE-HrF"/>
                             <constraint firstItem="rDE-25-KUL" firstAttribute="leading" secondItem="jun-XQ-lK4" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="f40-rx-BvX"/>
                             <constraint firstItem="KyX-44-yS4" firstAttribute="leading" secondItem="jun-XQ-lK4" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fZ3-Nc-smo"/>
-                            <constraint firstItem="Ddq-Ik-EBj" firstAttribute="leading" secondItem="jun-XQ-lK4" secondAttribute="leading" constant="60" id="fug-ng-3rD"/>
-                            <constraint firstAttribute="trailing" secondItem="WaJ-Nu-DjM" secondAttribute="trailing" constant="3" id="htx-Zh-VnT"/>
-                            <constraint firstItem="RjS-5N-7lv" firstAttribute="trailing" secondItem="WaJ-Nu-DjM" secondAttribute="trailing" type="default" id="j9n-v9-KsY"/>
-                            <constraint firstItem="Alh-gc-M4L" firstAttribute="leading" secondItem="jun-XQ-lK4" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="sSU-PY-FRP"/>
-                            <constraint firstItem="KzM-de-boZ" firstAttribute="leading" secondItem="jun-XQ-lK4" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="t5s-J6-Yzv"/>
-                            <constraint firstItem="WaJ-Nu-DjM" firstAttribute="centerX" secondItem="sUs-9R-fdl" secondAttribute="centerX" type="default" id="yA5-uI-wi3"/>
+                            <constraint firstItem="Alh-gc-M4L" firstAttribute="top" secondItem="jun-XQ-lK4" secondAttribute="top" constant="20" symbolic="YES" type="default" id="jQ1-b5-9aD"/>
+                            <constraint firstItem="RjS-5N-7lv" firstAttribute="baseline" secondItem="Ddq-Ik-EBj" secondAttribute="baseline" type="default" id="pUd-Ib-cGk"/>
+                            <constraint firstItem="RjS-5N-7lv" firstAttribute="trailing" secondItem="WaJ-Nu-DjM" secondAttribute="trailing" type="default" id="wei-vj-11C"/>
+                            <constraint firstItem="WaJ-Nu-DjM" firstAttribute="centerY" secondItem="jun-XQ-lK4" secondAttribute="centerY" type="default" id="yrA-tP-aYK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nR4-Tn-0oD"/>
                     <connections>
-                        <outlet property="nameView" destination="SmE-HR-c8D" id="W9o-nA-kxc"/>
                         <outlet property="reservationDate" destination="WaJ-Nu-DjM" id="v9B-ze-11c"/>
                         <outlet property="reservationDays" destination="RjS-5N-7lv" id="jxF-ug-x0f"/>
-                        <outlet property="reservationName" destination="3we-iA-Dl8" id="0PZ-wB-oEi"/>
+                        <outlet property="reservationName" destination="Me8-gr-R8c" id="EIT-cK-nqS"/>
                         <outlet property="scrollViewWithFriends" destination="KyX-44-yS4" id="pMt-Xr-GrZ"/>
                         <outlet property="starImage" destination="KzM-de-boZ" id="r3D-na-VGj"/>
                         <outlet property="webView" destination="Alh-gc-M4L" id="KvZ-5V-Gmp"/>
@@ -216,23 +205,20 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Log in/out in Facebook and Twitter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygT-TW-Guv">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Log in/out in Facebook and Twitter to share your information about places you have been!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="ygT-TW-Guv">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="WtT-RA-JJf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="To share your information about places you have been" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8n1-Ya-vzh">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Ehu-MP-861"/>
-                                    <constraint firstAttribute="width" constant="413" id="XGD-V4-eKn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNb-i4-4kH">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="57" id="wFW-B6-xeS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Post">
+                                <state key="normal" title="FB">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -247,8 +233,11 @@
                                 <color key="backgroundColor" red="0.231372565" green="0.34901961679999999" blue="0.59607845540000004" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGf-9S-5fw">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="57" id="65N-HG-2aH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Post">
+                                <state key="normal" title="Tweeter">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -261,7 +250,7 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="facebook_logo@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="ly3-Fh-y5g">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="PDw-op-6Yf"/>
+                                    <constraint firstAttribute="height" constant="60" id="PSR-qY-JgW"/>
                                     <constraint firstAttribute="width" constant="60" id="cC0-rd-rD6"/>
                                 </constraints>
                             </imageView>
@@ -279,12 +268,12 @@
                                     <action selector="segmentedSwitch:" destination="RdP-08-1dM" eventType="valueChanged" id="W1M-CB-tsB"/>
                                 </connections>
                             </segmentedControl>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="You are logged as:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPw-Hd-UIW">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="You are logged as:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPw-Hd-UIW">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zsm-9R-U6x">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zsm-9R-U6x">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="170" id="wjg-Jr-ewr"/>
                                 </constraints>
@@ -295,29 +284,27 @@
                         </subviews>
                         <color key="backgroundColor" red="0.95294123890000004" green="0.96078437569999997" blue="0.85490202900000001" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
-                            <constraint firstItem="O1p-lf-znt" firstAttribute="top" secondItem="gr1-7M-241" secondAttribute="top" constant="278" id="7Wh-Vy-Mb9"/>
-                            <constraint firstItem="Zsm-9R-U6x" firstAttribute="leading" secondItem="fPw-Hd-UIW" secondAttribute="leading" type="default" id="7cX-zu-QQS"/>
-                            <constraint firstItem="8n1-Ya-vzh" firstAttribute="top" secondItem="gr1-7M-241" secondAttribute="top" constant="130" id="8P1-yP-lgp"/>
-                            <constraint firstAttribute="bottom" secondItem="NNb-i4-4kH" secondAttribute="bottom" constant="141" id="AgG-TG-UFj"/>
-                            <constraint firstItem="8n1-Ya-vzh" firstAttribute="leading" secondItem="gr1-7M-241" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Bio-if-Qm4"/>
+                            <constraint firstItem="fPw-Hd-UIW" firstAttribute="centerX" secondItem="YIe-RD-mjG" secondAttribute="centerX" type="default" id="1XA-Zd-aW0"/>
+                            <constraint firstAttribute="trailing" secondItem="sGf-9S-5fw" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="74f-GJ-ro9"/>
+                            <constraint firstItem="fPw-Hd-UIW" firstAttribute="top" secondItem="YIe-RD-mjG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Av6-ZC-fHv"/>
                             <constraint firstItem="dPi-Tn-Rkx" firstAttribute="top" secondItem="gr1-7M-241" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Cdi-7c-FCQ"/>
-                            <constraint firstAttribute="bottom" secondItem="Zsm-9R-U6x" secondAttribute="bottom" constant="42" id="GqT-XV-UtK"/>
-                            <constraint firstItem="dPi-Tn-Rkx" firstAttribute="bottom" secondItem="ly3-Fh-y5g" secondAttribute="bottom" type="default" id="INs-Xc-sK8"/>
-                            <constraint firstAttribute="bottom" secondItem="fPw-Hd-UIW" secondAttribute="bottom" constant="205" id="IrE-Vs-j7V"/>
-                            <constraint firstAttribute="bottom" secondItem="O1p-lf-znt" secondAttribute="bottom" constant="89" id="MPH-g2-Wxe"/>
-                            <constraint firstAttribute="bottom" secondItem="sGf-9S-5fw" secondAttribute="bottom" constant="82" id="NgB-9Q-7QB"/>
-                            <constraint firstItem="ygT-TW-Guv" firstAttribute="top" secondItem="gr1-7M-241" secondAttribute="top" constant="80" id="P3W-cn-shi"/>
-                            <constraint firstItem="ygT-TW-Guv" firstAttribute="centerX" secondItem="gr1-7M-241" secondAttribute="centerX" type="default" id="PW6-Xe-DNU"/>
-                            <constraint firstItem="fPw-Hd-UIW" firstAttribute="leading" secondItem="ygT-TW-Guv" secondAttribute="leading" type="default" id="VSw-kc-kY5"/>
-                            <constraint firstItem="YIe-RD-mjG" firstAttribute="centerX" secondItem="ygT-TW-Guv" secondAttribute="centerX" type="default" id="Xgp-3I-gaQ"/>
-                            <constraint firstItem="YIe-RD-mjG" firstAttribute="top" secondItem="gr1-7M-241" secondAttribute="top" constant="169" id="abw-hA-qNO"/>
-                            <constraint firstItem="ly3-Fh-y5g" firstAttribute="centerX" secondItem="O1p-lf-znt" secondAttribute="centerX" type="default" id="d3z-pU-e3P"/>
+                            <constraint firstItem="O1p-lf-znt" firstAttribute="leading" secondItem="gr1-7M-241" secondAttribute="leading" constant="120" id="Gk2-OW-RRQ"/>
+                            <constraint firstItem="O1p-lf-znt" firstAttribute="top" secondItem="fPw-Hd-UIW" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="KSf-2m-a4G"/>
+                            <constraint firstItem="NNb-i4-4kH" firstAttribute="top" secondItem="O1p-lf-znt" secondAttribute="top" type="default" id="Ml8-k0-6cO"/>
+                            <constraint firstItem="Zsm-9R-U6x" firstAttribute="top" secondItem="O1p-lf-znt" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="OwO-qo-zf6"/>
+                            <constraint firstAttribute="trailing" secondItem="dPi-Tn-Rkx" secondAttribute="trailing" constant="63" id="P4e-ZD-GNz"/>
+                            <constraint firstItem="ygT-TW-Guv" firstAttribute="top" secondItem="dPi-Tn-Rkx" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Twt-fi-auF"/>
+                            <constraint firstItem="YIe-RD-mjG" firstAttribute="centerX" secondItem="ygT-TW-Guv" secondAttribute="centerX" type="default" id="XsZ-zi-QRy"/>
+                            <constraint firstItem="NNb-i4-4kH" firstAttribute="baseline" secondItem="sGf-9S-5fw" secondAttribute="baseline" type="default" id="eIc-Uz-sa4"/>
                             <constraint firstItem="ly3-Fh-y5g" firstAttribute="top" secondItem="gr1-7M-241" secondAttribute="top" constant="20" symbolic="YES" type="default" id="eIv-HM-f9p"/>
+                            <constraint firstItem="O1p-lf-znt" firstAttribute="centerX" secondItem="fPw-Hd-UIW" secondAttribute="centerX" type="default" id="gct-St-dOk"/>
                             <constraint firstItem="ly3-Fh-y5g" firstAttribute="leading" secondItem="gr1-7M-241" secondAttribute="leading" constant="58" id="j44-vz-zeh"/>
-                            <constraint firstItem="NNb-i4-4kH" firstAttribute="centerX" secondItem="8n1-Ya-vzh" secondAttribute="centerX" type="default" id="mcm-fQ-fSL"/>
-                            <constraint firstItem="O1p-lf-znt" firstAttribute="leading" secondItem="gr1-7M-241" secondAttribute="leading" constant="48" id="nN3-HK-YoF"/>
-                            <constraint firstItem="sGf-9S-5fw" firstAttribute="leading" secondItem="NNb-i4-4kH" secondAttribute="leading" type="default" id="sdb-BR-0Fj"/>
-                            <constraint firstItem="dPi-Tn-Rkx" firstAttribute="centerX" secondItem="8n1-Ya-vzh" secondAttribute="centerX" type="default" id="stQ-cc-vTY"/>
+                            <constraint firstItem="ygT-TW-Guv" firstAttribute="top" secondItem="ly3-Fh-y5g" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="lT0-No-22e"/>
+                            <constraint firstItem="NNb-i4-4kH" firstAttribute="leading" secondItem="gr1-7M-241" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="mdC-0p-YYB"/>
+                            <constraint firstAttribute="bottom" secondItem="Zsm-9R-U6x" secondAttribute="bottom" constant="22" id="oZT-Ah-y4p"/>
+                            <constraint firstItem="YIe-RD-mjG" firstAttribute="top" secondItem="ygT-TW-Guv" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="rtE-n0-sPO"/>
+                            <constraint firstItem="ygT-TW-Guv" firstAttribute="leading" secondItem="gr1-7M-241" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="t7X-Mf-Naa"/>
+                            <constraint firstItem="Zsm-9R-U6x" firstAttribute="centerX" secondItem="O1p-lf-znt" secondAttribute="centerX" type="default" id="x6j-VA-UVW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="adW-VF-5LT"/>
@@ -1557,171 +1544,6 @@
         <image name="twitter_logo.png" width="50" height="50"/>
         <image name="twitter_logo@2x.png" width="100" height="100"/>
     </resources>
-    <classes>
-        <class className="CityPickerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CityPickerViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="ContactsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactsViewController.h"/>
-        </class>
-        <class className="FBProfilePictureView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FBProfilePictureView.h"/>
-        </class>
-        <class className="GalleryViewController" superclassName="UICollectionViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GalleryViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="loadingIndicator" candidateClass="UIActivityIndicatorView"/>
-            </relationships>
-        </class>
-        <class className="HotelDescriptionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HotelDescriptionViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="checkInTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="checkOutTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="floorsNumber" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="hotelPolicy" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="propertyInformation" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="roomsNumber" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="HotelImageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HotelImageViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="hotelImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="HotelTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HotelTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="hotelDescription" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="hotelImage" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="hotelName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="hotelRating" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="HotelViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HotelViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="findInMapTouched:"/>
-                <relationship kind="action" name="makeReservationTouched:"/>
-                <relationship kind="outlet" name="address" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cityAndPostalCode" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="hotelImage" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="hotelMenuTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="locationDescription" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="ratingImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="ImageCollectionViewCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageCollectionViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="hotelImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="MapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="browseCitiesButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="mapImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="searchButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="searchTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
-        </class>
-        <class className="MyReservationViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyReservationViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="nameView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="reservationDate" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="reservationDays" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="reservationName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scrollViewWithFriends" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="starImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PlaceViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlaceViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="minusButtonTap:"/>
-                <relationship kind="action" name="plusButtonTap:"/>
-                <relationship kind="action" name="postOnTwitterButtonTap:"/>
-                <relationship kind="action" name="shareOnFacebookButtonTap:"/>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="hotelNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="photoImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="ratingFaceView" candidateClass="RatingFaceView"/>
-                <relationship kind="outlet" name="ratingImageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="PlacesPageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlacesPageViewController.h"/>
-        </class>
-        <class className="PropertyAmenitiesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PropertyAmenitiesViewController.h"/>
-        </class>
-        <class className="RatingFaceView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RatingFaceView.h"/>
-        </class>
-        <class className="ReservationViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReservationViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="date" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="days" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="hotelCity" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="hotelImage" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="hotelName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="selectedFriendsView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="starImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="ReservationsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReservationsTableViewController.h"/>
-        </class>
-        <class className="RoomTypesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoomTypesViewController.h"/>
-        </class>
-        <class className="RoomViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoomViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="roomAmenitiesTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="SocialViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="facebookPost" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="loginLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="profilePhoto" candidateClass="FBProfilePictureView"/>
-                <relationship kind="outlet" name="segmentedControl" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="twitterPost" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="usernameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="VisitedPlacesTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VisitedPlacesTableViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

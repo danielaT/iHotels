@@ -15,14 +15,12 @@
 #import "DataBaseHelper.h"
 
 @interface VisitedPlacesTableViewController ()
-
+@property NSArray* hotels;
 @end
 
 @implementation VisitedPlacesTableViewController
-{
-    NSArray* hotels;
-    int selectedIndex;
-}
+@synthesize hotels = _hotels;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -35,11 +33,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
-    NSManagedObjectContext *context = delegate.managedObjectContext;
-    NSError *error;
-    NSFetchRequest *request1 = [[NSFetchRequest alloc] initWithEntityName:@"HotelVisited"];
-    hotels = [context executeFetchRequest:request1 error:&error];
+
+    self.hotels = [DataBaseHelper getHotels];
     
     // apply color theme methods
     [self applyiHotelsThemeWithPatternImageName:@"iphone_places_pattern"];
@@ -48,7 +43,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    hotels = [DataBaseHelper reloadVisitedPlaces];
+    self.hotels = [DataBaseHelper reloadVisitedPlaces];
     [self.tableView reloadData];
 }
 
@@ -61,7 +56,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [hotels count];
+    return [self.hotels count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -69,7 +64,7 @@
     static NSString *CellIdentifier = @"VisitedHotelCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    HotelVisited *hotel = [hotels objectAtIndex:indexPath.row];
+    HotelVisited *hotel = [self.hotels objectAtIndex:indexPath.row];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
@@ -93,7 +88,7 @@
     {
         PlacesPageViewController* controller = (PlacesPageViewController*)segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        controller.selectedHotel = [hotels objectAtIndex:indexPath.row];
+        controller.selectedHotel = [self.hotels objectAtIndex:indexPath.row];
     }
 }
 
