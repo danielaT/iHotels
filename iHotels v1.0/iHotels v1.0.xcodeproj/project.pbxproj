@@ -17,8 +17,8 @@
 		5B49F8C216C7A20E00D806F9 /* iphone_navbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B49F8C016C7A20E00D806F9 /* iphone_navbar.png */; };
 		5B49F8C316C7A20E00D806F9 /* iphone_navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B49F8C116C7A20E00D806F9 /* iphone_navbar@2x.png */; };
 		5B4C5CC416C66F9200BAFAAA /* RatingFaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4C5CC316C66F9200BAFAAA /* RatingFaceView.m */; };
-		5B89BC3916C70C6E0012234F /* iphone_page_book.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B89BC3516C70C6E0012234F /* iphone_page_book.png */; };
-		5B89BC3A16C70C6E0012234F /* iphone_page_book@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B89BC3616C70C6E0012234F /* iphone_page_book@2x.png */; };
+		5B7AEBFA16C8054F004B95DB /* iphone_page_book.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B7AEBF816C8054F004B95DB /* iphone_page_book.png */; };
+		5B7AEBFB16C8054F004B95DB /* iphone_page_book@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B7AEBF916C8054F004B95DB /* iphone_page_book@2x.png */; };
 		5B89BC3B16C70C6E0012234F /* iphone_page.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B89BC3716C70C6E0012234F /* iphone_page.png */; };
 		5B89BC3C16C70C6E0012234F /* iphone_page@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B89BC3816C70C6E0012234F /* iphone_page@2x.png */; };
 		5BAC679116C108A8005637D9 /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAC679016C108A8005637D9 /* PlaceViewController.m */; };
@@ -135,8 +135,8 @@
 		5B49F8C116C7A20E00D806F9 /* iphone_navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone_navbar@2x.png"; sourceTree = "<group>"; };
 		5B4C5CC216C66F9200BAFAAA /* RatingFaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingFaceView.h; sourceTree = "<group>"; };
 		5B4C5CC316C66F9200BAFAAA /* RatingFaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingFaceView.m; sourceTree = "<group>"; };
-		5B89BC3516C70C6E0012234F /* iphone_page_book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_page_book.png; sourceTree = "<group>"; };
-		5B89BC3616C70C6E0012234F /* iphone_page_book@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone_page_book@2x.png"; sourceTree = "<group>"; };
+		5B7AEBF816C8054F004B95DB /* iphone_page_book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_page_book.png; sourceTree = "<group>"; };
+		5B7AEBF916C8054F004B95DB /* iphone_page_book@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone_page_book@2x.png"; sourceTree = "<group>"; };
 		5B89BC3716C70C6E0012234F /* iphone_page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_page.png; sourceTree = "<group>"; };
 		5B89BC3816C70C6E0012234F /* iphone_page@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone_page@2x.png"; sourceTree = "<group>"; };
 		5BAC678F16C108A8005637D9 /* PlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceViewController.h; sourceTree = "<group>"; };
@@ -404,10 +404,10 @@
 				5BCF413616C2EF99002C9CA3 /* iphone_ihotels_icon@2x.png */,
 				5B49F8C016C7A20E00D806F9 /* iphone_navbar.png */,
 				5B49F8C116C7A20E00D806F9 /* iphone_navbar@2x.png */,
-				5B89BC3516C70C6E0012234F /* iphone_page_book.png */,
-				5B89BC3616C70C6E0012234F /* iphone_page_book@2x.png */,
 				5B89BC3716C70C6E0012234F /* iphone_page.png */,
 				5B89BC3816C70C6E0012234F /* iphone_page@2x.png */,
+				5B7AEBF816C8054F004B95DB /* iphone_page_book.png */,
+				5B7AEBF916C8054F004B95DB /* iphone_page_book@2x.png */,
 				5BE1AF9316C1AE9A00A57D93 /* iphone_places.png */,
 				5BE1AF9416C1AE9A00A57D93 /* iphone_places@2x.png */,
 				5BCF414016C2F065002C9CA3 /* iphone_places_pattern.png */,
@@ -657,12 +657,12 @@
 				5B3B18C116C4ED1D004C29A9 /* twitter_logo@2x.png in Resources */,
 				5B46CFA516C5830A000643E5 /* iphone_map_bulgaria.png in Resources */,
 				5B46CFA616C5830A000643E5 /* iphone_map_bulgaria@2x.png in Resources */,
-				5B89BC3916C70C6E0012234F /* iphone_page_book.png in Resources */,
-				5B89BC3A16C70C6E0012234F /* iphone_page_book@2x.png in Resources */,
 				5B89BC3B16C70C6E0012234F /* iphone_page.png in Resources */,
 				5B89BC3C16C70C6E0012234F /* iphone_page@2x.png in Resources */,
 				5B49F8C216C7A20E00D806F9 /* iphone_navbar.png in Resources */,
 				5B49F8C316C7A20E00D806F9 /* iphone_navbar@2x.png in Resources */,
+				5B7AEBFA16C8054F004B95DB /* iphone_page_book.png in Resources */,
+				5B7AEBFB16C8054F004B95DB /* iphone_page_book@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

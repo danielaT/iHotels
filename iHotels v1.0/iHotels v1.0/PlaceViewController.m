@@ -12,6 +12,7 @@
 #import "HotelVisited.h"
 #import "UIViewController+iHotelsColorTheme.h"
 #import "RatingFaceView.h"
+#import "DataBaseHelper.h"
 #import <Social/Social.h>
 
 @interface PlaceViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
@@ -214,6 +215,7 @@
         [self.ratingFaceView setNeedsDisplay];
         
         self.hotel.userRating = [NSNumber numberWithInteger:self.ratingFaceView.ratingValue];
+        [DataBaseHelper saveContext];
     }
     
 }
@@ -224,6 +226,7 @@
         [self.ratingFaceView setNeedsDisplay];
         
         self.hotel.userRating = [NSNumber numberWithInteger:self.ratingFaceView.ratingValue];
+        [DataBaseHelper saveContext];
     }
 }
 

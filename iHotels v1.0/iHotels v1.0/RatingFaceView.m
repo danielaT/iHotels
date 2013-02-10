@@ -126,6 +126,19 @@
 
 
 
+-(void)drawNoRating
+{
+    UIBezierPath* rectanglePath = [UIBezierPath bezierPathWithRect: CGRectMake(5, 5, 40, 40)];
+    [self.strokeColor set];
+    rectanglePath.lineWidth = 2;
+    [rectanglePath stroke];
+    NSString* textContent = @"NO\nRATING";
+    CGRect textRect = CGRectMake(5, 5, 40, 30);
+    [textContent drawInRect: textRect withFont:  [UIFont fontWithName: @"Helvetica" size: 9] lineBreakMode: NSLineBreakByWordWrapping alignment: NSTextAlignmentCenter];
+}
+
+
+
 -(void) drawDefaultFaceComponents
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -198,6 +211,9 @@
 - (void)drawRect:(CGRect)rect
 {
     switch (self.ratingValue) {
+        case 0:
+            [self drawNoRating];
+            break;
         case 1:
             [self drawVerySadFace];
             break;

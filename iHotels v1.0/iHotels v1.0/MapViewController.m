@@ -32,7 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Cities&Hotels";
+    self.title = @"Cities & Hotels";
     
     self.mapImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"iphone_map_bulgaria" ofType:@"png"]];
        

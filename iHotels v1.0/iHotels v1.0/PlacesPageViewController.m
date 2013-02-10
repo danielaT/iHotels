@@ -93,7 +93,7 @@
     }
     
     index--;
-    self.selectedHotelIndex--;
+    self.selectedHotelIndex = index;
     [self updateTitle];
     return [self viewControllerAtIndex:index];
 }
@@ -106,7 +106,7 @@
     }
     
     index++;
-    self.selectedHotelIndex++;
+    self.selectedHotelIndex = index;
     if (index == [self.visitedHotels count]) {
         return nil;
     }
@@ -114,10 +114,6 @@
     return [self viewControllerAtIndex:index];
 }
 
--(void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers
-{
-    // save the context (in case the user changed the rating and/or picture)
-    [DataBaseHelper saveContext];
-}
+
 
 @end
