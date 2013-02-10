@@ -78,16 +78,16 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
 
 -(void) showDatePickerView {
     
-    UIDatePicker *pickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, PICKER_TOOLBAR_HEIGTH, 0, 0)];
+    UIDatePicker *pickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
     pickerView.datePickerMode = UIDatePickerModeDate;
     pickerView.hidden = NO;
     pickerView.date = [NSDate date];
     pickerView.minimumDate = [NSDate date];
-    // about a yars
+    // a yars
     double timeInterval = 365 * 24 * 60 * 60;
     pickerView.maximumDate = [[NSDate date] dateByAddingTimeInterval:timeInterval];
     
-    UIToolbar *pickerToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, PICKER_TOOLBAR_HEIGTH)];
+    UIToolbar *pickerToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
     pickerToolbar.barStyle = UIBarStyleBlackOpaque;
     [pickerToolbar sizeToFit];
     
@@ -104,7 +104,7 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
     [pickerViewPopup addSubview:pickerView];
     [pickerViewPopup addSubview:pickerToolbar];
     [pickerViewPopup showFromTabBar:self.tabBarController.tabBar];
-    [pickerViewPopup setBounds:CGRectMake(0, 0 , self.view.frame.size.width, self.view.frame.size.height)];
+    [pickerViewPopup setBounds:CGRectMake(0, 0 , self.view.frame.size.width, self.view.frame.size.height/2)];
 }
 
 -(void)doneButtonPressed:(id)sender{
@@ -250,8 +250,8 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
     scheduledAlert.applicationIconBadgeNumber = 1;
     // one day before the reservation start date
     double oneDayBefore = -(24*60*60);
-   // scheduledAlert.fireDate = [fireDate dateByAddingTimeInterval:oneDayBefore];
-    scheduledAlert.fireDate = [NSDate dateWithTimeIntervalSinceNow:20];
+    scheduledAlert.fireDate = [fireDate dateByAddingTimeInterval:oneDayBefore];
+//    scheduledAlert.fireDate = [NSDate dateWithTimeIntervalSinceNow:20];
     scheduledAlert.timeZone = [NSTimeZone localTimeZone];
     scheduledAlert.repeatInterval =  NSHourCalendarUnit;
     scheduledAlert.soundName = UILocalNotificationDefaultSoundName;

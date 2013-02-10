@@ -209,7 +209,6 @@
 - (IBAction)browseCitiesButtonTap:(id)sender {
     self.selectedRegion = nil;
     self.searchString = @"";
-    [self performSegueWithIdentifier:@"toCityListSegue" sender:self];
 }
 
 

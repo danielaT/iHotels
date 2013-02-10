@@ -15,5 +15,7 @@
 +(NSArray*) reloadReservations;
 +(NSArray*) getHotels;
 +(void) saveContext;
++(NSArray*) getAllCitiesFromPlist;
++(NSArray*) sortArray:(NSArray*)array;
 
 @end

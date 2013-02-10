@@ -9,13 +9,14 @@
 #import "CityPickerViewController.h"
 #import "MasterViewController.h"
 #import "UIViewController+iHotelsColorTheme.h"
+#import "DataBaseHelper.h"
 
 NSString* const BLANK_SPACE = @" ";
 NSString* const BLANK_SPACE_REPLACEMENT = @"%20";
 
 @interface CityPickerViewController () <UITableViewDataSource, UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray* availableCitiesArray;
 @property (nonatomic, strong) NSString* selectedRegionName;
 @property (nonatomic, strong) NSString* selectedSearchString;
@@ -55,30 +56,37 @@ NSString* const BLANK_SPACE_REPLACEMENT = @"%20";
 
 -(void) searchCitiesInPlist:(NSDictionary*)plist thatMatchSearchString:(NSString*) string
 {
-    NSMutableArray* citiesArray = [[NSMutableArray alloc]init];
+    NSMutableArray* citiesArray = [[NSMutableArray alloc] init];
     NSDictionary *regionsFromPlist = [plist objectForKey:@"Regions"];
     
-    // Add all cities that contain the search string to the temporary "citiesArray"
     // If search string is empty, just add every city.
+    NSString *trimmedString = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    if ([trimmedString length] <= 0) {
+        self.availableCitiesArray = [DataBaseHelper getAllCitiesFromPlist];
+    }
     
-    for (NSString* regionName in regionsFromPlist) {
-        NSDictionary* region = [regionsFromPlist objectForKey:regionName];
-        NSArray* citiesInRegion = [region objectForKey:@"Cities"];
-        for (int i=0; i<[citiesInRegion count]; i++) {
-            
-            NSString* cityName = [citiesInRegion objectAtIndex:i];
-            
-            NSRange range = [cityName rangeOfString:string options:NSCaseInsensitiveSearch];
-            
-            if (!(range.location == NSNotFound) || ([string isEqualToString:@""]))
-            {
-                [citiesArray addObject:[citiesInRegion objectAtIndex:i]];
+    // Add all cities that contain the search string to the temporary "citiesArray"
+    else {
+        for (NSString* regionName in regionsFromPlist) {
+            NSDictionary* region = [regionsFromPlist objectForKey:regionName];
+            NSArray* citiesInRegion = [region objectForKey:@"Cities"];
+            for (int i=0; i<[citiesInRegion count]; i++) {
+                
+                NSString* cityName = [citiesInRegion objectAtIndex:i];
+                
+                NSRange range = [cityName rangeOfString:string options:NSCaseInsensitiveSearch];
+                
+                if (!(range.location == NSNotFound) || ([string isEqualToString:@""]))
+                {
+                    [citiesArray addObject:[citiesInRegion objectAtIndex:i]];
+                }
             }
         }
     }
+    
     // Sort the citiesArray and place the result in the availableCitiesArray, which fills the tableview later.
     self.availableCitiesArray = (NSArray*) citiesArray;
-    [self sortAvailableCitiesArray];
+    self.availableCitiesArray = [DataBaseHelper sortArray:self.availableCitiesArray];
     
     // set the title
     self.title = @"Available Cities";
@@ -90,20 +98,11 @@ NSString* const BLANK_SPACE_REPLACEMENT = @"%20";
     NSDictionary *regionsFromPlist = [plist objectForKey:@"Regions"];
     NSDictionary *selectedRegion = [regionsFromPlist objectForKey:self.selectedRegionName];
     self.availableCitiesArray = [selectedRegion objectForKey:@"Cities"];
-    [self sortAvailableCitiesArray];
+    self.availableCitiesArray = [DataBaseHelper sortArray:self.availableCitiesArray];
     
     // set the region name as title
     self.title = [NSString stringWithFormat:@"%@ Region", self.selectedRegionName];
     
-}
-
-// sort the cities array by name (easy, since there are all string objects in it)
--(void) sortAvailableCitiesArray
-{
-    self.availableCitiesArray = [self.availableCitiesArray sortedArrayUsingComparator: ^NSComparisonResult(id a, id b)
-                                 {
-                                     return ([a compare:b]);
-                                 }];
 }
 
 -(void) setRegion:(NSString*)regionName

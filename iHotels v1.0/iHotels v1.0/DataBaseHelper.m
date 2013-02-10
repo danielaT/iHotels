@@ -19,7 +19,7 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Reservation"];
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSArray* reservations = [delegate.managedObjectContext executeFetchRequest:request error:&error];
-
+    
     for (Reservation* res in reservations)
     {
         if (res.isVisited == YES)
@@ -82,6 +82,31 @@
     {
         NSLog(@"error updating photo path: %@", error.localizedDescription);
     }
+}
+
++(NSArray*) getAllCitiesFromPlist {
+    NSMutableArray* citiesArray = [[NSMutableArray alloc] init];
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"RegionsAndCities" ofType:@"plist"];
+    NSDictionary *regionsAndCities = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+    NSDictionary *regionsFromPlist = [regionsAndCities objectForKey:@"Regions"];
+    
+    for (NSString* regionName in regionsFromPlist) {
+        NSDictionary* region = [regionsFromPlist objectForKey:regionName];
+        NSArray* citiesInRegion = [region objectForKey:@"Cities"];
+        for (int i=0; i<[citiesInRegion count]; i++) {
+            [citiesArray addObject:[citiesInRegion objectAtIndex:i]];
+        }
+    }
+    return citiesArray;
+}
+
+// sort the cities array by name (easy, since there are all string objects in it)
++(NSArray*) sortArray:(NSArray*)array {
+    array = [array sortedArrayUsingComparator: ^NSComparisonResult(id a, id b)
+             {
+                 return ([a compare:b]);
+             }];
+    return array;
 }
 
 @end

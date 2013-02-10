@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AdvancedSearchSettings</key>
+	<dict>
+		<key>Amenities</key>
+		<array>
+			<string>swimming pool</string>
+			<string>fitness center</string>
+			<string>restaurant</string>
+			<string>children’s activities</string>
+			<string>complimentary breakfast</string>
+			<string>meeting facilities</string>
+			<string>pets allowed</string>
+			<string>wheelchair accessible</string>
+			<string>kitchen/kitchenette</string>
+		</array>
+		<key>PropertyCategories</key>
+		<array>
+			<string>hotel</string>
+			<string>suite</string>
+			<string>resort</string>
+			<string>vacation rental/condo</string>
+			<string>bed &amp; breakfast</string>
+			<string>all-inclusive</string>
+		</array>
+	</dict>
+</dict>
+</plist>
