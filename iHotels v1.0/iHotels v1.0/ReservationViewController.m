@@ -41,8 +41,6 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
 {
     [super viewDidLoad];
     
-    
-    //
     arrayWithFriends = [[NSMutableArray alloc]init];
     
     self.date.delegate = self;
@@ -55,11 +53,6 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
     [self applyTheme];
     
     pickerViewPopup = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
-}
-
--(void)viewWillAppear:(BOOL)animated
-{
-    NSLog(@"%d fr: ", [arrayWithFriends count]);
 }
 
 // apply color theme methods
