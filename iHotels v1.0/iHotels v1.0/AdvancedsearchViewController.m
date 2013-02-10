@@ -67,7 +67,7 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@""]) {
+    if ([segue.identifier isEqualToString:@"showFilteredHotels"]) {
         CityPickerViewController* cityPicker = (CityPickerViewController*)segue.destinationViewController;
         cityPicker.searchFilters = searchFilters;
     }
