@@ -27,6 +27,8 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
 @property (strong, nonatomic) IBOutlet UITextView *selectedFriendsView;
 @property (retain, nonatomic) FBFriendPickerViewController *friendPickerController;
 @property (weak, nonatomic) IBOutlet UITextField *days;
+@property (weak, nonatomic) IBOutlet UIButton *facebookButton;
+@property (weak, nonatomic) IBOutlet UIButton *phoneContactsButton;
 
 - (void)fillTextBoxAndDismiss:(NSString *)text;
 
@@ -60,6 +62,46 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
     [self applyiHotelsThemeWithPatternImageName:@"iphone_hotel_pattern"];
     [self configureNavigationBar];
     [self configureSubviewsWithPatternImageName:@"iphone_hotel_pattern"];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    UIInterfaceOrientation orientation = [[UIDevice currentDevice] orientation];
+    [self rearrangeViewsInOrientation:orientation];
+}
+
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [self rearrangeViewsInOrientation:toInterfaceOrientation];
+}
+
+-(void)viewDidLayoutSubviews
+{
+    UIInterfaceOrientation orientation = [[UIDevice currentDevice] orientation];
+    [self rearrangeViewsInOrientation:orientation];
+}
+
+-(void) rearrangeViewsInOrientation:(UIInterfaceOrientation) orientation
+{
+    [UIView animateWithDuration:0.1 animations:^{
+        if (orientation == UIInterfaceOrientationLandscapeRight || orientation == UIInterfaceOrientationLandscapeLeft) {
+            
+            if([[UIScreen mainScreen] bounds].size.height == 568.0)
+            {
+                // iphone 4.0 inch screen
+                self.facebookButton.frame = CGRectMake(350, 10, self.facebookButton.frame.size.width, self.facebookButton.frame.size.height);
+                self.phoneContactsButton.frame = CGRectMake(350, 50, self.phoneContactsButton.frame.size.width, self.phoneContactsButton.frame.size.height);
+                self.selectedFriendsView.frame = CGRectMake(310, 90, 210, 120);
+            }
+            else
+            {
+                // iphone 3.5 inch screen
+                self.facebookButton.frame = CGRectMake(300, 10, self.facebookButton.frame.size.width, self.facebookButton.frame.size.height);
+                self.phoneContactsButton.frame = CGRectMake(300, 50, self.phoneContactsButton.frame.size.width, self.phoneContactsButton.frame.size.height);
+                self.selectedFriendsView.frame = CGRectMake(275, 90, 180, 120);
+            }
+        }
+    }];
 }
 
 -(void) showInformation {
@@ -205,9 +247,7 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
     }
     return YES;
 }
-
-- (IBAction)makeReservation:(id)sender
-{
+- (IBAction)reservationDone:(id)sender {
     if ([self isValid])
     {
         NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
