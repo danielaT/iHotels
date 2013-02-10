@@ -64,8 +64,6 @@
              if (!error) {
                  self.usernameLabel.text = user.name;
                  self.profilePhoto.profileID = user.id;
-                 //
-                 //NSLog(@"user's id %@",self.profilePhoto.profileID);
              }
          }];
     }

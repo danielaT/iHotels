@@ -45,8 +45,6 @@
     NSString* imageName = [NSString stringWithFormat:@"iphone_star%@",self.hotelRating];
     self.starImage.image = [UIImage imageNamed:imageName];
     
-    NSLog(@"%d friends: ", [self.arrayWithFriends count]);
-    
     self.textFieldWithFriends.text = @"";
     
     if([self.arrayWithFriends count] == 0)
@@ -60,21 +58,6 @@
             self.textFieldWithFriends.text = [NSString stringWithFormat:@"%@\n %@", self.textFieldWithFriends.text, name];
         }   
     }
-        
-   
-
-    //NSArray *reservations = [DataBaseHelper reloadReservations];
-    
-//    int i = 0;
-//    for( Reservation* res in reservations)
-//    {
-//        if([res.hotelName isEqualToString:self.stringName])
-//            break;
-//        i++;
-//    }
-//    Reservation *current_res = [reservations objectAtIndex:i];
-//    //self.arrayWithFriends = [[current_res.friends allObjects] mutableCopy];
-//    NSLog(@"%d friends: ", [self.arrayWithFriends count]);
 
 //    [UIView animateWithDuration:2.0
 //                          delay:0.0

@@ -159,35 +159,26 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
         
         [self.friendPickerController loadData];
         [self.friendPickerController clearSelection];
-        
-        // iOS 5.0+ apps should use [UIViewController presentViewController:animated:completion:]
-        // rather than this deprecated method, but we want our samples to run on iOS 4.x as well.
-        //[self presentModalViewController:self.friendPickerController animated:YES];
         [self presentViewController:self.friendPickerController animated:YES completion:nil];
     }
     else
-    {
         [self.tabBarController setSelectedIndex:3];
-        //[(UINavigationController*)[self.tabBarController.viewControllers objectAtIndex:0] popViewControllerAnimated:YES];
-        
-    }
+
 }
 
 - (void)facebookViewControllerDoneWasPressed:(id)sender
 {
     NSMutableString *text = [[NSMutableString alloc] init];
-    
     // we pick up the users from the selection, and create a string that we use to update the text view
     // at the bottom of the display; note that self.selection is a property inherited from our base class
-    //Friend *current_friend = [[Friend alloc]init];
-    for (id<FBGraphUser> user in self.friendPickerController.selection) {
-        if ([text length]) {
+    for (id<FBGraphUser> user in self.friendPickerController.selection)
+    {
+        if ([text length])
+        {
             [text appendString:@", "];
         }
         [text appendString:user.name];
-        
         [arrayWithFriends addObject:user.name];
-        NSLog(@"friend: %@", user.name);
     }
     
     [self fillTextBoxAndDismiss:text.length > 0 ? text : @"<None>"];
@@ -200,20 +191,18 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
 
 - (void)fillTextBoxAndDismiss:(NSString *)text
 {
-    //self.selectedFriendsView.text = text;
     if([self.selectedFriendsView.text isEqualToString:@"Friends:"])
         [self.selectedFriendsView setText:[NSString stringWithFormat:@"%@ %@", self.selectedFriendsView.text, text]];
     else
         [self.selectedFriendsView setText:[NSString stringWithFormat:@"%@, %@", self.selectedFriendsView.text, text]];
-
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(BOOL) isValid {
+-(BOOL) isValid
+{
     NSString *trimmedDate = [self.date.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     NSString *trimmedDays = [self.days.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    
     if ([trimmedDate length] <= 0) {
         alertMessage = @"Please, enter date.";
         return NO;}
@@ -254,8 +243,6 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
         
         alertMessage = [NSString stringWithFormat:@"You made reservation for: %@", self.hotelName.text, nil];
         [self.navigationController popToRootViewControllerAnimated:YES];
-        
-        
         [self createNotificationWithFireDate:date];
     }
     

@@ -31,17 +31,13 @@
     NSDate *dateAfterTheTrip = [[NSCalendar currentCalendar] dateByAddingComponents:dateComponents toDate:self.startDate options:0];
     
     if ([dateNow compare:dateAfterTheTrip] == NSOrderedDescending)
-    {
         return YES;
-    }
-    else if ([dateNow compare:dateAfterTheTrip] == NSOrderedAscending)
-    {
-        return NO;
-    }
     else
-    {
+        if ([dateNow compare:dateAfterTheTrip] == NSOrderedAscending)
+            return NO;
+    else
         return YES;
-    }
+
 }
 
 @end

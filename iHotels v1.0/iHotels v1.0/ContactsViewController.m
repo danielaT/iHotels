@@ -59,14 +59,9 @@
     }
     
     if (accessGranted) {
-        //NSLog(@"granted");
         ind= ABAddressBookGetPersonCount(addressBook);
-        //NSLog(@"%d",(int)ind);
+       
         self.peopleArray = [(__bridge NSArray*)ABAddressBookCopyArrayOfAllPeople(addressBook) mutableCopy];
-        
-        
-        // Do whatever you want here.
-        
     }
     
     ABRecordRef person;
@@ -79,14 +74,6 @@
         //NSString *firstName = (__bridge NSString *)ABRecordCopyValue(ref,kABPersonFirstNameProperty);
        //NSString *lastName = (__bridge NSString *)ABRecordCopyValue(ref,kABPersonLastNameProperty);
     }
-    
-    
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -117,8 +104,6 @@
     static NSString *CellIdentifier = @"MyCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
-    
     ABRecordRef person;
 
     person = (__bridge ABRecordRef)([self.peopleArray objectAtIndex:indexPath.row]);
@@ -138,56 +123,12 @@
     return cell;
 }
 
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
 
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- }
- else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
     UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
     
     if (selectedCell.accessoryType == UITableViewCellAccessoryNone)
@@ -202,22 +143,14 @@
             selectedCell.accessoryType = UITableViewCellAccessoryNone;
             [arrayWithContacts removeObject:selectedCell.textLabel.text];
         }
-
 }
 
 - (IBAction)addContactsToReservation:(id)sender
 {
     ReservationViewController *reservation =  [[[self navigationController] viewControllers]objectAtIndex:4];
-    
-    NSLog(@"%d fr2:", [arrayWithContacts count]);
 
     for(int i = 0; i < [arrayWithContacts count]; i++)
-    {
-                //NSLog(@"of: %@", [arrayWithContacts objectAtIndex:i]);
-        //Friend *friend = [[Friend alloc]init];
-        //friend. name = [arrayWithContacts objectAtIndex:i];
         [reservation addFriend:[arrayWithContacts objectAtIndex:i]];
-    }
 
     [[self navigationController] popToViewController:reservation animated:YES];
 }
