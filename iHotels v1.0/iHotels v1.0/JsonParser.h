@@ -10,7 +10,8 @@
 
 @interface JsonParser : NSObject
 
-+(void)getJsonForCity:(NSString*)cityName  handler:(void (^)(NSDictionary*))ch;
-+(void)getJsonForHotel:(int)hotelId handler:(void (^)(NSDictionary*))ch;
++(void)getJsonForCity:(NSString*)cityName  handler:(void (^)(NSDictionary*))callback;
++(void)getJsonForHotel:(int)hotelId handler:(void (^)(NSDictionary*))callback;
++(void)getJsonForHotelsWithFilter:(NSDictionary*)cityName  handler:(void (^)(NSDictionary*))callback;
 
 @end

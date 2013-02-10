@@ -28,7 +28,7 @@ NSString* const BLANK_SPACE_REPLACEMENT = @"%20";
 @synthesize availableCitiesArray = _availableCitiesArray;
 @synthesize selectedSearchString = _selecredSearchString;
 @synthesize selectedRegionName = _selectedRegionName;
-@synthesize searchFilters=_searchFilters;
+
 
 - (void)viewDidLoad
 {
@@ -43,15 +43,8 @@ NSString* const BLANK_SPACE_REPLACEMENT = @"%20";
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"RegionsAndCities" ofType:@"plist"];
     NSDictionary *regionsAndCities = [NSDictionary dictionaryWithContentsOfFile:plistPath];
     
-    // the advanced search is used 
-    if (self.searchFilters != nil) {
-        
-        
-        
-    }
-    
     // if region is nil, that means that the user has made a search or selected to see all cities
-	else if (self.selectedRegionName == nil) {
+    if (self.selectedRegionName == nil) {
         
         [self searchCitiesInPlist:regionsAndCities thatMatchSearchString:self.selectedSearchString];
     }

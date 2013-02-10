@@ -19,5 +19,6 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @property (nonatomic) NSString* cityName;
+@property (nonatomic) NSDictionary* searchFilters;
 
 @end

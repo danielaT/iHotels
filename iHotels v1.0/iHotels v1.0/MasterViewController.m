@@ -32,13 +32,26 @@ const float ROW_HEIGTH = 120;
 
 @synthesize hotelListArray=_hotelListArray;
 @synthesize cityName=_cityName;
+@synthesize searchFilters=_searchFilters;
 
 // reload tableView with new hotels when new city is selected
 -(void)setCityName:(NSString *)cityName {
     _cityName = cityName;
     self.navigationItem.title = self.cityName;
-    HotelsInformation* hotelsInfo = [[HotelsInformation alloc] init];
-    [hotelsInfo getHotelsForCity:cityName handler:^(NSArray* hotels) {
+    [[[HotelsInformation alloc] init] getHotelsForCity:cityName handler:^(NSArray* hotels) {
+        self.hotelListArray = hotels;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }];
+}
+
+-(void)setSearchFilters:(NSDictionary *)searchFilters {
+    _searchFilters = searchFilters;
+    self.navigationItem.title = @"Results";
+    
+    [[[HotelsInformation alloc] init] getHotelsWithFilter:searchFilters handler:^(NSArray* hotels) {
         self.hotelListArray = hotels;
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -71,7 +84,6 @@ const float ROW_HEIGTH = 120;
     [self applyiHotelsThemeWithPatternImageName:@"iphone_hotel_pattern"];
     [self configureSubviewsWithPatternImageName:@"iphone_hotel_pattern"];
     
-    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     self.hotelListArray = [[NSMutableArray alloc] init];
 }
 
@@ -103,7 +115,6 @@ const float ROW_HEIGTH = 120;
     // Return NO if you do not want the specified item to be editable.
     return NO;
 }
-
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {

@@ -20,5 +20,6 @@
 -(NSArray*) getRoomAmenitiesForRoom:(NSDictionary*)room;
 -(NSString*) getProfilePhotoForHotel:(NSDictionary*)hotel;
 -(NSArray*) getPropertyAmenitiesForHotel:(NSDictionary*)hotel;
+-(void)getHotelsWithFilter:(NSDictionary*)cityName handler:(void (^)(NSArray*))callback;
 
 @end

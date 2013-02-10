@@ -9,14 +9,17 @@
 #import "AdvancedsearchViewController.h"
 #import "UIViewController+iHotelsColorTheme.h"
 #import "DataBaseHelper.h"
-#import "CityPickerViewController.h"
+#import "MasterViewController.h"
 
 @interface AdvancedsearchViewController ()<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 {
     NSArray* amenities;
     NSArray* propertyCategories;
     NSArray* citiesArray;
-    NSDictionary* searchFilters;
+    NSMutableDictionary* searchFilters;
+    NSString* selectedCity;
+    NSMutableArray* selectedPropertyCategories;
+    NSMutableArray* selectedAmenities;
 }
 @end
 
@@ -39,45 +42,41 @@
     
     // load information for filters
     [self loadInformationForAdvancedSearch];
+    
+    searchFilters = [[NSMutableDictionary alloc] init];
+    selectedAmenities = [[NSMutableArray alloc] init];
+    selectedPropertyCategories = [[NSMutableArray alloc] init];
 }
 
 -(void)search:(id)sender {
     
     // the search must have selected city
-    [self validateSearch];
-    
-    // selected city
-    NSString* selectedCityName = [citiesArray objectAtIndex:self.cities.indexPathForSelectedRow.row];
-    
-    // selected property categoris
-    NSMutableArray* selectedPropertyCategories = [[NSMutableArray alloc] init];
-    for (NSIndexPath* indexPath in self.propertyCategories.indexPathsForSelectedRows) {
-        [selectedPropertyCategories addObject:[propertyCategories objectAtIndex:indexPath.row]];
+    if (![self isValid]) {
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"" message:@"You have to select a city for searching." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
     }
     
-    // selected amenities
-    NSMutableArray* selectedAmenities = [[NSMutableArray alloc] init];
-    for (NSIndexPath* indexPath in self.amenities.indexPathsForSelectedRows) {
-        [selectedAmenities addObject:[amenities objectAtIndex:indexPath.row]];
+    else {
+        [searchFilters setValue:selectedCity forKey:@"city"];
+        [searchFilters setValue:selectedAmenities forKey:@"amenities"];
+        [searchFilters setValue:selectedPropertyCategories forKey:@"propertyCategories"];
+        
+        [self performSegueWithIdentifier:@"showFilteredHotels" sender:sender];
     }
-    
-    [searchFilters setValue:selectedCityName forKey:@"city"];
-    [searchFilters setValue:selectedAmenities forKey:@"amenities"];
-    [searchFilters setValue:selectedPropertyCategories forKey:@"propertyCategories"];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showFilteredHotels"]) {
-        CityPickerViewController* cityPicker = (CityPickerViewController*)segue.destinationViewController;
-        cityPicker.searchFilters = searchFilters;
+        MasterViewController* filteredHotels = (MasterViewController*)segue.destinationViewController;
+        filteredHotels.searchFilters = searchFilters;
     }
 }
 
--(void)validateSearch {
-    if ([[citiesArray objectAtIndex:self.cities.indexPathForSelectedRow.row] length] <= 0) {
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"" message:@"You have to select a city for searching." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alert show];
+-(BOOL)isValid {
+    if ([selectedCity length] <= 0) {
+        return NO;
     }
+    return YES;
 }
 
 -(void) loadInformationForAdvancedSearch
@@ -176,16 +175,48 @@
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView.tag == 0) {
-        NSArray *visibleCells = [tableView visibleCells];
-        for (UITableViewCell *cell in visibleCells) {
-            [cell setAccessoryType:UITableViewCellAccessoryNone];
+        for (UITableViewCell* cell in [tableView visibleCells]) {
+            if ([cell.textLabel.text isEqualToString:selectedCity]) {
+                [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+            }
+            else {
+                [cell setAccessoryType:UITableViewCellAccessoryNone];
+            }
         }
     }
+}
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // if the cell was checked, uncheck it
+    if ([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark) {
+        [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryNone];
+    }
+    
+    else {
+        if (tableView.tag == 0) {
+            selectedCity = [citiesArray objectAtIndex:indexPath.row];
+            
+            // select just one city at a time, so uncheck the other cities
+            for (UITableViewCell* cell in [tableView visibleCells]) {
+                [cell setAccessoryType:UITableViewCellAccessoryNone];
+            }
+        }
+        
+        else if (tableView.tag == 1) {
+            [selectedAmenities addObject:[NSString stringWithFormat:@"%d", indexPath.row + 1]];
+        }
+        
+        else {
+            [selectedPropertyCategories addObject:[NSString stringWithFormat:@"%d", indexPath.row + 1]];
+        }
+        
+        [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
+    }
+    
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
