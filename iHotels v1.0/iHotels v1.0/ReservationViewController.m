@@ -41,6 +41,10 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
 {
     [super viewDidLoad];
     
+    
+    //
+    arrayWithFriends = [[NSMutableArray alloc]init];
+    
     self.date.delegate = self;
     self.days.delegate = self;
     
@@ -51,6 +55,11 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
     [self applyTheme];
     
     pickerViewPopup = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    NSLog(@"%d fr: ", [arrayWithFriends count]);
 }
 
 // apply color theme methods
@@ -191,7 +200,12 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
 
 - (void)fillTextBoxAndDismiss:(NSString *)text
 {
-    self.selectedFriendsView.text = text;
+    //self.selectedFriendsView.text = text;
+    if([self.selectedFriendsView.text isEqualToString:@"Friends:"])
+        [self.selectedFriendsView setText:[NSString stringWithFormat:@"%@ %@", self.selectedFriendsView.text, text]];
+    else
+        [self.selectedFriendsView setText:[NSString stringWithFormat:@"%@, %@", self.selectedFriendsView.text, text]];
+
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -269,6 +283,10 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
 - (void) addFriend:(NSString*) name
 {
     [arrayWithFriends addObject:name];
+    if([self.selectedFriendsView.text isEqualToString:@"Friends:"])
+        [self.selectedFriendsView setText:[NSString stringWithFormat:@"%@ %@", self.selectedFriendsView.text, name]];
+   
+    else [self.selectedFriendsView setText:[NSString stringWithFormat:@"%@, %@", self.selectedFriendsView.text, name]];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

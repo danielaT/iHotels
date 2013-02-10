@@ -9,7 +9,7 @@
 #import "ContactsViewController.h"
 #import "ReservationViewController.h"
 #import "UIViewController+iHotelsColorTheme.h"
-
+#import "Friend.h"
 
 @interface ContactsViewController ()
 
@@ -34,6 +34,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    arrayWithContacts = [[NSMutableArray alloc]init];
+    
     self.navigationItem.hidesBackButton = YES;
     //[self.tableView reloadData];
     
@@ -57,9 +59,9 @@
     }
     
     if (accessGranted) {
-        NSLog(@"granted");
+        //NSLog(@"granted");
         ind= ABAddressBookGetPersonCount(addressBook);
-        NSLog(@"%d",(int)ind);
+        //NSLog(@"%d",(int)ind);
         self.peopleArray = [(__bridge NSArray*)ABAddressBookCopyArrayOfAllPeople(addressBook) mutableCopy];
         
         
@@ -70,19 +72,12 @@
     ABRecordRef person;
     for(int i = 0; i <ind;i++)
     {
-        NSLog(@"person: %@", [self.peopleArray objectAtIndex:i]);
         person = (__bridge ABRecordRef)([self.peopleArray objectAtIndex:i]);
-        NSLog(@"name %@", person);
-        
-        ABRecordRef ref = CFArrayGetValueAtIndex((__bridge CFArrayRef)(self.peopleArray), i);
+        //ABRecordRef ref = CFArrayGetValueAtIndex((__bridge CFArrayRef)(self.peopleArray), i);
         
         // Get First name, Last name, Prefix, Suffix, Job title
-        NSString *firstName = (__bridge NSString *)ABRecordCopyValue(ref,kABPersonFirstNameProperty);
-        NSString *lastName = (__bridge NSString *)ABRecordCopyValue(ref,kABPersonLastNameProperty);
-        //UIImage *image = (__bridge UIImage *)(ABRecordCopyValue(ref,kABPersonImageFormatThumbnail));
-        
-        NSLog(@"f: %@ l: %@", firstName,lastName);
-        
+        //NSString *firstName = (__bridge NSString *)ABRecordCopyValue(ref,kABPersonFirstNameProperty);
+       //NSString *lastName = (__bridge NSString *)ABRecordCopyValue(ref,kABPersonLastNameProperty);
     }
     
     
@@ -125,24 +120,17 @@
     // Configure the cell...
     
     ABRecordRef person;
-    
-    //NSLog(@"person: %@", [self.peopleArray objectAtIndex:indexPath.row]);
+
     person = (__bridge ABRecordRef)([self.peopleArray objectAtIndex:indexPath.row]);
-    //NSLog(@"name %@", person);
-    
     ABRecordRef ref = CFArrayGetValueAtIndex((__bridge CFArrayRef)(self.peopleArray), indexPath.row);
     
     // Get First name, Last name, Prefix, Suffix, Job title
     NSString *firstName = (__bridge NSString *)ABRecordCopyValue(ref,kABPersonFirstNameProperty);
     NSString *lastName = (__bridge NSString *)ABRecordCopyValue(ref,kABPersonLastNameProperty);
-    //UIImage *image = (__bridge UIImage *)(ABRecordCopyValue(ref,kABPersonImageFormatThumbnail));
-    
-    //NSLog(@"f: %@ l: %@", firstName,lastName);
-    
     NSString *name = [NSString stringWithFormat:@"%@ %@",firstName,lastName];
     
     cell.textLabel.text = name;
-    //cell.imageView.image = [UIImage imageNamed:@"iphone-contacts-icon.jpg"];
+    
     NSData *data=nil;
     data = (__bridge NSData *) ABPersonCopyImageData(ref);
     cell.imageView.image = [UIImage imageWithData:data];
@@ -212,6 +200,7 @@
         if (selectedCell.accessoryType == UITableViewCellAccessoryCheckmark)
         {
             selectedCell.accessoryType = UITableViewCellAccessoryNone;
+            [arrayWithContacts removeObject:selectedCell.textLabel.text];
         }
 
 }
@@ -220,9 +209,13 @@
 {
     ReservationViewController *reservation =  [[[self navigationController] viewControllers]objectAtIndex:4];
     
+    NSLog(@"%d fr2:", [arrayWithContacts count]);
+
     for(int i = 0; i < [arrayWithContacts count]; i++)
     {
-        NSLog(@"of: %@", [arrayWithContacts objectAtIndex:i]);
+                //NSLog(@"of: %@", [arrayWithContacts objectAtIndex:i]);
+        //Friend *friend = [[Friend alloc]init];
+        //friend. name = [arrayWithContacts objectAtIndex:i];
         [reservation addFriend:[arrayWithContacts objectAtIndex:i]];
     }
 

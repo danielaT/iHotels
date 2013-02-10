@@ -9,12 +9,15 @@
 #import "MyReservationViewController.h"
 #import "HotelsInformation.h"
 #import "UIViewController+iHotelsColorTheme.h"
-
+#import "DataBaseHelper.h"
+#import "Reservation.h"
+#import "Friend.h"
 
 @interface MyReservationViewController ()
 
 @property NSArray* hotelListArray;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollViewWithFriends;
+@property (weak, nonatomic) IBOutlet UITextView *textFieldWithFriends;
+
 
 @end
 
@@ -34,7 +37,7 @@
 {
     [super viewDidLoad];
     [self.reservationName setText:self.stringName];
-    [self.reservationDays setText:self.stringDays];
+    [self.reservationDays setText:[NSString stringWithFormat:@"%@ day(s)", self.stringDays]];
     [self.reservationDate setText:[self.stringDate substringToIndex:10]];
     NSURL *url = [NSURL URLWithString:self.urlString];
     [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
@@ -42,6 +45,37 @@
     NSString* imageName = [NSString stringWithFormat:@"iphone_star%@",self.hotelRating];
     self.starImage.image = [UIImage imageNamed:imageName];
     
+    NSLog(@"%d friends: ", [self.arrayWithFriends count]);
+    
+    self.textFieldWithFriends.text = @"";
+    
+    if([self.arrayWithFriends count] == 0)
+        self.textFieldWithFriends.text = @"Nobody!";
+    else
+    {
+        for(int i = 0; i < [self.arrayWithFriends count]; i++)
+        {
+            Friend *friend = [self.arrayWithFriends objectAtIndex:i];
+            NSString *name = friend.name;
+            self.textFieldWithFriends.text = [NSString stringWithFormat:@"%@\n %@", self.textFieldWithFriends.text, name];
+        }   
+    }
+        
+   
+
+    //NSArray *reservations = [DataBaseHelper reloadReservations];
+    
+//    int i = 0;
+//    for( Reservation* res in reservations)
+//    {
+//        if([res.hotelName isEqualToString:self.stringName])
+//            break;
+//        i++;
+//    }
+//    Reservation *current_res = [reservations objectAtIndex:i];
+//    //self.arrayWithFriends = [[current_res.friends allObjects] mutableCopy];
+//    NSLog(@"%d friends: ", [self.arrayWithFriends count]);
+
 //    [UIView animateWithDuration:2.0
 //                          delay:0.0
 //                        options: UIViewAnimationCurveEaseInOut

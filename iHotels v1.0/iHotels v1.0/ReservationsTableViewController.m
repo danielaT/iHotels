@@ -115,6 +115,8 @@
         NSURL *url = [NSURL URLWithString:res.hotelImage];
         [hotelDecription.webView loadRequest:[NSURLRequest requestWithURL:url]];
         hotelDecription.arrayWithFriends = [NSMutableArray arrayWithArray:[res.friends allObjects]];
+        NSLog(@" friends: %d", [[res.friends allObjects] count]);
+        hotelDecription.arrayWithFriends = [[res.friends allObjects] mutableCopy];
         hotelDecription.hotelRating =  res.hotelRate;
         
     }

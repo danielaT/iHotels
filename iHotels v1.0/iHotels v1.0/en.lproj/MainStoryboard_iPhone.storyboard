@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="nSu-Z2-WrV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="nSu-Z2-WrV">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller - Reservations-->
@@ -125,7 +125,6 @@
                                     <constraint firstAttribute="height" constant="70" id="Vlc-gP-h7c"/>
                                 </constraints>
                             </webView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KyX-44-yS4"/>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KzM-de-boZ">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="0me-71-GCH"/>
@@ -137,34 +136,49 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAg-U1-4pI">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="4PM-cN-UIO"/>
+                                    <constraint firstAttribute="width" constant="283" id="igN-lj-Eey"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Friends that will come:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFf-zM-pFx">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.95294123890000004" green="0.96078437569999997" blue="0.85490202900000001" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="TAg-U1-4pI" secondAttribute="bottom" constant="30" id="0VU-P4-nEa"/>
                             <constraint firstItem="rDE-25-KUL" firstAttribute="trailing" secondItem="Ddq-Ik-EBj" secondAttribute="trailing" type="default" id="30l-vA-SlV"/>
                             <constraint firstItem="sUs-9R-fdl" firstAttribute="top" secondItem="jun-XQ-lK4" secondAttribute="top" constant="77" id="52E-Fs-HgK"/>
                             <constraint firstItem="Ddq-Ik-EBj" firstAttribute="top" secondItem="rDE-25-KUL" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5dS-4D-vxP"/>
                             <constraint firstAttribute="trailing" secondItem="Me8-gr-R8c" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="9xn-1M-Keq"/>
+                            <constraint firstItem="RjS-5N-7lv" firstAttribute="trailing" secondItem="TAg-U1-4pI" secondAttribute="trailing" type="default" id="9xs-Vo-iNJ"/>
                             <constraint firstItem="Me8-gr-R8c" firstAttribute="leading" secondItem="jun-XQ-lK4" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="B8A-Lv-Jwq"/>
+                            <constraint firstItem="BFf-zM-pFx" firstAttribute="top" secondItem="Ddq-Ik-EBj" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="CDf-bD-vt6"/>
+                            <constraint firstItem="BFf-zM-pFx" firstAttribute="centerX" secondItem="Me8-gr-R8c" secondAttribute="centerX" type="default" id="EBM-5F-95R"/>
                             <constraint firstItem="WaJ-Nu-DjM" firstAttribute="baseline" secondItem="rDE-25-KUL" secondAttribute="baseline" type="default" id="Hue-ME-7pI"/>
                             <constraint firstItem="Me8-gr-R8c" firstAttribute="top" secondItem="KzM-de-boZ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="JD1-UB-jPG"/>
                             <constraint firstItem="RjS-5N-7lv" firstAttribute="leading" secondItem="WaJ-Nu-DjM" secondAttribute="leading" type="default" id="Kic-PE-Hif"/>
                             <constraint firstAttribute="trailing" secondItem="sUs-9R-fdl" secondAttribute="trailing" constant="27" id="N0y-mS-qwQ"/>
-                            <constraint firstAttribute="bottom" secondItem="KyX-44-yS4" secondAttribute="bottom" constant="35" id="NFN-ob-Dun"/>
                             <constraint firstItem="RjS-5N-7lv" firstAttribute="top" secondItem="WaJ-Nu-DjM" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="NJQ-hJ-16v"/>
                             <constraint firstItem="KzM-de-boZ" firstAttribute="centerX" secondItem="Alh-gc-M4L" secondAttribute="centerX" type="default" id="Ncw-Em-A7u"/>
                             <constraint firstItem="Ddq-Ik-EBj" firstAttribute="leading" secondItem="jun-XQ-lK4" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="SOY-c4-0uz"/>
                             <constraint firstItem="Me8-gr-R8c" firstAttribute="centerX" secondItem="KzM-de-boZ" secondAttribute="centerX" type="default" id="TK6-ab-5UJ"/>
                             <constraint firstItem="KzM-de-boZ" firstAttribute="top" secondItem="Alh-gc-M4L" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Tb9-Cf-1A1"/>
                             <constraint firstItem="WaJ-Nu-DjM" firstAttribute="top" secondItem="rDE-25-KUL" secondAttribute="top" type="default" id="Z9N-Cc-L9D"/>
-                            <constraint firstItem="KyX-44-yS4" firstAttribute="top" secondItem="jun-XQ-lK4" secondAttribute="top" constant="276" id="a99-WZ-LhN"/>
-                            <constraint firstAttribute="trailing" secondItem="KyX-44-yS4" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="anx-vI-fc3"/>
-                            <constraint firstAttribute="trailing" secondItem="WaJ-Nu-DjM" secondAttribute="trailing" constant="17" id="cMo-uE-HrF"/>
                             <constraint firstItem="rDE-25-KUL" firstAttribute="leading" secondItem="jun-XQ-lK4" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="f40-rx-BvX"/>
-                            <constraint firstItem="KyX-44-yS4" firstAttribute="leading" secondItem="jun-XQ-lK4" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fZ3-Nc-smo"/>
                             <constraint firstItem="Alh-gc-M4L" firstAttribute="top" secondItem="jun-XQ-lK4" secondAttribute="top" constant="20" symbolic="YES" type="default" id="jQ1-b5-9aD"/>
                             <constraint firstItem="RjS-5N-7lv" firstAttribute="baseline" secondItem="Ddq-Ik-EBj" secondAttribute="baseline" type="default" id="pUd-Ib-cGk"/>
                             <constraint firstItem="RjS-5N-7lv" firstAttribute="trailing" secondItem="WaJ-Nu-DjM" secondAttribute="trailing" type="default" id="wei-vj-11C"/>
-                            <constraint firstItem="WaJ-Nu-DjM" firstAttribute="centerY" secondItem="jun-XQ-lK4" secondAttribute="centerY" type="default" id="yrA-tP-aYK"/>
+                            <constraint firstItem="TAg-U1-4pI" firstAttribute="leading" secondItem="jun-XQ-lK4" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="wxC-bg-iCZ"/>
+                            <constraint firstItem="rDE-25-KUL" firstAttribute="centerY" secondItem="jun-XQ-lK4" secondAttribute="centerY" type="default" id="y9z-ys-WNb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nR4-Tn-0oD"/>
@@ -172,8 +186,8 @@
                         <outlet property="reservationDate" destination="WaJ-Nu-DjM" id="v9B-ze-11c"/>
                         <outlet property="reservationDays" destination="RjS-5N-7lv" id="jxF-ug-x0f"/>
                         <outlet property="reservationName" destination="Me8-gr-R8c" id="EIT-cK-nqS"/>
-                        <outlet property="scrollViewWithFriends" destination="KyX-44-yS4" id="pMt-Xr-GrZ"/>
                         <outlet property="starImage" destination="KzM-de-boZ" id="r3D-na-VGj"/>
+                        <outlet property="textFieldWithFriends" destination="TAg-U1-4pI" id="xW1-EF-hKG"/>
                         <outlet property="webView" destination="Alh-gc-M4L" id="KvZ-5V-Gmp"/>
                     </connections>
                 </viewController>
@@ -288,20 +302,21 @@
                             <constraint firstAttribute="trailing" secondItem="sGf-9S-5fw" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="74f-GJ-ro9"/>
                             <constraint firstItem="fPw-Hd-UIW" firstAttribute="top" secondItem="YIe-RD-mjG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Av6-ZC-fHv"/>
                             <constraint firstItem="dPi-Tn-Rkx" firstAttribute="top" secondItem="gr1-7M-241" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Cdi-7c-FCQ"/>
+                            <constraint firstAttribute="bottom" secondItem="sGf-9S-5fw" secondAttribute="bottom" constant="89" id="Gba-E3-h59"/>
                             <constraint firstItem="O1p-lf-znt" firstAttribute="leading" secondItem="gr1-7M-241" secondAttribute="leading" constant="120" id="Gk2-OW-RRQ"/>
                             <constraint firstItem="O1p-lf-znt" firstAttribute="top" secondItem="fPw-Hd-UIW" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="KSf-2m-a4G"/>
-                            <constraint firstItem="NNb-i4-4kH" firstAttribute="top" secondItem="O1p-lf-znt" secondAttribute="top" type="default" id="Ml8-k0-6cO"/>
-                            <constraint firstItem="Zsm-9R-U6x" firstAttribute="top" secondItem="O1p-lf-znt" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="OwO-qo-zf6"/>
                             <constraint firstAttribute="trailing" secondItem="dPi-Tn-Rkx" secondAttribute="trailing" constant="63" id="P4e-ZD-GNz"/>
                             <constraint firstItem="ygT-TW-Guv" firstAttribute="top" secondItem="dPi-Tn-Rkx" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Twt-fi-auF"/>
+                            <constraint firstAttribute="bottom" secondItem="O1p-lf-znt" secondAttribute="bottom" constant="51" id="U5Y-Kl-uUt"/>
                             <constraint firstItem="YIe-RD-mjG" firstAttribute="centerX" secondItem="ygT-TW-Guv" secondAttribute="centerX" type="default" id="XsZ-zi-QRy"/>
+                            <constraint firstAttribute="bottom" secondItem="NNb-i4-4kH" secondAttribute="bottom" constant="90" id="b19-E7-tmZ"/>
                             <constraint firstItem="NNb-i4-4kH" firstAttribute="baseline" secondItem="sGf-9S-5fw" secondAttribute="baseline" type="default" id="eIc-Uz-sa4"/>
                             <constraint firstItem="ly3-Fh-y5g" firstAttribute="top" secondItem="gr1-7M-241" secondAttribute="top" constant="20" symbolic="YES" type="default" id="eIv-HM-f9p"/>
+                            <constraint firstAttribute="bottom" secondItem="Zsm-9R-U6x" secondAttribute="bottom" constant="23" id="erR-GG-Qk7"/>
                             <constraint firstItem="O1p-lf-znt" firstAttribute="centerX" secondItem="fPw-Hd-UIW" secondAttribute="centerX" type="default" id="gct-St-dOk"/>
                             <constraint firstItem="ly3-Fh-y5g" firstAttribute="leading" secondItem="gr1-7M-241" secondAttribute="leading" constant="58" id="j44-vz-zeh"/>
                             <constraint firstItem="ygT-TW-Guv" firstAttribute="top" secondItem="ly3-Fh-y5g" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="lT0-No-22e"/>
                             <constraint firstItem="NNb-i4-4kH" firstAttribute="leading" secondItem="gr1-7M-241" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="mdC-0p-YYB"/>
-                            <constraint firstAttribute="bottom" secondItem="Zsm-9R-U6x" secondAttribute="bottom" constant="22" id="oZT-Ah-y4p"/>
                             <constraint firstItem="YIe-RD-mjG" firstAttribute="top" secondItem="ygT-TW-Guv" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="rtE-n0-sPO"/>
                             <constraint firstItem="ygT-TW-Guv" firstAttribute="leading" secondItem="gr1-7M-241" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="t7X-Mf-Naa"/>
                             <constraint firstItem="Zsm-9R-U6x" firstAttribute="centerX" secondItem="O1p-lf-znt" secondAttribute="centerX" type="default" id="x6j-VA-UVW"/>
@@ -350,7 +365,7 @@
                                 <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CityCell" textLabel="3dN-bj-TWr" style="IBUITableViewCellStyleDefault" id="k2u-iA-H17">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -404,7 +419,7 @@
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HotelCell" rowHeight="120" id="lJ0-d7-vTF" customClass="HotelTableViewCell">
-                                <rect key="frame" x="0.0" y="46" width="320" height="121"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="122"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="119"/>
@@ -657,7 +672,7 @@
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RoomType" id="3DN-dL-R0m">
-                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -691,7 +706,7 @@
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleAspectFit" selectionStyle="blue" indentationWidth="10" reuseIdentifier="PropertyAmenity" id="myo-0j-bFV">
-                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -1334,7 +1349,7 @@
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VisitedHotelCell" textLabel="OXd-Lz-Aep" detailTextLabel="Wsp-1h-9AG" style="IBUITableViewCellStyleValue2" id="ucC-HD-Ju3">
-                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="280" height="43"/>

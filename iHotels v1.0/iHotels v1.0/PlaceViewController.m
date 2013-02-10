@@ -121,7 +121,7 @@
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
     [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
     
-    NSString* fileName = [NSString stringWithFormat:@"visited_place_%@.jpg", [dateFormatter stringFromDate: self.hotel.startDate]];
+    NSString* fileName = [NSString stringWithFormat:@"visited_place_%@%@.jpg", [dateFormatter stringFromDate: self.hotel.startDate], self.hotel.hotelName];
     NSString* fullPath = [[documentsDirectoryURL path] stringByAppendingString:fileName];
     NSFileManager *manager = [NSFileManager defaultManager];
     NSData* imageData = UIImageJPEGRepresentation(image, 1.0);
