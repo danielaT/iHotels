@@ -36,14 +36,6 @@
     }
     
     [delegate.managedObjectContext save:&error];
-    
-    //    NSFetchRequest *request2 = [[NSFetchRequest alloc] initWithEntityName:@"Friend"];
-    //    NSArray* orders2 = [self.managedObjectContext executeFetchRequest:request2 error:&error1];
-    //
-    //    for(Friend* fr in orders2)
-    //    {
-    //        NSLog(@"fr: %@",fr.name);
-    //    }
 }
 
 +(NSArray*) reloadVisitedPlaces
@@ -51,10 +43,10 @@
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = delegate.managedObjectContext;
     NSError *error;
-    NSFetchRequest *request1 = [[NSFetchRequest alloc] initWithEntityName:@"HotelVisited"];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"HotelVisited"];
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:YES];
-    request1.sortDescriptors = @[sortDescriptor];
-    return [context executeFetchRequest:request1 error:&error];
+    request.sortDescriptors = @[sortDescriptor];
+    return [context executeFetchRequest:request error:&error];
 }
 
 +(NSArray*) reloadReservations
@@ -62,13 +54,13 @@
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = delegate.managedObjectContext;
     NSError *error;
-    NSFetchRequest *request1 = [[NSFetchRequest alloc] initWithEntityName:@"Reservation"];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Reservation"];
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc ]initWithKey:@"startDate" ascending:YES];
-    request1.sortDescriptors = @[sortDescriptor];
-    return [context executeFetchRequest:request1 error:&error];
+    request.sortDescriptors = @[sortDescriptor];
+    return [context executeFetchRequest:request error:&error];
 }
 
-+ (NSArray*) getHotels
++(NSArray*) getHotels
 {
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = delegate.managedObjectContext;
