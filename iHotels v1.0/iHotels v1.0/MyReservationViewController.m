@@ -85,13 +85,14 @@
             if([[UIScreen mainScreen] bounds].size.height == 568.0)
             {
                 // iphone 4.0 inch screen
-                self.friendsThatWillComeLabel.frame = CGRectMake(260, 10, self.friendsThatWillComeLabel.frame.size.width, self.friendsThatWillComeLabel.frame.size.height);
-                self.textFieldWithFriends.frame = CGRectMake(260, 40, self.textFieldWithFriends.frame.size.width, self.textFieldWithFriends.frame.size.height);
+                self.friendsThatWillComeLabel.frame = CGRectMake(320, 20, 220, self.friendsThatWillComeLabel.frame.size.height);
+                self.textFieldWithFriends.frame = CGRectMake(320, 50, 220, 160);
             }
             else
             {
                 // iphone 3.5 inch screen
-                
+                self.friendsThatWillComeLabel.frame = CGRectMake(280, 20, 180, self.friendsThatWillComeLabel.frame.size.height);
+                self.textFieldWithFriends.frame = CGRectMake(290, 50, 170, 160);                
             }
         }
     }];
