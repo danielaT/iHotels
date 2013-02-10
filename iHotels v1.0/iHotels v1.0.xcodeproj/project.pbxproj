@@ -19,6 +19,8 @@
 		5B4C5CC416C66F9200BAFAAA /* RatingFaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4C5CC316C66F9200BAFAAA /* RatingFaceView.m */; };
 		5B7AEBFA16C8054F004B95DB /* iphone_page_book.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B7AEBF816C8054F004B95DB /* iphone_page_book.png */; };
 		5B7AEBFB16C8054F004B95DB /* iphone_page_book@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B7AEBF916C8054F004B95DB /* iphone_page_book@2x.png */; };
+		5B7AEC0616C80DE2004B95DB /* AdvancedsearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7AEC0516C80DE2004B95DB /* AdvancedsearchViewController.m */; };
+		5B7AEC0916C80E6D004B95DB /* AdvancedSearch.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B7AEC0816C80E6D004B95DB /* AdvancedSearch.plist */; };
 		5B89BC3B16C70C6E0012234F /* iphone_page.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B89BC3716C70C6E0012234F /* iphone_page.png */; };
 		5B89BC3C16C70C6E0012234F /* iphone_page@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B89BC3816C70C6E0012234F /* iphone_page@2x.png */; };
 		5BAC679116C108A8005637D9 /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAC679016C108A8005637D9 /* PlaceViewController.m */; };
@@ -105,20 +107,16 @@
 		FD8FB83616BE6E3A003B81D0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8FB82C16BE6E3A003B81D0 /* AddressBook.framework */; };
 		FD8FB83E16BE72DE003B81D0 /* ReservationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8FB83D16BE72DE003B81D0 /* ReservationViewController.m */; };
 		FD8FB84116BE759E003B81D0 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8FB84016BE759E003B81D0 /* ContactsViewController.m */; };
-		FD8FB84316BE78C5003B81D0 /* pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD8FB84216BE78C5003B81D0 /* pic.jpg */; };
 		FD8FB84D16BE7E62003B81D0 /* SocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8FB84C16BE7E62003B81D0 /* SocialViewController.m */; };
 		FD8FB85716BE8308003B81D0 /* fb-logout.gif in Resources */ = {isa = PBXBuildFile; fileRef = FD8FB85616BE8308003B81D0 /* fb-logout.gif */; };
 		FD8FB85B16BEA5FD003B81D0 /* iphone-contacts-icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD8FB85A16BEA5FD003B81D0 /* iphone-contacts-icon.jpg */; };
 		FD8FB86516BEACA0003B81D0 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8FB86416BEAC9F003B81D0 /* Friend.m */; };
 		FD8FB87416BEB2A4003B81D0 /* ReservationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8FB87316BEB2A4003B81D0 /* ReservationsTableViewController.m */; };
-		FD8FB87616BEB45D003B81D0 /* car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD8FB87516BEB45D003B81D0 /* car.jpg */; };
 		FD8FB87916BEB863003B81D0 /* MyReservationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8FB87816BEB862003B81D0 /* MyReservationViewController.m */; };
 		FD8FB88016BECB88003B81D0 /* VisitedPlacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8FB87F16BECB87003B81D0 /* VisitedPlacesTableViewController.m */; };
-		FD8FB88216BECE8F003B81D0 /* hotel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD8FB88116BECE8E003B81D0 /* hotel.jpg */; };
 		FD8FB8CB16C01D1B003B81D0 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FD8FB8C916C01D1B003B81D0 /* FacebookSDKResources.bundle */; };
 		FD8FB8CC16C01D1B003B81D0 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FD8FB8CA16C01D1B003B81D0 /* FBUserSettingsViewResources.bundle */; };
 		FD8FB8CE16C01D33003B81D0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8FB8CD16C01D33003B81D0 /* FacebookSDK.framework */; };
-		FD8FB93116C3F305003B81D0 /* images.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD8FB93016C3F305003B81D0 /* images.jpg */; };
 		FD8FB93916C3FE70003B81D0 /* Reservation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8FB93816C3FE62003B81D0 /* Reservation.m */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +135,9 @@
 		5B4C5CC316C66F9200BAFAAA /* RatingFaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingFaceView.m; sourceTree = "<group>"; };
 		5B7AEBF816C8054F004B95DB /* iphone_page_book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_page_book.png; sourceTree = "<group>"; };
 		5B7AEBF916C8054F004B95DB /* iphone_page_book@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone_page_book@2x.png"; sourceTree = "<group>"; };
+		5B7AEC0416C80DE2004B95DB /* AdvancedsearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvancedsearchViewController.h; sourceTree = "<group>"; };
+		5B7AEC0516C80DE2004B95DB /* AdvancedsearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvancedsearchViewController.m; sourceTree = "<group>"; };
+		5B7AEC0816C80E6D004B95DB /* AdvancedSearch.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AdvancedSearch.plist; sourceTree = "<group>"; };
 		5B89BC3716C70C6E0012234F /* iphone_page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_page.png; sourceTree = "<group>"; };
 		5B89BC3816C70C6E0012234F /* iphone_page@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone_page@2x.png"; sourceTree = "<group>"; };
 		5BAC678F16C108A8005637D9 /* PlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceViewController.h; sourceTree = "<group>"; };
@@ -248,7 +249,6 @@
 		FD8FB83D16BE72DE003B81D0 /* ReservationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationViewController.m; sourceTree = "<group>"; };
 		FD8FB83F16BE759E003B81D0 /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
 		FD8FB84016BE759E003B81D0 /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
-		FD8FB84216BE78C5003B81D0 /* pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic.jpg; sourceTree = "<group>"; };
 		FD8FB84B16BE7E61003B81D0 /* SocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialViewController.h; sourceTree = "<group>"; };
 		FD8FB84C16BE7E62003B81D0 /* SocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialViewController.m; sourceTree = "<group>"; };
 		FD8FB85616BE8308003B81D0 /* fb-logout.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "fb-logout.gif"; sourceTree = "<group>"; };
@@ -257,16 +257,13 @@
 		FD8FB86416BEAC9F003B81D0 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Friend.m; path = ../Friend.m; sourceTree = "<group>"; };
 		FD8FB87216BEB2A4003B81D0 /* ReservationsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservationsTableViewController.h; sourceTree = "<group>"; };
 		FD8FB87316BEB2A4003B81D0 /* ReservationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationsTableViewController.m; sourceTree = "<group>"; };
-		FD8FB87516BEB45D003B81D0 /* car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = car.jpg; sourceTree = "<group>"; };
 		FD8FB87716BEB861003B81D0 /* MyReservationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyReservationViewController.h; sourceTree = "<group>"; };
 		FD8FB87816BEB862003B81D0 /* MyReservationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyReservationViewController.m; sourceTree = "<group>"; };
 		FD8FB87E16BECB86003B81D0 /* VisitedPlacesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisitedPlacesTableViewController.h; sourceTree = "<group>"; };
 		FD8FB87F16BECB87003B81D0 /* VisitedPlacesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisitedPlacesTableViewController.m; sourceTree = "<group>"; };
-		FD8FB88116BECE8E003B81D0 /* hotel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hotel.jpg; sourceTree = "<group>"; };
 		FD8FB8C916C01D1B003B81D0 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKResources.bundle; sourceTree = "<group>"; };
 		FD8FB8CA16C01D1B003B81D0 /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
 		FD8FB8CD16C01D33003B81D0 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
-		FD8FB93016C3F305003B81D0 /* images.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpg; sourceTree = "<group>"; };
 		FD8FB93716C3FE5A003B81D0 /* Reservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reservation.h; sourceTree = "<group>"; };
 		FD8FB93816C3FE62003B81D0 /* Reservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reservation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -449,15 +446,12 @@
 				5B3B18BB16C4ED1D004C29A9 /* facebook_logo@2x.png */,
 				5B3B18BC16C4ED1D004C29A9 /* twitter_logo.png */,
 				5B3B18BD16C4ED1D004C29A9 /* twitter_logo@2x.png */,
-				FD8FB87516BEB45D003B81D0 /* car.jpg */,
 				FD8FB85616BE8308003B81D0 /* fb-logout.gif */,
-				FD8FB88116BECE8E003B81D0 /* hotel.jpg */,
 				FD8FB85A16BEA5FD003B81D0 /* iphone-contacts-icon.jpg */,
 				5BEF076616BD3289005F7990 /* map_control.png */,
 				F9957B0216BCA2C200CC06A2 /* maps_icon.png */,
-				FD8FB84216BE78C5003B81D0 /* pic.jpg */,
+				5B7AEC0816C80E6D004B95DB /* AdvancedSearch.plist */,
 				5BEF076B16BD3322005F7990 /* RegionsAndCities.plist */,
-				FD8FB93016C3F305003B81D0 /* images.jpg */,
 			);
 			name = Resources;
 			path = ..;
@@ -515,6 +509,8 @@
 				F9989EE616B9A9280015A5C9 /* Supporting Files */,
 				F9989EEE16B9A9280015A5C9 /* AppDelegate.h */,
 				F9989EEF16B9A9280015A5C9 /* AppDelegate.m */,
+				5B7AEC0416C80DE2004B95DB /* AdvancedsearchViewController.h */,
+				5B7AEC0516C80DE2004B95DB /* AdvancedsearchViewController.m */,
 				5BEF077016BD482E005F7990 /* CityPickerViewController.h */,
 				5BEF077116BD482E005F7990 /* CityPickerViewController.m */,
 				FD8FB83F16BE759E003B81D0 /* ContactsViewController.h */,
@@ -605,11 +601,8 @@
 				F9957B0316BCA2C200CC06A2 /* maps_icon.png in Resources */,
 				5BEF076916BD3289005F7990 /* map_control.png in Resources */,
 				5BEF076C16BD3322005F7990 /* RegionsAndCities.plist in Resources */,
-				FD8FB84316BE78C5003B81D0 /* pic.jpg in Resources */,
 				FD8FB85716BE8308003B81D0 /* fb-logout.gif in Resources */,
 				FD8FB85B16BEA5FD003B81D0 /* iphone-contacts-icon.jpg in Resources */,
-				FD8FB87616BEB45D003B81D0 /* car.jpg in Resources */,
-				FD8FB88216BECE8F003B81D0 /* hotel.jpg in Resources */,
 				FD8FB8CB16C01D1B003B81D0 /* FacebookSDKResources.bundle in Resources */,
 				FD8FB8CC16C01D1B003B81D0 /* FBUserSettingsViewResources.bundle in Resources */,
 				5BE1AF8B16C1AD8300A57D93 /* iphone_hotel.png in Resources */,
@@ -650,7 +643,6 @@
 				5BCF415916C2F0C6002C9CA3 /* iphone_button.png in Resources */,
 				5BCF415F16C2F21B002C9CA3 /* baarprg_.TTF in Resources */,
 				5BCF416016C2F21B002C9CA3 /* baarpb__.TTF in Resources */,
-				FD8FB93116C3F305003B81D0 /* images.jpg in Resources */,
 				5B3B18BE16C4ED1D004C29A9 /* facebook_logo.png in Resources */,
 				5B3B18BF16C4ED1D004C29A9 /* facebook_logo@2x.png in Resources */,
 				5B3B18C016C4ED1D004C29A9 /* twitter_logo.png in Resources */,
@@ -663,6 +655,7 @@
 				5B49F8C316C7A20E00D806F9 /* iphone_navbar@2x.png in Resources */,
 				5B7AEBFA16C8054F004B95DB /* iphone_page_book.png in Resources */,
 				5B7AEBFB16C8054F004B95DB /* iphone_page_book@2x.png in Resources */,
+				5B7AEC0916C80E6D004B95DB /* AdvancedSearch.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,6 +698,7 @@
 				5B3B18C916C4F26B004C29A9 /* HotelVisited.m in Sources */,
 				5B4C5CC416C66F9200BAFAAA /* RatingFaceView.m in Sources */,
 				F9AF007516C69063006CAE32 /* DataBaseHelper.m in Sources */,
+				5B7AEC0616C80DE2004B95DB /* AdvancedsearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
