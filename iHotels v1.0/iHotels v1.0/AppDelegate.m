@@ -30,7 +30,6 @@
 {
     [DataBaseHelper moveReservationsToVisitedPlaces];
     
-    
     // Override point for customization after application launch.
 //    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
 //        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;

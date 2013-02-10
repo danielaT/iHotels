@@ -57,7 +57,7 @@
     self.callback(self.connectionData);
 }
 
-// cheks if internet connection is svailable
+// checks if internet connection is available
 - (void)showMessageIfInternetConnectionIsUnavailable
 {
     static BOOL checkNetwork = YES;
@@ -69,7 +69,7 @@
         SCNetworkReachabilityFlags flags;
         success = SCNetworkReachabilityGetFlags(reachability, &flags);
         if (!(success && (flags & kSCNetworkFlagsReachable) && !(flags & kSCNetworkFlagsConnectionRequired))) {
-            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"" message:@"This application needs internet connection." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Cannot find internet connection." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
     }

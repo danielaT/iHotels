@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="nSu-Z2-WrV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="nSu-Z2-WrV">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller - Reservations-->
@@ -31,7 +31,7 @@
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReservationCell" textLabel="F8y-Cr-4CN" detailTextLabel="TeQ-Od-VZg" style="IBUITableViewCellStyleValue2" id="9lC-Bb-f7N">
-                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -365,7 +365,7 @@
                                 <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CityCell" textLabel="3dN-bj-TWr" style="IBUITableViewCellStyleDefault" id="k2u-iA-H17">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -419,7 +419,7 @@
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HotelCell" rowHeight="120" id="lJ0-d7-vTF" customClass="HotelTableViewCell">
-                                <rect key="frame" x="0.0" y="46" width="320" height="121"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="122"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="119"/>
@@ -987,17 +987,14 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="aij-Pj-hzE">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="416" id="sE4-sG-iY6"/>
-                                </constraints>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="aij-Pj-hzE"/>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aij-Pj-hzE" firstAttribute="trailing" secondItem="hwf-t5-Pgs" secondAttribute="trailing" type="default" id="2nV-wo-cR2"/>
-                            <constraint firstItem="aij-Pj-hzE" firstAttribute="centerY" secondItem="hwf-t5-Pgs" secondAttribute="centerY" type="default" id="GBd-gS-CNC"/>
-                            <constraint firstItem="aij-Pj-hzE" firstAttribute="leading" secondItem="hwf-t5-Pgs" secondAttribute="leading" type="default" id="im9-Hc-ucc"/>
+                            <constraint firstItem="aij-Pj-hzE" firstAttribute="top" secondItem="hwf-t5-Pgs" secondAttribute="top" constant="20" symbolic="YES" type="default" id="4hU-aE-cZa"/>
+                            <constraint firstItem="aij-Pj-hzE" firstAttribute="leading" secondItem="hwf-t5-Pgs" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="KGg-vm-01V"/>
+                            <constraint firstAttribute="bottom" secondItem="aij-Pj-hzE" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="ST1-8M-3WJ"/>
+                            <constraint firstAttribute="trailing" secondItem="aij-Pj-hzE" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="vjO-89-JMm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zSp-GR-vXU"/>
@@ -1349,7 +1346,7 @@
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VisitedHotelCell" textLabel="OXd-Lz-Aep" detailTextLabel="Wsp-1h-9AG" style="IBUITableViewCellStyleValue2" id="ucC-HD-Ju3">
-                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -1652,8 +1649,6 @@
         <class className="PlaceViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PlaceViewController.h"/>
             <relationships>
-                <relationship kind="action" name="minusButtonTap:"/>
-                <relationship kind="action" name="plusButtonTap:"/>
                 <relationship kind="action" name="postOnTwitterButtonTap:"/>
                 <relationship kind="action" name="shareOnFacebookButtonTap:"/>
                 <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
@@ -1699,9 +1694,6 @@
         <class className="SocialViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialViewController.h"/>
             <relationships>
-                <relationship kind="action" name="postInFacebook:"/>
-                <relationship kind="action" name="postInTwitter:"/>
-                <relationship kind="action" name="segmentedSwitch:"/>
                 <relationship kind="outlet" name="facebookPost" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="loginLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="profilePhoto" candidateClass="FBProfilePictureView"/>
