@@ -9,12 +9,14 @@
 #import "AdvancedsearchViewController.h"
 #import "UIViewController+iHotelsColorTheme.h"
 #import "DataBaseHelper.h"
+#import "CityPickerViewController.h"
 
-@interface AdvancedsearchViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface AdvancedsearchViewController ()<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 {
     NSArray* amenities;
     NSArray* propertyCategories;
-    NSArray* cities;
+    NSArray* citiesArray;
+    NSDictionary* searchFilters;
 }
 @end
 
@@ -40,7 +42,42 @@
 }
 
 -(void)search:(id)sender {
-    // TODO: filter cities
+    
+    // the search must have selected city
+    [self validateSearch];
+    
+    // selected city
+    NSString* selectedCityName = [citiesArray objectAtIndex:self.cities.indexPathForSelectedRow.row];
+    
+    // selected property categoris
+    NSMutableArray* selectedPropertyCategories = [[NSMutableArray alloc] init];
+    for (NSIndexPath* indexPath in self.propertyCategories.indexPathsForSelectedRows) {
+        [selectedPropertyCategories addObject:[propertyCategories objectAtIndex:indexPath.row]];
+    }
+    
+    // selected amenities
+    NSMutableArray* selectedAmenities = [[NSMutableArray alloc] init];
+    for (NSIndexPath* indexPath in self.amenities.indexPathsForSelectedRows) {
+        [selectedAmenities addObject:[amenities objectAtIndex:indexPath.row]];
+    }
+    
+    [searchFilters setValue:selectedCityName forKey:@"city"];
+    [searchFilters setValue:selectedAmenities forKey:@"amenities"];
+    [searchFilters setValue:selectedPropertyCategories forKey:@"propertyCategories"];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@""]) {
+        CityPickerViewController* cityPicker = (CityPickerViewController*)segue.destinationViewController;
+        cityPicker.searchFilters = searchFilters;
+    }
+}
+
+-(void)validateSearch {
+    if ([[citiesArray objectAtIndex:self.cities.indexPathForSelectedRow.row] length] <= 0) {
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"" message:@"You have to select a city for searching." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
 }
 
 -(void) loadInformationForAdvancedSearch
@@ -62,8 +99,8 @@
     propertyCategories = [advancedSearchSettings objectForKey:@"PropertyCategories"];
     
     // get the cities that are going to be displayed (from plist)
-    cities = [DataBaseHelper getAllCitiesFromPlist];
-    cities = [DataBaseHelper sortArray:cities];
+    citiesArray = [DataBaseHelper getAllCitiesFromPlist];
+    citiesArray = [DataBaseHelper sortArray:citiesArray];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -75,7 +112,7 @@
 {
     switch (tableView.tag) {
         case 0:
-            return [cities count];
+            return [citiesArray count];
             break;
         case 1:
             return [amenities count];
@@ -97,7 +134,7 @@
             if (cell == nil) {
                 cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CityCell"];
             }
-            cell.textLabel.text = [cities objectAtIndex: indexPath.row];
+            cell.textLabel.text = [citiesArray objectAtIndex: indexPath.row];
             cell = [self configureCell:cell atIndexPath:indexPath];
             return cell;
         }
@@ -139,8 +176,25 @@
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (tableView.tag == 0) {
+        NSArray *visibleCells = [tableView visibleCells];
+        for (UITableViewCell *cell in visibleCells) {
+            [cell setAccessoryType:UITableViewCellAccessoryNone];
+        }
+    }
+
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    return [textField resignFirstResponder];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
 }
 
 @end

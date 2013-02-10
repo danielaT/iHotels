@@ -12,5 +12,6 @@
 
 -(void) setRegion:(NSString*)regionName;
 -(void) setSearchString:(NSString *)searchString;
+@property NSDictionary* searchFilters;
 
 @end
