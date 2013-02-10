@@ -132,8 +132,8 @@
 - (UITableViewCell*)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     cell.textLabel.adjustsFontSizeToFitWidth = YES;
-    cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-    cell.textLabel.font = [UIFont fontWithName:@"Baar Philos" size:16.0];
+    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.textLabel.font = [UIFont fontWithName:@"Baar Philos" size:14.0];
     cell.textLabel.textColor = [UIColor colorWithHue:0.1417 saturation:0.21 brightness:0.9 alpha:1];
     cell.backgroundColor = [UIColor colorWithHue:0.63 saturation:0.17 brightness:0.4 alpha:1];
     return cell;

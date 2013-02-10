@@ -360,99 +360,109 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="4oW-BY-wxf">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="jrg-yf-hd4">
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="96" id="d6U-bi-g4u"/>
-                                </constraints>
+                                <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleAspectFit" selectionStyle="blue" indentationWidth="10" reuseIdentifier="CityCell" id="6ze-VN-8A7">
+                                        <rect key="frame" x="0.0" y="88" width="100" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="80" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="4oW-BY-wxf">
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleAspectFit" selectionStyle="blue" indentationWidth="10" reuseIdentifier="AmenityCell" id="t4Y-tW-47d">
-                                        <rect key="frame" x="0.0" y="88" width="96" height="46"/>
+                                        <rect key="frame" x="0.0" y="88" width="100" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="76" height="43"/>
+                                            <rect key="frame" x="10" y="1" width="80" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <tableView clipsSubviews="YES" tag="2" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="PDe-kk-oWJ">
+                            <tableView clipsSubviews="YES" tag="2" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="PDe-kk-oWJ">
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="96" id="L8d-3v-gg7"/>
-                                    <constraint firstAttribute="height" constant="254" id="YfF-2w-wwF"/>
-                                </constraints>
+                                <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell tag="2" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="PropertyCategoryCell" id="q63-5t-1yN">
-                                        <rect key="frame" x="0.0" y="88" width="96" height="46"/>
+                                        <rect key="frame" x="0.0" y="88" width="100" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="76" height="43"/>
+                                            <rect key="frame" x="10" y="1" width="80" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="From" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6d-kj-1YM">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="From:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6d-kj-1YM">
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="800" constant="80" type="user" id="ug5-DV-JDK"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="To" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ori-Fi-67R">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="To:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ori-Fi-67R">
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="900" constant="80" type="user" id="YXP-Qp-OJw"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gcm-Ch-3Ch">
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="800" constant="80" type="user" id="WPw-8x-0Oz"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bhe-qZ-IAB">
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="800" constant="80" type="user" id="nHC-J8-qvg"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="jrg-yf-hd4">
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="435" id="6Ql-Og-EkF"/>
-                                    <constraint firstAttribute="width" constant="96" id="LOH-R4-0iN"/>
-                                </constraints>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleAspectFit" selectionStyle="blue" indentationWidth="10" reuseIdentifier="CityCell" id="6ze-VN-8A7">
-                                        <rect key="frame" x="0.0" y="88" width="96" height="46"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="76" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bhe-qZ-IAB" firstAttribute="leading" secondItem="4oW-BY-wxf" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="47B-Ow-jAs"/>
-                            <constraint firstAttribute="bottom" secondItem="Gcm-Ch-3Ch" secondAttribute="bottom" constant="116" id="5E7-g0-CsW"/>
-                            <constraint firstItem="Ori-Fi-67R" firstAttribute="leading" secondItem="4oW-BY-wxf" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="5Lx-YQ-mdC"/>
-                            <constraint firstItem="4oW-BY-wxf" firstAttribute="centerY" secondItem="HFo-3w-R7N" secondAttribute="centerY" type="default" id="84s-ix-Grv"/>
-                            <constraint firstItem="4oW-BY-wxf" firstAttribute="leading" secondItem="jrg-yf-hd4" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="ABU-sr-Zbz"/>
-                            <constraint firstItem="PDe-kk-oWJ" firstAttribute="trailing" secondItem="C6d-kj-1YM" secondAttribute="trailing" type="default" id="Cv8-Le-FpM"/>
-                            <constraint firstItem="jrg-yf-hd4" firstAttribute="bottom" secondItem="4oW-BY-wxf" secondAttribute="bottom" type="default" id="Ecv-qf-Cgf"/>
-                            <constraint firstItem="Ori-Fi-67R" firstAttribute="trailing" secondItem="Gcm-Ch-3Ch" secondAttribute="trailing" type="default" id="NaV-eD-v9m"/>
-                            <constraint firstItem="jrg-yf-hd4" firstAttribute="top" secondItem="4oW-BY-wxf" secondAttribute="top" type="default" id="Ozy-oR-PEo"/>
-                            <constraint firstItem="Gcm-Ch-3Ch" firstAttribute="leading" secondItem="4oW-BY-wxf" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="SP0-yE-k6R"/>
-                            <constraint firstItem="PDe-kk-oWJ" firstAttribute="leading" secondItem="4oW-BY-wxf" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="b7t-Ro-m0t"/>
-                            <constraint firstItem="PDe-kk-oWJ" firstAttribute="top" secondItem="4oW-BY-wxf" secondAttribute="top" type="default" id="bFp-Ko-sqX"/>
-                            <constraint firstItem="C6d-kj-1YM" firstAttribute="top" secondItem="PDe-kk-oWJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="bIa-PY-9jj"/>
-                            <constraint firstAttribute="bottom" secondItem="Ori-Fi-67R" secondAttribute="bottom" constant="77" id="flr-EG-LCw"/>
-                            <constraint firstItem="jrg-yf-hd4" firstAttribute="leading" secondItem="HFo-3w-R7N" secondAttribute="leading" constant="4" id="gYw-rf-Kkz"/>
-                            <constraint firstAttribute="bottom" secondItem="bhe-qZ-IAB" secondAttribute="bottom" constant="28" id="kOj-ht-tc6"/>
-                            <constraint firstItem="C6d-kj-1YM" firstAttribute="trailing" secondItem="Gcm-Ch-3Ch" secondAttribute="trailing" type="default" id="kSp-gn-LFW"/>
-                            <constraint firstItem="C6d-kj-1YM" firstAttribute="leading" secondItem="4oW-BY-wxf" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="kYt-sh-9tE"/>
-                            <constraint firstItem="Ori-Fi-67R" firstAttribute="trailing" secondItem="bhe-qZ-IAB" secondAttribute="trailing" type="default" id="oOj-1D-PKf"/>
+                            <constraint firstItem="C6d-kj-1YM" firstAttribute="leading" secondItem="Gcm-Ch-3Ch" secondAttribute="leading" type="user" id="0fP-oN-6CT"/>
+                            <constraint firstItem="jrg-yf-hd4" firstAttribute="leading" secondItem="HFo-3w-R7N" secondAttribute="leading" constant="10" type="user" id="6jT-Lj-tEd"/>
+                            <constraint firstAttribute="trailing" secondItem="C6d-kj-1YM" secondAttribute="trailing" constant="20" type="user" id="7JM-So-GcK"/>
+                            <constraint firstItem="Ori-Fi-67R" firstAttribute="leading" secondItem="bhe-qZ-IAB" secondAttribute="leading" type="user" id="AJv-cc-4Ls"/>
+                            <constraint firstItem="4oW-BY-wxf" firstAttribute="leading" secondItem="jrg-yf-hd4" secondAttribute="trailing" type="user" id="EPu-xv-kgH"/>
+                            <constraint firstItem="jrg-yf-hd4" firstAttribute="top" secondItem="HFo-3w-R7N" secondAttribute="top" constant="10" type="user" id="EWT-0O-aWu"/>
+                            <constraint firstItem="jrg-yf-hd4" firstAttribute="bottom" secondItem="4oW-BY-wxf" secondAttribute="bottom" type="user" id="Ecv-qf-Cgf"/>
+                            <constraint firstAttribute="trailing" secondItem="Ori-Fi-67R" secondAttribute="trailing" constant="20" type="user" id="Gam-fg-UPG"/>
+                            <constraint firstItem="bhe-qZ-IAB" firstAttribute="bottom" secondItem="4oW-BY-wxf" secondAttribute="bottom" type="default" id="NNt-fZ-WK3"/>
+                            <constraint firstItem="jrg-yf-hd4" firstAttribute="top" secondItem="4oW-BY-wxf" secondAttribute="top" type="user" id="Ozy-oR-PEo"/>
+                            <constraint firstItem="bhe-qZ-IAB" firstAttribute="top" secondItem="Ori-Fi-67R" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Qbd-tm-uP3"/>
+                            <constraint firstItem="4oW-BY-wxf" firstAttribute="width" secondItem="PDe-kk-oWJ" secondAttribute="width" type="user" id="UXn-2O-VvD"/>
+                            <constraint firstItem="4oW-BY-wxf" firstAttribute="width" secondItem="jrg-yf-hd4" secondAttribute="width" type="user" id="Wxu-q0-kyE"/>
+                            <constraint firstItem="bhe-qZ-IAB" firstAttribute="leading" secondItem="4oW-BY-wxf" secondAttribute="trailing" constant="10" type="user" id="XUm-fD-C5f"/>
+                            <constraint firstAttribute="bottom" secondItem="jrg-yf-hd4" secondAttribute="bottom" constant="10" type="user" id="YRv-Wh-VHA"/>
+                            <constraint firstAttribute="trailing" secondItem="bhe-qZ-IAB" secondAttribute="trailing" constant="20" type="user" id="Zci-Bq-I3I"/>
+                            <constraint firstItem="4oW-BY-wxf" firstAttribute="leading" secondItem="jrg-yf-hd4" secondAttribute="trailing" type="user" id="agw-KA-jva"/>
+                            <constraint firstAttribute="trailing" secondItem="Gcm-Ch-3Ch" secondAttribute="trailing" constant="20" type="user" id="dYU-87-P4f"/>
+                            <constraint firstItem="Gcm-Ch-3Ch" firstAttribute="top" secondItem="C6d-kj-1YM" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gbx-Nm-rUS"/>
+                            <constraint firstAttribute="trailing" secondItem="PDe-kk-oWJ" secondAttribute="trailing" constant="10" type="user" id="ibm-WM-jhX"/>
+                            <constraint firstItem="Ori-Fi-67R" firstAttribute="top" secondItem="Gcm-Ch-3Ch" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="kWw-3f-znh"/>
+                            <constraint firstItem="bhe-qZ-IAB" firstAttribute="leading" secondItem="Gcm-Ch-3Ch" secondAttribute="leading" type="user" id="nrz-hl-9rT"/>
+                            <constraint firstItem="PDe-kk-oWJ" firstAttribute="leading" secondItem="4oW-BY-wxf" secondAttribute="trailing" type="user" id="p97-jH-9uD"/>
+                            <constraint firstItem="jrg-yf-hd4" firstAttribute="top" secondItem="PDe-kk-oWJ" secondAttribute="top" type="user" id="tal-Mg-wfk"/>
+                            <constraint firstItem="C6d-kj-1YM" firstAttribute="top" secondItem="PDe-kk-oWJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ueo-VB-bYG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Advanced search" id="P92-yo-x5Z"/>
@@ -535,7 +545,7 @@
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HotelCell" rowHeight="120" id="lJ0-d7-vTF" customClass="HotelTableViewCell">
-                                <rect key="frame" x="0.0" y="46" width="320" height="121"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="122"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="119"/>
@@ -1673,6 +1683,178 @@
         <image name="twitter_logo.png" width="50" height="50"/>
         <image name="twitter_logo@2x.png" width="100" height="100"/>
     </resources>
+    <classes>
+        <class className="AdvancedsearchViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AdvancedsearchViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="amenities" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="cities" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="priceFrom" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="priceTo" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="propertyCategories" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="CityPickerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CityPickerViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ContactsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactsViewController.h"/>
+        </class>
+        <class className="FBProfilePictureView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FBProfilePictureView.h"/>
+        </class>
+        <class className="GalleryViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GalleryViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="loadingIndicator" candidateClass="UIActivityIndicatorView"/>
+            </relationships>
+        </class>
+        <class className="HotelDescriptionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HotelDescriptionViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="checkInTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="checkOutTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="floorsNumber" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="hotelPolicy" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="propertyInformation" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="roomsNumber" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="HotelImageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HotelImageViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="hotelImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="HotelTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HotelTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="hotelDescription" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="hotelImage" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="hotelName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="hotelRating" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="HotelViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HotelViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="findInMapTouched:"/>
+                <relationship kind="action" name="makeReservationTouched:"/>
+                <relationship kind="outlet" name="address" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cityAndPostalCode" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="hotelImage" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="hotelMenuTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="locationDescription" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="ratingImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="ImageCollectionViewCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageCollectionViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="hotelImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="browseCitiesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mapImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="searchButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="searchTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="MasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
+        </class>
+        <class className="MyReservationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyReservationViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="reservationDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="reservationDays" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="reservationName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="starImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="textFieldWithFriends" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PlaceViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlaceViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="postOnTwitterButtonTap:"/>
+                <relationship kind="action" name="shareOnFacebookButtonTap:"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="hotelNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="photoImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="ratingFaceView" candidateClass="RatingFaceView"/>
+                <relationship kind="outlet" name="ratingImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="PlacesPageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlacesPageViewController.h"/>
+        </class>
+        <class className="PropertyAmenitiesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PropertyAmenitiesViewController.h"/>
+        </class>
+        <class className="RatingFaceView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RatingFaceView.h"/>
+        </class>
+        <class className="ReservationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReservationViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="date" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="days" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="hotelCity" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="hotelImage" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="hotelName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="selectedFriendsView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="starImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="ReservationsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReservationsTableViewController.h"/>
+        </class>
+        <class className="RoomTypesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoomTypesViewController.h"/>
+        </class>
+        <class className="RoomViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoomViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="roomAmenitiesTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SocialViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="facebookPost" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="loginLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="profilePhoto" candidateClass="FBProfilePictureView"/>
+                <relationship kind="outlet" name="segmentedControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="twitterPost" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="usernameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="VisitedPlacesTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VisitedPlacesTableViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
