@@ -50,7 +50,6 @@ typedef enum {
 @synthesize address=_address;
 @synthesize hotelImage=_hotelImage;
 @synthesize cityAndPostalCode=_cityAndPostalCode;
-@synthesize locationDescription=_locationDescription;
 @synthesize hotelId=_hotelId;
 @synthesize hotel=_hotel;
 @synthesize hotelIdLoaded=_hotelIdLoaded;
@@ -80,12 +79,43 @@ typedef enum {
     menuItems = [[NSArray alloc] initWithObjects:@"Hotel description", @"Rooms", @"Property amenities", @"Gallery", nil];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    UIInterfaceOrientation orientation = [[UIDevice currentDevice] orientation];
+    [self rearrangeViewsInOrientation:orientation];
+}
+
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [self rearrangeViewsInOrientation:toInterfaceOrientation];
+}
+
+-(void) rearrangeViewsInOrientation:(UIInterfaceOrientation) orientation
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        if (orientation == UIInterfaceOrientationLandscapeRight || orientation == UIInterfaceOrientationLandscapeLeft) {
+            
+            if([[UIScreen mainScreen] bounds].size.height == 568.0)
+            {
+                // iphone 4.0 inch screen
+
+                self.hotelMenuTableView.frame = CGRectMake(268, 10, self.hotelMenuTableView.frame.size.width, self.hotelMenuTableView.frame.size.height);
+            }
+            else
+            {
+                // iphone 3.5 inch screen
+                self.hotelMenuTableView.frame = CGRectMake(260, 10, 215, self.hotelMenuTableView.frame.size.height);
+
+            }
+        }
+    }];
+}
+
 -(void) reloadData {
     NSDictionary* hotelSummary = [hotelInfo getSummaryForHotel:self.hotel];
     self.navigationItem.title = [hotelSummary valueForKey:@"name"];
     [self.cityAndPostalCode setText:[NSString stringWithFormat:@"%@, %@", [hotelSummary valueForKey:@"city"], [hotelSummary valueForKey:@"postalCode"]]];
     [self.address setText:[hotelSummary valueForKey:@"address1"]];
-    [self.locationDescription setText:[hotelSummary valueForKey:@"locationDescription"]];
     NSURL* url = [NSURL URLWithString:[hotelInfo getProfilePhotoForHotel:self.hotel]];
     [self.hotelImage loadRequest:[NSURLRequest requestWithURL:url]];
     
@@ -108,9 +138,9 @@ typedef enum {
     [self performSegueWithIdentifier:[NSString stringWithFormat:@"%d", indexPath.row] sender:tableView];
 }
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"Hotel information";
-}
+//-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+//    return @"Hotel information";
+//}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString* CellIdentifier = @"MenuItemCell";

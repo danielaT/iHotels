@@ -15,7 +15,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *ratingImage;
 @property (weak, nonatomic) IBOutlet UILabel *cityAndPostalCode;
 @property (weak, nonatomic) IBOutlet UILabel *address;
-@property (weak, nonatomic) IBOutlet UILabel *locationDescription;
+@property (weak, nonatomic) IBOutlet UIButton *reservationButton;
+@property (weak, nonatomic) IBOutlet UIButton *mapButton;
+
 @property (weak, nonatomic) IBOutlet UIWebView *hotelImage;
 @property (weak, nonatomic) IBOutlet UITableView *hotelMenuTableView;
 

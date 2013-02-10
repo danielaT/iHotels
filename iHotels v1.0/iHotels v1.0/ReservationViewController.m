@@ -55,6 +55,37 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
     pickerViewPopup = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    UIInterfaceOrientation orientation = [[UIDevice currentDevice] orientation];
+    [self rearrangeViewsInOrientation:orientation];
+}
+
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [self rearrangeViewsInOrientation:toInterfaceOrientation];
+}
+
+-(void) rearrangeViewsInOrientation:(UIInterfaceOrientation) orientation
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        if (orientation == UIInterfaceOrientationLandscapeRight || orientation == UIInterfaceOrientationLandscapeLeft) {
+            
+            if([[UIScreen mainScreen] bounds].size.height == 568.0)
+            {
+                // iphone 4.0 inch screen
+                
+            }
+            else
+            {
+                // iphone 3.5 inch screen
+
+            }
+            // TODO = code for iPad screen
+        }
+    }];
+}
+
 // apply color theme methods
 -(void) applyTheme {
     [self applyiHotelsThemeWithPatternImageName:@"iphone_hotel_pattern"];
