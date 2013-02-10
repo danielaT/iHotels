@@ -395,6 +395,7 @@
                             </tableView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Min price:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6d-kj-1YM">
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="6Bi-wL-3CE"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="800" constant="80" type="user" id="ug5-DV-JDK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -403,6 +404,7 @@
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Max price:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ori-Fi-67R">
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="QuG-Bn-MaS"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="900" constant="80" type="user" id="YXP-Qp-OJw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -412,12 +414,14 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gcm-Ch-3Ch">
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="800" constant="80" type="user" id="WPw-8x-0Oz"/>
+                                    <constraint firstAttribute="height" constant="30" id="mjE-Yz-09U"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bhe-qZ-IAB">
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="dvf-6L-VmM"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="800" constant="80" type="user" id="nHC-J8-qvg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -434,7 +438,7 @@
                             <constraint firstItem="jrg-yf-hd4" firstAttribute="top" secondItem="HFo-3w-R7N" secondAttribute="top" constant="10" type="user" id="EWT-0O-aWu"/>
                             <constraint firstItem="jrg-yf-hd4" firstAttribute="bottom" secondItem="4oW-BY-wxf" secondAttribute="bottom" type="user" id="Ecv-qf-Cgf"/>
                             <constraint firstAttribute="trailing" secondItem="Ori-Fi-67R" secondAttribute="trailing" constant="20" type="user" id="Gam-fg-UPG"/>
-                            <constraint firstItem="bhe-qZ-IAB" firstAttribute="bottom" secondItem="4oW-BY-wxf" secondAttribute="bottom" type="default" id="NNt-fZ-WK3"/>
+                            <constraint firstItem="bhe-qZ-IAB" firstAttribute="bottom" secondItem="4oW-BY-wxf" secondAttribute="bottom" priority="500" type="user" id="NNt-fZ-WK3"/>
                             <constraint firstItem="jrg-yf-hd4" firstAttribute="top" secondItem="4oW-BY-wxf" secondAttribute="top" type="user" id="Ozy-oR-PEo"/>
                             <constraint firstItem="bhe-qZ-IAB" firstAttribute="top" secondItem="Ori-Fi-67R" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Qbd-tm-uP3"/>
                             <constraint firstItem="4oW-BY-wxf" firstAttribute="width" secondItem="PDe-kk-oWJ" secondAttribute="width" type="user" id="UXn-2O-VvD"/>
@@ -447,10 +451,11 @@
                             <constraint firstItem="Gcm-Ch-3Ch" firstAttribute="top" secondItem="C6d-kj-1YM" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gbx-Nm-rUS"/>
                             <constraint firstAttribute="trailing" secondItem="PDe-kk-oWJ" secondAttribute="trailing" constant="10" type="user" id="ibm-WM-jhX"/>
                             <constraint firstItem="Ori-Fi-67R" firstAttribute="top" secondItem="Gcm-Ch-3Ch" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="kWw-3f-znh"/>
+                            <constraint firstItem="PDe-kk-oWJ" firstAttribute="top" secondItem="bhe-qZ-IAB" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="nJ7-0S-4Br"/>
                             <constraint firstItem="bhe-qZ-IAB" firstAttribute="leading" secondItem="Gcm-Ch-3Ch" secondAttribute="leading" type="user" id="nrz-hl-9rT"/>
+                            <constraint firstItem="C6d-kj-1YM" firstAttribute="top" secondItem="HFo-3w-R7N" secondAttribute="top" constant="10" type="user" id="oys-8W-BcT"/>
                             <constraint firstItem="PDe-kk-oWJ" firstAttribute="leading" secondItem="4oW-BY-wxf" secondAttribute="trailing" type="user" id="p97-jH-9uD"/>
-                            <constraint firstItem="jrg-yf-hd4" firstAttribute="top" secondItem="PDe-kk-oWJ" secondAttribute="top" type="user" id="tal-Mg-wfk"/>
-                            <constraint firstItem="C6d-kj-1YM" firstAttribute="top" secondItem="PDe-kk-oWJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ueo-VB-bYG"/>
+                            <constraint firstItem="PDe-kk-oWJ" firstAttribute="bottom" secondItem="4oW-BY-wxf" secondAttribute="bottom" type="user" id="zxA-rR-gGC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Advanced search" id="P92-yo-x5Z"/>
