@@ -17,6 +17,7 @@
 
 @property NSArray* hotelListArray;
 @property (weak, nonatomic) IBOutlet UITextView *textFieldWithFriends;
+@property (weak, nonatomic) IBOutlet UILabel *friendsThatWillComeLabel;
 
 
 @end
@@ -59,29 +60,42 @@
         }   
     }
 
-//    [UIView animateWithDuration:2.0
-//                          delay:0.0
-//                        options: UIViewAnimationCurveEaseInOut
-//                     animations:^{
-//                         [self.nameView setAlpha:1.0f];
-//                         
-//                     }
-//                     completion:^(BOOL finished){
-//                         //if(finished)  NSLog(@"Finished !!!!!");
-//                                             // do any stuff here if you want
-//                                             }];
-
-
     // apply color theme methods
     [self applyiHotelsThemeWithPatternImageName:@"iphone_reservation_pattern"];
     [self configureSubviewsWithPatternImageName:@"iphone_reservation_pattern"];
 }
-- (IBAction)goToMap:(id)sender
+
+
+-(void)viewDidAppear:(BOOL)animated
 {
-    [self.tabBarController setSelectedIndex:0];
-    [(UINavigationController*)[self.tabBarController.viewControllers objectAtIndex:0] popViewControllerAnimated:YES];
+    UIInterfaceOrientation orientation = [[UIDevice currentDevice] orientation];
+    [self rearrangeViewsInOrientation:orientation];
 }
 
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [self rearrangeViewsInOrientation:toInterfaceOrientation];
+}
+
+-(void) rearrangeViewsInOrientation:(UIInterfaceOrientation) orientation
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        if (orientation == UIInterfaceOrientationLandscapeRight || orientation == UIInterfaceOrientationLandscapeLeft) {
+            
+            if([[UIScreen mainScreen] bounds].size.height == 568.0)
+            {
+                // iphone 4.0 inch screen
+                self.friendsThatWillComeLabel.frame = CGRectMake(260, 10, self.friendsThatWillComeLabel.frame.size.width, self.friendsThatWillComeLabel.frame.size.height);
+                self.textFieldWithFriends.frame = CGRectMake(260, 40, self.textFieldWithFriends.frame.size.width, self.textFieldWithFriends.frame.size.height);
+            }
+            else
+            {
+                // iphone 3.5 inch screen
+                
+            }
+        }
+    }];
+}
 
 
 - (void)didReceiveMemoryWarning

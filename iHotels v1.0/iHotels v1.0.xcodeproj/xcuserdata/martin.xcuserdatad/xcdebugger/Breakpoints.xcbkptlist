@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "iHotels v1.0/ReservationViewController.m"
-         timestampString = "382217581.212653"
+         timestampString = "382221578.14793"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "109"
-         endingLineNumber = "109"
+         startingLineNumber = "78"
+         endingLineNumber = "78"
          landmarkName = "@implementation ReservationViewController"
          landmarkType = "3">
       </FileBreakpoint>

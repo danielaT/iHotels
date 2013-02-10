@@ -98,14 +98,12 @@ typedef enum {
             if([[UIScreen mainScreen] bounds].size.height == 568.0)
             {
                 // iphone 4.0 inch screen
-
                 self.hotelMenuTableView.frame = CGRectMake(268, 10, self.hotelMenuTableView.frame.size.width, self.hotelMenuTableView.frame.size.height);
             }
             else
             {
                 // iphone 3.5 inch screen
                 self.hotelMenuTableView.frame = CGRectMake(260, 10, 215, self.hotelMenuTableView.frame.size.height);
-
             }
         }
     }];
