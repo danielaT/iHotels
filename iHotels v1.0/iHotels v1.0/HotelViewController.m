@@ -136,10 +136,6 @@ typedef enum {
     [self performSegueWithIdentifier:[NSString stringWithFormat:@"%d", indexPath.row] sender:tableView];
 }
 
-//-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-//    return @"Hotel information";
-//}
-
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString* CellIdentifier = @"MenuItemCell";
     UITableViewCell* cell = [self.hotelMenuTableView dequeueReusableCellWithIdentifier:CellIdentifier];

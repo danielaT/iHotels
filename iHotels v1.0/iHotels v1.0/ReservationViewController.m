@@ -24,6 +24,7 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
     NSString* alertMessage;
     UIActionSheet *pickerViewPopup;
 }
+@property (strong) UIPopoverController *popover;
 @property (strong, nonatomic) IBOutlet UITextView *selectedFriendsView;
 @property (retain, nonatomic) FBFriendPickerViewController *friendPickerController;
 @property (weak, nonatomic) IBOutlet UITextField *days;
@@ -36,6 +37,7 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
 
 @implementation ReservationViewController
 
+@synthesize popover=_popover;
 @synthesize selectedFriendsView = _friendResultText;
 @synthesize friendPickerController = _friendPickerController;
 
@@ -119,17 +121,18 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
 }
 
 -(void) showDatePickerView {
+    // a year
+    double timeInterval = 365 * 24 * 60 * 60;
+    
+    // toolbar with buttons
     UIToolbar *pickerToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
     pickerToolbar.barStyle = UIBarStyleBlackOpaque;
-    [pickerToolbar sizeToFit];
     
     UIDatePicker *pickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, pickerToolbar.frame.size.height - 5, 0, 0)];
     pickerView.datePickerMode = UIDatePickerModeDate;
-    pickerView.hidden = NO;
+    // pickerView.hidden = NO;
     pickerView.date = [NSDate date];
     pickerView.minimumDate = [NSDate date];
-    // a year
-    double timeInterval = 365 * 24 * 60 * 60;
     pickerView.maximumDate = [[NSDate date] dateByAddingTimeInterval:timeInterval];
     
     NSMutableArray *barItems = [[NSMutableArray alloc] init];
@@ -140,28 +143,92 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
     [barItems addObject:doneBtn];
     UIBarButtonItem *cancelBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonPressed:)];
     [barItems addObject:cancelBtn];
+    
     [pickerToolbar setItems:barItems animated:YES];
     
-    [pickerViewPopup addSubview:pickerView];
-    [pickerViewPopup addSubview:pickerToolbar];
-    [pickerViewPopup showFromTabBar:self.tabBarController.tabBar];
-    [pickerViewPopup setBounds:CGRectMake(0, 0 , self.view.frame.size.width, self.view.frame.size.height)];
-    [pickerViewPopup setFrame:CGRectMake(0, self.view.center.y + pickerToolbar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height/2)];
+    // iPhone
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        // [pickerToolbar sizeToFit];
+        
+        [pickerViewPopup addSubview:pickerView];
+        [pickerViewPopup addSubview:pickerToolbar];
+        [pickerViewPopup showFromTabBar:self.tabBarController.tabBar];
+        
+        //  self.view.autoresizesSubviews = NO;
+        // pickerViewPopup.autoresizesSubviews = NO;
+        [pickerViewPopup setBounds:CGRectMake(0, 0 , self.view.frame.size.width, self.view.frame.size.height)];
+        [pickerViewPopup setTranslatesAutoresizingMaskIntoConstraints:YES];
+        [pickerViewPopup setFrame:CGRectMake(0, self.view.center.y + pickerToolbar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height/2)];
+    }
+    
+    // iPad
+    else if (UI_USER_INTERFACE_IDIOM() ==  UIUserInterfaceIdiomPad) {
+        
+        // [pickerView setFrame:CGRectZero];
+        // pickerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+        
+        
+        UIViewController* popoverContent = [[UIViewController alloc] init];
+        UIView* popoverView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 244)];
+        
+        [pickerView setFrame:CGRectMake(0, 40, 320, 300)];
+        
+        [pickerToolbar setFrame:CGRectMake(0, 0, 320, 30)];
+        
+        
+        [popoverView addSubview:pickerToolbar];
+        [popoverView addSubview:pickerView];
+        popoverContent.view = popoverView;
+        
+        //resize the popover view shown
+        //in the current view to the view's size
+        popoverContent.contentSizeForViewInPopover = CGSizeMake(320, 244);
+        
+        //create a popover controller
+        self.popover = [[UIPopoverController alloc] initWithContentViewController:popoverContent];
+        
+        //present the popover view non-modal with a
+        //refrence to the button pressed within the current view
+        [self.popover presentPopoverFromRect:self.date.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
+    }
 }
 
 -(void)doneButtonPressed:(id)sender{
-    for (UIView* view in pickerViewPopup.subviews) {
-        if ([[view class] isSubclassOfClass:[UIDatePicker class]]) {
-            NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-            [dateFormat setDateFormat:DATE_FORMAT];
-            self.date.text = [dateFormat stringFromDate:[(UIDatePicker*)view date]];
+    
+    // iPhone
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        for (UIView* view in pickerViewPopup.subviews) {
+            if ([[view class] isSubclassOfClass:[UIDatePicker class]]) {
+                NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+                [dateFormat setDateFormat:DATE_FORMAT];
+                self.date.text = [dateFormat stringFromDate:[(UIDatePicker*)view date]];
+            }
         }
+        [pickerViewPopup dismissWithClickedButtonIndex:1 animated:YES];
     }
-    [pickerViewPopup dismissWithClickedButtonIndex:1 animated:YES];
+    
+    // iPad
+    else {
+        for (UIView* view in self.popover.contentViewController.view.subviews) {
+            if ([[view class] isSubclassOfClass:[UIDatePicker class]]) {
+                NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+                [dateFormat setDateFormat:DATE_FORMAT];
+                self.date.text = [dateFormat stringFromDate:[(UIDatePicker*)view date]];
+            }
+        }
+        [self.popover dismissPopoverAnimated:YES];
+    }
 }
 
 -(void)cancelButtonPressed:(id)sender{
-    [pickerViewPopup dismissWithClickedButtonIndex:1 animated:YES];
+    // iPhone
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        [pickerViewPopup dismissWithClickedButtonIndex:1 animated:YES];
+    }
+    // iPad
+    else {
+        [self.popover dismissPopoverAnimated:YES];
+    }
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -205,7 +272,7 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
     }
     else
         [self.tabBarController setSelectedIndex:3];
-
+    
 }
 
 - (void)facebookViewControllerDoneWasPressed:(id)sender
@@ -303,7 +370,7 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
     // one day before the reservation start date
     double oneDayBefore = -(24*60*60);
     scheduledAlert.fireDate = [fireDate dateByAddingTimeInterval:oneDayBefore];
-//    scheduledAlert.fireDate = [NSDate dateWithTimeIntervalSinceNow:20];
+    //    scheduledAlert.fireDate = [NSDate dateWithTimeIntervalSinceNow:20];
     scheduledAlert.timeZone = [NSTimeZone localTimeZone];
     scheduledAlert.repeatInterval =  NSHourCalendarUnit;
     scheduledAlert.soundName = UILocalNotificationDefaultSoundName;
@@ -317,7 +384,7 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
     [arrayWithFriends addObject:name];
     if([self.selectedFriendsView.text isEqualToString:@"Friends:"])
         [self.selectedFriendsView setText:[NSString stringWithFormat:@"%@ %@", self.selectedFriendsView.text, name]];
-   
+    
     else [self.selectedFriendsView setText:[NSString stringWithFormat:@"%@, %@", self.selectedFriendsView.text, name]];
 }
 

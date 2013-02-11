@@ -158,10 +158,18 @@ const int HOTELS_DICTIONARY_CAPACITY = 3;
 }
 
 -(NSString*) getProfilePhotoForHotel:(NSDictionary*)hotel {
-    NSArray* hotelImagesArray = [[hotel valueForKey:HOTEL_IMAGES] valueForKey:HOTEL_IMAGE];
-    if ([hotelImagesArray count] > 0) {
-        NSDictionary* hotelImage = [hotelImagesArray objectAtIndex:0];
-        return [hotelImage valueForKey:@"thumbnailUrl"];
+    if ([[[[hotel valueForKey:HOTEL_IMAGES] valueForKey:HOTEL_IMAGE] class] isSubclassOfClass:[NSArray class]]) {
+        NSArray* hotelImagesArray = [[hotel valueForKey:HOTEL_IMAGES] valueForKey:HOTEL_IMAGE];
+        if ([hotelImagesArray count] > 0) {
+            NSDictionary* hotelImage = [hotelImagesArray objectAtIndex:0];
+            return [hotelImage valueForKey:@"thumbnailUrl"];
+        }
+    }
+    else if ([[[[hotel valueForKey:HOTEL_IMAGES] valueForKey:HOTEL_IMAGE] class] isSubclassOfClass:[NSDictionary class]]) {
+        return [[[hotel valueForKey:HOTEL_IMAGES] valueForKey:HOTEL_IMAGE] valueForKey:@"thumbnailUrl"];
+    }
+    else {
+        return nil;
     }
     return nil;
 }
