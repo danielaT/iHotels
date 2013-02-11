@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="ty3-Z2-GFM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12A269" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="ty3-Z2-GFM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -52,7 +52,7 @@
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VisitedHotelCell" textLabel="pDi-bi-uma" detailTextLabel="q0H-TA-T1G" style="IBUITableViewCellStyleValue2" id="ged-sS-hns">
-                                <rect key="frame" x="0.0" y="54" width="768" height="45"/>
+                                <rect key="frame" x="0.0" y="54" width="768" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="45" y="1" width="658" height="43"/>
@@ -415,7 +415,7 @@
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReservationCell" textLabel="ki1-jT-uOG" detailTextLabel="S1P-Ke-XAa" style="IBUITableViewCellStyleValue2" id="42w-iL-Eal">
-                                <rect key="frame" x="0.0" y="54" width="768" height="45"/>
+                                <rect key="frame" x="0.0" y="54" width="768" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="45" y="1" width="678" height="43"/>
@@ -691,7 +691,7 @@
                                 <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CityCell" id="Ytz-ZC-UTj">
-                                        <rect key="frame" x="0.0" y="34" width="216" height="45"/>
+                                        <rect key="frame" x="0.0" y="34" width="216" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="196" height="43"/>
@@ -1105,14 +1105,17 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RoomType" editingAccessoryType="disclosureIndicator" id="ice-UE-SBa">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RoomType" editingAccessoryType="disclosureIndicator" id="ice-UE-SBa">
                                 <rect key="frame" x="0.0" y="54" width="768" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="45" y="1" width="678" height="43"/>
+                                    <rect key="frame" x="45" y="1" width="658" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="xZW-3R-uer" kind="push" identifier="ShowRoom" id="BxM-7c-dy5"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1121,13 +1124,51 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Rooms" id="xYu-Em-NSh"/>
-                    <connections>
-                        <segue destination="s4q-So-Ull" kind="push" id="u5h-6K-caT"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4O-So-CCo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1983" y="-3281"/>
+        </scene>
+        <!--Room View Controller-->
+        <scene sceneID="Fot-fd-HmG">
+            <objects>
+                <viewController id="xZW-3R-uer" customClass="RoomViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P4T-iS-mE5">
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="xCa-hP-bws">
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="RoomAmenity" id="ecd-EB-sCg">
+                                        <rect key="frame" x="0.0" y="54" width="768" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="45" y="1" width="678" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="xZW-3R-uer" id="YDq-gp-7V9"/>
+                                    <outlet property="delegate" destination="xZW-3R-uer" id="fW8-E3-ymr"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xCa-hP-bws" firstAttribute="leading" secondItem="P4T-iS-mE5" secondAttribute="leading" type="default" id="5KF-Kl-gJ5"/>
+                            <constraint firstItem="xCa-hP-bws" firstAttribute="bottom" secondItem="P4T-iS-mE5" secondAttribute="bottom" type="default" id="CRW-Ud-kiR"/>
+                            <constraint firstItem="xCa-hP-bws" firstAttribute="top" secondItem="P4T-iS-mE5" secondAttribute="top" type="default" id="XQ2-77-pVp"/>
+                            <constraint firstItem="xCa-hP-bws" firstAttribute="trailing" secondItem="P4T-iS-mE5" secondAttribute="trailing" type="default" id="sin-Uu-ozC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Oly-Yt-gbG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lib-rR-ouX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2834" y="-3289"/>
         </scene>
         <!--Property Amenities View Controller-->
         <scene sceneID="RQt-HK-ez4">
@@ -1445,37 +1486,6 @@
             </objects>
             <point key="canvasLocation" x="3297" y="-796"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="y9B-1H-cAd">
-            <objects>
-                <tableViewController id="s4q-So-Ull" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Zjw-lr-oF5">
-                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RoomAmenity" id="Brj-cJ-4rN">
-                                <rect key="frame" x="0.0" y="54" width="768" height="45"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="45" y="1" width="678" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="s4q-So-Ull" id="toW-kG-JCK"/>
-                            <outlet property="delegate" destination="s4q-So-Ull" id="0gI-iH-Nqj"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="C8j-u6-tNq"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YXV-cS-tVA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2932" y="-3290"/>
-        </scene>
         <!--Hotel Description View Controller - Hotel description-->
         <scene sceneID="Eae-rc-n6E">
             <objects>
@@ -1753,6 +1763,10 @@
         <class className="PlaceViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PlaceViewController.h"/>
             <relationships>
+                <relationship kind="action" name="ipadMinusTap:"/>
+                <relationship kind="action" name="ipadPlusTap:"/>
+                <relationship kind="action" name="minusButtonTap:"/>
+                <relationship kind="action" name="plusButtonTap:"/>
                 <relationship kind="action" name="postOnTwitterButtonTap:"/>
                 <relationship kind="action" name="shareOnFacebookButtonTap:"/>
                 <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
@@ -1774,6 +1788,12 @@
         <class className="ReservationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ReservationViewController.h"/>
             <relationships>
+                <relationship kind="action" name="iPadFacebookFriendsTap:"/>
+                <relationship kind="action" name="iPadPhoneFriendsTap:"/>
+                <relationship kind="action" name="iPadReservationDone:"/>
+                <relationship kind="action" name="phoneFriends:"/>
+                <relationship kind="action" name="pickFriendsButtonClick:"/>
+                <relationship kind="action" name="reservationDone:"/>
                 <relationship kind="outlet" name="date" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="days" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="facebookButton" candidateClass="UIButton"/>
@@ -1790,6 +1810,12 @@
         </class>
         <class className="RoomTypesViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RoomTypesViewController.h"/>
+        </class>
+        <class className="RoomViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoomViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="roomAmenitiesTableView" candidateClass="UITableView"/>
+            </relationships>
         </class>
         <class className="SocialViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialViewController.h"/>
