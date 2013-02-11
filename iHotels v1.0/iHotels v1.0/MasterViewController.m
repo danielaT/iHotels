@@ -37,17 +37,18 @@ const float ROW_HEIGTH = 120;
 // reload tableView with hotels when new city is selected
 -(void)setCityName:(NSString *)cityName {
     _cityName = cityName;
-    self.navigationItem.title = self.cityName;
-    
     [[[HotelsInformation alloc] init] getHotelsForCity:cityName handler:^(NSArray* hotels) {
-        
         self.hotelListArray = hotels;
         dispatch_async(dispatch_get_main_queue(), ^{
+            
+            NSString* title = [NSString stringWithFormat:@"%d hotels", [self.hotelListArray count]];
+            if ([self.hotelListArray count] == 1) {
+                title = [NSString stringWithFormat:@"%d hotel", [self.hotelListArray count]];
+            }
+            self.navigationItem.title = title;
             [self.tableView reloadData];
         });
-        
     }];
-    
 }
 
 // reaload tableView with hotels filtered by advanced searching
@@ -129,7 +130,7 @@ const float ROW_HEIGTH = 120;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-       // self.detailViewController.detailItem = object;
+        // self.detailViewController.detailItem = object;
     }
 }
 
