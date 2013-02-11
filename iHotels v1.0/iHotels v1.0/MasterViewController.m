@@ -164,6 +164,9 @@ const float ROW_HEIGTH = 120;
     
     cell.hotelDescription.font = [UIFont fontWithName:@"Baar Philos" size:12];
     cell.hotelName.font = [UIFont fontWithName:@"BaarPhilosBold" size:16];
+    
+    UIImageView* accessory = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"iphone_disclosure_indicator" ofType:@"png"]]];
+    [cell setAccessoryView:accessory];
 }
 
 @end

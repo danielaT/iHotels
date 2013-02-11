@@ -85,7 +85,8 @@
     cell.textLabel.textColor = [UIColor colorWithHue:0.1417 saturation:0.21 brightness:0.9 alpha:1];
     cell.detailTextLabel.font = [UIFont fontWithName:@"Baar Philos" size:14.0];
     cell.detailTextLabel.textColor = [UIColor colorWithHue:0.1417 saturation:0.21 brightness:0.9 alpha:1];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    UIImageView* accessory = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"iphone_disclosure_indicator" ofType:@"png"]]];
+    [cell setAccessoryView:accessory];
     
     return cell;
 }

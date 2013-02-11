@@ -146,7 +146,7 @@
         SLComposeViewController *facebookSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         
         NSString* messageText;
-        if (self.hotel.userRating) {
+        if ([self.hotel.userRating integerValue] != 0) {
             messageText = [NSString stringWithFormat:@"was at %@ on %@ and rated the experience %d/5!",  self.hotelNameLabel.text, self.dateLabel.text, [self.hotel.userRating integerValue]];
         }
         else {
@@ -154,15 +154,24 @@
         }
         [facebookSheet setInitialText:messageText];
         
+        // add image if there is one
+        if (self.hotel.photoPath) {
+            [facebookSheet addImage:[UIImage imageWithContentsOfFile:self.hotel.photoPath]];
+        }
+        
         [facebookSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
             
             switch (result) {
                 case SLComposeViewControllerResultCancelled:
-                    NSLog(@"Post Cancelled");
+                    // NSLog(@"Post Cancelled");
                     break;
+                    
                 case SLComposeViewControllerResultDone:
-                    NSLog(@"Post Sucessful");
+                {
+                    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Post successful!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                    [alert show];
                     break;
+                }
                     
                 default:
                     break;
@@ -182,7 +191,7 @@
         SLComposeViewController *twitterSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         
         NSString* messageText;
-        if (self.hotel.userRating) {
+        if (([self.hotel.userRating integerValue] != 0)) {
             messageText = [NSString stringWithFormat:@"was at %@ on %@ and rated the experience %d/5!",  self.hotelNameLabel.text, self.dateLabel.text, [self.hotel.userRating integerValue]];
         }
         else {
@@ -190,15 +199,24 @@
         }
         [twitterSheet setInitialText:messageText];
         
+        // add image if there is one
+        if (self.hotel.photoPath) {
+            [twitterSheet addImage:[UIImage imageWithContentsOfFile:self.hotel.photoPath]];
+        }
+        
         [twitterSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
             
             switch (result) {
                 case SLComposeViewControllerResultCancelled:
-                    NSLog(@"Post Cancelled");
+                    //NSLog(@"Post Cancelled");
                     break;
+                    
                 case SLComposeViewControllerResultDone:
-                    NSLog(@"Post Sucessful");
+                {
+                    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Post successful!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                    [alert show];
                     break;
+                }
                     
                 default:
                     break;
