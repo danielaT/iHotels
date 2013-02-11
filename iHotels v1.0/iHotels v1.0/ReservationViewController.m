@@ -360,8 +360,8 @@ const float PICKER_VIEW_WIDTH = 320.0;
     scheduledAlert.applicationIconBadgeNumber = 1;
     // one day before the reservation start date
     double oneDayBefore = -(24*60*60);
-    scheduledAlert.fireDate = [fireDate dateByAddingTimeInterval:oneDayBefore];
-    //    scheduledAlert.fireDate = [NSDate dateWithTimeIntervalSinceNow:20];
+   // scheduledAlert.fireDate = [fireDate dateByAddingTimeInterval:oneDayBefore];
+    scheduledAlert.fireDate = [NSDate dateWithTimeIntervalSinceNow:20];
     scheduledAlert.timeZone = [NSTimeZone localTimeZone];
     scheduledAlert.repeatInterval =  NSHourCalendarUnit;
     scheduledAlert.soundName = UILocalNotificationDefaultSoundName;

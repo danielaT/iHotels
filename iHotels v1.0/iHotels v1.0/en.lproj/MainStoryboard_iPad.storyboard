@@ -1675,6 +1675,9 @@
         </class>
         <class className="ContactsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addContactsToReservation:"/>
+            </relationships>
         </class>
         <class className="FBProfilePictureView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FBProfilePictureView.h"/>
@@ -1736,6 +1739,8 @@
         <class className="MapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
+                <relationship kind="action" name="browseCitiesButtonTap:"/>
+                <relationship kind="action" name="searchButtonTap:"/>
                 <relationship kind="outlet" name="browseCitiesButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="mapImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="searchButton" candidateClass="UIButton"/>
@@ -1764,8 +1769,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PlaceViewController.h"/>
             <relationships>
                 <relationship kind="action" name="ipadMinusTap:"/>
-                <relationship kind="action" name="ipadPlusTap:"/>
-                <relationship kind="action" name="minusButtonTap:"/>
                 <relationship kind="action" name="plusButtonTap:"/>
                 <relationship kind="action" name="postOnTwitterButtonTap:"/>
                 <relationship kind="action" name="shareOnFacebookButtonTap:"/>
@@ -1820,6 +1823,9 @@
         <class className="SocialViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialViewController.h"/>
             <relationships>
+                <relationship kind="action" name="postInFacebook:"/>
+                <relationship kind="action" name="postInTwitter:"/>
+                <relationship kind="action" name="segmentedSwitch:"/>
                 <relationship kind="outlet" name="facebookPost" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="loginLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="profilePhoto" candidateClass="FBProfilePictureView"/>
@@ -1839,6 +1845,9 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
         <class className="VisitedPlacesTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VisitedPlacesTableViewController.h"/>

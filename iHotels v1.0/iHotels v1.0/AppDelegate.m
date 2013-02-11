@@ -65,14 +65,8 @@
 
 - (void)application:(UIApplication *)app didReceiveLocalNotification:(UILocalNotification *)notif {
     // Handle the notificaton when the app is running
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"" message:notif.alertBody delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"View", nil];
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"" message:notif.alertBody delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
     [alert show];
-}
-
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 1) {
-        // view reservation
-    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
