@@ -17,6 +17,7 @@
 
 const int PICKER_TOOLBAR_HEIGTH = 44;
 NSString* const DATE_FORMAT = @"yyyy-MM-dd";
+const float PICKER_VIEW_WIDTH = 320.0;
 
 @interface ReservationViewController ()
 {
@@ -128,13 +129,14 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
     UIToolbar *pickerToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
     pickerToolbar.barStyle = UIBarStyleBlackOpaque;
     
-    UIDatePicker *pickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, pickerToolbar.frame.size.height - 5, 0, 0)];
+    // date picker
+    UIDatePicker *pickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
     pickerView.datePickerMode = UIDatePickerModeDate;
-    // pickerView.hidden = NO;
     pickerView.date = [NSDate date];
     pickerView.minimumDate = [NSDate date];
     pickerView.maximumDate = [[NSDate date] dateByAddingTimeInterval:timeInterval];
     
+    // bar button items: done and cancel
     NSMutableArray *barItems = [[NSMutableArray alloc] init];
     UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
     [barItems addObject:flexSpace];
@@ -144,37 +146,29 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
     UIBarButtonItem *cancelBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonPressed:)];
     [barItems addObject:cancelBtn];
     
+    // set button items to pickerToolbar
     [pickerToolbar setItems:barItems animated:YES];
     
     // iPhone
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        // [pickerToolbar sizeToFit];
+        [pickerToolbar sizeToFit];
         
         [pickerViewPopup addSubview:pickerView];
         [pickerViewPopup addSubview:pickerToolbar];
         [pickerViewPopup showFromTabBar:self.tabBarController.tabBar];
-        
-        //  self.view.autoresizesSubviews = NO;
-        // pickerViewPopup.autoresizesSubviews = NO;
+     
         [pickerViewPopup setBounds:CGRectMake(0, 0 , self.view.frame.size.width, self.view.frame.size.height)];
-        [pickerViewPopup setTranslatesAutoresizingMaskIntoConstraints:YES];
         [pickerViewPopup setFrame:CGRectMake(0, self.view.center.y + pickerToolbar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height/2)];
     }
     
     // iPad
     else if (UI_USER_INTERFACE_IDIOM() ==  UIUserInterfaceIdiomPad) {
-        
-        // [pickerView setFrame:CGRectZero];
-        // pickerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
-        
-        
         UIViewController* popoverContent = [[UIViewController alloc] init];
-        UIView* popoverView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 244)];
+        UIView* popoverView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, PICKER_VIEW_WIDTH, 244)];
         
-        [pickerView setFrame:CGRectMake(0, 40, 320, 300)];
+        [pickerView setFrame:CGRectMake(0, 30, PICKER_VIEW_WIDTH, 300)];
         
-        [pickerToolbar setFrame:CGRectMake(0, 0, 320, 30)];
-        
+        [pickerToolbar setFrame:CGRectMake(0, 0, PICKER_VIEW_WIDTH, 30)];
         
         [popoverView addSubview:pickerToolbar];
         [popoverView addSubview:pickerView];
@@ -186,9 +180,6 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
         
         //create a popover controller
         self.popover = [[UIPopoverController alloc] initWithContentViewController:popoverContent];
-        
-        //present the popover view non-modal with a
-        //refrence to the button pressed within the current view
         [self.popover presentPopoverFromRect:self.date.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
     }
 }
