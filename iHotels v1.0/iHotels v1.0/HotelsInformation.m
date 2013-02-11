@@ -70,17 +70,11 @@ const int HOTELS_DICTIONARY_CAPACITY = 3;
 -(void)getHotelsWithFilter:(NSDictionary*)filter handler:(void (^)(NSArray*))callback
 {
     self.callback = callback;
-    if (![[self.hotelsInCities allKeys] containsObject:[filter valueForKey:@"city"]]) {
-        if ([self.hotelsInCities count] >= HOTELS_DICTIONARY_CAPACITY) {
-            [self.hotelsInCities removeObjectForKey:[[self.hotelsInCities allKeys] objectAtIndex:0]];
-        }
-        
-        [JsonParser getJsonForHotelsWithFilter:filter handler:^(NSDictionary* dict) {
-            [self.hotelsInCities setValue:dict forKey:[filter valueForKey:@"city"]];
-            [self callbackForCityName:[filter valueForKey:@"city"]];
-        }];
-    }
-    
+    [JsonParser getJsonForHotelsWithFilter:filter handler:^(NSDictionary* dict) {
+        [self.hotelsInCities setValue:dict forKey:[filter valueForKey:@"city"]];
+        [self callbackForCityName:[filter valueForKey:@"city"]];
+    }];
+
     [self callbackForCityName:[filter valueForKey:@"city"]];
 }
 

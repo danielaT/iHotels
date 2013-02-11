@@ -37,8 +37,10 @@ NSString* const AMENITIES = @"amenities";
 }
 
 +(void)getJsonForHotelsWithFilter:(NSDictionary*)filter  handler:(void (^)(NSDictionary*))callback {
+    // append the city to the url
     NSString* stringAppendedWithFilters = [HOTEL_LIST_REQUEST_URL stringByAppendingFormat:@"%@", [filter valueForKey:@"city"]];
     
+    // if there are any selected property categories, append them to the url
     if ([[filter valueForKey:PROPERTY_CATEGORIES] count] > 0) {
         stringAppendedWithFilters = [stringAppendedWithFilters stringByAppendingFormat:@"%@", @"&propertyCategory="];
         for (int i = 0; i < [[filter valueForKey:PROPERTY_CATEGORIES] count]; i++) {
@@ -50,6 +52,7 @@ NSString* const AMENITIES = @"amenities";
         }
     }
     
+    // if there are any selected amenities, append them to the url
     if ([[filter valueForKey:AMENITIES] count] > 0) {
         stringAppendedWithFilters = [stringAppendedWithFilters stringByAppendingFormat:@"%@", @"&amenities="];
         for (int i = 0; i < [[filter valueForKey:AMENITIES] count]; i++) {
@@ -59,6 +62,16 @@ NSString* const AMENITIES = @"amenities";
                 stringAppendedWithFilters = [stringAppendedWithFilters stringByAppendingFormat:@"%@,", [[filter valueForKey:AMENITIES] objectAtIndex:i]];
             }
         }
+    }
+    
+    // append minRate to the url
+    if ([[filter valueForKey:@"minRate"] length] > 0) {
+        stringAppendedWithFilters = [stringAppendedWithFilters stringByAppendingFormat:@"&minRate=%@", [filter valueForKey:@"minRate"]];
+    }
+    
+    // append maxRate to the url
+    if ([[filter valueForKey:@"maxRate"] length] > 0) {
+        stringAppendedWithFilters = [stringAppendedWithFilters stringByAppendingFormat:@"&maxRate=%@", [filter valueForKey:@"maxRate"]];
     }
     
     NSURL* urlForRequest = [NSURL URLWithString:stringAppendedWithFilters];

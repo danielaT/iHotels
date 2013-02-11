@@ -34,18 +34,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(search:)];
     
     // apply color theme methods
     [self applyiHotelsThemeWithPatternImageName:@"iphone_hotel_pattern"];
     [self configureSubviewsWithPatternImageName:@"iphone_hotel_pattern"];
     
+    [self configureControls];
+    
     // load information for filters
     [self loadInformationForAdvancedSearch];
-    
-    searchFilters = [[NSMutableDictionary alloc] init];
-    selectedAmenities = [[NSMutableArray alloc] init];
-    selectedPropertyCategories = [[NSMutableArray alloc] init];
 }
 
 -(void)search:(id)sender {
@@ -57,10 +54,14 @@
     }
     
     else {
+        NSString *minRate = [self.priceFrom.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        NSString *maxRate = [self.priceTo.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        
+        [searchFilters setValue:minRate forKey:@"minRate"];
+        [searchFilters setValue:maxRate forKey:@"maxRate"];
         [searchFilters setValue:selectedCity forKey:@"city"];
         [searchFilters setValue:selectedAmenities forKey:@"amenities"];
         [searchFilters setValue:selectedPropertyCategories forKey:@"propertyCategories"];
-        
         [self performSegueWithIdentifier:@"showFilteredHotels" sender:sender];
     }
 }
@@ -79,8 +80,10 @@
     return YES;
 }
 
--(void) loadInformationForAdvancedSearch
-{
+-(void) configureControls {
+    self.navigationItem.title = @"Search";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Search" style:UIBarButtonItemStyleDone target:self action:@selector(search:)];
+    
     self.amenities.dataSource = self;
     self.amenities.delegate = self;
     self.propertyCategories.delegate = self;
@@ -88,6 +91,16 @@
     self.cities.delegate = self;
     self.cities.dataSource = self;
     
+    searchFilters = [[NSMutableDictionary alloc] init];
+    selectedAmenities = [[NSMutableArray alloc] init];
+    selectedPropertyCategories = [[NSMutableArray alloc] init];
+    
+    self.priceFrom.keyboardType = UIKeyboardTypeNumberPad;
+    self.priceTo.keyboardType = UIKeyboardTypeNumberPad;
+}
+
+-(void) loadInformationForAdvancedSearch
+{
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"AdvancedSearch" ofType:@"plist"];
     NSDictionary *advancedSearchSettings = [[NSDictionary dictionaryWithContentsOfFile:plistPath] valueForKey:@"AdvancedSearchSettings"];
     
@@ -193,24 +206,41 @@
     // if the cell was checked, uncheck it
     if ([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark) {
         [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryNone];
+        switch (tableView.tag) {
+            case 0:
+                selectedCity = nil;
+                break;
+            case 1:
+                [selectedAmenities removeObjectAtIndex:indexPath.row];
+                break;
+            case 2:
+                [selectedPropertyCategories removeObjectAtIndex:indexPath.row];
+                break;
+            default:
+                break;
+        }
     }
     
     else {
-        if (tableView.tag == 0) {
-            selectedCity = [citiesArray objectAtIndex:indexPath.row];
-            
-            // select just one city at a time, so uncheck the other cities
-            for (UITableViewCell* cell in [tableView visibleCells]) {
-                [cell setAccessoryType:UITableViewCellAccessoryNone];
+        switch (tableView.tag) {
+            case 0:
+            {
+                selectedCity = [citiesArray objectAtIndex:indexPath.row];
+                
+                // select just one city at a time, so uncheck the other cities
+                for (UITableViewCell* cell in [tableView visibleCells]) {
+                    [cell setAccessoryType:UITableViewCellAccessoryNone];
+                }
             }
-        }
-        
-        else if (tableView.tag == 1) {
-            [selectedAmenities addObject:[NSString stringWithFormat:@"%d", indexPath.row + 1]];
-        }
-        
-        else {
-            [selectedPropertyCategories addObject:[NSString stringWithFormat:@"%d", indexPath.row + 1]];
+                break;
+            case 1:
+                [selectedAmenities addObject:[NSString stringWithFormat:@"%d", indexPath.row + 1]];
+                break;
+            case 2:
+                [selectedPropertyCategories addObject:[NSString stringWithFormat:@"%d", indexPath.row + 1]];
+                break;
+            default:
+                break;
         }
         
         [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
