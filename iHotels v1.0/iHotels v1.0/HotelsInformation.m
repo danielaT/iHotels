@@ -71,11 +71,17 @@ const int HOTELS_DICTIONARY_CAPACITY = 3;
 {
     self.callback = callback;
     [JsonParser getJsonForHotelsWithFilter:filter handler:^(NSDictionary* dict) {
-        [self.hotelsInCities setValue:dict forKey:[filter valueForKey:@"city"]];
-        [self callbackForCityName:[filter valueForKey:@"city"]];
+        NSDictionary* hotelListResponseDictionary = [dict objectForKey:HOTEL_LIST_RESPONSE];
+        NSDictionary* hotelListDictionary = [hotelListResponseDictionary objectForKey:HOTEL_LIST];
+        
+        // if there is just one hotel in the selected city
+        if ([[[hotelListDictionary objectForKey:HOTEL_SUMMARY] class] isSubclassOfClass:[NSDictionary class]]) {
+            self.callback([[NSArray alloc] initWithObjects:[hotelListDictionary objectForKey:HOTEL_SUMMARY], nil]);
+        }
+        else {
+            self.callback([hotelListDictionary objectForKey:HOTEL_SUMMARY]);
+        }
     }];
-
-    [self callbackForCityName:[filter valueForKey:@"city"]];
 }
 
 -(void) callbackForCityName:(NSString*)name {

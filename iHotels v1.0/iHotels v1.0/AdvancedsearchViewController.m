@@ -211,10 +211,10 @@
                 selectedCity = nil;
                 break;
             case 1:
-                [selectedAmenities removeObjectAtIndex:indexPath.row];
+                [selectedAmenities removeObject:[NSString stringWithFormat:@"%d", indexPath.row + 1]];
                 break;
             case 2:
-                [selectedPropertyCategories removeObjectAtIndex:indexPath.row];
+                [selectedPropertyCategories removeObject:[NSString stringWithFormat:@"%d", indexPath.row + 1]];
                 break;
             default:
                 break;
