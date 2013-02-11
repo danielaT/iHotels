@@ -45,7 +45,7 @@
     [self loadInformationForAdvancedSearch];
 }
 
--(void)search:(id)sender {
+-(void) search:(id)sender {
     
     // the search must have selected city
     if (![self isValid]) {
@@ -66,14 +66,14 @@
     }
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showFilteredHotels"]) {
         MasterViewController* filteredHotels = (MasterViewController*)segue.destinationViewController;
         filteredHotels.searchFilters = searchFilters;
     }
 }
 
--(BOOL)isValid {
+-(BOOL) isValid {
     if ([selectedCity length] <= 0) {
         return NO;
     }
@@ -196,7 +196,6 @@
                 [cell setAccessoryView:checkMark];
             }
             else {
-                // [cell setAccessoryType:UITableViewCellAccessoryNone];
                 [cell setAccessoryView:nil];
             }
         }
@@ -207,8 +206,7 @@
     
     // if the cell was checked, uncheck it
     UIImageView* checkMark = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"iphone_checkmark" ofType:@"png"]]];
-    if ([tableView cellForRowAtIndexPath:indexPath].accessoryView == checkMark) {
-        //  [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryNone];
+    if ([tableView cellForRowAtIndexPath:indexPath].accessoryView != nil) {
         [[tableView cellForRowAtIndexPath:indexPath] setAccessoryView:nil];
         switch (tableView.tag) {
             case 0:
@@ -233,8 +231,7 @@
                 
                 // select just one city at a time, so uncheck the other cities
                 for (UITableViewCell* cell in [tableView visibleCells]) {
-                    // [cell setAccessoryType:UITableViewCellAccessoryNone];
-                    [cell setAccessoryView:nil];
+                     [cell setAccessoryView:nil];
                 }
             }
                 break;
