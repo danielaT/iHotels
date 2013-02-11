@@ -192,10 +192,12 @@
     if (tableView.tag == 0) {
         for (UITableViewCell* cell in [tableView visibleCells]) {
             if ([cell.textLabel.text isEqualToString:selectedCity]) {
-                [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+                UIImageView* checkMark = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"iphone_checkmark" ofType:@"png"]]];
+                [cell setAccessoryView:checkMark];
             }
             else {
-                [cell setAccessoryType:UITableViewCellAccessoryNone];
+                // [cell setAccessoryType:UITableViewCellAccessoryNone];
+                [cell setAccessoryView:nil];
             }
         }
     }
@@ -204,8 +206,10 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // if the cell was checked, uncheck it
-    if ([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark) {
-        [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryNone];
+    UIImageView* checkMark = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"iphone_checkmark" ofType:@"png"]]];
+    if ([tableView cellForRowAtIndexPath:indexPath].accessoryView == checkMark) {
+        //  [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryNone];
+        [[tableView cellForRowAtIndexPath:indexPath] setAccessoryView:nil];
         switch (tableView.tag) {
             case 0:
                 selectedCity = nil;
@@ -229,12 +233,14 @@
                 
                 // select just one city at a time, so uncheck the other cities
                 for (UITableViewCell* cell in [tableView visibleCells]) {
-                    [cell setAccessoryType:UITableViewCellAccessoryNone];
+                    // [cell setAccessoryType:UITableViewCellAccessoryNone];
+                    [cell setAccessoryView:nil];
                 }
             }
                 break;
             case 1:
                 [selectedAmenities addObject:[NSString stringWithFormat:@"%d", indexPath.row + 1]];
+                
                 break;
             case 2:
                 [selectedPropertyCategories addObject:[NSString stringWithFormat:@"%d", indexPath.row + 1]];
@@ -243,7 +249,7 @@
                 break;
         }
         
-        [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
+        [[tableView cellForRowAtIndexPath:indexPath] setAccessoryView:checkMark];
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:NO];

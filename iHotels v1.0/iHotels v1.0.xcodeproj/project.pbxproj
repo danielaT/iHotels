@@ -92,6 +92,8 @@
 		F9989F1116B9EBB80015A5C9 /* ConnectionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F9989F1016B9EBB80015A5C9 /* ConnectionStore.m */; };
 		F9989F1816B9EF6C0015A5C9 /* JsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F9989F1716B9EF6C0015A5C9 /* JsonParser.m */; };
 		F9989F1B16B9F22D0015A5C9 /* HotelsInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = F9989F1A16B9F22D0015A5C9 /* HotelsInformation.m */; };
+		F9994EFD16C86FBE00735103 /* iphone_checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = F9994EFB16C86FBE00735103 /* iphone_checkmark.png */; };
+		F9994EFE16C86FBE00735103 /* iphone_checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9994EFC16C86FBE00735103 /* iphone_checkmark@2x.png */; };
 		F99BAF1816BBF8BC001F2D02 /* GalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F99BAF1716BBF8BC001F2D02 /* GalleryViewController.m */; };
 		F99BAF1C16BBF938001F2D02 /* ImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F99BAF1B16BBF938001F2D02 /* ImageCollectionViewCell.m */; };
 		F99BBACD16BAAE9100246E3B /* HotelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F99BBACC16BAAE9000246E3B /* HotelTableViewCell.m */; };
@@ -227,6 +229,8 @@
 		F9989F1716B9EF6C0015A5C9 /* JsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonParser.m; sourceTree = "<group>"; };
 		F9989F1916B9F22D0015A5C9 /* HotelsInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelsInformation.h; sourceTree = "<group>"; };
 		F9989F1A16B9F22D0015A5C9 /* HotelsInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelsInformation.m; sourceTree = "<group>"; };
+		F9994EFB16C86FBE00735103 /* iphone_checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_checkmark.png; sourceTree = "<group>"; };
+		F9994EFC16C86FBE00735103 /* iphone_checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone_checkmark@2x.png"; sourceTree = "<group>"; };
 		F99BAF1616BBF8BC001F2D02 /* GalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GalleryViewController.h; sourceTree = "<group>"; };
 		F99BAF1716BBF8BC001F2D02 /* GalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GalleryViewController.m; sourceTree = "<group>"; };
 		F99BAF1A16BBF938001F2D02 /* ImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCollectionViewCell.h; sourceTree = "<group>"; };
@@ -389,6 +393,8 @@
 		5BE1AF8116C1AC6F00A57D93 /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				F9994EFB16C86FBE00735103 /* iphone_checkmark.png */,
+				F9994EFC16C86FBE00735103 /* iphone_checkmark@2x.png */,
 				5BCF415716C2F0C6002C9CA3 /* iphone_button.png */,
 				5BCF415616C2F0C6002C9CA3 /* iphone_button@2x.png */,
 				5BE1AFAF16C1B51900A57D93 /* iphone_empty_photo.png */,
@@ -656,6 +662,8 @@
 				5B7AEBFA16C8054F004B95DB /* iphone_page_book.png in Resources */,
 				5B7AEBFB16C8054F004B95DB /* iphone_page_book@2x.png in Resources */,
 				5B7AEC0916C80E6D004B95DB /* AdvancedSearch.plist in Resources */,
+				F9994EFD16C86FBE00735103 /* iphone_checkmark.png in Resources */,
+				F9994EFE16C86FBE00735103 /* iphone_checkmark@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
