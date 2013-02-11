@@ -35,10 +35,7 @@
     
     [self setUpPageViewController];
     [self configureSubviewsWithPatternImageName:@"iphone_places_pattern"];
-    
-    UIImage* pattern = [[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"iphone_page_book" ofType:@"png"]]resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeTile];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:pattern];
-    
+    [self setBackground];
     [self updateTitle];
 }
 
@@ -47,14 +44,51 @@
     NSDictionary *options =  [NSDictionary dictionaryWithObject: @20.0 forKey: UIPageViewControllerOptionSpineLocationKey];
     self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options: options];
     self.pageController.dataSource = self;
-    [self.pageController.view setFrame:CGRectMake(20, 20, 280, 426)];
     
+    if ([[UIScreen mainScreen] bounds].size.height > 600.0)
+    {
+        // ipad
+        [self.pageController.view setFrame:CGRectMake(50, 50, 670, 820)];
+    }
+    else
+    {
+        // iphone
+        [self.pageController.view setFrame:CGRectMake(20, 20, 280, 426)];
+    }
+
     PlaceViewController *initialViewController = [self viewControllerAtIndex: [self.visitedHotels indexOfObject:self.selectedHotel]];
     NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
     [self.pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     [self addChildViewController:self.pageController];
     [[self view] addSubview:[self.pageController view]];
     [self.pageController didMoveToParentViewController:self];
+}
+
+-(void) setBackground
+{
+    UIImage* image;
+    if ([[UIScreen mainScreen] bounds].size.height > 600.0)
+        // ipad screen
+    {
+        image = [[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"iphone_page_book" ofType:@"png"]]resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeStretch];
+        
+        float scaleFactorX = (self.view.frame.size.width /image.size.width);
+        float scaleFactorY = (self.view.frame.size.height / image.size.height);
+        
+        CGSize newSize = CGSizeMake(image.size.width * scaleFactorX, image.size.height * scaleFactorY);
+        
+        UIGraphicsBeginImageContext(newSize);
+        [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+        UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        self.view.backgroundColor = [UIColor colorWithPatternImage:newImage];
+    }
+    else
+    {
+        // any iphone screen
+        image = [[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"iphone_page_book" ofType:@"png"]]resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeTile];
+        self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    }
 }
 
 -(void) updateTitle

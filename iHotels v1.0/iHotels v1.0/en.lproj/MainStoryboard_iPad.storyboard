@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="ty3-Z2-GFM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12A269" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="ty3-Z2-GFM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -94,7 +94,7 @@
                     <view key="view" contentMode="scaleToFill" id="rWc-fS-VBy">
                         <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.2628156841" green="0.27442795040000001" blue="0.32567173240000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="ioA-Xp-enb"/>
                 </viewController>
@@ -105,16 +105,15 @@
         <!--Place View Controller-->
         <scene sceneID="z1i-Ai-jSp">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LN8-c9-ee1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="PlaceViewController" id="VoW-Pv-H3w" customClass="PlaceViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fag-5O-SaT">
-                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <rect key="frame" x="0.0" y="20" width="670" height="740"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELf-tF-ICy">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="654" id="66v-3W-Nuk"/>
-                                    <constraint firstAttribute="height" constant="642" id="uYI-jv-QNv"/>
+                                    <constraint firstAttribute="width" constant="570" id="RIh-8C-Z8C"/>
+                                    <constraint firstAttribute="height" constant="345" id="uHs-as-WxP"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YTj-AI-5Kc">
@@ -123,7 +122,7 @@
                                     <constraint firstAttribute="width" constant="146" id="GE8-eO-4Xw"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4q-ua-VAc">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4q-ua-VAc">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="Pm8-yJ-Pdd"/>
                                 </constraints>
@@ -131,7 +130,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZa-FI-LNe">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZa-FI-LNe">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -141,8 +140,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0Q-50-0Sb">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="73" id="45w-bS-FWC"/>
-                                    <constraint firstAttribute="height" constant="56" id="H7B-Wh-aCU"/>
+                                    <constraint firstAttribute="width" constant="50" id="6Mi-Cf-dNQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" backgroundImage="facebook_logo.png">
@@ -158,8 +156,8 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQi-8a-db0">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="73" id="6N1-Pl-QYb"/>
-                                    <constraint firstAttribute="height" constant="55" id="YeC-cw-6b3"/>
+                                    <constraint firstAttribute="width" constant="50" id="bOL-wE-r4R"/>
+                                    <constraint firstAttribute="height" constant="50" id="qcX-wa-OGn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" backgroundImage="twitter_logo.png">
@@ -173,35 +171,77 @@
                                     <action selector="postOnTwitterButtonTap:" destination="VoW-Pv-H3w" eventType="touchUpInside" id="MbZ-3H-X82"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPE-na-5Fj">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="1ZK-2d-nsp"/>
+                                    <constraint firstAttribute="height" constant="59" id="DGv-4y-Afb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ipadMinusTap:" destination="VoW-Pv-H3w" eventType="touchUpInside" id="0zh-e9-0ta"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQb-e7-Pji">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="1G0-tx-Hvy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ipadPlusTap:" destination="VoW-Pv-H3w" eventType="touchUpInside" id="3M7-RH-1KB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aIZ-h4-4AS" firstAttribute="centerX" secondItem="DZa-FI-LNe" secondAttribute="centerX" type="default" id="0f7-1F-LBK"/>
-                            <constraint firstAttribute="bottom" secondItem="aIZ-h4-4AS" secondAttribute="bottom" constant="35" id="2Il-IR-WYb"/>
-                            <constraint firstItem="ELf-tF-ICy" firstAttribute="top" secondItem="fag-5O-SaT" secondAttribute="top" constant="180" id="48k-zj-ayV"/>
-                            <constraint firstItem="DZa-FI-LNe" firstAttribute="top" secondItem="fag-5O-SaT" secondAttribute="top" constant="120" id="5gF-8K-PZM"/>
                             <constraint firstItem="S4q-ua-VAc" firstAttribute="trailing" secondItem="DZa-FI-LNe" secondAttribute="trailing" type="default" id="8Ta-kQ-S9P"/>
-                            <constraint firstItem="zQi-8a-db0" firstAttribute="leading" secondItem="ELf-tF-ICy" secondAttribute="leading" type="default" id="8ab-gu-jR5"/>
-                            <constraint firstItem="zQi-8a-db0" firstAttribute="top" secondItem="YTj-AI-5Kc" secondAttribute="top" type="default" id="ONq-jw-zCk"/>
-                            <constraint firstItem="zQi-8a-db0" firstAttribute="top" secondItem="fag-5O-SaT" secondAttribute="top" constant="28" id="WLA-pD-830"/>
-                            <constraint firstItem="S4q-ua-VAc" firstAttribute="leading" secondItem="YTj-AI-5Kc" secondAttribute="leading" type="default" id="ad5-er-VxI"/>
-                            <constraint firstItem="S4q-ua-VAc" firstAttribute="top" secondItem="fag-5O-SaT" secondAttribute="top" constant="73" id="eVt-PH-KsS"/>
-                            <constraint firstAttribute="trailing" secondItem="a0Q-50-0Sb" secondAttribute="trailing" constant="63" id="ggZ-I3-lce"/>
-                            <constraint firstItem="aIZ-h4-4AS" firstAttribute="leading" secondItem="fag-5O-SaT" secondAttribute="leading" constant="389" id="hJq-Ej-7QR"/>
-                            <constraint firstItem="a0Q-50-0Sb" firstAttribute="top" secondItem="YTj-AI-5Kc" secondAttribute="top" type="default" id="ivV-ac-h4d"/>
-                            <constraint firstItem="ELf-tF-ICy" firstAttribute="centerX" secondItem="fag-5O-SaT" secondAttribute="centerX" type="default" id="jaK-XE-UJc"/>
-                            <constraint firstItem="YTj-AI-5Kc" firstAttribute="leading" secondItem="fag-5O-SaT" secondAttribute="leading" constant="317" id="k0U-Ea-DFb"/>
-                            <constraint firstItem="aIZ-h4-4AS" firstAttribute="top" secondItem="fag-5O-SaT" secondAttribute="top" constant="884" id="pqK-uc-Vwy"/>
+                            <constraint firstItem="aIZ-h4-4AS" firstAttribute="leading" secondItem="fag-5O-SaT" secondAttribute="leading" constant="310" id="8p5-HK-GvG"/>
+                            <constraint firstItem="YTj-AI-5Kc" firstAttribute="centerX" secondItem="fag-5O-SaT" secondAttribute="centerX" type="default" id="Aeb-bP-DJV"/>
+                            <constraint firstItem="a0Q-50-0Sb" firstAttribute="bottom" secondItem="zQi-8a-db0" secondAttribute="bottom" type="default" id="DUo-wg-fMo"/>
+                            <constraint firstItem="vPE-na-5Fj" firstAttribute="leading" secondItem="fag-5O-SaT" secondAttribute="leading" constant="183" id="FJN-WJ-een"/>
+                            <constraint firstAttribute="trailing" secondItem="a0Q-50-0Sb" secondAttribute="trailing" constant="29" id="Fkv-YR-wMl"/>
+                            <constraint firstAttribute="trailing" secondItem="yQb-e7-Pji" secondAttribute="trailing" constant="183" id="I9G-Vc-D7c"/>
+                            <constraint firstItem="ELf-tF-ICy" firstAttribute="centerX" secondItem="DZa-FI-LNe" secondAttribute="centerX" type="default" id="IiU-Hn-MgZ"/>
+                            <constraint firstItem="aIZ-h4-4AS" firstAttribute="top" secondItem="fag-5O-SaT" secondAttribute="top" constant="635" id="N2q-Wv-QJy"/>
+                            <constraint firstAttribute="bottom" secondItem="aIZ-h4-4AS" secondAttribute="bottom" constant="35" id="TaY-Re-cqu"/>
+                            <constraint firstItem="zQi-8a-db0" firstAttribute="top" secondItem="fag-5O-SaT" secondAttribute="top" constant="20" symbolic="YES" type="user" id="Ur7-DQ-gt1"/>
+                            <constraint firstItem="S4q-ua-VAc" firstAttribute="centerX" secondItem="YTj-AI-5Kc" secondAttribute="centerX" type="default" id="ZdX-xa-3GZ"/>
+                            <constraint firstItem="ELf-tF-ICy" firstAttribute="top" secondItem="fag-5O-SaT" secondAttribute="top" constant="240" id="dPh-Il-qck"/>
+                            <constraint firstItem="a0Q-50-0Sb" firstAttribute="top" secondItem="fag-5O-SaT" secondAttribute="top" constant="20" symbolic="YES" type="default" id="fpM-QB-QeT"/>
+                            <constraint firstItem="YTj-AI-5Kc" firstAttribute="top" secondItem="fag-5O-SaT" secondAttribute="top" constant="60" id="hLt-64-kRq"/>
+                            <constraint firstItem="yQb-e7-Pji" firstAttribute="top" secondItem="vPE-na-5Fj" secondAttribute="top" type="default" id="nAF-TC-eaV"/>
+                            <constraint firstItem="S4q-ua-VAc" firstAttribute="top" secondItem="fag-5O-SaT" secondAttribute="top" constant="117" id="niK-fr-k1n"/>
+                            <constraint firstItem="yQb-e7-Pji" firstAttribute="bottom" secondItem="vPE-na-5Fj" secondAttribute="bottom" type="default" id="t93-Sy-ggz"/>
+                            <constraint firstItem="zQi-8a-db0" firstAttribute="leading" secondItem="fag-5O-SaT" secondAttribute="leading" constant="29" id="uVk-rh-jSl"/>
                             <constraint firstItem="DZa-FI-LNe" firstAttribute="leading" secondItem="S4q-ua-VAc" secondAttribute="leading" type="default" id="wAk-9D-ZyI"/>
+                            <constraint firstAttribute="bottom" secondItem="yQb-e7-Pji" secondAttribute="bottom" constant="41" id="wbq-uN-62V"/>
+                            <constraint firstItem="DZa-FI-LNe" firstAttribute="top" secondItem="fag-5O-SaT" secondAttribute="top" constant="157" id="wj7-tu-b3X"/>
+                            <constraint firstAttribute="trailing" secondItem="aIZ-h4-4AS" secondAttribute="trailing" constant="290" id="ziG-EJ-OsO"/>
                         </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="dateLabel" destination="DZa-FI-LNe" id="u97-5S-VQN"/>
-                        <outlet property="hotelNameLabel" destination="S4q-ua-VAc" id="HVq-Jh-nRv"/>
-                        <outlet property="ratingFaceView" destination="aIZ-h4-4AS" id="Gqi-1y-lU2"/>
-                        <outlet property="ratingImageView" destination="YTj-AI-5Kc" id="28f-iO-sHd"/>
+                        <outlet property="dateLabel" destination="S4q-ua-VAc" id="h0C-lG-0cf"/>
+                        <outlet property="hotelNameLabel" destination="DZa-FI-LNe" id="rBR-Wc-lie"/>
+                        <outlet property="photoImageView" destination="ELf-tF-ICy" id="EYd-pM-RDR"/>
+                        <outlet property="ratingFaceView" destination="aIZ-h4-4AS" id="6XA-ch-2Pa"/>
+                        <outlet property="ratingImageView" destination="YTj-AI-5Kc" id="QdD-TA-p1H"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LN8-c9-ee1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="575" y="631"/>
         </scene>
@@ -941,7 +981,7 @@
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RoomType" editingAccessoryType="disclosureIndicator" id="ice-UE-SBa">
-                                <rect key="frame" x="0.0" y="54" width="768" height="45"/>
+                                <rect key="frame" x="0.0" y="54" width="768" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="45" y="1" width="678" height="43"/>
@@ -975,7 +1015,7 @@
                         <color key="separatorColor" red="0.74327898029999995" green="0.71181964870000003" blue="0.50550985339999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="PropertyAmenity" id="W8h-hB-5yZ">
-                                <rect key="frame" x="0.0" y="54" width="768" height="45"/>
+                                <rect key="frame" x="0.0" y="54" width="768" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="45" y="1" width="678" height="43"/>
@@ -1491,6 +1531,8 @@
                 <relationship kind="outlet" name="checkOutTime" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="floorsNumber" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="hotelPolicy" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="hotelPolicyLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="propertyInfoLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="propertyInformation" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="roomsNumber" candidateClass="UILabel"/>
             </relationships>
@@ -1519,8 +1561,9 @@
                 <relationship kind="outlet" name="cityAndPostalCode" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="hotelImage" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="hotelMenuTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="locationDescription" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mapButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="ratingImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="reservationButton" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="ImageCollectionViewCell" superclassName="UICollectionViewCell">
@@ -1544,6 +1587,7 @@
         <class className="MyReservationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MyReservationViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="friendsThatWillComeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="reservationDate" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="reservationDays" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="reservationName" candidateClass="UILabel"/>
@@ -1581,9 +1625,11 @@
             <relationships>
                 <relationship kind="outlet" name="date" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="days" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="facebookButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="hotelCity" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="hotelImage" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="hotelName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="phoneContactsButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="selectedFriendsView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="starImage" candidateClass="UIImageView"/>
             </relationships>

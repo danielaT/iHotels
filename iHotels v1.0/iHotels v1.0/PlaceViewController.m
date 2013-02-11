@@ -84,13 +84,38 @@
 
     // apply color theme methods
     [self configureSubviewsWithPatternImageName:@"iphone_places_pattern"];
-    
-    UIImage* pattern = [[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"iphone_page" ofType:@"png"]]resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeTile];
-    
-    // view controller background
-    self.view.backgroundColor = [UIColor colorWithPatternImage:pattern];
+    [self setBackground];
 }
 
+
+-(void) setBackground
+{
+    UIImage *backgroundImage;
+    if ([[UIScreen mainScreen] bounds].size.height > 600.0)
+    {
+        // ipad
+        backgroundImage = [[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"iphone_page" ofType:@"png"]]resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeStretch];
+        
+        float scaleFactorX = (670.0 /backgroundImage.size.width);
+        float scaleFactorY = (740.0 / backgroundImage.size.height);
+        
+        CGSize newSize = CGSizeMake(backgroundImage.size.width * scaleFactorX, backgroundImage.size.height * scaleFactorY);
+        
+        UIGraphicsBeginImageContext(newSize);
+        [backgroundImage drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+        UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        backgroundImage = newImage;
+    }
+    else
+    {
+        // iphone
+        backgroundImage = [[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"iphone_page" ofType:@"png"]]resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeTile];
+    }
+    
+    // view controller background
+    self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
+}
 
 
 - (void)didReceiveMemoryWarning
@@ -237,6 +262,9 @@
     }
     
 }
+- (IBAction)ipadPlusTap:(id)sender {
+    [self plusButtonTap:sender];
+}
 
 - (IBAction)minusButtonTap:(id)sender {
     if (self.ratingFaceView.ratingValue>1) {
@@ -248,6 +276,9 @@
     }
 }
 
+- (IBAction)ipadMinusTap:(id)sender {
+    [self minusButtonTap:sender];
+}
 
 #pragma mark - image picker delegate methods
 
