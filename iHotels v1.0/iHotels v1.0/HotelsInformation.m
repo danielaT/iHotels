@@ -53,6 +53,8 @@ const int HOTELS_DICTIONARY_CAPACITY = 3;
 -(void)getHotelsForCity:(NSString*)cityName handler:(void (^)(NSArray*))callback
 {
     self.callback = callback;
+    
+    // caching the last 3 cities searched for reducing the resuests to the server
     if (![[self.hotelsInCities allKeys] containsObject:cityName]) {
         if ([self.hotelsInCities count] >= HOTELS_DICTIONARY_CAPACITY) {
             [self.hotelsInCities removeObjectForKey:[[self.hotelsInCities allKeys] objectAtIndex:0]];
