@@ -179,6 +179,13 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
 {
     [self performSegueWithIdentifier:@"Phone Friends" sender:self];
 }
+- (IBAction)iPadPhoneFriendsTap:(id)sender {
+    [self phoneFriends:sender];
+}
+
+- (IBAction)iPadFacebookFriendsTap:(id)sender {
+    [self pickFriendsButtonClick:sender];
+}
 
 - (IBAction)pickFriendsButtonClick:(id)sender
 {
@@ -247,6 +254,11 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
     }
     return YES;
 }
+
+- (IBAction)iPadReservationDone:(id)sender {
+    [self reservationDone:sender];
+}
+
 - (IBAction)reservationDone:(id)sender {
     if ([self isValid])
     {
