@@ -119,19 +119,18 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
 }
 
 -(void) showDatePickerView {
+    UIToolbar *pickerToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    pickerToolbar.barStyle = UIBarStyleBlackOpaque;
+    [pickerToolbar sizeToFit];
     
-    UIDatePicker *pickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    UIDatePicker *pickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, pickerToolbar.frame.size.height - 5, 0, 0)];
     pickerView.datePickerMode = UIDatePickerModeDate;
     pickerView.hidden = NO;
     pickerView.date = [NSDate date];
     pickerView.minimumDate = [NSDate date];
-    // a yars
+    // a year
     double timeInterval = 365 * 24 * 60 * 60;
     pickerView.maximumDate = [[NSDate date] dateByAddingTimeInterval:timeInterval];
-    
-    UIToolbar *pickerToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
-    pickerToolbar.barStyle = UIBarStyleBlackOpaque;
-    [pickerToolbar sizeToFit];
     
     NSMutableArray *barItems = [[NSMutableArray alloc] init];
     UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
@@ -146,7 +145,8 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
     [pickerViewPopup addSubview:pickerView];
     [pickerViewPopup addSubview:pickerToolbar];
     [pickerViewPopup showFromTabBar:self.tabBarController.tabBar];
-    [pickerViewPopup setBounds:CGRectMake(0, 0 , self.view.frame.size.width, self.view.frame.size.height/2)];
+    [pickerViewPopup setBounds:CGRectMake(0, 0 , self.view.frame.size.width, self.view.frame.size.height)];
+    [pickerViewPopup setFrame:CGRectMake(0, self.view.center.y + pickerToolbar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height/2)];
 }
 
 -(void)doneButtonPressed:(id)sender{
@@ -234,7 +234,7 @@ NSString* const DATE_FORMAT = @"yyyy-MM-dd";
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(BOOL) isValid
+-(BOOL)isValid
 {
     NSString *trimmedDate = [self.date.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     NSString *trimmedDays = [self.days.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
