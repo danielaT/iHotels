@@ -43,7 +43,7 @@ const float ROW_HEIGTH = 120;
             
             NSString* title = [NSString stringWithFormat:@"%d hotels", [self.hotelListArray count]];
             if ([self.hotelListArray count] == 1) {
-                title = [NSString stringWithFormat:@"%d hotel", [self.hotelListArray count]];
+                title = @"1 hotel";
             }
             self.navigationItem.title = title;
             [self.tableView reloadData];
